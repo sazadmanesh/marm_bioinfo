@@ -1,0 +1,4 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_026332.1,1,1487,1,1444,97.1083,0.971083,30.4,29,622,Bacteria,unclassified Bacteria kingdom,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Enterobacteriaceae,Shigella,Shigella dysenteriae,0.9710827168796234,0.16757408468290172,0.1725641716921571,25.0
+1,NR_102980.1,1,1552,2,1481,95.4253,1.86276,32.6,4,1064535,Bacteria,unclassified Bacteria kingdom,Bacillota,Negativicutes,Veillonellales,Veillonellaceae,Megasphaera,Megasphaera elsdenii,1.862757731958763,0.45815027367115746,0.2459526892900852,50.0
+2,NR_125570.1,1,1395,1,1264,90.6093,0.906093,30.0,1,796943,Bacteria,unclassified Bacteria kingdom,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Oribacterium,Oribacterium parvum,0.9060931899641577,0.2916990247922248,0.32193049017812786,25.0
