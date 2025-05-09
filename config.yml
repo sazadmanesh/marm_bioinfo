@@ -1,0 +1,287 @@
+default:
+  setup: "setup/global/setup.R"
+  knit_engines: "setup/global/knit_engines.R"
+  conflicts: "setup/global/conflicts.R"
+  functions: "setup/global/functions.R"
+  packages: "setup/global/packages.R"
+  inputs: "setup/global/inputs.R"
+  test_prediction: "setup/microbiome/test_prediction/"
+  visuals: "visuals/"
+  summaries:
+    metadata: "../summaries/metadata/"
+  tmp_tsv: "tmp/tmp_table.tsv"
+  tmp_downloads: "tmp/downloads"
+  tmp_fetch: "tmp/fetch_references.txt"
+  tmp_acc: "tmp/accessions.txt"
+  tmp_fasta3: "tmp/tmp3.fasta"
+  tmp_fasta4: "tmp/tmp4.fasta"
+
+modules: 
+  generate_alignment_stats: "modules/generate_alignment_stats.R"
+  reactable_functions: "modules/reactable_functions.R"
+  reactable_columns: "modules/reactable_columns.R"
+  
+widgets:
+  depth_summary: "widgets/depth_summary.R"
+
+microbiome:
+  micro_scripts: !expr list("setup/microbiome/packages.R", "setup/microbiome/functions.R", "setup/microbiome/inputs.R")
+  setup_dir: "setup/microbiome"
+  inputs: "setup/microbiome/inputs.R"
+  packages: "setup/microbiome/packages.R"
+  first_use_packages: "setup/microbiome/packages_first_use.R"
+  functions: "setup/microbiome/functions.R"
+  tax4fun: "/Users/shayda/Desktop/kegg/Tax4Fun2_ReferenceData_v2/"
+  Ref99NR: "/Users/shayda/Desktop/kegg/Tax4Fun2_ReferenceData_v2/Ref99NR/"
+  blast: "/Users/shayda/Desktop/kegg/ncbi-blast-2.16.0+-x64-win64/ncbi-blast-2.16.0+/bin/"
+
+swan:
+  functions: "setup/read_processing/functions.R"
+  marm_tax: "/work/richlab/azadmanesh/marm_bioinfo/data/taxonomy/"
+  uid_file: "/work/richlab/azadmanesh/marm_bioinfo/tmp/fetch_references.txt"
+  logs: "/work/richlab/azadmanesh/marm_bioinfo/logs"
+  ont_reads: "/work/richlab/azadmanesh/ont_reads/"
+  dorado_model_r9: "/work/richlab/azadmanesh/ont_reads/dna_r9.4.1_e8_sup@v3.6/"
+  dorado_model_r10: "/work/richlab/azadmanesh/ont_reads/dna_r10.4.1_e8.2_400bps_sup@v5.0.0/"
+  bioinformatics_stats: "/work/richlab/azadmanesh/marm_bioinfo"
+  samplesheets: "/work/richlab/azadmanesh/marm_bioinfo/dataframes/sample_sheets"
+  scripts: "/work/richlab/azadmanesh/marm_bioinfo/batch_scripts/"
+  accessions: "/work/richlab/azadmanesh/marm_bioinfo/tmp/accessions.txt"
+  tmp_fasta1: "/work/richlab/azadmanesh/marm_bioinfo/tmp/tmp1.fasta"
+  tmp_fasta2: "/work/richlab/azadmanesh/marm_bioinfo/tmp/tmp2.fasta"
+  tmp_fasta3: "/work/richlab/azadmanesh/marm_bioinfo/tmp/tmp3.fasta"
+  tmp_fasta4: "/work/richlab/azadmanesh/marm_bioinfo/tmp/tmp4.fasta"
+  raw_loris_mb: "/work/richlab/azadmanesh/ont_reads/marm_raw"
+  basecalled_marm_mb: "/work/richlab/azadmanesh/ont_reads/basecalled"
+  trimmed_marm_mb: "/work/richlab/azadmanesh/ont_reads/trimmed"
+  filtered_marm_mb: "/work/richlab/azadmanesh/ont_reads/filtered"
+  marm_mb_aligned: "/work/richlab/azadmanesh/marm_bioinfo/data/taxonomy/refseqs_aligned.fasta"
+  marm_mb_tree: "/work/richlab/azadmanesh/marm_bioinfo/data/taxonomy/refseqs_tree.newick"
+
+marmoset:
+  bristol: "metadata/marm_bristol.tsv"
+  extracts: "metadata/marm_extracts.tsv"
+  libraries: "metadata/marm_libraries.tsv"
+  samples: "metadata/marm_samples.tsv"
+  seqruns: "metadata/marm_seqruns.tsv"
+  compilation: "metadata/compilation_marmoset.tsv"
+  libraries_csv: "../data/libraries_marmoset.csv"
+  seqruns_csv: "../data/seqruns_marmoset.csv"
+  compilation_csv: "../data/compilation_marmoset.csv"
+  extracts_csv: "../data/extracts_marmoset.csv"
+  samples_csv: "../data/samples_marmoset.csv"
+  barcodes_output: "dataframes/barcodes/marmoset/"
+  barcode_alignments: "../data/barcode_alignments/"
+  sample_sheets: "dataframes/sample_sheets/"
+  taxonomy_list: "dataframes/taxonomy_list/"
+  microeco: 
+    abund:
+      main:
+        phylum:  "microeco/abundance/main/phy_abund_main/Phylum_abund.tsv"
+        class:   "microeco/abundance/main/cla_abund_main/Class_abund.tsv"
+        order:   "microeco/abundance/main/ord_abund_main/Order_abund.tsv"
+        family:  "microeco/abundance/main/fam_abund_main/Family_abund.tsv"
+        genus:   "microeco/abundance/main/gen_abund_main/Genus_abund.tsv"
+        species: "microeco/abundance/main/spe_abund_main/Species_abund.tsv"
+      bysubj:
+        phylum:  "microeco/abundance/bysubject/phylum/"
+        class:   "microeco/abundance/bysubject/class/"
+        order:   "microeco/abundance/bysubject/order/"
+        family:  "microeco/abundance/bysubject/family/"
+        genus:   "microeco/abundance/bysubject/genus/"
+        species: "microeco/abundance/bysubject/species/"
+    alpha:
+      main:
+        phylum:  "microeco/alphadiversity/main/phy_alphadiv_main/alpha_diversity.csv"
+        class:   "microeco/alphadiversity/main/cla_alphadiv_main/alpha_diversity.csv"
+        order:   "microeco/alphadiversity/main/ord_alphadiv_main/alpha_diversity.csv"
+        family:  "microeco/alphadiversity/main/fam_alphadiv_main/alpha_diversity.csv"
+        genus:   "microeco/alphadiversity/main/gen_alphadiv_main/alpha_diversity.csv"
+        species: "microeco/alphadiversity/main/spe_alphadiv_main/alpha_diversity.csv"
+      bysubj:
+        phylum:  "microeco/alphadiversity/bysubject/phylum/"
+        class:   "microeco/alphadiversity/bysubject/class/"
+        order:   "microeco/alphadiversity/bysubject/order/"
+        family:  "microeco/alphadiversity/bysubject/family/"
+        genus:   "microeco/alphadiversity/bysubject/genus/"
+        species: "microeco/alphadiversity/bysubject/species/"
+    beta:
+      main:
+        phylum: 
+          canber:    "microeco/betadiversity/main/phy_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/betadiversity/main/phy_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/betadiversity/main/phy_betadiv_main/wei_unifrac.csv"
+        class:  
+          canber:    "microeco/betadiversity/main/cla_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/betadiversity/main/cla_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/betadiversity/main/cla_betadiv_main/wei_unifrac.csv"
+        order:  
+          canber:    "microeco/betadiversity/main/ord_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/betadiversity/main/ord_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/betadiversity/main/ord_betadiv_main/wei_unifrac.csv"
+        family: 
+          canber:    "microeco/betadiversity/main/fam_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/betadiversity/main/fam_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/betadiversity/main/fam_betadiv_main/wei_unifrac.csv"
+        genus:  
+          canber:    "microeco/betadiversity/main/gen_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/betadiversity/main/gen_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/betadiversity/main/gen_betadiv_main/wei_unifrac.csv"
+        species:
+          canber:    "microeco/betadiversity/main/spe_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/betadiversity/main/spe_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/betadiversity/main/spe_betadiv_main/wei_unifrac.csv"
+      bysubj:
+        phylum:  "microeco/betadiversity/bysubject/phylum/"
+        class:   "microeco/betadiversity/bysubject/class/"
+        order:   "microeco/betadiversity/bysubject/order/"
+        family:  "microeco/betadiversity/bysubject/family/"
+        genus:   "microeco/betadiversity/bysubject/genus/"
+        species: "microeco/betadiversity/bysubject/species/"
+    data:
+      main:
+        phylum: 
+          feature: "microeco/datasets/main/phy_dataset_main/feature_table.tsv"
+          tree:    "microeco/datasets/main/phy_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/datasets/main/phy_dataset_main/rep_fasta.fasta"
+          samples: "microeco/datasets/main/phy_dataset_main/sample_table.tsv"
+          taxa:    "microeco/datasets/main/phy_dataset_main/tax_table.tsv"
+        class:  
+          feature: "microeco/datasets/main/cla_dataset_main/feature_table.tsv"
+          tree:    "microeco/datasets/main/cla_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/datasets/main/cla_dataset_main/rep_fasta.fasta"
+          samples: "microeco/datasets/main/cla_dataset_main/sample_table.tsv"
+          taxa:    "microeco/datasets/main/cla_dataset_main/tax_table.tsv"
+        order:  
+          feature: "microeco/datasets/main/ord_dataset_main/feature_table.tsv"
+          tree:    "microeco/datasets/main/ord_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/datasets/main/ord_dataset_main/rep_fasta.fasta"
+          samples: "microeco/datasets/main/ord_dataset_main/sample_table.tsv"
+          taxa:    "microeco/datasets/main/ord_dataset_main/tax_table.tsv"
+        family: 
+          feature: "microeco/datasets/main/fam_dataset_main/feature_table.tsv"
+          tree:    "microeco/datasets/main/fam_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/datasets/main/fam_dataset_main/rep_fasta.fasta"
+          samples: "microeco/datasets/main/fam_dataset_main/sample_table.tsv"
+          taxa:    "microeco/datasets/main/fam_dataset_main/tax_table.tsv"
+        genus:  
+          feature: "microeco/datasets/main/gen_dataset_main/feature_table.tsv"
+          tree:    "microecodatasets/main/gen_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/datasets/main/gen_dataset_main/rep_fasta.fasta"
+          samples: "microeco/datasets/main/gen_dataset_main/sample_table.tsv"
+          taxa:    "microeco/datasets/main/gen_dataset_main/tax_table.tsv"
+        species: 
+          feature: "microeco/datasets/main/spe_dataset_main/feature_table.tsv"
+          tree:    "microeco/datasets/main/spe_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/datasets/main/spe_dataset_main/rep_fasta.fasta"
+          samples: "microeco/datasets/main/spe_dataset_main/sample_table.tsv"
+          taxa:    "microeco/datasets/main/spe_dataset_main/tax_table.tsv"
+      bysubj:
+        phylum:  "microeco/datasets/bysubject/phylum/"
+        class:   "microeco/datasets/bysubject/class/"
+        order:   "microeco/datasets/bysubject/order/"
+        family:  "microeco/datasets/bysubject/family/"
+        genus:   "microeco/datasets/bysubject/genus/"
+        species: "microeco/datasets/bysubject/species/"
+        
+sample_sheets:
+  compilations:
+    marmoset: "dataframes/sample_sheets/cm_combined_sample_sheet.csv"
+  cm001: "dataframes/sample_sheets/cm001_sample_sheet.csv"
+  cm002: "dataframes/sample_sheets/cm002_sample_sheet.csv"
+  cm003: "dataframes/sample_sheets/cm003_sample_sheet.csv"
+  cm004: "dataframes/sample_sheets/cm004_sample_sheet.csv"
+  cm005: "dataframes/sample_sheets/cm005_sample_sheet.csv"
+  cm006: "dataframes/sample_sheets/cm006_sample_sheet.csv"
+  cm007: "dataframes/sample_sheets/cm007_sample_sheet.csv"
+  cm008: "dataframes/sample_sheets/cm008_sample_sheet.csv"
+  cm009: "dataframes/sample_sheets/cm009_sample_sheet.csv"
+  cm010: "dataframes/sample_sheets/cm010_sample_sheet.csv"
+  cm011: "dataframes/sample_sheets/cm011_sample_sheet.csv"
+  cm012: "dataframes/sample_sheets/cm012_sample_sheet.csv"
+  cm013: "dataframes/sample_sheets/cm013_sample_sheet.csv"
+  cm014: "dataframes/sample_sheets/cm014_sample_sheet.csv"
+
+barcode_alignments:
+  compilations:
+    marmoset: "../data/barcode_alignments/cm_combined_barcode_alignment.tsv"
+  cm001: "../data/barcode_alignments/cm001_barcode_alignment.tsv"
+  cm002: "../data/barcode_alignments/cm002_barcode_alignment.tsv"
+  cm003: "../data/barcode_alignments/cm003_barcode_alignment.tsv"
+  cm004: "../data/barcode_alignments/cm004_barcode_alignment.tsv"
+  cm005: "../data/barcode_alignments/cm005_barcode_alignment.tsv"
+  cm006: "../data/barcode_alignments/cm006_barcode_alignment.tsv"
+  cm007: "../data/barcode_alignments/cm007_barcode_alignment.tsv"
+  cm008: "../data/barcode_alignments/cm008_barcode_alignment.tsv"
+  cm009: "../data/barcode_alignments/cm009_barcode_alignment.tsv"
+  cm010: "../data/barcode_alignments/cm010_barcode_alignment.tsv"
+  cm011: "../data/barcode_alignments/cm011_barcode_alignment.tsv"
+  cm012: "../data/barcode_alignments/cm012_barcode_alignment.tsv"
+  cm013: "../data/barcode_alignments/cm013_barcode_alignment.tsv"
+  cm014: "../data/barcode_alignments/cm014_barcode_alignment.tsv"
+
+abund_wf16s_files:
+  cm001: "data/wf16s_abundance/cm001_abundance_table_species.tsv"
+  cm002: "data/wf16s_abundance/cm002_abundance_table_species.tsv"
+  cm003: "data/wf16s_abundance/cm003_abundance_table_species.tsv"
+  cm004: "data/wf16s_abundance/cm004_abundance_table_species.tsv"
+  cm005: "data/wf16s_abundance/cm005_abundance_table_species.tsv"
+  cm006: "data/wf16s_abundance/cm006_abundance_table_species.tsv"
+  cm007: "data/wf16s_abundance/cm007_abundance_table_species.tsv"
+  cm008: "data/wf16s_abundance/cm008_abundance_table_species.tsv"
+  cm009: "data/wf16s_abundance/cm009_abundance_table_species.tsv"
+  cm010: "data/wf16s_abundance/cm010_abundance_table_species.tsv"
+  cm011: "data/wf16s_abundance/cm011_abundance_table_species.tsv"
+  cm012: "data/wf16s_abundance/cm012_abundance_table_species.tsv"
+  cm013: "data/wf16s_abundance/cm013_abundance_table_species.tsv"
+  cm014: "data/wf16s_abundance/cm014_abundance_table_species.tsv"
+
+methods_16s_r9:
+  libprep_workflow: "'rapid16s'"
+  dorado_model: "'dna_r9.4.1_e8_sup@v3.6'"
+  min_length: 1000
+  max_length: 2000
+  min_qual: 7
+  min_id: 85
+  min_cov: 80
+  kit_name: "'SQK-16S024'"
+  tax_rank: "S"
+  n_taxa_barplot: 12
+  abund_threshold: 0
+  marm:
+    rarefy: 4500
+    norm: "SRS"
+    min_abund: 0.00001
+    min_freq: 1
+    include_lowest: TRUE
+    unifrac: TRUE
+    betadiv: "aitchison"
+    alpha_pd: TRUE
+    tax4fun_db: "Ref99NR"
+    loris_rarefy: 4500
+    keg_minID: 97
+
+methods_16s_r10:
+  libprep_workflow: "'rapid16s'"
+  dorado_model: "'dna_r10.4.1_e8.2_400bps_sup@v5.0.0'"
+  min_length: 1000
+  max_length: 2000
+  min_qual: 7
+  min_id: 85
+  min_cov: 80
+  kit_name: "'SQK-16S114-24'"
+  tax_rank: "S"
+  n_taxa_barplot: 12
+  abund_threshold: 0
+  marm:
+    rarefy: 4500
+    norm: "SRS"
+    min_abund: 0.00001
+    min_freq: 1
+    include_lowest: TRUE
+    unifrac: TRUE
+    betadiv: "aitchison"
+    alpha_pd: TRUE
+    tax4fun_db: "Ref99NR"
+    loris_rarefy: 4500
+    keg_minID: 97
