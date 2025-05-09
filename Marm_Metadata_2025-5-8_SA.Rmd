@@ -130,5 +130,7 @@ write.table(samples,
             sep = "\t")
 ```
 ```{r}
-bristol <- read.table()
+bristol <- read.table("metadata/marm_bristol.tsv",
+                      header = T,
+                      sep = "\t")
 ```

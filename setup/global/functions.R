@@ -300,12 +300,18 @@ read.microtable <- function(format, suffix){
       rep_fasta    = rep_fasta,
       auto_tidy    = T)
   }
+  dataset$cal_abund()
+  return(dataset)
+}
+
+read.f.microtable <- function(format, prefix, suffix){
+  base_path <- "/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets"
   
   if (format == "function") {
     
-    sample_tab  <- read.table(file.path(base_path, paste0(prefix, suffix, "/sample_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
-    tax_table   <- read.table(file.path(base_path, paste0(prefix, suffix, "/tax_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
-    otu_table   <- read.table(file.path(base_path, paste0(prefix, suffix, "/feature_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
+    sample_tab  <- read.table(file.path(base_path, paste0(prefix, "_", suffix, "/sample_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
+    tax_table   <- read.table(file.path(base_path, paste0(prefix, "_", suffix, "/tax_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
+    otu_table   <- read.table(file.path(base_path, paste0(prefix, "_", suffix, "/feature_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
     
     dataset  <- microtable$new(
       sample_table = sample_tab,

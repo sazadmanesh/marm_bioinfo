@@ -86,3 +86,17 @@ marm_foods <- list(
     "tsp"
   )
 )
+
+dataset.names <-list(
+  "main",
+  "group1",
+  "group2",
+  "baseline",
+  "gum",
+  "gumwash",
+  "ctrlwash",
+  "int",
+  "ne",
+  "tx",
+  ""
+)

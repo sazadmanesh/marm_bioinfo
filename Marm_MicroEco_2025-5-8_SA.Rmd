@@ -1,5 +1,5 @@
 ---
-title: "Marm_MicroEco_2025-5-4_SA"
+title: "Marm_MicroEco_2025-5-8_SA"
 author: "Shayda"
 date: "`r Sys.Date()`"
 output: html_document
@@ -8,7 +8,7 @@ output: html_document
 ```{r}
 global <- config::get(config = "default")
 
-here::i_am("Marm_Microeco_2025-5-4_SA.Rmd")
+here::i_am("Marm_Microeco_2025-5-8_SA.Rmd")
 source(here::here(global$setup))
 
 dataset.main <- read.microtable("tax", "main")
@@ -20,24 +20,36 @@ dataset.control <- read.microtable("tax", "control")
 dataset.controlwash <- read.microtable("tax", "controlwash")
 dataset.gumwash <- read.microtable("tax", "gumwash")
 dataset.int <- read.microtable("tax", "intervention")
-dataset.ne <- read.microtable("tax", "ne")
-dataset.tx <- read.microtable("tax", "tx")
-dataset.rmb <- read.microtable("tax", "roomb")
-dataset.rmf <- read.microtable("tax", "roomf")
 
-keg.main
-keg.g1
-keg.g2
-keg.baseline
-keg.gum
-keg.control
-keg.controlwash
-keg.gumwash
-keg.int
-keg.ne
-keg.tx
-keg.rmb
-keg.rmf
+keg.main <- read.f.microtable("function", "keg", "main")
+keg.g1 <- read.f.microtable("function", "keg", "g1")
+keg.g2 <- read.f.microtable("function", "keg", "g2")
+keg.baseline <- read.f.microtable("function", "keg", "baseline")
+keg.gum <- read.f.microtable("function", "keg", "gum")
+keg.control <- read.f.microtable("function", "keg", "control")
+keg.controlwash <- read.f.microtable("function", "keg", "controlwash")
+keg.gumwash <- read.f.microtable("function", "keg", "gumwash")
+keg.int <- read.f.microtable("function", "keg", "intervention")
+
+fpt.main <- read.f.microtable("function", "fpt", "main")
+fpt.g1 <- read.f.microtable("function", "fpt", "g1")
+fpt.g2 <- read.f.microtable("function", "fpt", "g2")
+fpt.baseline <- read.f.microtable("function", "fpt", "baseline")
+fpt.gum <- read.f.microtable("function", "fpt", "gum")
+fpt.control <- read.f.microtable("function", "fpt", "control")
+fpt.controlwash <- read.f.microtable("function", "fpt", "controlwash")
+fpt.gumwash <- read.f.microtable("function", "fpt", "gumwash")
+fpt.int <- read.f.microtable("function", "fpt", "intervention")
+
+njc.main <- read.f.microtable("function", "njc", "main")
+njc.g1 <- read.f.microtable("function", "njc", "g1")
+njc.g2 <- read.f.microtable("function", "njc", "g1")
+njc.baseline <- read.f.microtable("function", "njc", "baseline")
+njc.gum <- read.f.microtable("function", "njc", "gum")
+njc.control <- read.f.microtable("function", "njc", "control")
+njc.controlwash <- read.f.microtable("function", "njc", "controlwash")
+njc.gumwash <- read.f.microtable("function", "njc", "gumwash")
+njc.int <- read.f.microtable("function", "njc", "int")
 ```
 
 # Data Visualization
