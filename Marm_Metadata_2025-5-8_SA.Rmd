@@ -129,3 +129,6 @@ write.table(samples,
             row.names = FALSE,
             sep = "\t")
 ```
+```{r}
+bristol <- read.table()
+```

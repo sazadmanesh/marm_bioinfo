@@ -19,12 +19,7 @@ source(here::here(global$setup))
 ```{r}
 samples <- read.table("metadata/marm_samples.tsv",
                       header = T,
-                      sep = "\t") %>%
-  rename(subject = SampleSubject) %>%
-  mutate(sampledate = as.Date(SampleDate,
-                        format = "%m/%d/%y"),
-         studyday = str_extract(SampleID, "(?<=-)[0-9]+(?=-)"),
-         subj_day = fct(str_glue("{subject}", "_", "{studyday}")))
+                      sep = "\t")
 
 extracts <- read.table("metadata/marm_extracts.tsv",
                       header = T,
@@ -36,53 +31,15 @@ libraries <- read.table("metadata/marm_libraries.tsv",
 
 seqruns <- read.table("metadata/marm_seqruns.tsv",
                       header = T,
-                      sep = "\t") %>%
-  rename(Seq.ID = Pooled.Library.Code)
+                      sep = "\t")
 
 subjects <- read.table("metadata/marm_subjects.tsv",
                       header = T,
-                      sep = "\t") %>%
-  mutate(
-    location = factor(cage, levels = unique(cage)),
-    subjectcode = factor(subjectcode, levels = unique(subjectcode)),
-    subject = factor(subject, levels = unique(subject)),
-    sex = factor(sex, levels = unique(sex)),
-    housing = factor(housing, levels = unique(housing)),
-    group = factor(group, levels = unique(group))
-  )
-```
-```{r}
-metadata <- libraries %>%
-  left_join(samples, by = "SampleID") %>%
-  left_join(subjects, by = "subject") %>%
-  left_join(seqruns, by = "Seq.ID") %>%
-  mutate(SampleDate = mdy(SampleDate)) %>%
-  mutate(diet_trial = case_when(
-    SampleDate >= as.Date("2023-03-10") & SampleDate <= as.Date("2023-03-23") ~ "run-in",
-    SampleDate >= as.Date("2023-03-24") & SampleDate <= as.Date("2023-04-06") ~ "intervention-1",
-    SampleDate >= as.Date("2023-04-07") & SampleDate <= as.Date("2023-04-20") ~ "washout-1",
-    SampleDate >= as.Date("2023-04-21") & SampleDate <= as.Date("2023-05-04") ~ "intervention-2",
-    SampleDate >= as.Date("2023-05-05") & SampleDate <= as.Date("2023-05-18") ~ "washout-2"
-  )) %>%
-  mutate(group_phase = case_when(
-    diet_trial == "run-in" & group == "g1" ~ "baseline",
-    diet_trial == "run-in" & group == "g2" ~ "baseline",
-    diet_trial == "intervention-1" & group == "g1" ~ "gum",
-    diet_trial == "intervention-1" & group == "g2" ~ "control",
-    diet_trial == "washout-1" & group == "g1" ~ "gum-washout",
-    diet_trial == "washout-1" & group == "g2" ~ "control-washout",
-    diet_trial == "intervention-2" & group == "g1" ~ "control",
-    diet_trial == "intervention-2" & group == "g2" ~ "gum",
-    diet_trial == "washout-2" & group == "g1" ~ "control-washout",
-    diet_trial == "washout-2" & group == "g2" ~ "gum-washout"
-  )) %>%
-  mutate(
-    diet_trial = factor(diet_trial, levels = unique(diet_trial)),
-    group_phase = factor(group_phase, levels = unique(group_phase)),
-    origin = factor(origin, levels = unique(origin)),
-    bristol = factor(Bristol, levels = unique(Bristol))
-  ) %>%
-  mutate(room = str_glue("room {str_extract(cage, '^[a-zA-Z]')}"))
+                      sep = "\t")
+
+metadata <- read.table("metadata/marmoset_compilation.tsv",
+                       header = T, 
+                       sep = "\t")
 ```
 ## Metadata Subsets
 # Sample Subsets
