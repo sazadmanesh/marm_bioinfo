@@ -1,0 +1,331 @@
+default:
+  setup: setup/global/setup.R
+  knit_engines: setup/global/knit_engines.R
+  conflicts: setup/global/conflicts.R
+  functions: setup/global/functions.R
+  packages: setup/global/packages.R
+  inputs: "setup/global/inputs.R"
+  fonts: "setup/global/fonts/FA6_Free-Solid-900.otf"
+  test_prediction: "setup/microbiome/test_prediction/"
+  visuals: "visuals/"
+  summaries:
+    metadata: "../summaries/metadata/"
+  tmp_tsv: "tmp/tmp_table.tsv"
+  tmp_downloads: "tmp/downloads/"
+  tmp_fetch: "tmp/fetch_references.txt"
+  tmp_fasta3: "tmp/tmp3.fasta"
+  tmp_fasta4: "tmp/tmp4.fasta"
+  
+modules:
+  generate_alignment_stats: "modules/generate_alignment_stats.R"
+  reactable_functions: "modules/reactable_functions.R"
+  reactable_columns: "modules/reactable_columns.R"
+  
+microbiome:
+  micro_scripts: !expr list("setup/microbiome/packages.R", "setup/microbiome/functions.R", "setup/microbiome/inputs.R")
+  setup_dir: "setup/microbiome"
+  inputs: "setup/microbiome/inputs.R"
+  packages: "setup/microbiome/packages.R"
+  first_use_packages: "setup/microbiome/packages_first_use.R"
+  functions: "setup/microbiome/functions.R"
+  tax4fun: "setup/microbiome/Tax4Fun2_ReferenceData_v2/"
+  Ref99NR: "setup/microbiome/Tax4Fun2_ReferenceData_v2/Ref99NR/"
+  blast: "setup/microbiome/ncbi-blast-2.16.0+/bin"
+  
+swan:
+  functions: "setup/read_processing/functions.R"
+  marm_tax: "/work/richlab/aliciarich/bioinformatics_stats/data/loris/taxonomy/"
+  uid_file: "/work/richlab/aliciarich/bioinformatics_stats/tmp/fetch_references.txt"
+  logs: "/work/richlab/aliciarich/bioinformatics_stats/logs"
+  ont_reads: "/work/richlab/aliciarich/ont_reads/"
+  dorado_model: "/work/richlab/aliciarich/ont_reads/dna_r10.4.1_e8.2_400bps_sup@v5.0.0/"
+  bioinformatics_stats: "/work/richlab/aliciarich/bioinformatics_stats"
+  samplesheets: "/work/richlab/aliciarich/bioinformatics_stats/dataframes/sample_sheet/loris"
+  scripts: "/work/richlab/aliciarich/bioinformatics_stats/batch_scripts/"
+  accessions: "/work/richlab/aliciarich/bioinformatics_stats/tmp/accessions.txt"
+  tmp_fasta1: "/work/richlab/aliciarich/bioinformatics_stats/tmp/tmp1.fasta"
+  tmp_fasta2: "/work/richlab/aliciarich/bioinformatics_stats/tmp/tmp2.fasta"
+  tmp_fasta3: "/work/richlab/aliciarich/bioinformatics_stats/tmp/tmp3.fasta"
+  tmp_fasta4: "/work/richlab/aliciarich/bioinformatics_stats/tmp/tmp4.fasta"
+  raw_loris_mb: "/work/richlab/aliciarich/ont_reads/loris_microbiome/hdz_raw"
+  basecalled_marm_mb: "/work/richlab/aliciarich/ont_reads/loris_microbiome/basecalled"
+  trimmed_marm_mb: "/work/richlab/aliciarich/ont_reads/loris_microbiome/trimmed"
+  filtered_marm_mb: "/work/richlab/aliciarich/ont_reads/loris_microbiome/filtered"
+  marm_mb_aligned: "/work/richlab/aliciarich/bioinformatics_stats/data/loris/taxonomy/refseqs_aligned.fasta"
+  marm_mb_tree: "/work/richlab/aliciarich/bioinformatics_stats/data/loris/taxonomy/refseqs_tree.newick"
+
+marmoset:
+  extracts: "dataframes/sample_inventories/extracts_marmoset.tsv"
+  libraries: "dataframes/sample_inventories/libraries_marmoset.tsv"
+  samples: "dataframes/sample_inventories/samples_marmoset.tsv"
+  compilation: "dataframes/sample_inventories/compilation_marmoset.tsv"
+  libraries_csv: "../data/libraries_marmoset.csv"
+  seqruns_csv: "../data/seqruns_marmoset.csv"
+  compilation_csv: "../data/compilation_marmoset.csv"
+  extracts_csv: "../data/extracts_marmoset.csv"
+  samples_csv: "../data/samples_marmoset.csv"
+  barcodes_output: "dataframes/barcodes/marmoset/"
+  barcode_alignments: "../labwork/minion_data/barcode_alignments/marmoset/"
+  sample_sheet: "marmoset/dataframes/sample_sheet/"
+  taxonomy_list: "marmoset/dataframes/taxonomy_list/"
+  microeco: 
+    abund:
+      main:
+        phylum:  "microeco/marmoset/abundance/main/phy_abund_main/Phylum_abund.tsv"
+        class:   "microeco/marmoset/abundance/main/cla_abund_main/Class_abund.tsv"
+        order:   "microeco/marmoset/abundance/main/ord_abund_main/Order_abund.tsv"
+        family:  "microeco/marmoset/abundance/main/fam_abund_main/Family_abund.tsv"
+        genus:   "microeco/marmoset/abundance/main/gen_abund_main/Genus_abund.tsv"
+        species: "microeco/marmoset/abundance/main/spe_abund_main/Species_abund.tsv"
+      bysubj:
+        phylum:  "microeco/marmoset/abundance/bysubject/phylum/"
+        class:   "microeco/marmoset/abundance/bysubject/class/"
+        order:   "microeco/marmoset/abundance/bysubject/order/"
+        family:  "microeco/marmoset/abundance/bysubject/family/"
+        genus:   "microeco/marmoset/abundance/bysubject/genus/"
+        species: "microeco/marmoset/abundance/bysubject/species/"
+    alpha:
+      main:
+        phylum:  "microeco/marmoset/alphadiversity/main/phy_alphadiv_main/alpha_diversity.csv"
+        class:   "microeco/marmoset/alphadiversity/main/cla_alphadiv_main/alpha_diversity.csv"
+        order:   "microeco/marmoset/alphadiversity/main/ord_alphadiv_main/alpha_diversity.csv"
+        family:  "microeco/marmoset/alphadiversity/main/fam_alphadiv_main/alpha_diversity.csv"
+        genus:   "microeco/marmoset/alphadiversity/main/gen_alphadiv_main/alpha_diversity.csv"
+        species: "microeco/marmoset/alphadiversity/main/spe_alphadiv_main/alpha_diversity.csv"
+      bysubj:
+        phylum:  "microeco/marmoset/alphadiversity/bysubject/phylum/"
+        class:   "microeco/marmoset/alphadiversity/bysubject/class/"
+        order:   "microeco/marmoset/alphadiversity/bysubject/order/"
+        family:  "microeco/marmoset/alphadiversity/bysubject/family/"
+        genus:   "microeco/marmoset/alphadiversity/bysubject/genus/"
+        species: "microeco/marmoset/alphadiversity/bysubject/species/"
+    beta:
+      main:
+        phylum: 
+          canber:    "microeco/marmoset/betadiversity/main/phy_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/marmoset/betadiversity/main/phy_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/marmoset/betadiversity/main/phy_betadiv_main/wei_unifrac.csv"
+        class:  
+          canber:    "microeco/marmoset/betadiversity/main/cla_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/marmoset/betadiversity/main/cla_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/marmoset/betadiversity/main/cla_betadiv_main/wei_unifrac.csv"
+        order:  
+          canber:    "microeco/marmoset/betadiversity/main/ord_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/marmoset/betadiversity/main/ord_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/marmoset/betadiversity/main/ord_betadiv_main/wei_unifrac.csv"
+        family: 
+          canber:    "microeco/marmoset/betadiversity/main/fam_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/marmoset/betadiversity/main/fam_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/marmoset/betadiversity/main/fam_betadiv_main/wei_unifrac.csv"
+        genus:  
+          canber:    "microeco/marmoset/betadiversity/main/gen_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/marmoset/betadiversity/main/gen_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/marmoset/betadiversity/main/gen_betadiv_main/wei_unifrac.csv"
+        species:
+          canber:    "microeco/marmoset/betadiversity/main/spe_betadiv_main/canberra.csv"
+          unifrac_u: "microeco/marmoset/betadiversity/main/spe_betadiv_main/unwei_unifrac.csv"
+          unifrac_w: "microeco/marmoset/betadiversity/main/spe_betadiv_main/wei_unifrac.csv"
+      bysubj:
+        phylum:  "microeco/marmoset/betadiversity/bysubject/phylum/"
+        class:   "microeco/marmoset/betadiversity/bysubject/class/"
+        order:   "microeco/marmoset/betadiversity/bysubject/order/"
+        family:  "microeco/marmoset/betadiversity/bysubject/family/"
+        genus:   "microeco/marmoset/betadiversity/bysubject/genus/"
+        species: "microeco/marmoset/betadiversity/bysubject/species/"
+    data:
+      main:
+        phylum: 
+          feature: "microeco/marmoset/datasets/main/phy_dataset_main/feature_table.tsv"
+          tree:    "microeco/marmoset/datasets/main/phy_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/marmoset/datasets/main/phy_dataset_main/rep_fasta.fasta"
+          samples: "microeco/marmoset/datasets/main/phy_dataset_main/sample_table.tsv"
+          taxa:    "microeco/marmoset/datasets/main/phy_dataset_main/tax_table.tsv"
+        class:  
+          feature: "microeco/marmoset/datasets/main/cla_dataset_main/feature_table.tsv"
+          tree:    "microeco/marmoset/datasets/main/cla_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/marmoset/datasets/main/cla_dataset_main/rep_fasta.fasta"
+          samples: "microeco/marmoset/datasets/main/cla_dataset_main/sample_table.tsv"
+          taxa:    "microeco/marmoset/datasets/main/cla_dataset_main/tax_table.tsv"
+        order:  
+          feature: "microeco/marmoset/datasets/main/ord_dataset_main/feature_table.tsv"
+          tree:    "microeco/marmoset/datasets/main/ord_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/marmoset/datasets/main/ord_dataset_main/rep_fasta.fasta"
+          samples: "microeco/marmoset/datasets/main/ord_dataset_main/sample_table.tsv"
+          taxa:    "microeco/marmoset/datasets/main/ord_dataset_main/tax_table.tsv"
+        family: 
+          feature: "microeco/marmoset/datasets/main/fam_dataset_main/feature_table.tsv"
+          tree:    "microeco/marmoset/datasets/main/fam_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/marmoset/datasets/main/fam_dataset_main/rep_fasta.fasta"
+          samples: "microeco/marmoset/datasets/main/fam_dataset_main/sample_table.tsv"
+          taxa:    "microeco/marmoset/datasets/main/fam_dataset_main/tax_table.tsv"
+        genus:  
+          feature: "microeco/marmoset/datasets/main/gen_dataset_main/feature_table.tsv"
+          tree:    "microeco/marmoset/datasets/main/gen_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/marmoset/datasets/main/gen_dataset_main/rep_fasta.fasta"
+          samples: "microeco/marmoset/datasets/main/gen_dataset_main/sample_table.tsv"
+          taxa:    "microeco/marmoset/datasets/main/gen_dataset_main/tax_table.tsv"
+        species: 
+          feature: "microeco/marmoset/datasets/main/spe_dataset_main/feature_table.tsv"
+          tree:    "microeco/marmoset/datasets/main/spe_dataset_main/phylo_tree.tre"
+          fasta:   "microeco/marmoset/datasets/main/spe_dataset_main/rep_fasta.fasta"
+          samples: "microeco/marmoset/datasets/main/spe_dataset_main/sample_table.tsv"
+          taxa:    "microeco/marmoset/datasets/main/spe_dataset_main/tax_table.tsv"
+      bysubj:
+        phylum:  "microeco/marmoset/datasets/bysubject/phylum/"
+        class:   "microeco/marmoset/datasets/bysubject/class/"
+        order:   "microeco/marmoset/datasets/bysubject/order/"
+        family:  "microeco/marmoset/datasets/bysubject/family/"
+        genus:   "microeco/marmoset/datasets/bysubject/genus/"
+        species: "microeco/marmoset/datasets/bysubject/species/"
+        
+bats:
+  extracts: "dataframes/sample_inventories/extracts_bats.tsv"
+  libraries: "dataframes/sample_inventories/libraries_bats.tsv"
+  samples: "dataframes/sample_inventories/samples_bats.tsv"
+  compilation: "dataframes/sample_inventories/compilation_bats.tsv"
+  compilation_csv: "../data/compilation_bats.csv"
+  extracts_csv: "../data/extracts_bats.csv"
+  samples_csv: "../data/samples_bats.csv"
+
+isolates:
+  extracts: "dataframes/sample_inventories/extracts_isolates.tsv"
+  libraries: "dataframes/sample_inventories/libraries_isolates.tsv"
+  samples: ".../bioinformatics_stats/dataframes/sample_inventories/samples_isolates.tsv"
+  compilation: "dataframes/sample_inventories/compilation_isolates.tsv"
+  compilation_csv: "../data/compilation_isolates.csv"
+  extracts_csv: "../data/extracts_isolates.csv"
+  samples_csv: "../data/samples_isolates.csv"
+  
+envir:
+  extracts: "dataframes/sample_inventories/extracts_envir.tsv"
+  libraries: "dataframes/sample_inventories/libraries_envir.tsv"
+  samples: "dataframes/sample_inventories/samples_envir.tsv"
+  compilation: "dataframes/sample_inventories/compilation_envir.tsv"
+  compilation_csv: "../data/compilation_envir.csv"
+  extracts_csv: "../data/extracts_envir.csv"
+  samples_csv: "../data/samples_envir.csv"
+
+sample_sheets:
+  compilations:
+    loris:    "dataframes/sample_sheet/loris/hdz_combined_sample_sheet.csv"
+    marmoset: "dataframes/sample_sheet/marmoset/cm_combined_sample_sheet.csv"
+  hdz1:  "dataframes/sample_sheet/loris/hdz1_sample_sheet.csv"
+  hdz2:  "dataframes/sample_sheet/loris/hdz2_sample_sheet.csv"
+  hdz3:  "dataframes/sample_sheet/loris/hdz3_sample_sheet.csv"
+  hdz4:  "dataframes/sample_sheet/loris/hdz4_sample_sheet.csv"
+  hdz5:  "dataframes/sample_sheet/loris/hdz5_sample_sheet.csv"
+  hdz6:  "dataframes/sample_sheet/loris/hdz6_sample_sheet.csv"
+  hdz7:  "dataframes/sample_sheet/loris/hdz7_sample_sheet.csv"
+  hdz8:  "dataframes/sample_sheet/loris/hdz8_sample_sheet.csv"
+  hdz9:  "dataframes/sample_sheet/loris/hdz9_sample_sheet.csv"
+  hdz10: "dataframes/sample_sheet/loris/hdz10_sample_sheet.csv"
+  hdz11: "dataframes/sample_sheet/loris/hdz11_sample_sheet.csv"
+  hdz12: "dataframes/sample_sheet/loris/hdz12_sample_sheet.csv"
+  hdz13: "dataframes/sample_sheet/loris/hdz13_sample_sheet.csv"
+  hdz14: "dataframes/sample_sheet/loris/hdz14_sample_sheet.csv"
+  hdz15: "dataframes/sample_sheet/loris/hdz15_sample_sheet.csv"
+  hdz16: "dataframes/sample_sheet/loris/hdz16_sample_sheet.csv"
+  hdz17: "dataframes/sample_sheet/loris/hdz17_sample_sheet.csv"
+  hdz18: "dataframes/sample_sheet/loris/hdz18_sample_sheet.csv"
+  cm001: "dataframes/sample_sheet/marmoset/cm001_sample_sheet.csv"
+  cm002: "dataframes/sample_sheet/marmoset/cm002_sample_sheet.csv"
+  cm003: "dataframes/sample_sheet/marmoset/cm003_sample_sheet.csv"
+  cm004: "dataframes/sample_sheet/marmoset/cm004_sample_sheet.csv"
+  cm005: "dataframes/sample_sheet/marmoset/cm005_sample_sheet.csv"
+  cm006: "dataframes/sample_sheet/marmoset/cm006_sample_sheet.csv"
+  cm007: "dataframes/sample_sheet/marmoset/cm007_sample_sheet.csv"
+  cm008: "dataframes/sample_sheet/marmoset/cm008_sample_sheet.csv"
+  cm009: "dataframes/sample_sheet/marmoset/cm009_sample_sheet.csv"
+  cm010: "dataframes/sample_sheet/marmoset/cm010_sample_sheet.csv"
+  cm011: "dataframes/sample_sheet/marmoset/cm011_sample_sheet.csv"
+
+barcode_alignments:
+  compilations:
+    loris:    "../labwork/minion_data/barcode_alignments/loris/hdz_combined_barcode_alignment.tsv"
+    marmoset: "../labwork/minion_data/barcode_alignments/marmoset/cm_combined_barcode_alignment.tsv"
+  hdz1:  "../labwork/minion_data/barcode_alignments/loris/hdz1_barcode_alignment.tsv"
+  hdz2:  "../labwork/minion_data/barcode_alignments/loris/hdz2_barcode_alignment.tsv"
+  hdz3:  "../labwork/minion_data/barcode_alignments/loris/hdz3_barcode_alignment.tsv"
+  hdz4:  "../labwork/minion_data/barcode_alignments/loris/hdz4_barcode_alignment.tsv"
+  hdz5:  "../labwork/minion_data/barcode_alignments/loris/hdz5_barcode_alignment.tsv"
+  hdz6:  "../labwork/minion_data/barcode_alignments/loris/hdz6_barcode_alignment.tsv"
+  hdz7:  "../labwork/minion_data/barcode_alignments/loris/hdz7_barcode_alignment.tsv"
+  hdz8:  "../labwork/minion_data/barcode_alignments/loris/hdz8_barcode_alignment.tsv"
+  hdz9:  "../labwork/minion_data/barcode_alignments/loris/hdz9_barcode_alignment.tsv"
+  hdz10: "../labwork/minion_data/barcode_alignments/loris/hdz10_barcode_alignment.tsv"
+  hdz11: "../labwork/minion_data/barcode_alignments/loris/hdz11_barcode_alignment.tsv"
+  hdz12: "../labwork/minion_data/barcode_alignments/loris/hdz12_barcode_alignment.tsv"
+  hdz13: "../labwork/minion_data/barcode_alignments/loris/hdz13_barcode_alignment.tsv"
+  hdz14: "../labwork/minion_data/barcode_alignments/loris/hdz14_barcode_alignment.tsv"
+  hdz15: "../labwork/minion_data/barcode_alignments/loris/hdz15_barcode_alignment.tsv"
+  hdz16: "../labwork/minion_data/barcode_alignments/loris/hdz16_barcode_alignment.tsv"
+  hdz17: "../labwork/minion_data/barcode_alignments/loris/hdz17_barcode_alignment.tsv"
+  hdz18: "../labwork/minion_data/barcode_alignments/loris/hdz18_barcode_alignment.tsv"
+  cm001: "../labwork/minion_data/barcode_alignments/marmoset/cm001_barcode_alignment.tsv"
+  cm002: "../labwork/minion_data/barcode_alignments/marmoset/cm002_barcode_alignment.tsv"
+  cm003: "../labwork/minion_data/barcode_alignments/marmoset/cm003_barcode_alignment.tsv"
+  cm004: "../labwork/minion_data/barcode_alignments/marmoset/cm004_barcode_alignment.tsv"
+  cm005: "../labwork/minion_data/barcode_alignments/marmoset/cm005_barcode_alignment.tsv"
+  cm006: "../labwork/minion_data/barcode_alignments/marmoset/cm006_barcode_alignment.tsv"
+  cm007: "../labwork/minion_data/barcode_alignments/marmoset/cm007_barcode_alignment.tsv"
+  cm008: "../labwork/minion_data/barcode_alignments/marmoset/cm008_barcode_alignment.tsv"
+  cm009: "../labwork/minion_data/barcode_alignments/marmoset/cm009_barcode_alignment.tsv"
+  cm010: "../labwork/minion_data/barcode_alignments/marmoset/cm010_barcode_alignment.tsv"
+  cm011: "../labwork/minion_data/barcode_alignments/marmoset/cm011_barcode_alignment.tsv"
+
+abund_wf16s_files:
+  hdz1:  "data/loris/wf16s_abundance/hdz1_abundance_table_species.tsv"
+  hdz2:  "data/loris/wf16s_abundance/hdz2_abundance_table_species.tsv"
+  hdz3:  "data/loris/wf16s_abundance/hdz3_abundance_table_species.tsv"
+  hdz4:  "data/loris/wf16s_abundance/hdz4_abundance_table_species.tsv"
+  hdz5:  "data/loris/wf16s_abundance/hdz5_abundance_table_species.tsv"
+  hdz6:  "data/loris/wf16s_abundance/hdz6_abundance_table_species.tsv"
+  hdz7:  "data/loris/wf16s_abundance/hdz7_abundance_table_species.tsv"
+  hdz8:  "data/loris/wf16s_abundance/hdz8_abundance_table_species.tsv"
+  hdz9:  "data/loris/wf16s_abundance/hdz9_abundance_table_species.tsv"
+  hdz10: "data/loris/wf16s_abundance/hdz10_abundance_table_species.tsv"
+  hdz11: "data/loris/wf16s_abundance/hdz11_abundance_table_species.tsv"
+  hdz12: "data/loris/wf16s_abundance/hdz12_abundance_table_species.tsv"
+  hdz13: "data/loris/wf16s_abundance/hdz13_abundance_table_species.tsv"
+  hdz14: "data/loris/wf16s_abundance/hdz14_abundance_table_species.tsv"
+  hdz15: "data/loris/wf16s_abundance/hdz15_abundance_table_species.tsv"
+  hdz16: "data/loris/wf16s_abundance/hdz16_abundance_table_species.tsv"
+  hdz17: "data/loris/wf16s_abundance/hdz17_abundance_table_species.tsv"
+  hdz18: "data/loris/wf16s_abundance/hdz18_abundance_table_species.tsv"
+  cm001: "data/marmoset/wf16s_abundance/cm001_abundance_table_species.tsv"
+  cm002: "data/marmoset/wf16s_abundance/cm002_abundance_table_species.tsv"
+  cm003: "data/marmoset/wf16s_abundance/cm003_abundance_table_species.tsv"
+  cm004: "data/marmoset/wf16s_abundance/cm004_abundance_table_species.tsv"
+  cm005: "data/marmoset/wf16s_abundance/cm005_abundance_table_species.tsv"
+  cm006: "data/marmoset/wf16s_abundance/cm006_abundance_table_species.tsv"
+  cm007: "data/marmoset/wf16s_abundance/cm007_abundance_table_species.tsv"
+  cm008: "data/marmoset/wf16s_abundance/cm008_abundance_table_species.tsv"
+  cm009: "data/marmoset/wf16s_abundance/cm009_abundance_table_species.tsv"
+  cm010: "data/marmoset/wf16s_abundance/cm010_abundance_table_species.tsv"
+  cm011: "data/marmoset/wf16s_abundance/cm011_abundance_table_species.tsv"
+
+methods_16s:
+  libprep_workflow: "'rapid16s'"
+  dorado_model: "'dna_r10.4.1_e8.2_400bps_sup@v5.0.0'"
+  min_length: 1000
+  max_length: 2000
+  min_qual: 7
+  min_id: 85
+  min_cov: 80
+  kit_name: "'SQK-16S114-24'"
+  tax_rank: "S"
+  n_taxa_barplot: 12
+  abund_threshold: 0
+  loris:
+    rarefy: 4500
+    norm: "SRS"
+    min_abund: 0.00001
+    min_freq: 1
+    include_lowest: TRUE
+    unifrac: TRUE
+    betadiv: "aitchison"
+    alpha_pd: TRUE
+    tax4fun_db: "Ref99NR"
+    loris_rarefy: 4500
+    keg_minID: 97
+    
