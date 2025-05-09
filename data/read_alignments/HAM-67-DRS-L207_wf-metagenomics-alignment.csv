@@ -1,0 +1,2 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_113411.1,1,1493,2,1400,93.7709,1.86135,39.3,50.5,537011,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Segatella,Segatella copri,1.8613529805760214,0.4939690306093042,0.2653817066209756,100.0

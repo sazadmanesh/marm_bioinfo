@@ -1,0 +1,3 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_113411.1,1,1493,2,1398,93.637,1.85466,36.5,33,537011,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Segatella,Segatella copri,1.854655056932351,0.5014781548801995,0.27038890763313034,66.67
+1,NR_144750.1,1,1493,1,1358,90.9578,0.909578,35.0,49,1852370,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotellamassilia,Prevotellamassilia timonensis,0.9095780308104487,0.2867853494818654,0.31529493871607145,33.33

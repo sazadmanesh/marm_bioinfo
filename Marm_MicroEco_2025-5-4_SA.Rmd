@@ -1,0 +1,276 @@
+---
+title: "Marm_MicroEco_2025-5-4_SA"
+author: "Shayda"
+date: "`r Sys.Date()`"
+output: html_document
+---
+# Setup and Datasets
+```{r}
+global <- config::get(config = "default")
+
+here::i_am("Marm_Microeco_2025-5-4_SA.Rmd")
+source(here::here(global$setup))
+
+dataset.main <- read.microtable("tax", "main")
+dataset.g1 <- read.microtable("tax", "g1")
+dataset.g2 <- read.microtable("tax", "g2")
+dataset.baseline <- read.microtable("tax", "baseline")
+dataset.gum <- read.microtable("tax", "gum")
+dataset.control <- read.microtable("tax", "control")
+dataset.controlwash <- read.microtable("tax", "controlwash")
+dataset.gumwash <- read.microtable("tax", "gumwash")
+dataset.int <- read.microtable("tax", "intervention")
+dataset.ne <- read.microtable("tax", "ne")
+dataset.tx <- read.microtable("tax", "tx")
+dataset.rmb <- read.microtable("tax", "roomb")
+dataset.rmf <- read.microtable("tax", "roomf")
+
+keg.main
+keg.g1
+keg.g2
+keg.baseline
+keg.gum
+keg.control
+keg.controlwash
+keg.gumwash
+keg.int
+keg.ne
+keg.tx
+keg.rmb
+keg.rmf
+```
+
+# Data Visualization
+## Alpha Diversity
+```{r}
+
+```
+```{r}
+chao.int <- trans_alpha$new(
+  dataset = dataset.int,
+  group = "group_phase"
+)
+chao.int$cal_diff(method = "wilcox")
+```
+## Beta Diversity
+```{r}
+dataset.main$cal_betadiv()
+
+bray.main <- trans_beta$new(
+  dataset = dataset.main,
+  group = "group_phase",
+  measure = "bray"
+)
+```
+```{r}
+bray.main$cal_group_distance(within_group = TRUE)
+bray.main$cal_group_distance_diff(method = "KW")
+bray.main$plot_group_distance(add = "mean")
+```
+```{r}
+bray.main$cal_ordination(method = "PCoA")
+```
+```{r}
+bray.main.pcoa <- bray.main$plot_ordination(plot_color = "group_phase",
+                                          plot_shape = "group_phase",
+                                          plot_type = c("point", "ellipse"))
+```
+```{r}
+dataset.int$cal_betadiv()
+
+bray.int <- trans_beta$new(
+  dataset = dataset.int,
+  group = "group_phase",
+  measure = "bray"
+)
+```
+```{r}
+bray.int$cal_group_distance(within_group = TRUE)
+bray.int$cal_group_distance_diff(method = "wilcox")
+bray.int$plot_group_distance(add = "mean")
+```
+```{r}
+bray.int$cal_ordination(method = "PCoA")
+```
+```{r}
+bray.int.pcoa <- bray.int$plot_ordination(plot_color = "group_phase",
+                                          plot_shape = "group_phase",
+                                          plot_type = c("point", "ellipse"))
+```
+```{r}
+bray.int.pcoa + labs(
+    fill = "Intervention",
+    color = "Intervention",
+    shape = "Intervention",
+    title = "Principal Coordinate Analysis (PCoA) with Bray-Curtis Dissimilarity") +
+  scale_fill_manual(
+    values = c("gum" = "#EE7600", "control" = "#00868B"),
+    labels = c("Gum Diet", "Control Diet")) +
+  scale_color_manual(
+    values = c("gum" = "#EE7600", "control" = "#00868B"),
+    labels = c("Gum Diet", "Control Diet")) +
+  scale_shape_manual(
+    values = c("gum" = 17, "control" = 16),
+    labels = c("Gum Diet", "Control Diet")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(hjust = 0.5),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14))
+```
+# Abundance
+```{r}
+sample.table.order <- read.table("C:/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets/dataset_main/sample_table.tsv",
+                                 header = T,
+                                 sep = "\t") %>%
+  arrange(studyday, group_phase, subject)
+
+ordered.samples <- as.ordered(sample.table.order$ID)
+```
+```{r}
+phy.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Phylum")
+phy.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+phy.rad <- trans_abund$new(dataset = dataset.main,
+                           taxrank = "Phylum",
+                          ntaxa = 8,
+                          groupmean = "group_phase")
+phy.rad$plot_radar(values.radar = c("0%", "25%", "50%"),
+                   grid.min = 0,
+                   grid.mid = 0.25,
+                   grid.max = 0.5)
+```
+```{r}
+cla.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Class")
+cla.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+cla.rad <- trans_abund$new(dataset = dataset.main,
+                           taxrank = "Class",
+                          ntaxa = 8,
+                          groupmean = "group_phase")
+cla.rad$plot_radar(values.radar = c("0%", "25%", "50%"),
+                   grid.min = 0,
+                   grid.mid = 0.25,
+                   grid.max = 0.5)
+```
+```{r}
+ord.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Order")
+ord.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+
+```{r}
+fam.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Family")
+fam.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+gen.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Genus")
+gen.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+wlcx.int <- trans_diff$new(
+  dataset = dataset.int,
+  method = "wilcox",
+  group = "group_phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+
+wlcx.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.int$plot_diff_abund()
+```
+```{r}
+lfs.gp <- trans_diff$new(
+  dataset = dataset.main,
+  method = "lefse",
+  group = "group_phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+
+lfs.gp$plot_diff_abund()
+```
+```{r}
+gen.phy.g1 <- trans_abund$new(
+  dataset = dataset.g1,
+  ntaxa = 30,
+  taxrank = "Genus",
+  high_level = "Phylum",
+  groupmean = "group_phase",
+  group_morestats = T)
+gen.phy.g1$plot_bar(ggnested = T,
+                     order_x = c("baseline",
+                                 "gum",
+                                 "gum-washout",
+                                 "control",
+                                 "control-washout"))
+```
+```{r}
+gen.phy.g2 <- trans_abund$new(
+  dataset = dataset.g2,
+  ntaxa = 30,
+  taxrank = "Genus",
+  high_level = "Phylum",
+  groupmean = "group_phase",
+  group_morestats = T)
+gen.phy.g2$plot_bar(ggnested = T,
+                     order_x = c("baseline",
+                                 "control",
+                                 "control-washout",
+                                 "gum",
+                                 "gum-washout"))
+```
+```{r}
+gen.phy.int <- trans_abund$new(
+  dataset = dataset.int,
+  ntaxa = 30,
+  taxrank = "Genus",
+  high_level = "Phylum",
+  groupmean = "group_phase",
+  group_morestats = T)
+gen.phy.int$plot_bar(ggnested = T,
+                     order_x = c("control", "gum"))
+```
+```{r}
+gen.int <- trans_abund$new(dataset = dataset.int,
+                             taxrank = "Genus",
+                             ntaxa = 40)
+gen.hm.int <- gen.int$plot_heatmap(facet = c("group", "group_phase"),
+                                 xtext_keep = FALSE,
+                                 withmargin = FALSE,
+                                 plot_breaks = c(0.01, 0.1, 1, 10),
+                                 order_x = c(ordered.samples))
+gen.hm.int
+```
+```{r}
+spe.fam.int <- trans_abund$new(
+  dataset = dataset.int,
+  ntaxa = 25,
+  taxrank = "Species",
+  high_level = "Family",
+  groupmean = "group_phase",
+  group_morestats = T)
+spe.fam.int$plot_bar(ggnested = T,
+                     order_x = c("control", "gum"))
+  
+
+```

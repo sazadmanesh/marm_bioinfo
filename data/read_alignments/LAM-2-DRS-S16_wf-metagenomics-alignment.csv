@@ -1,0 +1,2 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_179270.1,1,1482,1,1470,99.1903,0.991903,34.6,60,2654621,Bacteria,unclassified Bacteria kingdom,Bacillota,Negativicutes,Acidaminococcales,Acidaminococcaceae,Phascolarctobacterium,Phascolarctobacterium wakonense,0.9919028340080972,0.0896192049440443,0.09035079029052628,100.0

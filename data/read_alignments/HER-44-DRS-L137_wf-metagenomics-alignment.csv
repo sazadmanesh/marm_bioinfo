@@ -1,0 +1,2 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_170508.1,1,1542,1,1358,88.0674,0.880674,41.3,1,2518971,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Muribaculaceae,Duncaniella,Duncaniella dubosii,0.880674448767834,0.32417119559779767,0.3680942441913137,100.0

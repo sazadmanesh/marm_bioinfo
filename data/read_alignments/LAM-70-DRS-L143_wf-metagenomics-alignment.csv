@@ -1,0 +1,4 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_041277.1,1,1490,1,1388,93.1544,0.931544,35.2,60,484018,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Phocaeicola,Phocaeicola plebeius,0.9315436241610738,0.25252742513621346,0.27108491603239054,33.33
+1,NR_074515.1,1,1510,1,1023,67.7483,0.677483,39.2,27,435590,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Phocaeicola,Phocaeicola vulgatus,0.6774834437086092,0.4674394369427279,0.6899643692898525,33.33
+2,NR_113064.1,1,1490,1,1365,91.6107,0.916107,41.4,1,1236538,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Bacteroidaceae,Phocaeicola,Phocaeicola sartorii,0.9161073825503355,0.2772267054003064,0.3026137663344004,33.33

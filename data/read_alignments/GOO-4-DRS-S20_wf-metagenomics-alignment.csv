@@ -1,0 +1,2 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_104901.1,1,1515,1,1443,95.2475,0.952475,36.2,0,621,Bacteria,unclassified Bacteria kingdom,Pseudomonadota,Gammaproteobacteria,Enterobacterales,Enterobacteriaceae,Shigella,Shigella boydii,0.9524752475247524,0.21275843197724023,0.22337423731498196,100.0
