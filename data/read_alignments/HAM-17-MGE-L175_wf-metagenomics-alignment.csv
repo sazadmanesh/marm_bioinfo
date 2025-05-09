@@ -1,0 +1,4 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_036800.1,1,1481,1,1124,75.8947,0.758947,39.6,51,411470,Bacteria,unclassified Bacteria kingdom,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Mediterraneibacter,Mediterraneibacter gnavus,0.7589466576637407,0.42772260693675934,0.5635740043357123,33.33
+1,NR_041343.1,1,1492,1,1394,93.4316,0.934316,40.6,60,46503,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Tannerellaceae,Parabacteroides,Parabacteroides merdae,0.9343163538873994,0.2477282881423821,0.2651439066774994,33.33
+2,NR_113384.1,1,1469,1,1344,91.4908,0.914908,39.0,60,856,Bacteria,unclassified Bacteria kingdom,Fusobacteriota,Fusobacteriia,Fusobacteriales,Fusobacteriaceae,Fusobacterium,Fusobacterium varium,0.9149081007488087,0.2790184007068654,0.3049687727964176,33.33
