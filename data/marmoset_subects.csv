@@ -1,0 +1,22 @@
+"cage","subjectcode","subject","sex","housing","group","Age","contraception","origin","previousexp","notes","room","subj_dob"
+"b1","ham","hamlet","male","pair","g1",6.016438356,"","nebraska","","","room b",2017-03-05
+"b1","her","hera","female","pair","g1",3.531506849,"estrumate","texas","","","room b",2019-08-29
+"b2","jar","jarjarbinks","male","pair","g1",3.123287671,"","texas","","","room b",2020-01-25
+"b2","oph","ophelia","female","pair","g1",5.594520548,"estrumate","nebraska","","","room b",2017-08-06
+"b3","kub","kubo","male","pair","g1",4.101369863,"","nebraska","","","room b",2019-02-02
+"b3","kor","korra","female","pair","g1",5.898630137,"estrumate","nebraska","","Gave birth to 4 stillborn babies 4/29/23","room b",2017-04-17
+"b4","wol","wolverine","male","pair","g1",8.452054795,"","nebraska","abx-ctrl","","room b",2014-09-28
+"b4","iri","iris","female","pair","g1",6.835616438,"estrumate","texas","abx-ctrl","","room b",2016-05-10
+"f1","goo","goose","male","family","g1",6.712328767,"","texas","abx-ctrl","","room f",2016-06-24
+"f1","lam","lambchop","female","family","g1",5.82739726,"estrumate","texas","","","room f",2017-05-13
+"f2","fra","franc","male","pair","g2",6.342465753,"","texas","abx","","room f",2016-11-06
+"f2","ivy","ivy","female","pair","g2",4.202739726,"estrumate","nebraska","","","room f",2018-12-27
+"f3","cha","charles","male","pair","g2",4.230136986,"","nebraska","","Re-paired with Bubblegum 3/31/23","room f",2018-12-17
+"f3","pad","padme","female","pair","g2",4.657534247,"estrumate","texas","","Euthanized 3/29/23 (Renal failure)","room f",2018-08-02
+"f4","gro","grogu","male","pair","g2",4.583561644,"","texas","","","room f",2018-08-10
+"f4","mar","marshmallow","female","pair","g2",4.101369863,"estrumate","nebraska","","","room f",2019-02-02
+"f5","bud","buddy","male","family","g2",6.397260274,"","texas","","","room f",2016-10-17
+"f5","joa","joans","female","family","g2",5.967123288,"estrumate","nebraska","","Gave birth to 1 baby, given oxytocin to help induce contractions, given 1 non-bio baby from Venus 5/11/23","room f",2017-03-23
+"f6","hen","henry","male","pair","g2",4.208219178,"","nebraska","","","room f",2018-12-25
+"f6","gin","ginger","female","pair","g2",6.117808219,"estrumate","nebraska","abx","","room f",2017-01-27
+"","","","","","",NA,"","","","","room NA",2017-01-27

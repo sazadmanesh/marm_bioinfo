@@ -17,27 +17,27 @@ source(here::here(global$setup))
 ```
 # Metadata
 ```{r}
-samples <- read.table("metadata/marm_samples.tsv",
+samples <- read.table(marmoset$samples,
                       header = T,
                       sep = "\t")
 
-extracts <- read.table("metadata/marm_extracts.tsv",
+extracts <- read.table(marmoset$extracts,
                       header = T,
                       sep = "\t")
 
-libraries <- read.table("metadata/marm_libraries.tsv",
+libraries <- read.table(marmoset$libraries,
                       header = T,
                       sep = "\t") 
 
-seqruns <- read.table("metadata/marm_seqruns.tsv",
+seqruns <- read.table(marmoset$seqruns,
                       header = T,
                       sep = "\t")
 
-subjects <- read.table("metadata/marm_subjects.tsv",
+subjects <- read.table(marmoset$subjects,
                       header = T,
                       sep = "\t")
 
-metadata <- read.table("metadata/marmoset_compilation.tsv",
+metadata <- read.table(marmoset$compilation,
                        header = T, 
                        sep = "\t")
 ```
@@ -166,11 +166,11 @@ samples.rmf <- sample.list.rmf %>% unlist()
 ```
 # Alignment Files
 ```{r}
-alignment.files.list <- list.files(path = "data/read_alignments/",
+alignment.files.list <- list.files(path = marmoset$barcode_alignments,
                                    pattern = "*_wf-metagenomics-alignment.csv$",
                                    full.names = TRUE)
 
-alignment.filenames <- list.files(path = "data/read_alignments/",
+alignment.filenames <- list.files(path = marmoset$barcode_alignments,
                                    pattern = "*_wf-metagenomics-alignment.csv$",
                                    full.names = FALSE)
 

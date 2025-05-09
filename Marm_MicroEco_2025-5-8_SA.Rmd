@@ -10,10 +10,11 @@ global <- config::get(config = "default")
 
 here::i_am("Marm_Microeco_2025-5-8_SA.Rmd")
 source(here::here(global$setup))
-
+```
+```{r}
 dataset.main <- read.microtable("tax", "main")
-dataset.g1 <- read.microtable("tax", "g1")
-dataset.g2 <- read.microtable("tax", "g2")
+dataset.g1 <- read.microtable("tax", "group1")
+dataset.g2 <- read.microtable("tax", "group2")
 dataset.baseline <- read.microtable("tax", "baseline")
 dataset.gum <- read.microtable("tax", "gum")
 dataset.control <- read.microtable("tax", "control")
@@ -22,34 +23,34 @@ dataset.gumwash <- read.microtable("tax", "gumwash")
 dataset.int <- read.microtable("tax", "intervention")
 
 keg.main <- read.f.microtable("function", "keg", "main")
-keg.g1 <- read.f.microtable("function", "keg", "g1")
-keg.g2 <- read.f.microtable("function", "keg", "g2")
+keg.g1 <- read.f.microtable("function", "keg", "group1")
+keg.g2 <- read.f.microtable("function", "keg", "group2")
 keg.baseline <- read.f.microtable("function", "keg", "baseline")
 keg.gum <- read.f.microtable("function", "keg", "gum")
-keg.control <- read.f.microtable("function", "keg", "control")
-keg.controlwash <- read.f.microtable("function", "keg", "controlwash")
+keg.ctrl <- read.f.microtable("function", "keg", "control")
+keg.ctrllwash <- read.f.microtable("function", "keg", "controlwash")
 keg.gumwash <- read.f.microtable("function", "keg", "gumwash")
 keg.int <- read.f.microtable("function", "keg", "intervention")
 
 fpt.main <- read.f.microtable("function", "fpt", "main")
-fpt.g1 <- read.f.microtable("function", "fpt", "g1")
-fpt.g2 <- read.f.microtable("function", "fpt", "g2")
+fpt.g1 <- read.f.microtable("function", "fpt", "group1")
+fpt.g2 <- read.f.microtable("function", "fpt", "group2")
 fpt.baseline <- read.f.microtable("function", "fpt", "baseline")
 fpt.gum <- read.f.microtable("function", "fpt", "gum")
-fpt.control <- read.f.microtable("function", "fpt", "control")
-fpt.controlwash <- read.f.microtable("function", "fpt", "controlwash")
+fpt.ctrl <- read.f.microtable("function", "fpt", "control")
+fpt.ctrlwash <- read.f.microtable("function", "fpt", "controlwash")
 fpt.gumwash <- read.f.microtable("function", "fpt", "gumwash")
 fpt.int <- read.f.microtable("function", "fpt", "intervention")
 
 njc.main <- read.f.microtable("function", "njc", "main")
-njc.g1 <- read.f.microtable("function", "njc", "g1")
-njc.g2 <- read.f.microtable("function", "njc", "g1")
+njc.g1 <- read.f.microtable("function", "njc", "group1")
+njc.g2 <- read.f.microtable("function", "njc", "group2")
 njc.baseline <- read.f.microtable("function", "njc", "baseline")
 njc.gum <- read.f.microtable("function", "njc", "gum")
-njc.control <- read.f.microtable("function", "njc", "control")
-njc.controlwash <- read.f.microtable("function", "njc", "controlwash")
+njc.ctrl <- read.f.microtable("function", "njc", "control")
+njc.ctrlwash <- read.f.microtable("function", "njc", "controlwash")
 njc.gumwash <- read.f.microtable("function", "njc", "gumwash")
-njc.int <- read.f.microtable("function", "njc", "int")
+njc.int <- read.f.microtable("function", "njc", "intervention")
 ```
 
 # Data Visualization
@@ -131,6 +132,7 @@ bray.int.pcoa + labs(
         legend.title = element_text(size = 14))
 ```
 # Abundance
+## Taxonomic
 ```{r}
 sample.table.order <- read.table("C:/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets/dataset_main/sample_table.tsv",
                                  header = T,
@@ -183,7 +185,6 @@ ord.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = 
                         facet = c("group"),
                         order_x = c(ordered.samples))
 ```
-
 ```{r}
 fam.abund <- trans_abund$new(dataset = dataset.main,
                              taxrank = "Family")
@@ -196,6 +197,50 @@ fam.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = 
 gen.abund <- trans_abund$new(dataset = dataset.main,
                              taxrank = "Genus")
 gen.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+## Functional
+### KEGG
+```{r}
+keg.1.main <- trans_abund$new(dataset = keg.main,
+                            taxrank = "Level.1")
+keg.1.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+keg.2.main <- trans_abund$new(dataset = keg.main,
+                            taxrank = "Level.2")
+keg.2.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+keg.3.main <- trans_abund$new(dataset = keg.main,
+                            taxrank = "Level.3")
+keg.3.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+### FAPROTAX
+```{r}
+fpt.func.main <- trans_abund$new(dataset = fpt.main,
+                            taxrank = "Function")
+fpt.func.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("group"),
+                        order_x = c(ordered.samples))
+```
+### NJC19
+```{r}
+njc.func.main <- trans_abund$new(dataset = njc.main,
+                            taxrank = "Function")
+njc.func.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
                         facet = c("group"),
                         order_x = c(ordered.samples))

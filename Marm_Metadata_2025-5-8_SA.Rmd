@@ -39,6 +39,7 @@ write.table(samples,
             "metadata/marmoset_samples.tsv",
             row.names = FALSE,
             sep = "\t")
+write.csv(samples, marmoset$samples_csv, row.names = FALSE)
 ```
 ```{r}
 extracts <- read.table("metadata/marm_extracts.tsv",
@@ -51,6 +52,8 @@ write.table(samples,
             "metadata/marmoset_extracts.tsv",
             row.names = FALSE,
             sep = "\t")
+write.csv(extracts, marmoset$extracts_csv, row.names = FALSE)
+
 ```
 ```{r}
 libraries <- read.table("metadata/marm_libraries.tsv",
@@ -61,6 +64,7 @@ write.table(samples,
             "metadata/marmoset_libraries.tsv",
             row.names = FALSE,
             sep = "\t")
+write.csv(libraries, marmoset$libraries_csv, row.names = FALSE)
 
 seqruns <- read.table("metadata/marm_seqruns.tsv",
                       header = T,
@@ -73,6 +77,8 @@ write.table(samples,
             "metadata/marmoset_seqruns.tsv",
             row.names = FALSE,
             sep = "\t")
+write.csv(seqruns, marmoset$seqruns_csv, row.names = FALSE)
+
 
 subjects <- read.table("metadata/marm_subjects.tsv",
                       header = T,
@@ -91,6 +97,8 @@ write.table(samples,
             "metadata/marmoset_subjects.tsv",
             row.names = FALSE,
             sep = "\t")
+write.csv(subjects, marmoset$subjects_csv, row.names = FALSE)
+
 ```
 ```{r}
 metadata <- libraries %>%
@@ -125,7 +133,7 @@ metadata <- libraries %>%
   rename(Library_Conc = Final.Library.Concentration,
          Pooled_Vol = Volume.Added.to.Pool..uL.) 
 write.table(samples,
-            "metadata/marmoset_compilation.tsv",
+            marmoset$compilation,
             row.names = FALSE,
             sep = "\t")
 ```
