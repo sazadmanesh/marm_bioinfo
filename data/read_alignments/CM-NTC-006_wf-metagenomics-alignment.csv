@@ -1,0 +1,2 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_042610.1,1,1504,1,1381,91.8218,0.918218,17.9,1,427333,Bacteria,unclassified Bacteria kingdom,Pseudomonadota,Betaproteobacteria,Burkholderiales,Oxalobacteraceae,Herminiimonas,Herminiimonas saxobsidens,0.918218085106383,0.27403217564722065,0.29843909643259947,100.0

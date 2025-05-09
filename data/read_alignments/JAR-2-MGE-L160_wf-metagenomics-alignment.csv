@@ -1,0 +1,2 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_144750.1,1,1493,1,1363,91.2927,0.912927,38.7,60,1852370,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Prevotellaceae,Prevotellamassilia,Prevotellamassilia timonensis,0.9129269926322839,0.2819420131084713,0.3088330341679733,100.0

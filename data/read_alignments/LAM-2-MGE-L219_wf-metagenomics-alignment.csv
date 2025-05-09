@@ -1,0 +1,2 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_112899.1,1,1491,1,1338,89.7384,0.897384,42.6,1,742742,Bacteria,unclassified Bacteria kingdom,Actinomycetota,Coriobacteriia,Coriobacteriales,Coriobacteriaceae,Collinsella,Collinsella tanakaei,0.89738430583501,0.30345627934848757,0.3381564368524626,100.0

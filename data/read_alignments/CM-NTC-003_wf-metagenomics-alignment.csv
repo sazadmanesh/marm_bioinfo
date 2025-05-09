@@ -1,0 +1,2 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_029097.1,1,1374,1,1290,93.8865,0.938865,22.6,1,237576,Bacteria,unclassified Bacteria kingdom,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Oribacterium,Oribacterium sinus,0.9388646288209607,0.2395784580671659,0.25517891580177204,100.0

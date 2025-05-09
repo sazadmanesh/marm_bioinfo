@@ -1,0 +1,4 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_026100.1,1,1499,2,1445,96.3976,1.91661,33.6,1,1286362,Bacteria,unclassified Bacteria kingdom,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Lacrimispora,Lacrimispora celerecrescens,1.9166110740493663,0.3853352371647074,0.20105030299683133,50.0
+1,NR_041590.1,1,1342,1,1251,93.2191,0.932191,33.7,38,742816,Bacteria,unclassified Bacteria kingdom,Bacillota,Negativicutes,Selenomonadales,Selenomonadaceae,Megamonas,Megamonas funiformis,0.9321907600596125,0.2514182708537603,0.2697068900765358,25.0
+2,NR_113165.1,1,1466,1,1408,96.0437,0.960437,29.3,34,147207,Bacteria,unclassified Bacteria kingdom,Actinomycetota,Coriobacteriia,Coriobacteriales,Coriobacteriaceae,Collinsella,Collinsella intestinalis,0.9604365620736699,0.1949311989030471,0.20296103522149647,25.0

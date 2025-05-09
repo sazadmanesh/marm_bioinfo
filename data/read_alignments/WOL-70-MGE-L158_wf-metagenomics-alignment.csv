@@ -1,0 +1,3 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_041342.1,1,1488,1,1282,86.1559,0.861559,38.8,1,823,Bacteria,unclassified Bacteria kingdom,Bacteroidota,Bacteroidia,Bacteroidales,Tannerellaceae,Parabacteroides,Parabacteroides distasonis,0.8615591397849462,0.3453621120475861,0.4008571160115508,50.0
+1,NR_102980.1,1,1552,1,1391,89.6263,0.896263,36.9,1,1064535,Bacteria,unclassified Bacteria kingdom,Bacillota,Negativicutes,Veillonellales,Veillonellaceae,Megasphaera,Megasphaera elsdenii,0.8962628865979382,0.30491921012797657,0.34021180022905795,50.0

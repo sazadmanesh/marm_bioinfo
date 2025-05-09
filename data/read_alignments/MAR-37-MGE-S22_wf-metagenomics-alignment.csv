@@ -1,0 +1,3 @@
+index,reference,startpos,ref length,number of reads,covbases,pc coverage,meandepth,meanbaseq,meanmapq,taxid,superkingdom,kingdom,phylum,class,order,family,genus,species,mean,sd,Coefficient of Variance,pcreads
+0,NR_025518.1,1,1494,4,1429,95.6493,3.74029,33.6,51.2,179995,Bacteria,unclassified Bacteria kingdom,Pseudomonadota,Gammaproteobacteria,Aeromonadales,Succinivibrionaceae,Anaerobiospirillum,Anaerobiospirillum thomasii,3.7402945113788486,0.8577679817909221,0.22933166871790223,80.0
+1,NR_113231.1,1,1491,1,1378,92.4212,0.924212,34.0,4.0,536633,Bacteria,unclassified Bacteria kingdom,Bacillota,Clostridia,Lachnospirales,Lachnospiraceae,Blautia,Blautia glucerasea,0.9242119382964453,0.2646587074078097,0.2863614896553297,20.0

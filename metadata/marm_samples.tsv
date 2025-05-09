@@ -1,0 +1,1961 @@
+SampleID	SampleSubject	SampleDate	SampleCollectedBy	SampleNotes	SampleBox	Bristol	SampleTime	SampleStabilizer
+HAM-1-DRS	hamlet	3/10/23	SA		1	1	800	DNA/RNA Shield
+HAM-1-MGE	hamlet	3/10/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+HER-1-DRS	hera	3/10/23	SA		1	1	800	DNA/RNA Shield
+HER-1-MGE	hera	3/10/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+JAR-1-DRS	jarjarbinks	3/10/23	SA		1	3	800	DNA/RNA Shield
+JAR-1-MGE	jarjarbinks	3/10/23	SA		1	3	800	Molecular Grade (96%) Ethanol
+WOL-1-DRS	wolverine	3/10/23	SA		1	1	800	DNA/RNA Shield
+WOL-1-MGE	wolverine	3/10/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+IRI-1-DRS	iris	3/10/23	SA		1	2	800	DNA/RNA Shield
+IRI-1-MGE	iris	3/10/23	SA		1	2	800	Molecular Grade (96%) Ethanol
+GOO-1-DRS	goose	3/10/23	SA		1	2	730	DNA/RNA Shield
+GOO-1-MGE	goose	3/10/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+LAM-1-DRS	lambchop	3/10/23	SA		1	2	730	DNA/RNA Shield
+LAM-1-MGE	lambchop	3/10/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+IVY-1-DRS	ivy	3/10/23	SA		1	1	730	DNA/RNA Shield
+IVY-1-MGE	ivy	3/10/23	SA		1	1	730	Molecular Grade (96%) Ethanol
+PAD-1-DRS	padme	3/10/23	SA		1	4	730	DNA/RNA Shield
+PAD-1-MGE	padme	3/10/23	SA		1	4	730	Molecular Grade (96%) Ethanol
+JOA-1-DRS	joans	3/10/23	SA		1	1	730	DNA/RNA Shield
+JOA-1-MGE	joans	3/10/23	SA		1	1	730	Molecular Grade (96%) Ethanol
+GIN-1-DRS	ginger	3/10/23	SA		1	2	730	DNA/RNA Shield
+GIN-1-MGE	ginger	3/10/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+HAM-2-DRS	hamlet	3/11/23	SA		1	1	800	DNA/RNA Shield
+HAM-2-MGE	hamlet	3/11/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+HER-2-DRS	hera	3/11/23	SA		1	2	800	DNA/RNA Shield
+HER-2-MGE	hera	3/11/23	SA		1	2	800	Molecular Grade (96%) Ethanol
+JAR-2-DRS	jarjarbinks	3/11/23	SA		1	3	800	DNA/RNA Shield
+JAR-2-MGE	jarjarbinks	3/11/23	SA		1	3	800	Molecular Grade (96%) Ethanol
+OPH-2-DRS	ophelia	3/11/23	SA		1	1	800	DNA/RNA Shield
+OPH-2-MGE	ophelia	3/11/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+WOL-2-DRS	wolverine	3/11/23	SA		1	1	800	DNA/RNA Shield
+WOL-2-MGE	wolverine	3/11/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+IRI-2-DRS	iris	3/11/23	SA		1	1	800	DNA/RNA Shield
+IRI-2-MGE	iris	3/11/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+GOO-2-DRS	goose	3/11/23	SA		1	1	730	DNA/RNA Shield
+GOO-2-MGE	goose	3/11/23	SA		1	1	730	Molecular Grade (96%) Ethanol
+LAM-2-DRS	lambchop	3/11/23	SA		1	2	730	DNA/RNA Shield
+LAM-2-MGE	lambchop	3/11/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+IVY-2-DRS	ivy	3/11/23	SA		1	2	730	DNA/RNA Shield
+IVY-2-MGE	ivy	3/11/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+JOA-2-DRS	joans	3/11/23	SA		1	1	730	DNA/RNA Shield
+JOA-2-MGE	joans	3/11/23	SA		1	1	730	Molecular Grade (96%) Ethanol
+HEN-2-DRS	henry	3/11/23	SA		1	3	730	DNA/RNA Shield
+HEN-2-MGE	henry	3/11/23	SA		1	3	730	Molecular Grade (96%) Ethanol
+GIN-2-DRS	ginger	3/11/23	SA		1	3	730	DNA/RNA Shield
+GIN-2-MGE	ginger	3/11/23	SA		1	3	730	Molecular Grade (96%) Ethanol
+HAM-3-DRS	hamlet	3/12/23	SA		1	1	800	DNA/RNA Shield
+HAM-3-MGE	hamlet	3/12/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+JAR-3-DRS	jarjarbinks	3/12/23	SA		1	1	800	DNA/RNA Shield
+JAR-3-MGE	jarjarbinks	3/12/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+OPH-3-DRS	ophelia	3/12/23	SA		1	1	800	DNA/RNA Shield
+OPH-3-MGE	ophelia	3/12/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+KUB-3-DRS	kubo	3/12/23	SA		1	1	800	DNA/RNA Shield
+KUB-3-MGE	kubo	3/12/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+KOR-3-DRS	korra	3/12/23	SA		1	2	800	DNA/RNA Shield
+KOR-3-MGE	korra	3/12/23	SA		1	2	800	Molecular Grade (96%) Ethanol
+WOL-3-DRS	wolverine	3/12/23	SA		1	1	800	DNA/RNA Shield
+WOL-3-MGE	wolverine	3/12/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+IRI-3-DRS	iris	3/12/23	SA		1	2	800	DNA/RNA Shield
+IRI-3-MGE	iris	3/12/23	SA		1	2	800	Molecular Grade (96%) Ethanol
+GOO-3-DRS	goose	3/12/23	SA		1	2	730	DNA/RNA Shield
+GOO-3-MGE	goose	3/12/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+LAM-3-DRS	lambchop	3/12/23	SA		1	3	730	DNA/RNA Shield
+LAM-3-MGE	lambchop	3/12/23	SA		1	3	730	Molecular Grade (96%) Ethanol
+FRA-3-DRS	franc	3/12/23	SA		1	2	730	DNA/RNA Shield
+FRA-3-MGE	franc	3/12/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+IVY-3-DRS	ivy	3/12/23	SA		1	1	730	DNA/RNA Shield
+IVY-3-MGE	ivy	3/12/23	SA		1	1	730	Molecular Grade (96%) Ethanol
+PAD-3-DRS	padme	3/12/23	SA		1	3	730	DNA/RNA Shield
+PAD-3-MGE	padme	3/12/23	SA		1	3	730	Molecular Grade (96%) Ethanol
+GRO-3-DRS	grogu	3/12/23	SA		1	2	730	DNA/RNA Shield
+GRO-3-MGE	grogu	3/12/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+MAR-3-DRS	marshmallow	3/12/23	SA		1	3	730	DNA/RNA Shield
+MAR-3-MGE	marshmallow	3/12/23	SA		1	3	730	Molecular Grade (96%) Ethanol
+BUD-3-DRS	buddy	3/12/23	SA		1	3	730	DNA/RNA Shield
+BUD-3-MGE	buddy	3/12/23	SA		1	3	730	Molecular Grade (96%) Ethanol
+JOA-3-DRS	joans	3/12/23	SA		1	2	730	DNA/RNA Shield
+JOA-3-MGE	joans	3/12/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+HEN-3-DRS	henry	3/12/23	SA		1	2	730	DNA/RNA Shield
+HEN-3-MGE	henry	3/12/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+GIN-3-DRS	ginger	3/12/23	SA		1	3	730	DNA/RNA Shield
+GIN-3-MGE	ginger	3/12/23	SA		1	3	730	Molecular Grade (96%) Ethanol
+HAM-4-DRS	hamlet	3/13/23	SA		1	1	800	DNA/RNA Shield
+HAM-4-MGE	hamlet	3/13/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+HER-4-DRS	hera	3/13/23	SA		1	1	800	DNA/RNA Shield
+HER-4-MGE	hera	3/13/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+JAR-4-DRS	jarjarbinks	3/13/23	SA		1	2	800	DNA/RNA Shield
+JAR-4-MGE	jarjarbinks	3/13/23	SA		1	2	800	Molecular Grade (96%) Ethanol
+OPH-4-DRS	ophelia	3/13/23	SA		1	1	800	DNA/RNA Shield
+OPH-4-MGE	ophelia	3/13/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+KUB-4-DRS	kubo	3/13/23	SA		1	1	800	DNA/RNA Shield
+KUB-4-MGE	kubo	3/13/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+KOR-4-DRS	korra	3/13/23	SA		1	2	800	DNA/RNA Shield
+KOR-4-MGE	korra	3/13/23	SA		1	2	800	Molecular Grade (96%) Ethanol
+WOL-4-DRS	wolverine	3/13/23	SA		1	1	800	DNA/RNA Shield
+WOL-4-MGE	wolverine	3/13/23	SA		1	1	800	Molecular Grade (96%) Ethanol
+IRI-4-DRS	iris	3/13/23	SA		1	2	800	DNA/RNA Shield
+IRI-4-MGE	iris	3/13/23	SA		1	2	800	Molecular Grade (96%) Ethanol
+GOO-4-DRS	goose	3/13/23	SA		1	2	730	DNA/RNA Shield
+GOO-4-MGE	goose	3/13/23	SA		1	2	730	Molecular Grade (96%) Ethanol
+LAM-4-DRS	lambchop	3/13/23	SA		2	2	730	DNA/RNA Shield
+LAM-4-MGE	lambchop	3/13/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+FRA-4-DRS	franc	3/13/23	SA		2	2	730	DNA/RNA Shield
+FRA-4-MGE	franc	3/13/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+IVY-4-DRS	ivy	3/13/23	SA		2	2	730	DNA/RNA Shield
+IVY-4-MGE	ivy	3/13/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+BUD-4-DRS	buddy	3/13/23	SA		2	2	730	DNA/RNA Shield
+BUD-4-MGE	buddy	3/13/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+JOA-4-DRS	joans	3/13/23	SA		2	2	730	DNA/RNA Shield
+JOA-4-MGE	joans	3/13/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+HEN-4-DRS	henry	3/13/23	SA		2	3	730	DNA/RNA Shield
+HEN-4-MGE	henry	3/13/23	SA		2	3	730	Molecular Grade (96%) Ethanol
+GIN-4-DRS	ginger	3/13/23	SA		2	2	730	DNA/RNA Shield
+GIN-4-MGE	ginger	3/13/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+HAM-5-DRS	hamlet	3/14/23	SA		2	1	830	DNA/RNA Shield
+HAM-5-MGE	hamlet	3/14/23	SA		2	1	830	Molecular Grade (96%) Ethanol
+PAD-5-DRS	padme	3/14/23	SA		2	4	800	DNA/RNA Shield
+PAD-5-MGE	padme	3/14/23	SA		2	4	800	Molecular Grade (96%) Ethanol
+HAM-6-DRS	hamlet	3/15/23	SA		2	2	800	DNA/RNA Shield
+HAM-6-MGE	hamlet	3/15/23	SA		2	2	800	Molecular Grade (96%) Ethanol
+OPH-6-DRS	ophelia	3/15/23	SA		2	1	800	DNA/RNA Shield
+OPH-6-MGE	ophelia	3/15/23	SA		2	1	800	Molecular Grade (96%) Ethanol
+KOR-6-DRS	korra	3/15/23	SA		2	4	800	DNA/RNA Shield
+KOR-6-MGE	korra	3/15/23	SA		2	4	800	Molecular Grade (96%) Ethanol
+WOL-6-DRS	wolverine	3/15/23	SA		2	3	800	DNA/RNA Shield
+WOL-6-MGE	wolverine	3/15/23	SA		2	3	800	Molecular Grade (96%) Ethanol
+LAM-6-DRS	lambchop	3/15/23	SA		2	2	730	DNA/RNA Shield
+LAM-6-MGE	lambchop	3/15/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+IVY-6-DRS	ivy	3/15/23	SA		2	2	730	DNA/RNA Shield
+IVY-6-MGE	ivy	3/15/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+PAD-6-DRS	padme	3/15/23	SA		2	4	730	DNA/RNA Shield
+PAD-6-MGE	padme	3/15/23	SA		2	4	730	Molecular Grade (96%) Ethanol
+MAR-6-DRS	marshmallow	3/15/23	SA		2	4	730	DNA/RNA Shield
+MAR-6-MGE	marshmallow	3/15/23	SA		2	4	730	Molecular Grade (96%) Ethanol
+JOA-6-DRS	joans	3/15/23	SA		2	1	730	DNA/RNA Shield
+JOA-6-MGE	joans	3/15/23	SA		2	1	730	Molecular Grade (96%) Ethanol
+HEN-6-DRS	henry	3/15/23	SA		2	3	730	DNA/RNA Shield
+HEN-6-MGE	henry	3/15/23	SA		2	3	730	Molecular Grade (96%) Ethanol
+HAM-7-DRS	hamlet	3/16/23	SA		2	1	800	DNA/RNA Shield
+HAM-7-MGE	hamlet	3/16/23	SA		2	1	800	Molecular Grade (96%) Ethanol
+HER-7-DRS	hera	3/16/23	SA		2	2	800	DNA/RNA Shield
+HER-7-MGE	hera	3/16/23	SA		2	2	800	Molecular Grade (96%) Ethanol
+JAR-7-DRS	jarjarbinks	3/16/23	SA		2	3	800	DNA/RNA Shield
+JAR-7-MGE	jarjarbinks	3/16/23	SA		2	3	800	Molecular Grade (96%) Ethanol
+OPH-7-DRS	ophelia	3/16/23	SA		2	1	800	DNA/RNA Shield
+OPH-7-MGE	ophelia	3/16/23	SA		2	1	800	Molecular Grade (96%) Ethanol
+IRI-7-DRS	iris	3/16/23	SA		2	2	800	DNA/RNA Shield
+IRI-7-MGE	iris	3/16/23	SA		2	2	800	Molecular Grade (96%) Ethanol
+GOO-7-DRS	goose	3/16/23	SA		2	2	730	DNA/RNA Shield
+GOO-7-MGE	goose	3/16/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+LAM-7-DRS	lambchop	3/16/23	SA		2	3	730	DNA/RNA Shield
+LAM-7-MGE	lambchop	3/16/23	SA		2	3	730	Molecular Grade (96%) Ethanol
+FRA-7-DRS	franc	3/16/23	SA		2	1	730	DNA/RNA Shield
+FRA-7-MGE	franc	3/16/23	SA		2	1	730	Molecular Grade (96%) Ethanol
+IVY-7-DRS	ivy	3/16/23	SA		2	1	730	DNA/RNA Shield
+IVY-7-MGE	ivy	3/16/23	SA		2	1	730	Molecular Grade (96%) Ethanol
+CHA-7-DRS	charles	3/16/23	SA		2	2	730	DNA/RNA Shield
+CHA-7-MGE	charles	3/16/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+PAD-7-DRS	padme	3/16/23	SA		2	4	730	DNA/RNA Shield
+PAD-7-MGE	padme	3/16/23	SA		2	4	730	Molecular Grade (96%) Ethanol
+GRO-7-DRS	grogu	3/16/23	SA		2	3	730	DNA/RNA Shield
+GRO-7-MGE	grogu	3/16/23	SA		2	3	730	Molecular Grade (96%) Ethanol
+MAR-7-DRS	marshmallow	3/16/23	SA		2	3	730	DNA/RNA Shield
+MAR-7-MGE	marshmallow	3/16/23	SA		2	3	730	Molecular Grade (96%) Ethanol
+BUD-7-DRS	buddy	3/16/23	SA		2	5	730	DNA/RNA Shield
+BUD-7-MGE	buddy	3/16/23	SA		2	5	730	Molecular Grade (96%) Ethanol
+JOA-7-DRS	joans	3/16/23	SA		2	1	730	DNA/RNA Shield
+JOA-7-MGE	joans	3/16/23	SA		2	1	730	Molecular Grade (96%) Ethanol
+HEN-7-DRS	henry	3/16/23	SA		2	3	730	DNA/RNA Shield
+HEN-7-MGE	henry	3/16/23	SA		2	3	730	Molecular Grade (96%) Ethanol
+GIN-7-DRS	ginger	3/16/23	SA		2	3	730	DNA/RNA Shield
+GIN-7-MGE	ginger	3/16/23	SA		2	3	730	Molecular Grade (96%) Ethanol
+HAM-9-DRS	hamlet	3/18/13	SA		2	2	730	DNA/RNA Shield
+HAM-9-MGE	hamlet	3/18/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+HER-9-DRS	hera	3/18/23	SA		2	2	730	DNA/RNA Shield
+HER-9-MGE	hera	3/18/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+JAR-9-DRS	jarjarbinks	3/18/23	SA		2	1	730	DNA/RNA Shield
+JAR-9-MGE	jarjarbinks	3/18/23	SA		2	1	730	Molecular Grade (96%) Ethanol
+OPH-9-DRS	ophelia	3/18/23	SA		2	1	730	DNA/RNA Shield
+OPH-9-MGE	ophelia	3/18/23	SA		2	1	730	Molecular Grade (96%) Ethanol
+KUB-9-DRS	kubo	3/18/23	SA		2	1	730	DNA/RNA Shield
+KUB-9-MGE	kubo	3/18/23	SA		2	1	730	Molecular Grade (96%) Ethanol
+KOR-9-DRS	korra	3/18/23	SA		2	2	730	DNA/RNA Shield
+KOR-9-MGE	korra	3/18/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+WOL-9-DRS	wolverine	3/18/23	SA		2	1	730	DNA/RNA Shield
+WOL-9-MGE	wolverine	3/18/23	SA		2	1	730	Molecular Grade (96%) Ethanol
+IRI-9-DRS	iris	3/18/23	SA		2	2	730	DNA/RNA Shield
+IRI-9-MGE	iris	3/18/23	SA		2	2	730	Molecular Grade (96%) Ethanol
+GOO-9-DRS	goose	3/18/23	SA		2	3	800	DNA/RNA Shield
+GOO-9-MGE	goose	3/18/23	SA		2	3	800	Molecular Grade (96%) Ethanol
+LAM-9-DRS	lambchop	3/18/23	SA		2	3	800	DNA/RNA Shield
+LAM-9-MGE	lambchop	3/18/23	SA		2	3	800	Molecular Grade (96%) Ethanol
+FRA-9-DRS	franc	3/18/23	SA		2	2	800	DNA/RNA Shield
+FRA-9-MGE	franc	3/18/23	SA		2	2	800	Molecular Grade (96%) Ethanol
+IVY-9-DRS	ivy	3/18/23	SA		2	1	800	DNA/RNA Shield
+IVY-9-MGE	ivy	3/18/23	SA		2	1	800	Molecular Grade (96%) Ethanol
+CHA-9-DRS	charles	3/18/23	SA		2	2	800	DNA/RNA Shield
+CHA-9-MGE	charles	3/18/23	SA		2	2	800	Molecular Grade (96%) Ethanol
+PAD-9-DRS	padme	3/18/23	SA		2	3	800	DNA/RNA Shield
+PAD-9-MGE	padme	3/18/23	SA		2	3	800	Molecular Grade (96%) Ethanol
+GRO-9-DRS	grogu	3/18/23	SA		3	3	800	DNA/RNA Shield
+GRO-9-MGE	grogu	3/18/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+MAR-9-DRS	marshmallow	3/18/23	SA		3	2	800	DNA/RNA Shield
+MAR-9-MGE	marshmallow	3/18/23	SA		3	2	800	Molecular Grade (96%) Ethanol
+BUD-9-DRS	buddy	3/18/23	SA		3	3	800	DNA/RNA Shield
+BUD-9-MGE	buddy	3/18/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+JOA-9-DRS	joans	3/18/23	SA		3	2	800	DNA/RNA Shield
+JOA-9-MGE	joans	3/18/23	SA		3	2	800	Molecular Grade (96%) Ethanol
+HEN-9-DRS	henry	3/18/23	SA		3	3	800	DNA/RNA Shield
+HEN-9-MGE	henry	3/18/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+GIN-9-DRS	ginger	3/18/23	SA		3	3	800	DNA/RNA Shield
+GIN-9-MGE	ginger	3/18/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+HAM-11-DRS	hamlet	3/20/23	SA		3	2	730	DNA/RNA Shield
+HAM-11-MGE	hamlet	3/20/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+HER-11-DRS	hera	3/20/23	SA		3	2	730	DNA/RNA Shield
+HER-11-MGE	hera	3/20/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+JAR-11-DRS	jarjarbinks	3/20/23	SA		3	1	730	DNA/RNA Shield
+JAR-11-MGE	jarjarbinks	3/20/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+OPH-11-DRS	ophelia	3/20/23	SA		3	2	730	DNA/RNA Shield
+OPH-11-MGE	ophelia	3/20/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+KUB-11-DRS	kubo	3/20/23	SA		3	1	730	DNA/RNA Shield
+KUB-11-MGE	kubo	3/20/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+KOR-11-DRS	korra	3/20/23	SA		3	1	730	DNA/RNA Shield
+KOR-11-MGE	korra	3/20/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+WOL-11-DRS	wolverine	3/20/23	SA		3	1	730	DNA/RNA Shield
+WOL-11-MGE	wolverine	3/20/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+IRI-11-DRS	iris	3/20/23	SA		3	1	730	DNA/RNA Shield
+IRI-11-MGE	iris	3/20/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+GOO-11-DRS	goose	3/20/23	SA		3	3	800	DNA/RNA Shield
+GOO-11-MGE	goose	3/20/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+LAM-11-DRS	lambchop	3/20/23	SA		3	3	800	DNA/RNA Shield
+LAM-11-MGE	lambchop	3/20/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+FRA-11-DRS	franc	3/20/23	SA		3	2	800	DNA/RNA Shield
+FRA-11-MGE	franc	3/20/23	SA		3	2	800	Molecular Grade (96%) Ethanol
+PAD-11-DRS	padme	3/20/23	SA		3	1	800	DNA/RNA Shield
+PAD-11-MGE	padme	3/20/23	SA		3	1	800	Molecular Grade (96%) Ethanol
+BUD-11-DRS	buddy	3/20/23	SA		3	3	800	DNA/RNA Shield
+BUD-11-MGE	buddy	3/20/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+JOA-11-DRS	joans	3/20/23	SA		3	2	800	DNA/RNA Shield
+JOA-11-MGE	joans	3/20/23	SA		3	2	800	Molecular Grade (96%) Ethanol
+HAM-14-DRS	hamlet	3/23/23	SA/GR		3	1	730	DNA/RNA Shield
+HAM-14-MGE	hamlet	3/23/23	SA/GR		3	1	730	Molecular Grade (96%) Ethanol
+HER-14-DRS	hera	3/23/23	SA/GR		3	1	730	DNA/RNA Shield
+HER-14-MGE	hera	3/23/23	SA/GR		3	1	730	Molecular Grade (96%) Ethanol
+JAR-14-DRS	jarjarbinks	3/23/23	SA/GR		3	1	730	DNA/RNA Shield
+JAR-14-MGE	jarjarbinks	3/23/23	SA/GR		3	1	730	Molecular Grade (96%) Ethanol
+OPH-14-DRS	ophelia	3/23/23	SA/GR		3	2	730	DNA/RNA Shield
+OPH-14-MGE	ophelia	3/23/23	SA/GR		3	2	730	Molecular Grade (96%) Ethanol
+KUB-14-DRS	kubo	3/23/23	SA/GR		3	2	730	DNA/RNA Shield
+KUB-14-MGE	kubo	3/23/23	SA/GR		3	2	730	Molecular Grade (96%) Ethanol
+KOR-14-DRS	korra	3/23/23	SA/GR		3	1	730	DNA/RNA Shield
+KOR-14-MGE	korra	3/23/23	SA/GR		3	1	730	Molecular Grade (96%) Ethanol
+WOL-14-DRS	wolverine	3/23/23	SA/GR		3	2	730	DNA/RNA Shield
+WOL-14-MGE	wolverine	3/23/23	SA/GR		3	2	730	Molecular Grade (96%) Ethanol
+IRI-14-DRS	iris	3/23/23	SA/GR		3	2	730	DNA/RNA Shield
+IRI-14-MGE	iris	3/23/23	SA/GR		3	2	730	Molecular Grade (96%) Ethanol
+LAM-14-DRS	lambchop	3/23/23	SA/GR		3	3	800	DNA/RNA Shield
+LAM-14-MGE	lambchop	3/23/23	SA/GR		3	3	800	Molecular Grade (96%) Ethanol
+BUD-14-DRS	buddy	3/23/23	SA/GR		3	3	800	DNA/RNA Shield
+BUD-14-MGE	buddy	3/23/23	SA/GR		3	3	800	Molecular Grade (96%) Ethanol
+JOA-14-DRS	joans	3/23/23	SA/GR		3	4	800	DNA/RNA Shield
+JOA-14-MGE	joans	3/23/23	SA/GR		3	4	800	Molecular Grade (96%) Ethanol
+HEN-14-DRS	henry	3/23/23	SA/GR		3	1	800	DNA/RNA Shield
+HEN-14-MGE	henry	3/23/23	SA/GR		3	1	800	Molecular Grade (96%) Ethanol
+GIN-14-DRS	ginger	3/23/23	SA/GR		3	1	800	DNA/RNA Shield
+GIN-14-MGE	ginger	3/23/23	SA/GR		3	1	800	Molecular Grade (96%) Ethanol
+HAM-15-DRS	hamlet	3/24/23	SA		3	1	730	DNA/RNA Shield
+HAM-15-MGE	hamlet	3/24/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+HER-15-MGE	hera	3/24/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+JAR-15-MGE	jarjarbinks	3/24/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+OPH-15-MGE	ophelia	3/24/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+KUB-15-MGE	kubo	3/24/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+KOR-15-MGE	korra	3/24/23	SA		3	3	730	Molecular Grade (96%) Ethanol
+WOL-15-MGE	wolverine	3/24/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+IRI-15-MGE	iris	3/24/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+LAM-15-MGE	lambchop	3/24/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+PAD-15-DRS	padme	3/24/23	SA		3	3	800	DNA/RNA Shield
+PAD-15-MGE	padme	3/24/23	SA		3	3	800	Molecular Grade (96%) Ethanol
+HAM-16-DRS	hamlet	3/25/23	SA		3	2	730	DNA/RNA Shield
+HAM-16-MGE	hamlet	3/25/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+HER-16-DRS	hera	3/25/23	SA		3	2	730	DNA/RNA Shield
+HER-16-MGE	hera	3/25/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+JAR-16-DRS	jarjarbinks	3/25/23	SA		3	2	730	DNA/RNA Shield
+JAR-16-MGE	jarjarbinks	3/25/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+OPH-16-DRS	ophelia	3/25/23	SA		3	1	730	DNA/RNA Shield
+OPH-16-MGE	ophelia	3/25/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+KUB-16-DRS	kubo	3/25/23	SA		3	3	730	DNA/RNA Shield
+KUB-16-MGE	kubo	3/25/23	SA		3	3	730	Molecular Grade (96%) Ethanol
+KOR-16-DRS	korra	3/25/23	SA		3	3	730	DNA/RNA Shield
+KOR-16-MGE	korra	3/25/23	SA		3	3	730	Molecular Grade (96%) Ethanol
+WOL-16-DRS	wolverine	3/25/23	SA		3	1	730	DNA/RNA Shield
+WOL-16-MGE	wolverine	3/25/23	SA		3	1	730	Molecular Grade (96%) Ethanol
+IRI-16-DRS	iris	3/25/23	SA		3	2	730	DNA/RNA Shield
+IRI-16-MGE	iris	3/25/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+BUD-16-DRS	buddy	3/25/23	SA		3	4	800	DNA/RNA Shield
+BUD-16-MGE	buddy	3/25/23	SA		3	4	800	Molecular Grade (96%) Ethanol
+HAM-17-DRS	hamlet	3/26/23	SA		3	3	730	DNA/RNA Shield
+HAM-17-MGE	hamlet	3/26/23	SA		3	3	730	Molecular Grade (96%) Ethanol
+HER-17-DRS	hera	3/26/23	SA		3	2	730	DNA/RNA Shield
+HER-17-MGE	hera	3/26/23	SA		3	2	730	Molecular Grade (96%) Ethanol
+JAR-17-DRS	jarjarbinks	3/26/23	SA		4	1	730	DNA/RNA Shield
+JAR-17-MGE	jarjarbinks	3/26/23	SA		4	1	730	Molecular Grade (96%) Ethanol
+OPH-17-DRS	ophelia	3/26/23	SA		4	2	730	DNA/RNA Shield
+OPH-17-MGE	ophelia	3/26/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+KUB-17-DRS	kubo	3/26/23	SA		4	1	730	DNA/RNA Shield
+KUB-17-MGE	kubo	3/26/23	SA		4	1	730	Molecular Grade (96%) Ethanol
+KOR-17-DRS	korra	3/26/23	SA		4	2	730	DNA/RNA Shield
+KOR-17-MGE	korra	3/26/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+WOL-17-DRS	wolverine	3/26/23	SA		4	2	730	DNA/RNA Shield
+WOL-17-MGE	wolverine	3/26/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+IRI-17-DRS	iris	3/26/23	SA		4	3	730	DNA/RNA Shield
+IRI-17-MGE	iris	3/26/23	SA		4	3	730	Molecular Grade (96%) Ethanol
+GOO-17-DRS	goose	3/26/23	SA		4	1	800	DNA/RNA Shield
+GOO-17-MGE	goose	3/26/23	SA		4	1	800	Molecular Grade (96%) Ethanol
+LAM-17-DRS	lambchop	3/26/23	SA		4	3	800	DNA/RNA Shield
+LAM-17-MGE	lambchop	3/26/23	SA		4	3	800	Molecular Grade (96%) Ethanol
+FRA-17-DRS	franc	3/26/23	SA		4	2	800	DNA/RNA Shield
+FRA-17-MGE	franc	3/26/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+IVY-17-DRS	ivy	3/26/23	SA		4	2	800	DNA/RNA Shield
+IVY-17-MGE	ivy	3/26/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+CHA-17-DRS	charles	3/26/23	SA		4	2	800	DNA/RNA Shield
+CHA-17-MGE	charles	3/26/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+PAD-17-DRS	padme	3/26/23	SA		4	5	800	DNA/RNA Shield
+PAD-17-MGE	padme	3/26/23	SA		4	5	800	Molecular Grade (96%) Ethanol
+GRO-17-DRS	grogu	3/26/23	SA		4	2	800	DNA/RNA Shield
+GRO-17-MGE	grogu	3/26/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+MAR-17-DRS	marshmallow	3/26/23	SA		4	2	800	DNA/RNA Shield
+MAR-17-MGE	marshmallow	3/26/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+BUD-17-DRS	buddy	3/26/23	SA		4	2	800	DNA/RNA Shield
+BUD-17-MGE	buddy	3/26/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+JOA-17-DRS	joans	3/26/23	SA		4	3	800	DNA/RNA Shield
+JOA-17-MGE	joans	3/26/23	SA		4	3	800	Molecular Grade (96%) Ethanol
+HEN-17-DRS	henry	3/26/23	SA		4	2	800	DNA/RNA Shield
+HEN-17-MGE	henry	3/26/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+GIN-17-DRS	ginger	3/26/23	SA		4	2	800	DNA/RNA Shield
+GIN-17-MGE	ginger	3/26/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+HAM-18-DRS	hamlet	3/27/23	SA/GR		4	2	800	DNA/RNA Shield
+HAM-18-MGE	hamlet	3/27/23	SA/GR		4	2	800	Molecular Grade (96%) Ethanol
+HER-18-DRS	hera	3/27/23	SA/GR		4	3	800	DNA/RNA Shield
+HER-18-MGE	hera	3/27/23	SA/GR		4	3	800	Molecular Grade (96%) Ethanol
+JAR-18-DRS	jarjarbinks	3/27/23	SA/GR		4	3	800	DNA/RNA Shield
+JAR-18-MGE	jarjarbinks	3/27/23	SA/GR		4	3	800	Molecular Grade (96%) Ethanol
+OPH-18-DRS	ophelia	3/27/23	SA/GR		4	2	800	DNA/RNA Shield
+OPH-18-MGE	ophelia	3/27/23	SA/GR		4	2	800	Molecular Grade (96%) Ethanol
+KUB-18-DRS	kubo	3/27/23	SA/GR		4	2	800	DNA/RNA Shield
+KUB-18-MGE	kubo	3/27/23	SA/GR		4	2	800	Molecular Grade (96%) Ethanol
+KOR-18-DRS	korra	3/27/23	SA/GR		4	3	800	DNA/RNA Shield
+KOR-18-MGE	korra	3/27/23	SA/GR		4	3	800	Molecular Grade (96%) Ethanol
+WOL-18-DRS	wolverine	3/27/23	SA/GR		4	2	800	DNA/RNA Shield
+WOL-18-MGE	wolverine	3/27/23	SA/GR		4	2	800	Molecular Grade (96%) Ethanol
+IRI-18-DRS	iris	3/27/23	SA/GR		4	2	800	DNA/RNA Shield
+IRI-18-MGE	iris	3/27/23	SA/GR		4	2	800	Molecular Grade (96%) Ethanol
+LAM-18-DRS	lambchop	3/27/23	SA/GR		4	3	730	DNA/RNA Shield
+LAM-18-MGE	lambchop	3/27/23	SA/GR		4	3	730	Molecular Grade (96%) Ethanol
+IVY-18-DRS	ivy	3/27/23	SA/GR		4	4	730	DNA/RNA Shield
+IVY-18-MGE	ivy	3/27/23	SA/GR		4	4	730	Molecular Grade (96%) Ethanol
+GRO-18-DRS	grogu	3/27/23	SA/GR		4	3	730	DNA/RNA Shield
+GRO-18-MGE	grogu	3/27/23	SA/GR		4	3	730	Molecular Grade (96%) Ethanol
+BUD-18-DRS	buddy	3/27/23	SA/GR		4	2	730	DNA/RNA Shield
+BUD-18-MGE	buddy	3/27/23	SA/GR		4	2	730	Molecular Grade (96%) Ethanol
+GIN-18-DRS	ginger	3/27/23	SA/GR		4	2	730	DNA/RNA Shield
+GIN-18-MGE	ginger	3/27/23	SA/GR		4	2	730	Molecular Grade (96%) Ethanol
+HER-19-DRS	hera	3/28/23	SA		4	2	800	DNA/RNA Shield
+HER-19-MGE	hera	3/28/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+OPH-19-DRS	ophelia	3/28/23	SA		4	2	800	DNA/RNA Shield
+OPH-19-MGE	ophelia	3/28/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+WOL-19-DRS	wolverine	3/28/23	SA		4	2	800	DNA/RNA Shield
+WOL-19-MGE	wolverine	3/28/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+IRI-19-DRS	iris	3/28/23	SA		4	3	800	DNA/RNA Shield
+IRI-19-MGE	iris	3/28/23	SA		4	3	800	Molecular Grade (96%) Ethanol
+FRA-19-DRS	franc	3/28/23	SA		4	2	730	DNA/RNA Shield
+FRA-19-MGE	franc	3/28/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+IVY-19-DRS	ivy	3/28/23	SA		4	4	730	DNA/RNA Shield
+IVY-19-MGE	ivy	3/28/23	SA		4	4	730	Molecular Grade (96%) Ethanol
+BUD-19-DRS	buddy	3/28/23	SA		4	3	730	DNA/RNA Shield
+BUD-19-DRS	buddy	3/28/23	SA		4	3	730	Molecular Grade (96%) Ethanol
+HAM-20-DRS	hamlet	3/29/23	SA		4	1	730	DNA/RNA Shield
+HAM-20-MGE	hamlet	3/29/23	SA		4	1	730	Molecular Grade (96%) Ethanol
+HER-20-DRS	hera	3/29/23	SA		4	2	730	DNA/RNA Shield
+HER-20-MGE	hera	3/29/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+JAR-20-DRS	jarjarbinks	3/29/23	SA		4	1	730	DNA/RNA Shield
+JAR-20-MGE	jarjarbinks	3/29/23	SA		4	1	730	Molecular Grade (96%) Ethanol
+OPH-20-DRS	ophelia	3/29/23	SA		4	1	730	DNA/RNA Shield
+OPH-20-MGE	ophelia	3/29/23	SA		4	1	730	Molecular Grade (96%) Ethanol
+KUB-20-DRS	kubo	3/29/23	SA		4	2	730	DNA/RNA Shield
+KUB-20-MGE	kubo	3/29/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+KOR-20-DRS	korra	3/29/23	SA		4	3	730	DNA/RNA Shield
+KOR-20-MGE	korra	3/29/23	SA		4	3	730	Molecular Grade (96%) Ethanol
+WOL-20-DRS	wolverine	3/29/23	SA		4	2	730	DNA/RNA Shield
+WOL-20-MGE	wolverine	3/29/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+IRI-20-DRS	iris	3/29/23	SA		4	2	730	DNA/RNA Shield
+IRI-20-MGE	iris	3/29/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+GOO-20-DRS	goose	3/29/23	SA		4	2	730	DNA/RNA Shield
+GOO-20-MGE	goose	3/29/23	SA		4	2	730	Molecular Grade (96%) Ethanol
+LAM-20-DRS	lambchop	3/29/23	SA		4	3	730	DNA/RNA Shield
+LAM-20-MGE	lambchop	3/29/23	SA		4	3	730	Molecular Grade (96%) Ethanol
+CHA-20-DRS	charles	3/29/23	SA		4	2	800	DNA/RNA Shield
+CHA-20-MGE	charles	3/29/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+PAD-20-DRS	padme	3/29/23	SA	Euthanized (renal failure)	4	4	800	DNA/RNA Shield
+PAD-20-MGE	padme	3/29/23	SA	Euthanized (renal failure)	4	4	800	Molecular Grade (96%) Ethanol
+BUD-20-DRS	buddy	3/29/23	SA		4	2	800	DNA/RNA Shield
+BUD-20-MGE	buddy	3/29/23	SA		4	2	800	Molecular Grade (96%) Ethanol
+GIN-20-DRS	ginger	3/29/23	SA		5	2	800	DNA/RNA Shield
+GIN-20-MGE	ginger	3/29/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+HAM-21-DRS	hamlet	3/30/23	SA		5	2	800	DNA/RNA Shield
+HAM-21-MGE	hamlet	3/30/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+HER-21-DRS	hera	3/30/23	SA		5	2	800	DNA/RNA Shield
+HER-21-MGE	hera	3/30/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+JAR-21-DRS	jarjarbinks	3/30/23	SA		5	2	800	DNA/RNA Shield
+JAR-21-MGE	jarjarbinks	3/30/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+OPH-21-DRS	ophelia	3/30/23	SA		5	1	800	DNA/RNA Shield
+OPH-21-MGE	ophelia	3/30/23	SA		5	1	800	Molecular Grade (96%) Ethanol
+KUB-21-DRS	kubo	3/30/23	SA		5	2	800	DNA/RNA Shield
+KUB-21-MGE	kubo	3/30/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+KOR-21-DRS	korra	3/30/23	SA		5	2	800	DNA/RNA Shield
+KOR-21-MGE	korra	3/30/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+WOL-21-DRS	wolverine	3/30/23	SA		5	3	800	DNA/RNA Shield
+WOL-21-MGE	wolverine	3/30/23	SA		5	3	800	Molecular Grade (96%) Ethanol
+IRI-21-DRS	iris	3/30/23	SA		5	3	800	DNA/RNA Shield
+IRI-21-MGE	iris	3/30/23	SA		5	3	800	Molecular Grade (96%) Ethanol
+BUD-21-DRS	buddy	3/30/23	SA		5	3	730	DNA/RNA Shield
+BUD-21-MGE	buddy	3/30/23	SA		5	3	730	Molecular Grade (96%) Ethanol
+JOA-21-DRS	joans	3/30/23	SA		5	3	730	DNA/RNA Shield
+JOA-21-MGE	joans	3/30/23	SA		5	3	730	Molecular Grade (96%) Ethanol
+HAM-22-DRS	hamlet	3/31/23	SA/GR		5	2	800	DNA/RNA Shield
+HAM-22-MGE	hamlet	3/31/23	SA/GR		5	2	800	Molecular Grade (96%) Ethanol
+HER-22-DRS	hera	3/31/23	SA/GR		5	2	800	DNA/RNA Shield
+HER-22-MGE	hera	3/31/23	SA/GR		5	2	800	Molecular Grade (96%) Ethanol
+JAR-22-DRS	jarjarbinks	3/31/23	SA/GR		5	2	800	DNA/RNA Shield
+JAR-22-MGE	jarjarbinks	3/31/23	SA/GR		5	2	800	Molecular Grade (96%) Ethanol
+OPH-22-DRS	ophelia	3/31/23	SA/GR		5	1	800	DNA/RNA Shield
+OPH-22-MGE	ophelia	3/31/23	SA/GR		5	1	800	Molecular Grade (96%) Ethanol
+KUB-22-DRS	kubo	3/31/23	SA/GR		5	2	800	DNA/RNA Shield
+KUB-22-MGE	kubo	3/31/23	SA/GR		5	2	800	Molecular Grade (96%) Ethanol
+KOR-22-DRS	korra	3/31/23	SA/GR		5	3	800	DNA/RNA Shield
+KOR-22-MGE	korra	3/31/23	SA/GR		5	3	800	Molecular Grade (96%) Ethanol
+WOL-22-DRS	wolverine	3/31/23	SA/GR		5	2	800	DNA/RNA Shield
+WOL-22-MGE	wolverine	3/31/23	SA/GR		5	2	800	Molecular Grade (96%) Ethanol
+IRI-22-DRS	iris	3/31/23	SA/GR		5	3	800	DNA/RNA Shield
+IRI-22-MGE	iris	3/31/23	SA/GR		5	3	800	Molecular Grade (96%) Ethanol
+GOO-22-DRS	goose	3/31/23	SA/GR		5	2	730	DNA/RNA Shield
+GOO-22-MGE	goose	3/31/23	SA/GR		5	2	730	Molecular Grade (96%) Ethanol
+LAM-22-DRS	lambchop	3/31/23	SA/GR		5	3	730	DNA/RNA Shield
+LAM-22-MGE	lambchop	3/31/23	SA/GR		5	3	730	Molecular Grade (96%) Ethanol
+FRA-22-DRS	franc	3/31/23	SA/GR		5	3	730	DNA/RNA Shield
+FRA-22-MGE	franc	3/31/23	SA/GR		5	3	730	Molecular Grade (96%) Ethanol
+IVY-22-DRS	ivy	3/31/23	SA/GR		5	2	730	DNA/RNA Shield
+IVY-22-MGE	ivy	3/31/23	SA/GR		5	2	730	Molecular Grade (96%) Ethanol
+GRO-22-DRS	grogu	3/31/23	SA/GR		5	2	730	DNA/RNA Shield
+GRO-22-MGE	grogu	3/31/23	SA/GR		5	2	730	Molecular Grade (96%) Ethanol
+MAR-22-DRS	marshmallow	3/31/23	SA/GR		5	2	730	DNA/RNA Shield
+MAR-22-MGE	marshmallow	3/31/23	SA/GR		5	2	730	Molecular Grade (96%) Ethanol
+BUD-22-DRS	buddy	3/31/23	SA/GR		5	1	730	DNA/RNA Shield
+BUD-22-MGE	buddy	3/31/23	SA/GR		5	1	730	Molecular Grade (96%) Ethanol
+JOA-22-DRS	joans	3/31/23	SA/GR		5	1	730	DNA/RNA Shield
+JOA-22-MGE	joans	3/31/23	SA/GR		5	1	730	Molecular Grade (96%) Ethanol
+HEN-22-DRS	henry	3/31/23	SA/GR		5	2	730	DNA/RNA Shield
+HEN-22-MGE	henry	3/31/23	SA/GR		5	2	730	Molecular Grade (96%) Ethanol
+GIN-22-DRS	ginger	3/31/23	SA/GR		5	2	730	DNA/RNA Shield
+GIN-22-MGE	ginger	3/31/23	SA/GR		5	2	730	Molecular Grade (96%) Ethanol
+HAM-23-DRS	hamlet	4/1/23	SA		5	5	800	DNA/RNA Shield
+HAM-23-MGE	hamlet	4/1/23	SA		5	5	800	Molecular Grade (96%) Ethanol
+HER-23-DRS	hera	4/1/23	SA		5	2	800	DNA/RNA Shield
+HER-23-MGE	hera	4/1/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+JAR-23-DRS	jarjarbinks	4/1/23	SA		5	2	800	DNA/RNA Shield
+JAR-23-MGE	jarjarbinks	4/1/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+KOR-23-DRS	korra	4/1/23	SA		5	3	800	DNA/RNA Shield
+KOR-23-MGE	korra	4/1/23	SA		5	3	800	Molecular Grade (96%) Ethanol
+WOL-23-DRS	wolverine	4/1/23	SA		5	2	800	DNA/RNA Shield
+WOL-23-MGE	wolverine	4/1/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+IRI-23-DRS	iris	4/1/23	SA		5	3	800	DNA/RNA Shield
+IRI-23-MGE	iris	4/1/23	SA		5	3	800	Molecular Grade (96%) Ethanol
+HAM-24-DRS	hamlet	4/2/23	SA		5	2	800	DNA/RNA Shield
+HAM-24-MGE	hamlet	4/2/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+HER-24-DRS	hera	4/2/23	SA		5	3	800	DNA/RNA Shield
+HER-24-MGE	hera	4/2/23	SA		5	3	800	Molecular Grade (96%) Ethanol
+JAR-24-DRS	jarjarbinks	4/2/23	SA		5	3	800	DNA/RNA Shield
+JAR-24-MGE	jarjarbinks	4/2/23	SA		5	3	800	Molecular Grade (96%) Ethanol
+OPH-24-DRS	ophelia	4/2/23	SA		5	1	800	DNA/RNA Shield
+OPH-24-MGE	ophelia	4/2/23	SA		5	1	800	Molecular Grade (96%) Ethanol
+KUB-24-DRS	kubo	4/2/23	SA		5	3	800	DNA/RNA Shield
+KUB-24-MGE	kubo	4/2/23	SA		5	3	800	Molecular Grade (96%) Ethanol
+KOR-24-DRS	korra	4/2/23	SA		5	1	800	DNA/RNA Shield
+KOR-24-MGE	korra	4/2/23	SA		5	1	800	Molecular Grade (96%) Ethanol
+WOL-24-DRS	wolverine	4/2/23	SA		5	2	800	DNA/RNA Shield
+WOL-24-MGE	wolverine	4/2/23	SA		5	2	800	Molecular Grade (96%) Ethanol
+IRI-24-DRS	iris	4/2/23	SA		5	3	800	DNA/RNA Shield
+IRI-24-MGE	iris	4/2/23	SA		5	3	800	Molecular Grade (96%) Ethanol
+GOO-24-DRS	goose	4/2/23	SA		5	2	730	DNA/RNA Shield
+GOO-24-MGE	goose	4/2/23	SA		5	2	730	Molecular Grade (96%) Ethanol
+LAM-24-DRS	lambchop	4/2/23	SA		5	3	730	DNA/RNA Shield
+LAM-24-MGE	lambchop	4/2/23	SA		5	3	730	Molecular Grade (96%) Ethanol
+FRA-24-DRS	franc	4/2/23	SA		5	2	730	DNA/RNA Shield
+FRA-24-MGE	franc	4/2/23	SA		5	2	730	Molecular Grade (96%) Ethanol
+IVY-24-DRS	ivy	4/2/23	SA		5	2	730	DNA/RNA Shield
+IVY-24-MGE	ivy	4/2/23	SA		5	2	730	Molecular Grade (96%) Ethanol
+GRO-24-DRS	grogu	4/2/23	SA		5	2	730	DNA/RNA Shield
+GRO-24-MGE	grogu	4/2/23	SA		5	2	730	Molecular Grade (96%) Ethanol
+MAR-24-DRS	marshmallow	4/2/23	SA		5	2	730	DNA/RNA Shield
+MAR-24-MGE	marshmallow	4/2/23	SA		5	2	730	Molecular Grade (96%) Ethanol
+BUD-24-DRS	buddy	4/2/23	SA		5	3	730	DNA/RNA Shield
+BUD-24-MGE	buddy	4/2/23	SA		5	3	730	Molecular Grade (96%) Ethanol
+JOA-24-DRS	joans	4/2/23	SA		6	3	730	DNA/RNA Shield
+JOA-24-MGE	joans	4/2/23	SA		6	3	730	Molecular Grade (96%) Ethanol
+HEN-24-DRS	henry	4/2/23	SA		6	2	730	DNA/RNA Shield
+HEN-24-MGE	henry	4/2/23	SA		6	2	730	Molecular Grade (96%) Ethanol
+GIN-24-DRS	ginger	4/2/23	SA		6	2	730	DNA/RNA Shield
+GIN-24-MGE	ginger	4/2/23	SA		6	2	730	Molecular Grade (96%) Ethanol
+HAM-25-DRS	hamlet	4/3/23	SA/GR		6	2	800	DNA/RNA Shield
+HAM-25-MGE	hamlet	4/3/23	SA/GR		6	2	800	Molecular Grade (96%) Ethanol
+HER-25-DRS	hera	4/3/23	SA/GR		6	3	800	DNA/RNA Shield
+HER-25-MGE	hera	4/3/23	SA/GR		6	3	800	Molecular Grade (96%) Ethanol
+JAR-25-DRS	jarjarbinks	4/3/23	SA/GR		6	2	800	DNA/RNA Shield
+JAR-25-MGE	jarjarbinks	4/3/23	SA/GR		6	2	800	Molecular Grade (96%) Ethanol
+OPH-25-DRS	ophelia	4/3/23	SA/GR		6	1	800	DNA/RNA Shield
+OPH-25-MGE	ophelia	4/3/23	SA/GR		6	1	800	Molecular Grade (96%) Ethanol
+KUB-25-DRS	kubo	4/3/23	SA/GR		6	2	800	DNA/RNA Shield
+KUB-25-MGE	kubo	4/3/23	SA/GR		6	2	800	Molecular Grade (96%) Ethanol
+KOR-25-DRS	korra	4/3/23	SA/GR		6	2	800	DNA/RNA Shield
+KOR-25-MGE	korra	4/3/23	SA/GR		6	2	800	Molecular Grade (96%) Ethanol
+WOL-25-DRS	wolverine	4/3/23	SA/GR		6	1	800	DNA/RNA Shield
+WOL-25-MGE	wolverine	4/3/23	SA/GR		6	1	800	Molecular Grade (96%) Ethanol
+IRI-25-DRS	iris	4/3/23	SA/GR		6	3	800	DNA/RNA Shield
+IRI-25-MGE	iris	4/3/23	SA/GR		6	3	800	Molecular Grade (96%) Ethanol
+GOO-25-DRS	goose	4/3/23	SA/GR		6	3	730	DNA/RNA Shield
+GOO-25-MGE	goose	4/3/23	SA/GR		6	3	730	Molecular Grade (96%) Ethanol
+LAM-25-DRS	lambchop	4/3/23	SA/GR		6	3	730	DNA/RNA Shield
+LAM-25-MGE	lambchop	4/3/23	SA/GR		6	3	730	Molecular Grade (96%) Ethanol
+FRA-25-DRS	franc	4/3/23	SA/GR		6	1	730	DNA/RNA Shield
+FRA-25-MGE	franc	4/3/23	SA/GR		6	1	730	Molecular Grade (96%) Ethanol
+IVY-25-DRS	ivy	4/3/23	SA/GR		6	2	730	DNA/RNA Shield
+IVY-25-MGE	ivy	4/3/23	SA/GR		6	2	730	Molecular Grade (96%) Ethanol
+GRO-25-DRS	grogu	4/3/23	SA/GR		6	2	730	DNA/RNA Shield
+GRO-25-MGE	grogu	4/3/23	SA/GR		6	2	730	Molecular Grade (96%) Ethanol
+MAR-25-DRS	marshmallow	4/3/23	SA/GR		6	2	730	DNA/RNA Shield
+MAR-25-MGE	marshmallow	4/3/23	SA/GR		6	2	730	Molecular Grade (96%) Ethanol
+BUD-25-DRS	buddy	4/3/23	SA/GR		6	3	730	DNA/RNA Shield
+BUD-25-MGE	buddy	4/3/23	SA/GR		6	3	730	Molecular Grade (96%) Ethanol
+JOA-25-DRS	joans	4/3/23	SA/GR		6	3	730	DNA/RNA Shield
+JOA-25-MGE	joans	4/3/23	SA/GR		6	3	730	Molecular Grade (96%) Ethanol
+HEN-25-DRS	henry	4/3/23	SA/GR		6	2	730	DNA/RNA Shield
+HEN-25-MGE	henry	4/3/23	SA/GR		6	2	730	Molecular Grade (96%) Ethanol
+GIN-25-DRS	ginger	4/3/23	SA/GR		6	2	730	DNA/RNA Shield
+GIN-25-MGE	ginger	4/3/23	SA/GR		6	2	730	Molecular Grade (96%) Ethanol
+HAM-27-DRS	hamlet	4/5/23	SA/GR		6	1	800	DNA/RNA Shield
+HAM-27-MGE	hamlet	4/5/23	SA/GR		6	1	800	Molecular Grade (96%) Ethanol
+HER-27-DRS	hera	4/5/23	SA/GR		6	1	800	DNA/RNA Shield
+HER-27-MGE	hera	4/5/23	SA/GR		6	1	800	Molecular Grade (96%) Ethanol
+JAR-27-DRS	jarjarbinks	4/5/23	SA/GR		6	3	800	DNA/RNA Shield
+JAR-27-MGE	jarjarbinks	4/5/23	SA/GR		6	3	800	Molecular Grade (96%) Ethanol
+OPH-27-DRS	ophelia	4/5/23	SA/GR		6	3	800	DNA/RNA Shield
+OPH-27-MGE	ophelia	4/5/23	SA/GR		6	3	800	Molecular Grade (96%) Ethanol
+KUB-27-DRS	kubo	4/5/23	SA/GR		6	3	800	DNA/RNA Shield
+KUB-27-MGE	kubo	4/5/23	SA/GR		6	3	800	Molecular Grade (96%) Ethanol
+KOR-27-DRS	korra	4/5/23	SA/GR		6	2	800	DNA/RNA Shield
+KOR-27-MGE	korra	4/5/23	SA/GR		6	2	800	Molecular Grade (96%) Ethanol
+WOL-27-DRS	wolverine	4/5/23	SA/GR		6	1	800	DNA/RNA Shield
+WOL-27-MGE	wolverine	4/5/23	SA/GR		6	1	800	Molecular Grade (96%) Ethanol
+IRI-27-DRS	iris	4/5/23	SA/GR		6	3	800	DNA/RNA Shield
+IRI-27-MGE	iris	4/5/23	SA/GR		6	3	800	Molecular Grade (96%) Ethanol
+GOO-27-DRS	goose	4/5/23	SA/GR		6	3	730	DNA/RNA Shield
+GOO-27-MGE	goose	4/5/23	SA/GR		6	3	730	Molecular Grade (96%) Ethanol
+LAM-27-DRS	lambchop	4/5/23	SA/GR		6	2	730	DNA/RNA Shield
+LAM-27-MGE	lambchop	4/5/23	SA/GR		6	2	730	Molecular Grade (96%) Ethanol
+FRA-27-DRS	franc	4/5/23	SA/GR		7	2	730	DNA/RNA Shield
+FRA-27-MGE	franc	4/5/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+IVY-27-DRS	ivy	4/5/23	SA/GR		7	1	730	DNA/RNA Shield
+IVY-27-MGE	ivy	4/5/23	SA/GR		7	1	730	Molecular Grade (96%) Ethanol
+GRO-27-DRS	grogu	4/5/23	SA/GR		7	2	730	DNA/RNA Shield
+GRO-27-MGE	grogu	4/5/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+MAR-27-DRS	marshmallow	4/5/23	SA/GR		7	2	730	DNA/RNA Shield
+MAR-27-MGE	marshmallow	4/5/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+BUD-27-DRS	buddy	4/5/23	SA/GR		7	2	730	DNA/RNA Shield
+BUD-27-MGE	buddy	4/5/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+JOA-27-DRS	joans	4/5/23	SA/GR		7	2	730	DNA/RNA Shield
+JOA-27-MGE	joans	4/5/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+HEN-27-DRS	henry	4/5/23	SA/GR		7	2	730	DNA/RNA Shield
+HEN-27-MGE	henry	4/5/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+GIN-27-DRS	ginger	4/5/23	SA/GR		7	1	730	DNA/RNA Shield
+GIN-27-MGE	ginger	4/5/23	SA/GR		7	1	730	Molecular Grade (96%) Ethanol
+HAM-28-DRS	hamlet	4/6/23	SA		7	2	730	DNA/RNA Shield
+HAM-28-MGE	hamlet	4/6/23	SA		7	2	730	Molecular Grade (96%) Ethanol
+HER-28-DRS	hera	4/6/23	SA		7	2	730	DNA/RNA Shield
+HER-28-MGE	hera	4/6/23	SA		7	2	730	Molecular Grade (96%) Ethanol
+JAR-28-DRS	jarjarbinks	4/6/23	SA		7	3	730	DNA/RNA Shield
+JAR-28-MGE	jarjarbinks	4/6/23	SA		7	3	730	Molecular Grade (96%) Ethanol
+OPH-28-DRS	ophelia	4/6/23	SA		7	2	730	DNA/RNA Shield
+OPH-28-MGE	ophelia	4/6/23	SA		7	2	730	Molecular Grade (96%) Ethanol
+KUB-28-DRS	kubo	4/6/23	SA		7	1	730	DNA/RNA Shield
+KUB-28-MGE	kubo	4/6/23	SA		7	1	730	Molecular Grade (96%) Ethanol
+KOR-28-DRS	korra	4/6/23	SA		7	3	730	DNA/RNA Shield
+KOR-28-MGE	korra	4/6/23	SA		7	3	730	Molecular Grade (96%) Ethanol
+WOL-28-DRS	wolverine	4/6/23	SA		7	1	730	DNA/RNA Shield
+WOL-28-MGE	wolverine	4/6/23	SA		7	1	730	Molecular Grade (96%) Ethanol
+IRI-28-DRS	iris	4/6/23	SA		7	3	730	DNA/RNA Shield
+IRI-28-MGE	iris	4/6/23	SA		7	3	730	Molecular Grade (96%) Ethanol
+GRO-28-DRS	grogu	4/6/23	SA		7	2	800	DNA/RNA Shield
+GRO-28-MGE	grogu	4/6/23	SA		7	2	800	Molecular Grade (96%) Ethanol
+MAR-28-DRS	marshmallow	4/6/23	SA		7	3	800	DNA/RNA Shield
+MAR-28-MGE	marshmallow	4/6/23	SA		7	3	800	Molecular Grade (96%) Ethanol
+BUD-28-DRS	buddy	4/6/23	SA		7	3	800	DNA/RNA Shield
+BUD-28-MGE	buddy	4/6/23	SA		7	3	800	Molecular Grade (96%) Ethanol
+JOA-28-DRS	joans	4/6/23	SA		7	3	800	DNA/RNA Shield
+JOA-28-MGE	joans	4/6/23	SA		7	3	800	Molecular Grade (96%) Ethanol
+HAM-29-DRS	hamlet	4/7/23	SA/GR		7	1	800	DNA/RNA Shield
+HAM-29-MGE	hamlet	4/7/23	SA/GR		7	1	800	Molecular Grade (96%) Ethanol
+HER-29-DRS	hera	4/7/23	SA/GR		7	3	800	DNA/RNA Shield
+HER-29-MGE	hera	4/7/23	SA/GR		7	3	800	Molecular Grade (96%) Ethanol
+JAR-29-DRS	jarjarbinks	4/7/23	SA/GR		7	3	800	DNA/RNA Shield
+JAR-29-MGE	jarjarbinks	4/7/23	SA/GR		7	3	800	Molecular Grade (96%) Ethanol
+OPH-29-DRS	ophelia	4/7/23	SA/GR		7	1	800	DNA/RNA Shield
+OPH-29-MGE	ophelia	4/7/23	SA/GR		7	1	800	Molecular Grade (96%) Ethanol
+KUB-29-DRS	kubo	4/7/23	SA/GR		7	2	800	DNA/RNA Shield
+KUB-29-MGE	kubo	4/7/23	SA/GR		7	2	800	Molecular Grade (96%) Ethanol
+KOR-29-DRS	korra	4/7/23	SA/GR		7	3	800	DNA/RNA Shield
+KOR-29-MGE	korra	4/7/23	SA/GR		7	3	800	Molecular Grade (96%) Ethanol
+WOL-29-DRS	wolverine	4/7/23	SA/GR		7	1	800	DNA/RNA Shield
+WOL-29-MGE	wolverine	4/7/23	SA/GR		7	1	800	Molecular Grade (96%) Ethanol
+IRI-29-DRS	iris	4/7/23	SA/GR		7	3	800	DNA/RNA Shield
+IRI-29-MGE	iris	4/7/23	SA/GR		7	3	800	Molecular Grade (96%) Ethanol
+GOO-29-DRS	goose	4/7/23	SA/GR		7	2	730	DNA/RNA Shield
+GOO-29-MGE	goose	4/7/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+LAM-29-DRS	lambchop	4/7/23	SA/GR		7	3	730	DNA/RNA Shield
+LAM-29-MGE	lambchop	4/7/23	SA/GR		7	3	730	Molecular Grade (96%) Ethanol
+FRA-29-DRS	franc	4/7/23	SA/GR		7	2	730	DNA/RNA Shield
+FRA-29-MGE	franc	4/7/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+IVY-29-DRS	ivy	4/7/23	SA/GR		7	2	730	DNA/RNA Shield
+IVY-29-MGE	ivy	4/7/23	SA/GR		7	2	730	Molecular Grade (96%) Ethanol
+GRO-29-DRS	grogu	4/7/23	SA/GR		8	2	730	DNA/RNA Shield
+GRO-29-MGE	grogu	4/7/23	SA/GR		8	2	730	Molecular Grade (96%) Ethanol
+MAR-29-DRS	marshmallow	4/7/23	SA/GR		8	2	730	DNA/RNA Shield
+MAR-29-MGE	marshmallow	4/7/23	SA/GR		8	2	730	Molecular Grade (96%) Ethanol
+BUD-29-DRS	buddy	4/7/23	SA/GR		8	2	730	DNA/RNA Shield
+BUD-29-MGE	buddy	4/7/23	SA/GR		8	2	730	Molecular Grade (96%) Ethanol
+JOA-29-DRS	joans	4/7/23	SA/GR		8	3	730	DNA/RNA Shield
+JOA-29-MGE	joans	4/7/23	SA/GR		8	3	730	Molecular Grade (96%) Ethanol
+HEN-29-DRS	henry	4/7/23	SA/GR		8	3	730	DNA/RNA Shield
+HEN-29-MGE	henry	4/7/23	SA/GR		8	3	730	Molecular Grade (96%) Ethanol
+GIN-29-DRS	ginger	4/7/23	SA/GR		8	2	730	DNA/RNA Shield
+GIN-29-MGE	ginger	4/7/23	SA/GR		8	2	730	Molecular Grade (96%) Ethanol
+HAM-30-DRS	hamlet	4/8/23	SA		8	1	730	DNA/RNA Shield
+HAM-30-MGE	hamlet	4/8/23	SA		8	1	730	Molecular Grade (96%) Ethanol
+HER-30-DRS	hera	4/8/23	SA		8	1	730	DNA/RNA Shield
+HER-30-MGE	hera	4/8/23	SA		8	1	730	Molecular Grade (96%) Ethanol
+JAR-30-DRS	jarjarbinks	4/8/23	SA		8	3	730	DNA/RNA Shield
+JAR-30-MGE	jarjarbinks	4/8/23	SA		8	3	730	Molecular Grade (96%) Ethanol
+OPH-30-DRS	ophelia	4/8/23	SA		8	1	730	DNA/RNA Shield
+OPH-30-MGE	ophelia	4/8/23	SA		8	1	730	Molecular Grade (96%) Ethanol
+KUB-30-DRS	kubo	4/8/23	SA		8	2	730	DNA/RNA Shield
+KUB-30-MGE	kubo	4/8/23	SA		8	2	730	Molecular Grade (96%) Ethanol
+KOR-30-DRS	korra	4/8/23	SA		8	3	730	DNA/RNA Shield
+KOR-30-MGE	korra	4/8/23	SA		8	3	730	Molecular Grade (96%) Ethanol
+WOL-30-DRS	wolverine	4/8/23	SA		8	1	730	DNA/RNA Shield
+WOL-30-MGE	wolverine	4/8/23	SA		8	1	730	Molecular Grade (96%) Ethanol
+IRI-30-DRS	iris	4/8/23	SA		8	3	730	DNA/RNA Shield
+IRI-30-MGE	iris	4/8/23	SA		8	3	730	Molecular Grade (96%) Ethanol
+GOO-30-DRS	goose	4/8/23	SA		8	2	800	DNA/RNA Shield
+GOO-30-MGE	goose	4/8/23	SA		8	2	800	Molecular Grade (96%) Ethanol
+LAM-30-DRS	lambchop	4/8/23	SA		8	3	800	DNA/RNA Shield
+LAM-30-MGE	lambchop	4/8/23	SA		8	3	800	Molecular Grade (96%) Ethanol
+FRA-30-DRS	franc	4/8/23	SA		8	2	800	DNA/RNA Shield
+FRA-30-MGE	franc	4/8/23	SA		8	2	800	Molecular Grade (96%) Ethanol
+IVY-30-DRS	ivy	4/8/23	SA		8	4	800	DNA/RNA Shield
+IVY-30-MGE	ivy	4/8/23	SA		8	4	800	Molecular Grade (96%) Ethanol
+CHA-30-DRS	charles	4/8/23	SA		8	2	800	DNA/RNA Shield
+CHA-30-MGE	charles	4/8/23	SA		8	2	800	Molecular Grade (96%) Ethanol
+BUB-30-DRS	Bubblegum	4/8/23	SA		8	1	800	DNA/RNA Shield
+BUB-30-MGE	Bubblegum	4/8/23	SA		8	1	800	Molecular Grade (96%) Ethanol
+GRO-30-DRS	grogu	4/8/23	SA		8	3	800	DNA/RNA Shield
+GRO-30-MGE	grogu	4/8/23	SA		8	3	800	Molecular Grade (96%) Ethanol
+MAR-30-DRS	marshmallow	4/8/23	SA		8	2	800	DNA/RNA Shield
+MAR-30-MGE	marshmallow	4/8/23	SA		8	2	800	Molecular Grade (96%) Ethanol
+BUD-30-DRS	buddy	4/8/23	SA		8	3	800	DNA/RNA Shield
+BUD-30-MGE	buddy	4/8/23	SA		8	3	800	Molecular Grade (96%) Ethanol
+JOA-30-DRS	joans	4/8/23	SA		8	2	800	DNA/RNA Shield
+JOA-30-MGE	joans	4/8/23	SA		8	2	800	Molecular Grade (96%) Ethanol
+HEN-30-DRS	henry	4/8/23	SA		8	2	800	DNA/RNA Shield
+HEN-30-MGE	henry	4/8/23	SA		8	2	800	Molecular Grade (96%) Ethanol
+GIN-30-DRS	ginger	4/8/23	SA		9	3	800	DNA/RNA Shield
+GIN-30-MGE	ginger	4/8/23	SA		9	3	800	Molecular Grade (96%) Ethanol
+HAM-31-DRS	hamlet	4/9/23	SA		9	2	700	DNA/RNA Shield
+HAM-31-MGE	hamlet	4/9/23	SA		9	2	700	Molecular Grade (96%) Ethanol
+HER-31-DRS	hera	4/9/23	SA		9	2	700	DNA/RNA Shield
+HER-31-MGE	hera	4/9/23	SA		9	2	700	Molecular Grade (96%) Ethanol
+JAR-31-DRS	jarjarbinks	4/9/23	SA		9	2	700	DNA/RNA Shield
+JAR-31-MGE	jarjarbinks	4/9/23	SA		9	2	700	Molecular Grade (96%) Ethanol
+OPH-31-DRS	ophelia	4/9/23	SA		9	1	700	DNA/RNA Shield
+OPH-31-MGE	ophelia	4/9/23	SA		9	1	700	Molecular Grade (96%) Ethanol
+KUB-31-DRS	kubo	4/9/23	SA		9	2	700	DNA/RNA Shield
+KUB-31-MGE	kubo	4/9/23	SA		9	2	700	Molecular Grade (96%) Ethanol
+KOR-31-DRS	korra	4/9/23	SA		9	3	700	DNA/RNA Shield
+KOR-31-MGE	korra	4/9/23	SA		9	3	700	Molecular Grade (96%) Ethanol
+WOL-31-DRS	wolverine	4/9/23	SA		9	2	700	DNA/RNA Shield
+WOL-31-MGE	wolverine	4/9/23	SA		9	2	700	Molecular Grade (96%) Ethanol
+IRI-31-DRS	iris	4/9/23	SA		9	2	700	DNA/RNA Shield
+IRI-31-MGE	iris	4/9/23	SA		9	2	700	Molecular Grade (96%) Ethanol
+GOO-31-DRS	goose	4/9/23	SA	See notes on Notion for Room F	9	3	730	DNA/RNA Shield
+GOO-31-MGE	goose	4/9/23	SA	See notes on Notion for Room F	9	3	730	Molecular Grade (96%) Ethanol
+LAM-31-DRS	lambchop	4/9/23	SA	See notes on Notion for Room F	9	3	730	DNA/RNA Shield
+LAM-31-MGE	lambchop	4/9/23	SA	See notes on Notion for Room F	9	3	730	Molecular Grade (96%) Ethanol
+FRA-31-DRS	franc	4/9/23	SA	See notes on Notion for Room F	9	2	730	DNA/RNA Shield
+FRA-31-MGE	franc	4/9/23	SA	See notes on Notion for Room F	9	2	730	Molecular Grade (96%) Ethanol
+IVY-31-DRS	ivy	4/9/23	SA	See notes on Notion for Room F	9	4	730	DNA/RNA Shield
+IVY-31-MGE	ivy	4/9/23	SA	See notes on Notion for Room F	9	4	730	Molecular Grade (96%) Ethanol
+CHA-31-DRS	charles	4/9/23	SA	See notes on Notion for Room F	9	2	730	DNA/RNA Shield
+CHA-31-MGE	charles	4/9/23	SA	See notes on Notion for Room F	9	2	730	Molecular Grade (96%) Ethanol
+BUB-31-DRS	Bubblegum	4/9/23	SA	See notes on Notion for Room F	9	2	730	DNA/RNA Shield
+BUB-31-MGE	Bubblegum	4/9/23	SA	See notes on Notion for Room F	9	2	730	Molecular Grade (96%) Ethanol
+GRO-31-DRS	grogu	4/9/23	SA	See notes on Notion for Room F	9	3	730	DNA/RNA Shield
+GRO-31-MGE	grogu	4/9/23	SA	See notes on Notion for Room F	9	3	730	Molecular Grade (96%) Ethanol
+MAR-31-DRS	marshmallow	4/9/23	SA	See notes on Notion for Room F	9	2	730	DNA/RNA Shield
+MAR-31-MGE	marshmallow	4/9/23	SA	See notes on Notion for Room F	9	2	730	Molecular Grade (96%) Ethanol
+HEN-31-DRS	henry	4/9/23	SA	See notes on Notion for Room F	9	3	730	DNA/RNA Shield
+HEN-31-MGE	henry	4/9/23	SA	See notes on Notion for Room F	9	3	730	Molecular Grade (96%) Ethanol
+GIN-31-DRS	ginger	4/9/23	SA	See notes on Notion for Room F	9	2	730	DNA/RNA Shield
+GIN-31-MGE	ginger	4/9/23	SA	See notes on Notion for Room F	9	2	730	Molecular Grade (96%) Ethanol
+HAM-32-DRS	hamlet	4/10/23	SA/GR		9	2	800	DNA/RNA Shield
+HAM-32-MGE	hamlet	4/10/23	SA/GR		9	2	800	Molecular Grade (96%) Ethanol
+HER-32-DRS	hera	4/10/23	SA/GR		9	2	800	DNA/RNA Shield
+HER-32-MGE	hera	4/10/23	SA/GR		9	2	800	Molecular Grade (96%) Ethanol
+JAR-32-DRS	jarjarbinks	4/10/23	SA/GR		9	2	800	DNA/RNA Shield
+JAR-32-MGE	jarjarbinks	4/10/23	SA/GR		9	2	800	Molecular Grade (96%) Ethanol
+OPH-32-DRS	ophelia	4/10/23	SA/GR		9	1	800	DNA/RNA Shield
+OPH-32-MGE	ophelia	4/10/23	SA/GR		9	1	800	Molecular Grade (96%) Ethanol
+KUB-32-DRS	kubo	4/10/23	SA/GR		9	2	800	DNA/RNA Shield
+KUB-32-MGE	kubo	4/10/23	SA/GR		9	2	800	Molecular Grade (96%) Ethanol
+KOR-32-DRS	korra	4/10/23	SA/GR		9	3	800	DNA/RNA Shield
+KOR-32-MGE	korra	4/10/23	SA/GR		9	3	800	Molecular Grade (96%) Ethanol
+WOL-32-DRS	wolverine	4/10/23	SA/GR		10	1	800	DNA/RNA Shield
+WOL-32-MGE	wolverine	4/10/23	SA/GR		10	1	800	Molecular Grade (96%) Ethanol
+IRI-32-DRS	iris	4/10/23	SA/GR		10	2	800	DNA/RNA Shield
+IRI-32-MGE	iris	4/10/23	SA/GR		10	2	730	Molecular Grade (96%) Ethanol
+GOO-32-DRS	goose	4/10/23	SA/GR		10	2	730	DNA/RNA Shield
+GOO-32-MGE	goose	4/10/23	SA/GR		10	2	730	Molecular Grade (96%) Ethanol
+LAM-32-DRS	lambchop	4/10/23	SA/GR		10	3	730	DNA/RNA Shield
+LAM-32-MGE	lambchop	4/10/23	SA/GR		10	3	730	Molecular Grade (96%) Ethanol
+FRA-32-DRS	franc	4/10/23	SA/GR		10	3	730	DNA/RNA Shield
+FRA-32-MGE	franc	4/10/23	SA/GR		10	3	730	Molecular Grade (96%) Ethanol
+IVY-32-DRS	ivy	4/10/23	SA/GR		10	2	730	DNA/RNA Shield
+IVY-32-MGE	ivy	4/10/23	SA/GR		10	2	730	Molecular Grade (96%) Ethanol
+CHA-32-DRS	charles	4/10/23	SA/GR		10	2	730	DNA/RNA Shield
+CHA-32-MGE	charles	4/10/23	SA/GR		10	2	730	Molecular Grade (96%) Ethanol
+BUB-32-DRS	Bubblegum	4/10/23	SA/GR		10	1	730	DNA/RNA Shield
+BUB-32-MGE	Bubblegum	4/10/23	SA/GR		10	1	730	Molecular Grade (96%) Ethanol
+GRO-32-DRS	grogu	4/10/23	SA/GR		10	2	730	DNA/RNA Shield
+GRO-32-MGE	grogu	4/10/23	SA/GR		10	2	730	Molecular Grade (96%) Ethanol
+MAR-32-DRS	marshmallow	4/10/23	SA/GR		10	2	730	DNA/RNA Shield
+MAR-32-MGE	marshmallow	4/10/23	SA/GR		10	2	730	Molecular Grade (96%) Ethanol
+BUD-32-DRS	buddy	4/10/23	SA/GR		10	3	730	DNA/RNA Shield
+BUD-32-MGE	buddy	4/10/23	SA/GR		10	3	730	Molecular Grade (96%) Ethanol
+JOA-32-DRS	joans	4/10/23	SA/GR		10	3	730	DNA/RNA Shield
+JOA-32-MGE	joans	4/10/23	SA/GR		10	3	730	Molecular Grade (96%) Ethanol
+HEN-32-DRS	henry	4/10/23	SA/GR		10	2	730	DNA/RNA Shield
+HEN-32-MGE	henry	4/10/23	SA/GR		10	2	730	Molecular Grade (96%) Ethanol
+GIN-32-DRS	ginger	4/10/23	SA/GR		10	2	730	DNA/RNA Shield
+GIN-32-MGE	ginger	4/10/23	SA/GR		10	2	730	Molecular Grade (96%) Ethanol
+HAM-33-DRS	hamlet	4/11/23	SA		10	2	800	DNA/RNA Shield
+HAM-33-MGE	hamlet	4/11/23	SA		10	2	800	Molecular Grade (96%) Ethanol
+HER-33-DRS	hera	4/11/23	SA		10	2	800	DNA/RNA Shield
+HER-33-MGE	hera	4/11/23	SA		10	2	800	Molecular Grade (96%) Ethanol
+JAR-33-DRS	jarjarbinks	4/11/23	SA		10	2	800	DNA/RNA Shield
+JAR-33-MGE	jarjarbinks	4/11/23	SA		10	2	800	Molecular Grade (96%) Ethanol
+OPH-33-DRS	ophelia	4/11/23	SA		10	2	800	DNA/RNA Shield
+OPH-33-MGE	ophelia	4/11/23	SA		10	2	800	Molecular Grade (96%) Ethanol
+KUB-33-DRS	kubo	4/11/23	SA		10	3	800	DNA/RNA Shield
+KUB-33-MGE	kubo	4/11/23	SA		10	3	800	Molecular Grade (96%) Ethanol
+KOR-33-DRS	korra	4/11/23	SA		10	2	800	DNA/RNA Shield
+KOR-33-MGE	korra	4/11/23	SA		10	2	800	Molecular Grade (96%) Ethanol
+WOL-33-DRS	wolverine	4/11/23	SA		10	1	800	DNA/RNA Shield
+WOL-33-MGE	wolverine	4/11/23	SA		10	1	800	Molecular Grade (96%) Ethanol
+IRI-33-DRS	iris	4/11/23	SA		10	2	800	DNA/RNA Shield
+IRI-33-MGE	iris	4/11/23	SA		10	2	800	Molecular Grade (96%) Ethanol
+GOO-33-DRS	goose	4/11/23	SA		10	3	800	DNA/RNA Shield
+GOO-33-MGE	goose	4/11/23	SA		10	3	800	Molecular Grade (96%) Ethanol
+LAM-33-DRS	lambchop	4/11/23	SA		10	4	800	DNA/RNA Shield
+LAM-33-MGE	lambchop	4/11/23	SA		10	4	800	Molecular Grade (96%) Ethanol
+CHA-33-DRS	charles	4/11/23	SA		10	2	800	DNA/RNA Shield
+CHA-33-MGE	charles	4/11/23	SA		10	2	800	Molecular Grade (96%) Ethanol
+HAM-34-DRS	hamlet	4/12/23	SA/GR		10	3	800	DNA/RNA Shield
+HAM-34-MGE	hamlet	4/12/23	SA/GR		10	3	800	Molecular Grade (96%) Ethanol
+HER-34-DRS	hera	4/12/23	SA/GR		10	2	800	DNA/RNA Shield
+HER-34-MGE	hera	4/12/23	SA/GR		10	2	800	Molecular Grade (96%) Ethanol
+JAR-34-DRS	jarjarbinks	4/12/23	SA/GR		10	3	800	DNA/RNA Shield
+JAR-34-MGE	jarjarbinks	4/12/23	SA/GR		10	3	800	Molecular Grade (96%) Ethanol
+OPH-34-DRS	ophelia	4/12/23	SA/GR		10	1	800	DNA/RNA Shield
+OPH-34-MGE	ophelia	4/12/23	SA/GR		10	1	800	Molecular Grade (96%) Ethanol
+KUB-34-DRS	kubo	4/12/23	SA/GR		10	2	800	DNA/RNA Shield
+KUB-34-MGE	kubo	4/12/23	SA/GR		10	2	800	Molecular Grade (96%) Ethanol
+KOR-34-DRS	korra	4/12/23	SA/GR		10	2	800	DNA/RNA Shield
+KOR-34-MGE	korra	4/12/23	SA/GR		10	2	800	Molecular Grade (96%) Ethanol
+WOL-34-DRS	wolverine	4/12/23	SA/GR		10	2	800	DNA/RNA Shield
+WOL-34-MGE	wolverine	4/12/23	SA/GR		10	2	800	Molecular Grade (96%) Ethanol
+IRI-34-DRS	iris	4/12/23	SA/GR		11	2	800	DNA/RNA Shield
+IRI-34-MGE	iris	4/12/23	SA/GR		11	2	800	Molecular Grade (96%) Ethanol
+GOO-34-DRS	goose	4/12/23	SA/GR		11	3	730	DNA/RNA Shield
+GOO-34-MGE	goose	4/12/23	SA/GR		11	3	730	Molecular Grade (96%) Ethanol
+LAM-34-DRS	lambchop	4/12/23	SA/GR		11	3	730	DNA/RNA Shield
+LAM-34-MGE	lambchop	4/12/23	SA/GR		11	3	730	Molecular Grade (96%) Ethanol
+FRA-34-DRS	franc	4/12/23	SA/GR		11	2	730	DNA/RNA Shield
+FRA-34-MGE	franc	4/12/23	SA/GR		11	2	730	Molecular Grade (96%) Ethanol
+IVY-34-DRS	ivy	4/12/23	SA/GR		11	2	730	DNA/RNA Shield
+IVY-34-MGE	ivy	4/12/23	SA/GR		11	2	730	Molecular Grade (96%) Ethanol
+CHA-34-DRS	charles	4/12/23	SA/GR		11	1	730	DNA/RNA Shield
+CHA-34-MGE	charles	4/12/23	SA/GR		11	1	730	Molecular Grade (96%) Ethanol
+GRO-34-DRS	grogu	4/12/23	SA/GR		11	2	730	DNA/RNA Shield
+GRO-34-MGE	grogu	4/12/23	SA/GR		11	2	730	Molecular Grade (96%) Ethanol
+MAR-34-DRS	marshmallow	4/12/23	SA/GR		11	2	730	DNA/RNA Shield
+MAR-34-MGE	marshmallow	4/12/23	SA/GR		11	2	730	Molecular Grade (96%) Ethanol
+BUD-34-DRS	buddy	4/12/23	SA/GR		11	3	730	DNA/RNA Shield
+BUD-34-MGE	buddy	4/12/23	SA/GR		11	3	730	Molecular Grade (96%) Ethanol
+JOA-34-DRS	joans	4/12/23	SA/GR		11	3	730	DNA/RNA Shield
+JOA-34-MGE	joans	4/12/23	SA/GR		11	3	730	Molecular Grade (96%) Ethanol
+HEN-34-DRS	henry	4/12/23	SA/GR		11	2	730	DNA/RNA Shield
+HEN-34-MGE	henry	4/12/23	SA/GR		11	2	730	Molecular Grade (96%) Ethanol
+GIN-34-DRS	ginger	4/12/23	SA/GR		11	2	730	DNA/RNA Shield
+GIN-34-MGE	ginger	4/12/23	SA/GR		11	2	730	Molecular Grade (96%) Ethanol
+HAM-35-DRS	hamlet	4/13/23	SA		11	2	730	DNA/RNA Shield
+HAM-35-MGE	hamlet	4/13/23	SA		11	2	730	Molecular Grade (96%) Ethanol
+HER-35-DRS	hera	4/13/23	SA		11	1	730	DNA/RNA Shield
+HER-35-MGE	hera	4/13/23	SA		11	1	730	Molecular Grade (96%) Ethanol
+JAR-35-DRS	jarjarbinks	4/13/23	SA		11	2	730	DNA/RNA Shield
+JAR-35-MGE	jarjarbinks	4/13/23	SA		11	2	730	Molecular Grade (96%) Ethanol
+OPH-35-DRS	ophelia	4/13/23	SA		11	1	730	DNA/RNA Shield
+OPH-35-MGE	ophelia	4/13/23	SA		11	1	730	Molecular Grade (96%) Ethanol
+KUB-35-DRS	kubo	4/13/23	SA		11	2	730	DNA/RNA Shield
+KUB-35-MGE	kubo	4/13/23	SA		11	2	730	Molecular Grade (96%) Ethanol
+KOR-35-DRS	korra	4/13/23	SA		11	2	730	DNA/RNA Shield
+KOR-35-MGE	korra	4/13/23	SA		11	2	730	Molecular Grade (96%) Ethanol
+WOL-35-DRS	wolverine	4/13/23	SA		11	1	730	DNA/RNA Shield
+WOL-35-MGE	wolverine	4/13/23	SA		11	1	730	Molecular Grade (96%) Ethanol
+IRI-35-DRS	iris	4/13/23	SA		11	2	730	DNA/RNA Shield
+IRI-35-MGE	iris	4/13/23	SA		11	2	730	Molecular Grade (96%) Ethanol
+GOO-35-DRS	goose	4/13/23	SA		11	3	800	DNA/RNA Shield
+GOO-35-MGE	goose	4/13/23	SA		11	3	800	Molecular Grade (96%) Ethanol
+LAM-35-DRS	lambchop	4/13/23	SA		11	3	800	DNA/RNA Shield
+LAM-35-MGE	lambchop	4/13/23	SA		11	3	800	Molecular Grade (96%) Ethanol
+FRA-35-DRS	franc	4/13/23	SA		11	2	800	DNA/RNA Shield
+FRA-35-MGE	franc	4/13/23	SA		11	2	800	Molecular Grade (96%) Ethanol
+IVY-35-DRS	ivy	4/13/23	SA		11	3	800	DNA/RNA Shield
+IVY-35-MGE	ivy	4/13/23	SA		11	3	800	Molecular Grade (96%) Ethanol
+CHA-35-DRS	charles	4/13/23	SA		11	1	800	DNA/RNA Shield
+CHA-35-MGE	charles	4/13/23	SA		11	1	800	Molecular Grade (96%) Ethanol
+GRO-35-DRS	grogu	4/13/23	SA		11	2	800	DNA/RNA Shield
+GRO-35-MGE	grogu	4/13/23	SA		11	2	800	Molecular Grade (96%) Ethanol
+MAR-35-DRS	marshmallow	4/13/23	SA		11	3	800	DNA/RNA Shield
+MAR-35-MGE	marshmallow	4/13/23	SA		11	3	800	Molecular Grade (96%) Ethanol
+BUD-35-DRS	buddy	4/13/23	SA		11	2	800	DNA/RNA Shield
+BUD-35-MGE	buddy	4/13/23	SA		11	2	800	Molecular Grade (96%) Ethanol
+JOA-35-DRS	joans	4/13/23	SA		11	3	800	DNA/RNA Shield
+JOA-35-MGE	joans	4/13/23	SA		11	3	800	Molecular Grade (96%) Ethanol
+HEN-35-DRS	henry	4/13/23	SA		11	2	800	DNA/RNA Shield
+HEN-35-MGE	henry	4/13/23	SA		11	2	800	Molecular Grade (96%) Ethanol
+GIN-35-DRS	ginger	4/13/23	SA		11	2	800	DNA/RNA Shield
+GIN-35-MGE	ginger	4/13/23	SA		11	2	800	Molecular Grade (96%) Ethanol
+HAM-36-MGE	hamlet	4/14/23	SA/GR		11	3	730	Molecular Grade (96%) Ethanol
+HER-36-MGE	hera	4/14/23	SA/GR		11	2	730	Molecular Grade (96%) Ethanol
+JAR-36-MGE	jarjarbinks	4/14/23	SA/GR		12	2	730	Molecular Grade (96%) Ethanol
+OPH-36-MGE	ophelia	4/14/23	SA/GR		12	1	730	Molecular Grade (96%) Ethanol
+KUB-36-MGE	kubo	4/14/23	SA/GR		12	2	730	Molecular Grade (96%) Ethanol
+KOR-36-MGE	korra	4/14/23	SA/GR		12	3	730	Molecular Grade (96%) Ethanol
+WOL-36-MGE	wolverine	4/14/23	SA/GR		12	2	730	Molecular Grade (96%) Ethanol
+IRI-36-MGE	iris	4/14/23	SA/GR		12	3	730	Molecular Grade (96%) Ethanol
+GOO-36-MGE	goose	4/14/23	SA/GR		12	3	800	Molecular Grade (96%) Ethanol
+LAM-36-MGE	lambchop	4/14/23	SA/GR		12	3	800	Molecular Grade (96%) Ethanol
+FRA-36-MGE	franc	4/14/23	SA/GR		12	3	800	Molecular Grade (96%) Ethanol
+IVY-36-MGE	ivy	4/14/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+CHA-36-MGE	charles	4/14/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+GRO-36-MGE	grogu	4/14/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+MAR-36-MGE	marshmallow	4/14/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+BUD-36-MGE	buddy	4/14/23	SA/GR		12	3	800	Molecular Grade (96%) Ethanol
+JOA-36-MGE	joans	4/14/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+HEN-36-MGE	henry	4/14/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+GIN-36-MGE	ginger	4/14/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+HAM-37-MGE	hamlet	4/15/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+HER-37-MGE	hera	4/15/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+JAR-37-MGE	jarjarbinks	4/15/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+OPH-37-MGE	ophelia	4/15/23	SA		12	1	730	Molecular Grade (96%) Ethanol
+KUB-37-MGE	kubo	4/15/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+KOR-37-MGE	korra	4/15/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+WOL-37-MGE	wolverine	4/15/23	SA		12	1	730	Molecular Grade (96%) Ethanol
+IRI-37-MGE	iris	4/15/23	SA		12	3	730	Molecular Grade (96%) Ethanol
+GOO-37-MGE	goose	4/15/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+LAM-37-MGE	lambchop	4/15/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+FRA-37-MGE	franc	4/15/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+IVY-37-MGE	ivy	4/15/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+CHA-37-MGE	charles	4/15/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+GRO-37-MGE	grogu	4/15/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+MAR-37-MGE	marshmallow	4/15/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+BUD-37-MGE	buddy	4/15/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+JOA-37-MGE	joans	4/15/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+HEN-37-MGE	henry	4/15/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+GIN-37-MGE	ginger	4/15/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+HAM-38-MGE	hamlet	4/16/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+HER-38-MGE	hera	4/16/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+JAR-38-MGE	jarjarbinks	4/16/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+OPH-38-MGE	ophelia	4/16/23	SA		12	1	730	Molecular Grade (96%) Ethanol
+KUB-38-MGE	kubo	4/16/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+KOR-38-MGE	korra	4/16/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+WOL-38-MGE	wolverine	4/16/23	SA		12	2	730	Molecular Grade (96%) Ethanol
+IRI-38-MGE	iris	4/16/23	SA		12	3	730	Molecular Grade (96%) Ethanol
+GOO-38-MGE	goose	4/16/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+LAM-38-MGE	lambchop	4/16/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+FRA-38-MGE	franc	4/16/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+IVY-38-MGE	ivy	4/16/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+CHA-38-MGE	charles	4/16/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+GRO-38-MGE	grogu	4/16/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+MAR-38-MGE	marshmallow	4/16/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+BUD-38-MGE	buddy	4/16/23	SA		12	3	800	Molecular Grade (96%) Ethanol
+JOA-38-MGE	joans	4/16/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+HEN-38-MGE	henry	4/16/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+GIN-38-MGE	ginger	4/16/23	SA		12	2	800	Molecular Grade (96%) Ethanol
+HAM-39-MGE	hamlet	4/17/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+HER-39-MGE	hera	4/17/23	SA/GR		12	3	800	Molecular Grade (96%) Ethanol
+JAR-39-MGE	jarjarbinks	4/17/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+OPH-39-MGE	ophelia	4/17/23	SA/GR		12	1	800	Molecular Grade (96%) Ethanol
+KUB-39-MGE	kubo	4/17/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+KOR-39-MGE	korra	4/17/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+WOL-39-MGE	wolverine	4/17/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+IRI-39-MGE	iris	4/17/23	SA/GR		12	2	800	Molecular Grade (96%) Ethanol
+GOO-39-MGE	goose	4/17/23	SA/GR		12	2	730	Molecular Grade (96%) Ethanol
+LAM-39-MGE	lambchop	4/17/23	SA/GR		12	3	730	Molecular Grade (96%) Ethanol
+FRA-39-MGE	franc	4/17/23	SA/GR		12	2	730	Molecular Grade (96%) Ethanol
+IVY-39-MGE	ivy	4/17/23	SA/GR		12	3	730	Molecular Grade (96%) Ethanol
+CHA-39-MGE	charles	4/17/23	SA/GR		12	1	730	Molecular Grade (96%) Ethanol
+GRO-39-MGE	grogu	4/17/23	SA/GR		12	2	730	Molecular Grade (96%) Ethanol
+MAR-39-MGE	marshmallow	4/17/23	SA/GR		12	2	730	Molecular Grade (96%) Ethanol
+BUD-39-MGE	buddy	4/17/23	SA/GR		12	3	730	Molecular Grade (96%) Ethanol
+JOA-39-MGE	joans	4/17/23	SA/GR		13	3	730	Molecular Grade (96%) Ethanol
+HEN-39-MGE	henry	4/17/23	SA/GR		13	2	730	Molecular Grade (96%) Ethanol
+GIN-39-MGE	ginger	4/17/23	SA/GR		13	2	730	Molecular Grade (96%) Ethanol
+HAM-41-DRS	hamlet	4/19/23	SA		13	2	730	DNA/RNA Shield
+HAM-41-MGE	hamlet	4/19/23	SA		13	2	730	Molecular Grade (96%) Ethanol
+HER-41-DRS	hera	4/19/23	SA		13	2	730	DNA/RNA Shield
+HER-41-MGE	hera	4/19/23	SA		13	2	730	Molecular Grade (96%) Ethanol
+JAR-41-DRS	jarjarbinks	4/19/23	SA		13	2	730	DNA/RNA Shield
+JAR-41-MGE	jarjarbinks	4/19/23	SA		13	2	730	Molecular Grade (96%) Ethanol
+OPH-41-DRS	ophelia	4/19/23	SA		13	1	730	DNA/RNA Shield
+OPH-41-MGE	ophelia	4/19/23	SA		13	1	730	Molecular Grade (96%) Ethanol
+KUB-41-DRS	kubo	4/19/23	SA		13	2	730	DNA/RNA Shield
+KUB-41-MGE	kubo	4/19/23	SA		13	2	730	Molecular Grade (96%) Ethanol
+KOR-41-DRS	korra	4/19/23	SA		13	3	730	DNA/RNA Shield
+KOR-41-MGE	korra	4/19/23	SA		13	3	730	Molecular Grade (96%) Ethanol
+WOL-41-DRS	wolverine	4/19/23	SA		13	2	730	DNA/RNA Shield
+WOL-41-MGE	wolverine	4/19/23	SA		13	2	730	Molecular Grade (96%) Ethanol
+IRI-41-DRS	iris	4/19/23	SA		13	2	730	DNA/RNA Shield
+IRI-41-MGE	iris	4/19/23	SA		13	2	730	Molecular Grade (96%) Ethanol
+GOO-41-DRS	goose	4/19/23	SA		13	3	800	DNA/RNA Shield
+GOO-41-MGE	goose	4/19/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+LAM-41-DRS	lambchop	4/19/23	SA		13	3	800	DNA/RNA Shield
+LAM-41-MGE	lambchop	4/19/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+FRA-41-DRS	franc	4/19/23	SA		13	2	800	DNA/RNA Shield
+FRA-41-MGE	franc	4/19/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+IVY-41-DRS	ivy	4/19/23	SA		13	3	800	DNA/RNA Shield
+IVY-41-MGE	ivy	4/19/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+CHA-41-DRS	charles	4/19/23	SA		13	2	800	DNA/RNA Shield
+CHA-41-MGE	charles	4/19/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+GRO-41-DRS	grogu	4/19/23	SA		13	2	800	DNA/RNA Shield
+GRO-41-MGE	grogu	4/19/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+MAR-41-DRS	marshmallow	4/19/23	SA		13	3	800	DNA/RNA Shield
+MAR-41-MGE	marshmallow	4/19/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+BUD-41-DRS	buddy	4/19/23	SA		13	3	800	DNA/RNA Shield
+BUD-41-MGE	buddy	4/19/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+JOA-41-DRS	joans	4/19/23	SA		13	2	800	DNA/RNA Shield
+JOA-41-MGE	joans	4/19/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+HEN-41-DRS	henry	4/19/23	SA		13	2	800	DNA/RNA Shield
+HEN-41-MGE	henry	4/19/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+GIN-41-DRS	ginger	4/19/23	SA		13	2	800	DNA/RNA Shield
+GIN-41-MGE	ginger	4/19/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+GOO-42-DRS	goose	4/20/23	SA		13	3	800	DNA/RNA Shield
+GOO-42-MGE	goose	4/20/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+LAM-42-DRS	lambchop	4/20/23	SA		13	3	800	DNA/RNA Shield
+LAM-42-MGE	lambchop	4/20/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+FRA-42-DRS	franc	4/20/23	SA		13	2	800	DNA/RNA Shield
+FRA-42-MGE	franc	4/20/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+IVY-42-DRS	ivy	4/20/23	SA		13	4	800	DNA/RNA Shield
+IVY-42-MGE	ivy	4/20/23	SA		13	4	800	Molecular Grade (96%) Ethanol
+GRO-42-DRS	grogu	4/20/23	SA		13	2	800	DNA/RNA Shield
+GRO-42-MGE	grogu	4/20/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+MAR-42-DRS	marshmallow	4/20/23	SA		13	3	800	DNA/RNA Shield
+MAR-42-MGE	marshmallow	4/20/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+BUD-42-DRS	buddy	4/20/23	SA		13	3	800	DNA/RNA Shield
+BUD-42-MGE	buddy	4/20/23	SA		13	3	800	Molecular Grade (96%) Ethanol
+JOA-42-DRS	joans	4/20/23	SA		13	2	800	DNA/RNA Shield
+JOA-42-MGE	joans	4/20/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+HEN-42-DRS	henry	4/20/23	SA		13	2	800	DNA/RNA Shield
+HEN-42-MGE	henry	4/20/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+GIN-42-DRS	ginger	4/20/23	SA		13	2	800	DNA/RNA Shield
+GIN-42-MGE	ginger	4/20/23	SA		13	2	800	Molecular Grade (96%) Ethanol
+HAM-43-DRS	hamlet	4/21/23	SA/GR		13	2	700	DNA/RNA Shield
+HAM-43-MGE	hamlet	4/21/23	SA/GR		13	2	700	Molecular Grade (96%) Ethanol
+HER-43-DRS	hera	4/21/23	SA/GR		13	2	700	DNA/RNA Shield
+HER-43-MGE	hera	4/21/23	SA/GR		13	2	700	Molecular Grade (96%) Ethanol
+JAR-43-DRS	jarjarbinks	4/21/23	SA/GR		13	2	700	DNA/RNA Shield
+JAR-43-MGE	jarjarbinks	4/21/23	SA/GR		13	2	700	Molecular Grade (96%) Ethanol
+OPH-43-DRS	ophelia	4/21/23	SA/GR		14	2	700	DNA/RNA Shield
+OPH-43-MGE	ophelia	4/21/23	SA/GR		14	2	700	Molecular Grade (96%) Ethanol
+KUB-43-DRS	kubo	4/21/23	SA/GR		14	2	700	DNA/RNA Shield
+KUB-43-MGE	kubo	4/21/23	SA/GR		14	2	700	Molecular Grade (96%) Ethanol
+KOR-43-DRS	korra	4/21/23	SA/GR		14	3	700	DNA/RNA Shield
+KOR-43-MGE	korra	4/21/23	SA/GR		14	3	700	Molecular Grade (96%) Ethanol
+WOL-43-DRS	wolverine	4/21/23	SA/GR		14	2	700	DNA/RNA Shield
+WOL-43-MGE	wolverine	4/21/23	SA/GR		14	2	700	Molecular Grade (96%) Ethanol
+IRI-43-DRS	iris	4/21/23	SA/GR		14	2	700	DNA/RNA Shield
+IRI-43-MGE	iris	4/21/23	SA/GR		14	2	700	Molecular Grade (96%) Ethanol
+GOO-43-DRS	goose	4/21/23	SA/GR		14	2	730	DNA/RNA Shield
+GOO-43-MGE	goose	4/21/23	SA/GR		14	2	730	Molecular Grade (96%) Ethanol
+LAM-43-DRS	lambchop	4/21/23	SA/GR		14	3	730	DNA/RNA Shield
+LAM-43-MGE	lambchop	4/21/23	SA/GR		14	3	730	Molecular Grade (96%) Ethanol
+FRA-43-DRS	franc	4/21/23	SA/GR		14	2	730	DNA/RNA Shield
+FRA-43-MGE	franc	4/21/23	SA/GR		14	2	730	Molecular Grade (96%) Ethanol
+IVY-43-DRS	ivy	4/21/23	SA/GR		14	3	730	DNA/RNA Shield
+IVY-43-MGE	ivy	4/21/23	SA/GR		14	3	730	Molecular Grade (96%) Ethanol
+CHA-43-DRS	charles	4/21/23	SA/GR		14	3	730	DNA/RNA Shield
+CHA-43-MGE	charles	4/21/23	SA/GR		14	3	730	Molecular Grade (96%) Ethanol
+GRO-43-DRS	grogu	4/21/23	SA/GR		14	2	730	DNA/RNA Shield
+GRO-43-MGE	grogu	4/21/23	SA/GR		14	2	730	Molecular Grade (96%) Ethanol
+MAR-43-DRS	marshmallow	4/21/23	SA/GR		14	3	730	DNA/RNA Shield
+MAR-43-MGE	marshmallow	4/21/23	SA/GR		14	3	730	Molecular Grade (96%) Ethanol
+BUD-43-DRS	buddy	4/21/23	SA/GR		14	3	730	DNA/RNA Shield
+BUD-43-MGE	buddy	4/21/23	SA/GR		14	3	730	Molecular Grade (96%) Ethanol
+JOA-43-DRS	joans	4/21/23	SA/GR		14	2	730	DNA/RNA Shield
+JOA-43-MGE	joans	4/21/23	SA/GR		14	2	730	Molecular Grade (96%) Ethanol
+HEN-43-DRS	henry	4/21/23	SA/GR		14	2	730	DNA/RNA Shield
+HEN-43-MGE	henry	4/21/23	SA/GR		14	2	730	Molecular Grade (96%) Ethanol
+GIN-43-DRS	ginger	4/21/23	SA/GR		14	2	730	DNA/RNA Shield
+GIN-43-MGE	ginger	4/21/23	SA/GR		14	2	730	Molecular Grade (96%) Ethanol
+HAM-44-DRS	hamlet	4/22/23	SA		14	2	730	DNA/RNA Shield
+HAM-44-MGE	hamlet	4/22/23	SA		14	2	730	Molecular Grade (96%) Ethanol
+HER-44-DRS	hera	4/22/23	SA		14	2	730	DNA/RNA Shield
+HER-44-MGE	hera	4/22/23	SA		14	2	730	Molecular Grade (96%) Ethanol
+JAR-44-DRS	jarjarbinks	4/22/23	SA		14	2	730	DNA/RNA Shield
+JAR-44-MGE	jarjarbinks	4/22/23	SA		14	2	730	Molecular Grade (96%) Ethanol
+OPH-44-DRS	ophelia	4/22/23	SA		14	2	730	DNA/RNA Shield
+OPH-44-MGE	ophelia	4/22/23	SA		14	2	730	Molecular Grade (96%) Ethanol
+KUB-44-DRS	kubo	4/22/23	SA		14	3	730	DNA/RNA Shield
+KUB-44-MGE	kubo	4/22/23	SA		14	3	730	Molecular Grade (96%) Ethanol
+KOR-44-DRS	korra	4/22/23	SA		14	3	730	DNA/RNA Shield
+KOR-44-MGE	korra	4/22/23	SA		14	3	730	Molecular Grade (96%) Ethanol
+WOL-44-DRS	wolverine	4/22/23	SA		14	2	730	DNA/RNA Shield
+WOL-44-MGE	wolverine	4/22/23	SA		14	2	730	Molecular Grade (96%) Ethanol
+IRI-44-DRS	iris	4/22/23	SA		14	2	730	DNA/RNA Shield
+IRI-44-MGE	iris	4/22/23	SA		14	2	730	Molecular Grade (96%) Ethanol
+GOO-44-DRS	goose	4/22/23	SA		14	3	800	DNA/RNA Shield
+GOO-44-MGE	goose	4/22/23	SA		14	3	800	Molecular Grade (96%) Ethanol
+LAM-44-DRS	lambchop	4/22/23	SA		14	3	800	DNA/RNA Shield
+LAM-44-MGE	lambchop	4/22/23	SA		14	3	800	Molecular Grade (96%) Ethanol
+FRA-44-DRS	franc	4/22/23	SA		14	3	800	DNA/RNA Shield
+FRA-44-MGE	franc	4/22/23	SA		14	3	800	Molecular Grade (96%) Ethanol
+IVY-44-DRS	ivy	4/22/23	SA		14	3	800	DNA/RNA Shield
+IVY-44-MGE	ivy	4/22/23	SA		14	3	800	Molecular Grade (96%) Ethanol
+CHA-44-DRS	charles	4/22/23	SA		14	2	800	DNA/RNA Shield
+CHA-44-MGE	charles	4/22/23	SA		14	2	800	Molecular Grade (96%) Ethanol
+GRO-44-DRS	grogu	4/22/23	SA		14	3	800	DNA/RNA Shield
+GRO-44-MGE	grogu	4/22/23	SA		14	3	800	Molecular Grade (96%) Ethanol
+MAR-44-DRS	marshmallow	4/22/23	SA		14	3	800	DNA/RNA Shield
+MAR-44-MGE	marshmallow	4/22/23	SA		14	3	800	Molecular Grade (96%) Ethanol
+BUD-44-DRS	buddy	4/22/23	SA		14	3	800	DNA/RNA Shield
+BUD-44-MGE	buddy	4/22/23	SA		14	3	800	Molecular Grade (96%) Ethanol
+JOA-44-DRS	joans	4/22/23	SA		14	2	800	DNA/RNA Shield
+JOA-44-MGE	joans	4/22/23	SA		14	2	800	Molecular Grade (96%) Ethanol
+HEN-44-DRS	henry	4/22/23	SA		15	3	800	DNA/RNA Shield
+HEN-44-MGE	henry	4/22/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+GIN-44-DRS	ginger	4/22/23	SA		15	3	800	DNA/RNA Shield
+GIN-44-MGE	ginger	4/22/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+HAM-45-DRS	hamlet	4/23/23	SA		15	2	730	DNA/RNA Shield
+HAM-45-MGE	hamlet	4/23/23	SA		15	2	730	Molecular Grade (96%) Ethanol
+HER-45-DRS	hera	4/23/23	SA		15	2	730	DNA/RNA Shield
+HER-45-MGE	hera	4/23/23	SA		15	2	730	Molecular Grade (96%) Ethanol
+JAR-45-DRS	jarjarbinks	4/23/23	SA		15	1	730	DNA/RNA Shield
+JAR-45-MGE	jarjarbinks	4/23/23	SA		15	1	730	Molecular Grade (96%) Ethanol
+OPH-45-DRS	ophelia	4/23/23	SA		15	2	730	DNA/RNA Shield
+OPH-45-MGE	ophelia	4/23/23	SA		15	2	730	Molecular Grade (96%) Ethanol
+KUB-45-DRS	kubo	4/23/23	SA		15	1	730	DNA/RNA Shield
+KUB-45-MGE	kubo	4/23/23	SA		15	1	730	Molecular Grade (96%) Ethanol
+KOR-45-DRS	korra	4/23/23	SA		15	3	730	DNA/RNA Shield
+KOR-45-MGE	korra	4/23/23	SA		15	3	730	Molecular Grade (96%) Ethanol
+WOL-45-DRS	wolverine	4/23/23	SA		15	2	730	DNA/RNA Shield
+WOL-45-MGE	wolverine	4/23/23	SA		15	2	730	Molecular Grade (96%) Ethanol
+IRI-45-DRS	iris	4/23/23	SA		15	2	730	DNA/RNA Shield
+IRI-45-MGE	iris	4/23/23	SA		15	2	730	Molecular Grade (96%) Ethanol
+GOO-45-DRS	goose	4/23/23	SA		15	3	800	DNA/RNA Shield
+GOO-45-MGE	goose	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+LAM-45-DRS	lambchop	4/23/23	SA		15	3	800	DNA/RNA Shield
+LAM-45-MGE	lambchop	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+FRA-45-DRS	franc	4/23/23	SA		15	3	800	DNA/RNA Shield
+FRA-45-MGE	franc	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+IVY-45-DRS	ivy	4/23/23	SA		15	3	800	DNA/RNA Shield
+IVY-45-MGE	ivy	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+CHA-45-DRS	charles	4/23/23	SA		15	3	800	DNA/RNA Shield
+CHA-45-MGE	charles	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+GRO-45-DRS	grogu	4/23/23	SA		15	3	800	DNA/RNA Shield
+GRO-45-MGE	grogu	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+MAR-45-DRS	marshmallow	4/23/23	SA		15	3	800	DNA/RNA Shield
+MAR-45-MGE	marshmallow	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+BUD-45-DRS	buddy	4/23/23	SA		15	3	800	DNA/RNA Shield
+BUD-45-MGE	buddy	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+JOA-45-DRS	joans	4/23/23	SA		15	3	800	DNA/RNA Shield
+JOA-45-MGE	joans	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+HEN-45-DRS	henry	4/23/23	SA		15	3	800	DNA/RNA Shield
+HEN-45-MGE	henry	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+GIN-45-DRS	ginger	4/23/23	SA		15	3	800	DNA/RNA Shield
+GIN-45-MGE	ginger	4/23/23	SA		15	3	800	Molecular Grade (96%) Ethanol
+HAM-46-DRS	hamlet	4/24/23	SA/GR		15	2	730	DNA/RNA Shield
+HAM-46-MGE	hamlet	4/24/23	SA/GR		15	2	730	Molecular Grade (96%) Ethanol
+HER-46-DRS	hera	4/24/23	SA/GR		15	2	730	DNA/RNA Shield
+HER-46-MGE	hera	4/24/23	SA/GR		15	2	730	Molecular Grade (96%) Ethanol
+JAR-46-DRS	jarjarbinks	4/24/23	SA/GR		15	2	730	DNA/RNA Shield
+JAR-46-MGE	jarjarbinks	4/24/23	SA/GR		15	2	730	Molecular Grade (96%) Ethanol
+OPH-46-DRS	ophelia	4/24/23	SA/GR		15	1	730	DNA/RNA Shield
+OPH-46-MGE	ophelia	4/24/23	SA/GR		15	1	730	Molecular Grade (96%) Ethanol
+KUB-46-DRS	kubo	4/24/23	SA/GR		15	2	730	DNA/RNA Shield
+KUB-46-MGE	kubo	4/24/23	SA/GR		15	2	730	Molecular Grade (96%) Ethanol
+KOR-46-DRS	korra	4/24/23	SA/GR		15	3	730	DNA/RNA Shield
+KOR-46-MGE	korra	4/24/23	SA/GR		15	3	730	Molecular Grade (96%) Ethanol
+WOL-46-DRS	wolverine	4/24/23	SA/GR		15	2	730	DNA/RNA Shield
+WOL-46-MGE	wolverine	4/24/23	SA/GR		15	2	730	Molecular Grade (96%) Ethanol
+IRI-46-DRS	iris	4/24/23	SA/GR		15	3	730	DNA/RNA Shield
+IRI-46-MGE	iris	4/24/23	SA/GR		15	3	730	Molecular Grade (96%) Ethanol
+GOO-46-DRS	goose	4/24/23	SA/GR		15	3	800	DNA/RNA Shield
+GOO-46-MGE	goose	4/24/23	SA/GR		15	3	800	Molecular Grade (96%) Ethanol
+LAM-46-DRS	lambchop	4/24/23	SA/GR		15	3	800	DNA/RNA Shield
+LAM-46-MGE	lambchop	4/24/23	SA/GR		15	3	800	Molecular Grade (96%) Ethanol
+FRA-46-DRS	franc	4/24/23	SA/GR		15	2	800	DNA/RNA Shield
+FRA-46-MGE	franc	4/24/23	SA/GR		15	2	800	Molecular Grade (96%) Ethanol
+IVY-46-DRS	ivy	4/24/23	SA/GR		15	3	800	DNA/RNA Shield
+IVY-46-MGE	ivy	4/24/23	SA/GR		15	3	800	Molecular Grade (96%) Ethanol
+CHA-46-DRS	charles	4/24/23	SA/GR		16	2	800	DNA/RNA Shield
+CHA-46-MGE	charles	4/24/23	SA/GR		16	2	800	Molecular Grade (96%) Ethanol
+GRO-46-DRS	grogu	4/24/23	SA/GR		16	3	800	DNA/RNA Shield
+GRO-46-MGE	grogu	4/24/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+MAR-46-DRS	marshmallow	4/24/23	SA/GR		16	3	800	DNA/RNA Shield
+MAR-46-MGE	marshmallow	4/24/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+BUD-46-DRS	buddy	4/24/23	SA/GR		16	3	800	DNA/RNA Shield
+BUD-46-MGE	buddy	4/24/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+JOA-46-DRS	joans	4/24/23	SA/GR		16	3	800	DNA/RNA Shield
+JOA-46-MGE	joans	4/24/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+HEN-46-DRS	henry	4/24/23	SA/GR		16	3	800	DNA/RNA Shield
+HEN-46-MGE	henry	4/24/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+GIN-46-DRS	ginger	4/24/23	SA/GR		16	3	800	DNA/RNA Shield
+GIN-46-MGE	ginger	4/24/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+FRA-47-DRS	franc	4/25/23	SA		16	3	730	DNA/RNA Shield
+FRA-47-MGE	franc	4/25/23	SA		16	3	730	Molecular Grade (96%) Ethanol
+IVY-47-DRS	ivy	4/25/23	SA		16	2	730	DNA/RNA Shield
+IVY-47-MGE	ivy	4/25/23	SA		16	2	730	Molecular Grade (96%) Ethanol
+CHA-47-DRS	charles	4/25/23	SA		16	3	730	DNA/RNA Shield
+CHA-47-MGE	charles	4/25/23	SA		16	3	730	Molecular Grade (96%) Ethanol
+GRO-47-DRS	grogu	4/25/23	SA		16	3	730	DNA/RNA Shield
+GRO-47-MGE	grogu	4/25/23	SA		16	3	730	Molecular Grade (96%) Ethanol
+MAR-47-DRS	marshmallow	4/25/23	SA		16	2	730	DNA/RNA Shield
+MAR-47-MGE	marshmallow	4/25/23	SA		16	2	730	Molecular Grade (96%) Ethanol
+BUD-47-DRS	buddy	4/25/23	SA		16	3	730	DNA/RNA Shield
+BUD-47-MGE	buddy	4/25/23	SA		16	3	730	Molecular Grade (96%) Ethanol
+JOA-47-DRS	joans	4/25/23	SA		16	3	730	DNA/RNA Shield
+JOA-47-MGE	joans	4/25/23	SA		16	3	730	Molecular Grade (96%) Ethanol
+HEN-47-DRS	henry	4/25/23	SA		16	3	730	DNA/RNA Shield
+HEN-47-MGE	henry	4/25/23	SA		16	3	730	Molecular Grade (96%) Ethanol
+GIN-47-DRS	ginger	4/25/23	SA		16	2	730	DNA/RNA Shield
+GIN-47-MGE	ginger	4/25/23	SA		16	2	730	Molecular Grade (96%) Ethanol
+HAM-48-DRS	hamlet	4/26/23	SA/GR		16	2	730	DNA/RNA Shield
+HAM-48-MGE	hamlet	4/26/23	SA/GR		16	2	730	Molecular Grade (96%) Ethanol
+HER-48-DRS	hera	4/26/23	SA/GR		16	2	730	DNA/RNA Shield
+HER-48-MGE	hera	4/26/23	SA/GR		16	2	730	Molecular Grade (96%) Ethanol
+JAR-48-DRS	jarjarbinks	4/26/23	SA/GR		16	2	730	DNA/RNA Shield
+JAR-48-MGE	jarjarbinks	4/26/23	SA/GR		16	2	730	Molecular Grade (96%) Ethanol
+OPH-48-DRS	ophelia	4/26/23	SA/GR		16	1	730	DNA/RNA Shield
+OPH-48-MGE	ophelia	4/26/23	SA/GR		16	1	730	Molecular Grade (96%) Ethanol
+KUB-48-DRS	kubo	4/26/23	SA/GR		16	2	730	DNA/RNA Shield
+KUB-48-MGE	kubo	4/26/23	SA/GR		16	2	730	Molecular Grade (96%) Ethanol
+KOR-48-DRS	korra	4/26/23	SA/GR		16	3	730	DNA/RNA Shield
+KOR-48-MGE	korra	4/26/23	SA/GR		16	3	730	Molecular Grade (96%) Ethanol
+WOL-48-DRS	wolverine	4/26/23	SA/GR		16	2	730	DNA/RNA Shield
+WOL-48-MGE	wolverine	4/26/23	SA/GR		16	2	730	Molecular Grade (96%) Ethanol
+IRI-48-DRS	iris	4/26/23	SA/GR		16	3	730	DNA/RNA Shield
+IRI-48-MGE	iris	4/26/23	SA/GR		16	3	730	Molecular Grade (96%) Ethanol
+GOO-48-DRS	goose	4/26/23	SA/GR		16	3	800	DNA/RNA Shield
+GOO-48-MGE	goose	4/26/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+LAM-48-DRS	lambchop	4/26/23	SA/GR		16	3	800	DNA/RNA Shield
+LAM-48-MGE	lambchop	4/26/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+FRA-48-DRS	franc	4/26/23	SA/GR		16	3	800	DNA/RNA Shield
+FRA-48-MGE	franc	4/26/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+IVY-48-DRS	ivy	4/26/23	SA/GR		16	4	800	DNA/RNA Shield
+IVY-48-MGE	ivy	4/26/23	SA/GR		16	4	800	Molecular Grade (96%) Ethanol
+CHA-48-DRS	charles	4/26/23	SA/GR		16	3	800	DNA/RNA Shield
+CHA-48-MGE	charles	4/26/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+GRO-48-DRS	grogu	4/26/23	SA/GR		16	3	800	DNA/RNA Shield
+GRO-48-MGE	grogu	4/26/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+MAR-48-DRS	marshmallow	4/26/23	SA/GR		16	3	800	DNA/RNA Shield
+MAR-48-MGE	marshmallow	4/26/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+BUD-48-DRS	buddy	4/26/23	SA/GR		16	3	800	DNA/RNA Shield
+BUD-48-MGE	buddy	4/26/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+JOA-48-DRS	joans	4/26/23	SA/GR		16	3	800	DNA/RNA Shield
+JOA-48-MGE	joans	4/26/23	SA/GR		16	3	800	Molecular Grade (96%) Ethanol
+HEN-48-DRS	henry	4/26/23	SA/GR		17	3	800	DNA/RNA Shield
+HEN-48-MGE	henry	4/26/23	SA/GR		17	3	800	Molecular Grade (96%) Ethanol
+GIN-48-DRS	ginger	4/26/23	SA/GR		17	2	800	DNA/RNA Shield
+GIN-48-MGE	ginger	4/26/23	SA/GR		17	2	800	Molecular Grade (96%) Ethanol
+HAM-49-DRS	hamlet	4/27/23	SA		17	2	730	DNA/RNA Shield
+HAM-49-MGE	hamlet	4/27/23	SA		17	2	730	Molecular Grade (96%) Ethanol
+HER-49-DRS	hera	4/27/23	SA		17	2	730	DNA/RNA Shield
+HER-49-MGE	hera	4/27/23	SA		17	2	730	Molecular Grade (96%) Ethanol
+JAR-49-DRS	jarjarbinks	4/27/23	SA		17	3	730	DNA/RNA Shield
+JAR-49-MGE	jarjarbinks	4/27/23	SA		17	3	730	Molecular Grade (96%) Ethanol
+OPH-49-DRS	ophelia	4/27/23	SA		17	2	730	DNA/RNA Shield
+OPH-49-MGE	ophelia	4/27/23	SA		17	2	730	Molecular Grade (96%) Ethanol
+KUB-49-DRS	kubo	4/27/23	SA		17	2	730	DNA/RNA Shield
+KUB-49-MGE	kubo	4/27/23	SA		17	2	730	Molecular Grade (96%) Ethanol
+KOR-49-DRS	korra	4/27/23	SA		17	3	730	DNA/RNA Shield
+KOR-49-MGE	korra	4/27/23	SA		17	3	730	Molecular Grade (96%) Ethanol
+WOL-49-DRS	wolverine	4/27/23	SA		17	2	730	DNA/RNA Shield
+WOL-49-MGE	wolverine	4/27/23	SA		17	2	730	Molecular Grade (96%) Ethanol
+IRI-49-DRS	iris	4/27/23	SA		17	3	730	DNA/RNA Shield
+IRI-49-MGE	iris	4/27/23	SA		17	3	730	Molecular Grade (96%) Ethanol
+GOO-49-DRS	goose	4/27/23	SA		17	2	800	DNA/RNA Shield
+GOO-49-MGE	goose	4/27/23	SA		17	2	800	Molecular Grade (96%) Ethanol
+LAM-49-DRS	lambchop	4/27/23	SA		17	3	800	DNA/RNA Shield
+LAM-49-MGE	lambchop	4/27/23	SA		17	3	800	Molecular Grade (96%) Ethanol
+FRA-49-DRS	franc	4/27/23	SA		17	3	800	DNA/RNA Shield
+FRA-49-MGE	franc	4/27/23	SA		17	3	800	Molecular Grade (96%) Ethanol
+IVY-49-DRS	ivy	4/27/23	SA		17	3	800	DNA/RNA Shield
+IVY-49-MGE	ivy	4/27/23	SA		17	3	800	Molecular Grade (96%) Ethanol
+CHA-49-DRS	charles	4/27/23	SA		17	5	800	DNA/RNA Shield
+CHA-49-MGE	charles	4/27/23	SA		17	5	800	Molecular Grade (96%) Ethanol
+GRO-49-DRS	grogu	4/27/23	SA		17	3	800	DNA/RNA Shield
+GRO-49-MGE	grogu	4/27/23	SA		17	3	800	Molecular Grade (96%) Ethanol
+MAR-49-DRS	marshmallow	4/27/23	SA		17	2	800	DNA/RNA Shield
+MAR-49-MGE	marshmallow	4/27/23	SA		17	2	800	Molecular Grade (96%) Ethanol
+BUD-49-DRS	buddy	4/27/23	SA		17	3	800	DNA/RNA Shield
+BUD-49-MGE	buddy	4/27/23	SA		17	3	800	Molecular Grade (96%) Ethanol
+JOA-49-DRS	joans	4/27/23	SA		17	2	800	DNA/RNA Shield
+JOA-49-MGE	joans	4/27/23	SA		17	2	800	Molecular Grade (96%) Ethanol
+HEN-49-DRS	henry	4/27/23	SA		17	3	800	DNA/RNA Shield
+HEN-49-MGE	henry	4/27/23	SA		17	3	800	Molecular Grade (96%) Ethanol
+GIN-49-DRS	ginger	4/27/23	SA		17	2	800	DNA/RNA Shield
+GIN-49-MGE	ginger	4/27/23	SA		17	2	800	Molecular Grade (96%) Ethanol
+HAM-50-DRS	hamlet	4/28/23	SA/GR		17	2	730	DNA/RNA Shield
+HAM-50-MGE	hamlet	4/28/23	SA/GR		17	2	730	Molecular Grade (96%) Ethanol
+HER-50-DRS	hera	4/28/23	SA/GR		17	3	730	DNA/RNA Shield
+HER-50-MGE	hera	4/28/23	SA/GR		17	3	730	Molecular Grade (96%) Ethanol
+JAR-50-DRS	jarjarbinks	4/28/23	SA/GR		17	3	730	DNA/RNA Shield
+JAR-50-MGE	jarjarbinks	4/28/23	SA/GR		17	3	730	Molecular Grade (96%) Ethanol
+OPH-50-DRS	ophelia	4/28/23	SA/GR		17	1	730	DNA/RNA Shield
+OPH-50-MGE	ophelia	4/28/23	SA/GR		17	1	730	Molecular Grade (96%) Ethanol
+KUB-50-DRS	kubo	4/28/23	SA/GR		17	2	730	DNA/RNA Shield
+KUB-50-MGE	kubo	4/28/23	SA/GR		17	2	730	Molecular Grade (96%) Ethanol
+KOR-50-DRS	korra	4/28/23	SA/GR		17	3	730	DNA/RNA Shield
+KOR-50-MGE	korra	4/28/23	SA/GR		17	3	730	Molecular Grade (96%) Ethanol
+WOL-50-DRS	wolverine	4/28/23	SA/GR		17	2	730	DNA/RNA Shield
+WOL-50-MGE	wolverine	4/28/23	SA/GR		17	2	730	Molecular Grade (96%) Ethanol
+IRI-50-DRS	iris	4/28/23	SA/GR		17	3	730	DNA/RNA Shield
+IRI-50-MGE	iris	4/28/23	SA/GR		17	3	730	Molecular Grade (96%) Ethanol
+GOO-50-DRS	goose	4/28/23	SA/GR		17	2	800	DNA/RNA Shield
+GOO-50-MGE	goose	4/28/23	SA/GR		17	2	800	Molecular Grade (96%) Ethanol
+LAM-50-DRS	lambchop	4/28/23	SA/GR		17	3	800	DNA/RNA Shield
+LAM-50-MGE	lambchop	4/28/23	SA/GR		17	3	800	Molecular Grade (96%) Ethanol
+FRA-50-DRS	franc	4/28/23	SA/GR		18	3	800	DNA/RNA Shield
+FRA-50-MGE	franc	4/28/23	SA/GR		18	3	800	Molecular Grade (96%) Ethanol
+IVY-50-DRS	ivy	4/28/23	SA/GR		18	3	800	DNA/RNA Shield
+IVY-50-MGE	ivy	4/28/23	SA/GR		18	3	800	Molecular Grade (96%) Ethanol
+CHA-50-DRS	charles	4/28/23	SA/GR		18	3	800	DNA/RNA Shield
+CHA-50-MGE	charles	4/28/23	SA/GR		18	3	800	Molecular Grade (96%) Ethanol
+GRO-50-DRS	grogu	4/28/23	SA/GR		18	3	800	DNA/RNA Shield
+GRO-50-MGE	grogu	4/28/23	SA/GR		18	3	800	Molecular Grade (96%) Ethanol
+MAR-50-DRS	marshmallow	4/28/23	SA/GR		18	3	800	DNA/RNA Shield
+MAR-50-MGE	marshmallow	4/28/23	SA/GR		18	3	800	Molecular Grade (96%) Ethanol
+BUD-50-DRS	buddy	4/28/23	SA/GR		18	2	800	DNA/RNA Shield
+BUD-50-MGE	buddy	4/28/23	SA/GR		18	2	800	Molecular Grade (96%) Ethanol
+JOA-50-DRS	joans	4/28/23	SA/GR		18	3	800	DNA/RNA Shield
+JOA-50-MGE	joans	4/28/23	SA/GR		18	3	800	Molecular Grade (96%) Ethanol
+HEN-50-DRS	henry	4/28/23	SA/GR		18	3	800	DNA/RNA Shield
+HEN-50-MGE	henry	4/28/23	SA/GR		18	3	800	Molecular Grade (96%) Ethanol
+GIN-50-DRS	ginger	4/28/23	SA/GR		18	3	800	DNA/RNA Shield
+GIN-50-MGE	ginger	4/28/23	SA/GR		18	3	800	Molecular Grade (96%) Ethanol
+GOO-51-DRS	goose	4/29/23	SA		18	3	800	DNA/RNA Shield
+GOO-51-MGE	goose	4/29/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+LAM-51-DRS	lambchop	4/29/23	SA		18	3	800	DNA/RNA Shield
+LAM-51-MGE	lambchop	4/29/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+FRA-51-DRS	franc	4/29/23	SA		18	3	800	DNA/RNA Shield
+FRA-51-MGE	franc	4/29/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+IVY-51-DRS	ivy	4/29/23	SA		18	5	800	DNA/RNA Shield
+IVY-51-MGE	ivy	4/29/23	SA		18	5	800	Molecular Grade (96%) Ethanol
+CHA-51-DRS	charles	4/29/23	SA		18	3	800	DNA/RNA Shield
+CHA-51-MGE	charles	4/29/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+GRO-51-DRS	grogu	4/29/23	SA		18	3	800	DNA/RNA Shield
+GRO-51-MGE	grogu	4/29/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+MAR-51-DRS	marshmallow	4/29/23	SA		18	3	800	DNA/RNA Shield
+MAR-51-MGE	marshmallow	4/29/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+BUD-51-DRS	buddy	4/29/23	SA		18	3	800	DNA/RNA Shield
+BUD-51-MGE	buddy	4/29/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+JOA-51-DRS	joans	4/29/23	SA		18	3	800	DNA/RNA Shield
+JOA-51-MGE	joans	4/29/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+HEN-51-DRS	henry	4/29/23	SA		18	4	800	DNA/RNA Shield
+HEN-51-MGE	henry	4/29/23	SA		18	4	800	Molecular Grade (96%) Ethanol
+GIN-51-DRS	ginger	4/29/23	SA		18	2	800	DNA/RNA Shield
+GIN-51-MGE	ginger	4/29/23	SA		18	2	800	Molecular Grade (96%) Ethanol
+HAM-52-DRS	hamlet	4/30/23	SA		18	2	730	DNA/RNA Shield
+HAM-52-MGE	hamlet	4/30/23	SA		18	2	730	Molecular Grade (96%) Ethanol
+HER-52-DRS	hera	4/30/23	SA		18	2	730	DNA/RNA Shield
+HER-52-MGE	hera	4/30/23	SA		18	2	730	Molecular Grade (96%) Ethanol
+JAR-52-DRS	jarjarbinks	4/30/23	SA		18	2	730	DNA/RNA Shield
+JAR-52-MGE	jarjarbinks	4/30/23	SA		18	2	730	Molecular Grade (96%) Ethanol
+OPH-52-DRS	ophelia	4/30/23	SA		18	1	730	DNA/RNA Shield
+OPH-52-MGE	ophelia	4/30/23	SA		18	1	730	Molecular Grade (96%) Ethanol
+KUB-52-DRS	kubo	4/30/23	SA		18	2	730	DNA/RNA Shield
+KUB-52-MGE	kubo	4/30/23	SA		18	2	730	Molecular Grade (96%) Ethanol
+KOR-52-DRS	korra	4/30/23	SA		18	3	730	DNA/RNA Shield
+KOR-52-MGE	korra	4/30/23	SA		18	3	730	Molecular Grade (96%) Ethanol
+WOL-52-DRS	wolverine	4/30/23	SA		18	3	730	DNA/RNA Shield
+WOL-52-MGE	wolverine	4/30/23	SA		18	3	730	Molecular Grade (96%) Ethanol
+IRI-52-DRS	iris	4/30/23	SA		18	2	730	DNA/RNA Shield
+IRI-52-MGE	iris	4/30/23	SA		18	2	730	Molecular Grade (96%) Ethanol
+GOO-52-DRS	goose	4/30/23	SA		18	3	800	DNA/RNA Shield
+GOO-52-MGE	goose	4/30/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+LAM-52-DRS	lambchop	4/30/23	SA		18	3	800	DNA/RNA Shield
+LAM-52-MGE	lambchop	4/30/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+FRA-52-DRS	franc	4/30/23	SA		18	2	800	DNA/RNA Shield
+FRA-52-MGE	franc	4/30/23	SA		18	2	800	Molecular Grade (96%) Ethanol
+IVY-52-DRS	ivy	4/30/23	SA		18	3	800	DNA/RNA Shield
+IVY-52-MGE	ivy	4/30/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+CHA-52-DRS	charles	4/30/23	SA		18	3	800	DNA/RNA Shield
+CHA-52-MGE	charles	4/30/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+GRO-52-DRS	grogu	4/30/23	SA		18	3	800	DNA/RNA Shield
+GRO-52-MGE	grogu	4/30/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+MAR-52-DRS	marshmallow	4/30/23	SA		18	3	800	DNA/RNA Shield
+MAR-52-MGE	marshmallow	4/30/23	SA		18	3	800	Molecular Grade (96%) Ethanol
+BUD-52-DRS	buddy	4/30/23	SA		19	4	800	DNA/RNA Shield
+BUD-52-MGE	buddy	4/30/23	SA		19	4	800	Molecular Grade (96%) Ethanol
+JOA-52-DRS	joans	4/30/23	SA		19	3	800	DNA/RNA Shield
+JOA-52-MGE	joans	4/30/23	SA		19	3	800	Molecular Grade (96%) Ethanol
+HEN-52-DRS	henry	4/30/23	SA		19	2	800	DNA/RNA Shield
+HEN-52-MGE	henry	4/30/23	SA		19	2	800	Molecular Grade (96%) Ethanol
+GIN-52-DRS	ginger	4/30/23	SA		19	2	800	DNA/RNA Shield
+GIN-52-MGE	ginger	4/30/23	SA		19	2	800	Molecular Grade (96%) Ethanol
+HAM-53-DRS	hamlet	5/1/23	SA/GR		19	2	730	DNA/RNA Shield
+HAM-53-MGE	hamlet	5/1/23	SA/GR		19	2	730	Molecular Grade (96%) Ethanol
+HER-53-DRS	hera	5/1/23	SA/GR		19	3	730	DNA/RNA Shield
+HER-53-MGE	hera	5/1/23	SA/GR		19	3	730	Molecular Grade (96%) Ethanol
+JAR-53-DRS	jarjarbinks	5/1/23	SA/GR		19	3	730	DNA/RNA Shield
+JAR-53-MGE	jarjarbinks	5/1/23	SA/GR		19	3	730	Molecular Grade (96%) Ethanol
+OPH-53-DRS	ophelia	5/1/23	SA/GR		19	1	730	DNA/RNA Shield
+OPH-53-MGE	ophelia	5/1/23	SA/GR		19	1	730	Molecular Grade (96%) Ethanol
+KUB-53-DRS	kubo	5/1/23	SA/GR		19	2	730	DNA/RNA Shield
+KUB-53-MGE	kubo	5/1/23	SA/GR		19	2	730	Molecular Grade (96%) Ethanol
+KOR-53-DRS	korra	5/1/23	SA/GR		19	3	730	DNA/RNA Shield
+KOR-53-MGE	korra	5/1/23	SA/GR		19	3	730	Molecular Grade (96%) Ethanol
+WOL-53-DRS	wolverine	5/1/23	SA/GR		19	2	730	DNA/RNA Shield
+WOL-53-MGE	wolverine	5/1/23	SA/GR		19	2	730	Molecular Grade (96%) Ethanol
+IRI-53-DRS	iris	5/1/23	SA/GR		19	3	730	DNA/RNA Shield
+IRI-53-MGE	iris	5/1/23	SA/GR		19	3	730	Molecular Grade (96%) Ethanol
+GOO-53-DRS	goose	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+GOO-53-MGE	goose	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+LAM-53-DRS	lambchop	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+LAM-53-MGE	lambchop	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+FRA-53-DRS	franc	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+FRA-53-MGE	franc	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+IVY-53-DRS	ivy	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+IVY-53-MGE	ivy	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+CHA-53-DRS	charles	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+CHA-53-MGE	charles	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+GRO-53-DRS	grogu	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+GRO-53-MGE	grogu	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+MAR-53-DRS	marshmallow	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+MAR-53-MGE	marshmallow	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+BUD-53-DRS	buddy	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+BUD-53-MGE	buddy	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+JOA-53-DRS	joans	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+JOA-53-MGE	joans	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+HEN-53-DRS	henry	5/1/23	SA/GR		19	3	800	DNA/RNA Shield
+HEN-53-MGE	henry	5/1/23	SA/GR		19	3	800	Molecular Grade (96%) Ethanol
+GIN-53-DRS	ginger	5/1/23	SA/GR		19	2	800	DNA/RNA Shield
+GIN-53-MGE	ginger	5/1/23	SA/GR		19	2	800	Molecular Grade (96%) Ethanol
+FRA-54-DRS	franc	5/2/23	SA		19	3	730	DNA/RNA Shield
+FRA-54-MGE	franc	5/2/23	SA		19	3	730	Molecular Grade (96%) Ethanol
+IVY-54-DRS	ivy	5/2/23	SA		19	2	730	DNA/RNA Shield
+IVY-54-MGE	ivy	5/2/23	SA		19	2	730	Molecular Grade (96%) Ethanol
+CHA-54-DRS	charles	5/2/23	SA		19	3	730	DNA/RNA Shield
+CHA-54-MGE	charles	5/2/23	SA		19	3	730	Molecular Grade (96%) Ethanol
+GRO-54-DRS	grogu	5/2/23	SA		19	3	730	DNA/RNA Shield
+GRO-54-MGE	grogu	5/2/23	SA		19	3	730	Molecular Grade (96%) Ethanol
+MAR-54-DRS	marshmallow	5/2/23	SA		19	3	730	DNA/RNA Shield
+MAR-54-MGE	marshmallow	5/2/23	SA		19	3	730	Molecular Grade (96%) Ethanol
+BUD-54-DRS	buddy	5/2/23	SA		19	2	730	DNA/RNA Shield
+BUD-54-MGE	buddy	5/2/23	SA		19	2	730	Molecular Grade (96%) Ethanol
+JOA-54-DRS	joans	5/2/23	SA		19	3	730	DNA/RNA Shield
+JOA-54-MGE	joans	5/2/23	SA		19	3	730	Molecular Grade (96%) Ethanol
+HEN-54-DRS	henry	5/2/23	SA		19	3	730	DNA/RNA Shield
+HEN-54-MGE	henry	5/2/23	SA		19	3	730	Molecular Grade (96%) Ethanol
+GIN-54-DRS	ginger	5/2/23	SA		19	2	730	DNA/RNA Shield
+GIN-54-MGE	ginger	5/2/23	SA		19	2	730	Molecular Grade (96%) Ethanol
+HAM-55-DRS	hamlet	5/3/23	SA/GR		19	1	730	DNA/RNA Shield
+HAM-55-MGE	hamlet	5/3/23	SA/GR		19	1	730	Molecular Grade (96%) Ethanol
+HER-55-DRS	hera	5/3/23	SA/GR		20	2	730	DNA/RNA Shield
+HER-55-MGE	hera	5/3/23	SA/GR		20	2	730	Molecular Grade (96%) Ethanol
+JAR-55-DRS	jarjarbinks	5/3/23	SA/GR		20	2	730	DNA/RNA Shield
+JAR-55-MGE	jarjarbinks	5/3/23	SA/GR		20	2	730	Molecular Grade (96%) Ethanol
+OPH-55-DRS	ophelia	5/3/23	SA/GR		20	1	730	DNA/RNA Shield
+OPH-55-MGE	ophelia	5/3/23	SA/GR		20	1	730	Molecular Grade (96%) Ethanol
+KUB-55-DRS	kubo	5/3/23	SA/GR		20	2	730	DNA/RNA Shield
+KUB-55-MGE	kubo	5/3/23	SA/GR		20	2	730	Molecular Grade (96%) Ethanol
+KOR-55-DRS	korra	5/3/23	SA/GR		20	3	730	DNA/RNA Shield
+KOR-55-MGE	korra	5/3/23	SA/GR		20	3	730	Molecular Grade (96%) Ethanol
+WOL-55-DRS	wolverine	5/3/23	SA/GR		20	2	730	DNA/RNA Shield
+WOL-55-MGE	wolverine	5/3/23	SA/GR		20	2	730	Molecular Grade (96%) Ethanol
+IRI-55-DRS	iris	5/3/23	SA/GR		20	3	730	DNA/RNA Shield
+IRI-55-MGE	iris	5/3/23	SA/GR		20	3	730	Molecular Grade (96%) Ethanol
+GOO-55-DRS	goose	5/3/23	SA/GR		20	2	800	DNA/RNA Shield
+GOO-55-MGE	goose	5/3/23	SA/GR		20	2	800	Molecular Grade (96%) Ethanol
+LAM-55-DRS	lambchop	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+LAM-55-MGE	lambchop	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+FRA-55-DRS	franc	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+FRA-55-MGE	franc	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+IVY-55-DRS	ivy	5/3/23	SA/GR		20	4	800	DNA/RNA Shield
+IVY-55-MGE	ivy	5/3/23	SA/GR		20	4	800	Molecular Grade (96%) Ethanol
+CHA-55-DRS	charles	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+CHA-55-MGE	charles	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+GRO-55-DRS	grogu	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+GRO-55-MGE	grogu	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+MAR-55-DRS	marshmallow	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+MAR-55-MGE	marshmallow	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+BUD-55-DRS	buddy	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+BUD-55-MGE	buddy	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+JOA-55-DRS	joans	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+JOA-55-MGE	joans	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+HEN-55-DRS	henry	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+HEN-55-MGE	henry	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+GIN-55-DRS	ginger	5/3/23	SA/GR		20	3	800	DNA/RNA Shield
+GIN-55-MGE	ginger	5/3/23	SA/GR		20	3	800	Molecular Grade (96%) Ethanol
+HAM-56-DRS	hamlet	5/4/23	SA		20	2	730	DNA/RNA Shield
+HAM-56-MGE	hamlet	5/4/23	SA		20	2	730	Molecular Grade (96%) Ethanol
+HER-56-DRS	hera	5/4/23	SA		20	2	730	DNA/RNA Shield
+HER-56-MGE	hera	5/4/23	SA		20	2	730	Molecular Grade (96%) Ethanol
+JAR-56-DRS	jarjarbinks	5/4/23	SA		20	2	730	DNA/RNA Shield
+JAR-56-MGE	jarjarbinks	5/4/23	SA		20	2	730	Molecular Grade (96%) Ethanol
+OPH-56-DRS	ophelia	5/4/23	SA		20	2	730	DNA/RNA Shield
+OPH-56-MGE	ophelia	5/4/23	SA		20	2	730	Molecular Grade (96%) Ethanol
+KUB-56-DRS	kubo	5/4/23	SA		20	2	730	DNA/RNA Shield
+KUB-56-MGE	kubo	5/4/23	SA		20	2	730	Molecular Grade (96%) Ethanol
+KOR-56-DRS	korra	5/4/23	SA		20	3	730	DNA/RNA Shield
+KOR-56-MGE	korra	5/4/23	SA		20	3	730	Molecular Grade (96%) Ethanol
+WOL-56-DRS	wolverine	5/4/23	SA		20	2	730	DNA/RNA Shield
+WOL-56-MGE	wolverine	5/4/23	SA		20	2	730	Molecular Grade (96%) Ethanol
+IRI-56-DRS	iris	5/4/23	SA		20	3	730	DNA/RNA Shield
+IRI-56-MGE	iris	5/4/23	SA		20	3	730	Molecular Grade (96%) Ethanol
+GOO-56-DRS	goose	5/4/23	SA		20	4	800	DNA/RNA Shield
+GOO-56-MGE	goose	5/4/23	SA		20	4	800	Molecular Grade (96%) Ethanol
+LAM-56-DRS	lambchop	5/4/23	SA		20	3	800	DNA/RNA Shield
+LAM-56-MGE	lambchop	5/4/23	SA		20	3	800	Molecular Grade (96%) Ethanol
+FRA-56-DRS	franc	5/4/23	SA		20	2	800	DNA/RNA Shield
+FRA-56-MGE	franc	5/4/23	SA		20	2	800	Molecular Grade (96%) Ethanol
+IVY-56-DRS	ivy	5/4/23	SA		20	3	800	DNA/RNA Shield
+IVY-56-MGE	ivy	5/4/23	SA		20	3	800	Molecular Grade (96%) Ethanol
+CHA-56-DRS	charles	5/4/23	SA		20	3	800	DNA/RNA Shield
+CHA-56-MGE	charles	5/4/23	SA		20	3	800	Molecular Grade (96%) Ethanol
+GRO-56-DRS	grogu	5/4/23	SA		20	3	800	DNA/RNA Shield
+GRO-56-MGE	grogu	5/4/23	SA		20	3	800	Molecular Grade (96%) Ethanol
+MAR-56-DRS	marshmallow	5/4/23	SA		20	3	800	DNA/RNA Shield
+MAR-56-MGE	marshmallow	5/4/23	SA		20	3	800	Molecular Grade (96%) Ethanol
+BUD-56-DRS	buddy	5/4/23	SA		21	3	800	DNA/RNA Shield
+BUD-56-MGE	buddy	5/4/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+JOA-56-DRS	joans	5/4/23	SA		21	2	800	DNA/RNA Shield
+JOA-56-MGE	joans	5/4/23	SA		21	2	800	Molecular Grade (96%) Ethanol
+HEN-56-DRS	henry	5/4/23	SA		21	4	800	DNA/RNA Shield
+HEN-56-MGE	henry	5/4/23	SA		21	4	800	Molecular Grade (96%) Ethanol
+GIN-56-DRS	ginger	5/4/23	SA		21	3	800	DNA/RNA Shield
+GIN-56-MGE	ginger	5/4/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+HAM-57-DRS	hamlet	5/5/23	SA		21	2	730	DNA/RNA Shield
+HAM-57-MGE	hamlet	5/5/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+HER-57-DRS	hera	5/5/23	SA		21	2	730	DNA/RNA Shield
+HER-57-MGE	hera	5/5/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+JAR-57-DRS	jarjarbinks	5/5/23	SA		21	2	730	DNA/RNA Shield
+JAR-57-MGE	jarjarbinks	5/5/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+OPH-57-DRS	ophelia	5/5/23	SA		21	2	730	DNA/RNA Shield
+OPH-57-MGE	ophelia	5/5/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+KUB-57-DRS	kubo	5/5/23	SA		21	2	730	DNA/RNA Shield
+KUB-57-MGE	kubo	5/5/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+KOR-57-DRS	korra	5/5/23	SA		21	3	730	DNA/RNA Shield
+KOR-57-MGE	korra	5/5/23	SA		21	3	730	Molecular Grade (96%) Ethanol
+WOL-57-DRS	wolverine	5/5/23	SA		21	2	730	DNA/RNA Shield
+WOL-57-MGE	wolverine	5/5/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+IRI-57-DRS	iris	5/5/23	SA		21	3	730	DNA/RNA Shield
+IRI-57-MGE	iris	5/5/23	SA		21	3	730	Molecular Grade (96%) Ethanol
+GOO-57-DRS	goose	5/5/23	SA		21	3	800	DNA/RNA Shield
+GOO-57-MGE	goose	5/5/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+LAM-57-DRS	lambchop	5/5/23	SA		21	3	800	DNA/RNA Shield
+LAM-57-MGE	lambchop	5/5/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+FRA-57-DRS	franc	5/5/23	SA		21	2	800	DNA/RNA Shield
+FRA-57-MGE	franc	5/5/23	SA		21	2	800	Molecular Grade (96%) Ethanol
+IVY-57-DRS	ivy	5/5/23	SA		21	3	800	DNA/RNA Shield
+IVY-57-MGE	ivy	5/5/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+CHA-57-DRS	charles	5/5/23	SA		21	3	800	DNA/RNA Shield
+CHA-57-MGE	charles	5/5/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+GRO-57-DRS	grogu	5/5/23	SA		21	3	800	DNA/RNA Shield
+GRO-57-MGE	grogu	5/5/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+MAR-57-DRS	marshmallow	5/5/23	SA		21	2	800	DNA/RNA Shield
+MAR-57-MGE	marshmallow	5/5/23	SA		21	2	800	Molecular Grade (96%) Ethanol
+BUD-57-DRS	buddy	5/5/23	SA		21	3	800	DNA/RNA Shield
+BUD-57-MGE	buddy	5/5/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+JOA-57-DRS	joans	5/5/23	SA		21	2	800	DNA/RNA Shield
+JOA-57-MGE	joans	5/5/23	SA		21	2	800	Molecular Grade (96%) Ethanol
+HEN-57-DRS	henry	5/5/23	SA		21	6	800	DNA/RNA Shield
+HEN-57-MGE	henry	5/5/23	SA		21	6	800	Molecular Grade (96%) Ethanol
+GIN-57-DRS	ginger	5/5/23	SA		21	2	800	DNA/RNA Shield
+GIN-57-MGE	ginger	5/5/23	SA		21	2	800	Molecular Grade (96%) Ethanol
+HAM-58-DRS	hamlet	5/6/23	SA		21	2	730	DNA/RNA Shield
+HAM-58-MGE	hamlet	5/6/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+HER-58-DRS	hera	5/6/23	SA		21	2	730	DNA/RNA Shield
+HER-58-MGE	hera	5/6/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+JAR-58-DRS	jarjarbinks	5/6/23	SA		21	3	730	DNA/RNA Shield
+JAR-58-MGE	jarjarbinks	5/6/23	SA		21	3	730	Molecular Grade (96%) Ethanol
+OPH-58-DRS	ophelia	5/6/23	SA		21	2	730	DNA/RNA Shield
+OPH-58-MGE	ophelia	5/6/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+KUB-58-DRS	kubo	5/6/23	SA		21	2	730	DNA/RNA Shield
+KUB-58-MGE	kubo	5/6/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+KOR-58-DRS	korra	5/6/23	SA		21	3	730	DNA/RNA Shield
+KOR-58-MGE	korra	5/6/23	SA		21	3	730	Molecular Grade (96%) Ethanol
+WOL-58-DRS	wolverine	5/6/23	SA		21	2	730	DNA/RNA Shield
+WOL-58-MGE	wolverine	5/6/23	SA		21	2	730	Molecular Grade (96%) Ethanol
+IRI-58-DRS	iris	5/6/23	SA		21	3	730	DNA/RNA Shield
+IRI-58-MGE	iris	5/6/23	SA		21	3	730	Molecular Grade (96%) Ethanol
+GOO-58-DRS	goose	5/6/23	SA		21	3	800	DNA/RNA Shield
+GOO-58-MGE	goose	5/6/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+LAM-58-DRS	lambchop	5/6/23	SA		21	3	800	DNA/RNA Shield
+LAM-58-MGE	lambchop	5/6/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+FRA-58-DRS	franc	5/6/23	SA		21	2	800	DNA/RNA Shield
+FRA-58-MGE	franc	5/6/23	SA		21	2	800	Molecular Grade (96%) Ethanol
+IVY-58-DRS	ivy	5/6/23	SA		21	3	800	DNA/RNA Shield
+IVY-58-MGE	ivy	5/6/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+CHA-58-DRS	charles	5/6/23	SA		21	3	800	DNA/RNA Shield
+CHA-58-MGE	charles	5/6/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+GRO-58-DRS	grogu	5/6/23	SA		21	3	800	DNA/RNA Shield
+GRO-58-MGE	grogu	5/6/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+MAR-58-DRS	marshmallow	5/6/23	SA		21	2	800	DNA/RNA Shield
+MAR-58-MGE	marshmallow	5/6/23	SA		21	2	800	Molecular Grade (96%) Ethanol
+BUD-58-DRS	buddy	5/6/23	SA		21	3	800	DNA/RNA Shield
+BUD-58-MGE	buddy	5/6/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+JOA-58-DRS	joans	5/6/23	SA		21	3	800	DNA/RNA Shield
+JOA-58-MGE	joans	5/6/23	SA		21	3	800	Molecular Grade (96%) Ethanol
+HEN-58-DRS	henry	5/6/23	SA		21	4	800	DNA/RNA Shield
+HEN-58-MGE	henry	5/6/23	SA		22	4	800	Molecular Grade (96%) Ethanol
+GIN-58-DRS	ginger	5/6/23	SA		22	3	800	DNA/RNA Shield
+GIN-58-MGE	ginger	5/6/23	SA		22	3	800	Molecular Grade (96%) Ethanol
+HAM-59-DRS	hamlet	5/7/23	SA		22	2	730	DNA/RNA Shield
+HAM-59-MGE	hamlet	5/7/23	SA		22	2	730	Molecular Grade (96%) Ethanol
+HER-59-DRS	hera	5/7/23	SA		22	2	730	DNA/RNA Shield
+HER-59-MGE	hera	5/7/23	SA		22	2	730	Molecular Grade (96%) Ethanol
+JAR-59-DRS	jarjarbinks	5/7/23	SA		22	3	730	DNA/RNA Shield
+JAR-59-MGE	jarjarbinks	5/7/23	SA		22	3	730	Molecular Grade (96%) Ethanol
+OPH-59-DRS	ophelia	5/7/23	SA		22	3	730	DNA/RNA Shield
+OPH-59-MGE	ophelia	5/7/23	SA		22	3	730	Molecular Grade (96%) Ethanol
+KUB-59-DRS	kubo	5/7/23	SA		22	2	730	DNA/RNA Shield
+KUB-59-MGE	kubo	5/7/23	SA		22	2	730	Molecular Grade (96%) Ethanol
+KOR-59-DRS	korra	5/7/23	SA		22	3	730	DNA/RNA Shield
+KOR-59-MGE	korra	5/7/23	SA		22	3	730	Molecular Grade (96%) Ethanol
+WOL-59-DRS	wolverine	5/7/23	SA		22	2	730	DNA/RNA Shield
+WOL-59-MGE	wolverine	5/7/23	SA		22	2	730	Molecular Grade (96%) Ethanol
+IRI-59-DRS	iris	5/7/23	SA		22	3	730	DNA/RNA Shield
+IRI-59-MGE	iris	5/7/23	SA		22	3	730	Molecular Grade (96%) Ethanol
+GOO-59-DRS	goose	5/7/23	SA		22	2	800	DNA/RNA Shield
+GOO-59-MGE	goose	5/7/23	SA		22	2	800	Molecular Grade (96%) Ethanol
+LAM-59-DRS	lambchop	5/7/23	SA		22	3	800	DNA/RNA Shield
+LAM-59-MGE	lambchop	5/7/23	SA		22	3	800	Molecular Grade (96%) Ethanol
+FRA-59-DRS	franc	5/7/23	SA		22	3	800	DNA/RNA Shield
+FRA-59-MGE	franc	5/7/23	SA		22	3	800	Molecular Grade (96%) Ethanol
+IVY-59-DRS	ivy	5/7/23	SA		22	2	800	DNA/RNA Shield
+IVY-59-MGE	ivy	5/7/23	SA		22	2	800	Molecular Grade (96%) Ethanol
+CHA-59-DRS	charles	5/7/23	SA		22	2	800	DNA/RNA Shield
+CHA-59-MGE	charles	5/7/23	SA		22	2	800	Molecular Grade (96%) Ethanol
+GRO-59-DRS	grogu	5/7/23	SA		22	2	800	DNA/RNA Shield
+GRO-59-MGE	grogu	5/7/23	SA		22	2	800	Molecular Grade (96%) Ethanol
+MAR-59-DRS	marshmallow	5/7/23	SA		22	2	800	DNA/RNA Shield
+MAR-59-MGE	marshmallow	5/7/23	SA		22	2	800	Molecular Grade (96%) Ethanol
+BUD-59-DRS	buddy	5/7/23	SA		22	2	800	DNA/RNA Shield
+BUD-59-MGE	buddy	5/7/23	SA		22	2	800	Molecular Grade (96%) Ethanol
+JOA-59-DRS	joans	5/7/23	SA		22	2	800	DNA/RNA Shield
+JOA-59-MGE	joans	5/7/23	SA		22	2	800	Molecular Grade (96%) Ethanol
+HEN-59-DRS	henry	5/7/23	SA		22	2	800	DNA/RNA Shield
+HEN-59-MGE	henry	5/7/23	SA		22	2	800	Molecular Grade (96%) Ethanol
+GIN-59-DRS	ginger	5/7/23	SA		22	3	800	DNA/RNA Shield
+GIN-59-MGE	ginger	5/7/23	SA		22	3	800	Molecular Grade (96%) Ethanol
+HAM-60-DRS	hamlet	5/8/23	SA/GR		22	2	730	DNA/RNA Shield
+HAM-60-MGE	hamlet	5/8/23	SA/GR		22	2	730	Molecular Grade (96%) Ethanol
+HER-60-DRS	hera	5/8/23	SA/GR		22	2	730	DNA/RNA Shield
+HER-60-MGE	hera	5/8/23	SA/GR		22	2	730	Molecular Grade (96%) Ethanol
+JAR-60-DRS	jarjarbinks	5/8/23	SA/GR		22	2	730	DNA/RNA Shield
+JAR-60-MGE	jarjarbinks	5/8/23	SA/GR		22	2	730	Molecular Grade (96%) Ethanol
+OPH-60-DRS	ophelia	5/8/23	SA/GR		22	2	730	DNA/RNA Shield
+OPH-60-MGE	ophelia	5/8/23	SA/GR		22	2	730	Molecular Grade (96%) Ethanol
+KUB-60-DRS	kubo	5/8/23	SA/GR		22	2	730	DNA/RNA Shield
+KUB-60-MGE	kubo	5/8/23	SA/GR		22	2	730	Molecular Grade (96%) Ethanol
+KOR-60-DRS	korra	5/8/23	SA/GR		22	3	730	DNA/RNA Shield
+KOR-60-MGE	korra	5/8/23	SA/GR		22	3	730	Molecular Grade (96%) Ethanol
+WOL-60-DRS	wolverine	5/8/23	SA/GR		22	2	730	DNA/RNA Shield
+WOL-60-MGE	wolverine	5/8/23	SA/GR		22	2	730	Molecular Grade (96%) Ethanol
+IRI-60-DRS	iris	5/8/23	SA/GR		22	3	730	DNA/RNA Shield
+IRI-60-MGE	iris	5/8/23	SA/GR		22	3	730	Molecular Grade (96%) Ethanol
+GOO-60-DRS	goose	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+GOO-60-MGE	goose	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+LAM-60-DRS	lambchop	5/8/23	SA/GR		22	3	800	DNA/RNA Shield
+LAM-60-MGE	lambchop	5/8/23	SA/GR		22	3	800	Molecular Grade (96%) Ethanol
+FRA-60-DRS	franc	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+FRA-60-MGE	franc	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+IVY-60-DRS	ivy	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+IVY-60-MGE	ivy	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+CHA-60-DRS	charles	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+CHA-60-MGE	charles	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+GRO-60-DRS	grogu	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+GRO-60-MGE	grogu	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+MAR-60-DRS	marshmallow	5/8/23	SA/GR		22	3	800	DNA/RNA Shield
+MAR-60-MGE	marshmallow	5/8/23	SA/GR		22	3	800	Molecular Grade (96%) Ethanol
+BUD-60-DRS	buddy	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+BUD-60-MGE	buddy	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+JOA-60-DRS	joans	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+JOA-60-MGE	joans	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+HEN-60-DRS	henry	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+HEN-60-MGE	henry	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+GIN-60-DRS	ginger	5/8/23	SA/GR		22	2	800	DNA/RNA Shield
+GIN-60-MGE	ginger	5/8/23	SA/GR		22	2	800	Molecular Grade (96%) Ethanol
+HAM-61-DRS	hamlet	5/9/23	SA		22	2	730	DNA/RNA Shield
+HAM-61-MGE	hamlet	5/9/23	SA		22	2	730	Molecular Grade (95%) Ethanol
+HER-61-DRS	hera	5/9/23	SA		23	2	730	DNA/RNA Shield
+HER-61-MGE	hera	5/9/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+JAR-61-DRS	jarjarbinks	5/9/23	SA		23	3	730	DNA/RNA Shield
+JAR-61-MGE	jarjarbinks	5/9/23	SA		23	3	730	Molecular Grade (95%) Ethanol
+OPH-61-DRS	ophelia	5/9/23	SA		23	2	730	DNA/RNA Shield
+OPH-61-MGE	ophelia	5/9/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+KUB-61-DRS	kubo	5/9/23	SA		23	3	730	DNA/RNA Shield
+KUB-61-MGE	kubo	5/9/23	SA		23	3	730	Molecular Grade (95%) Ethanol
+KOR-61-DRS	korra	5/9/23	SA		23	3	730	DNA/RNA Shield
+KOR-61-MGE	korra	5/9/23	SA		23	3	730	Molecular Grade (95%) Ethanol
+WOL-61-DRS	wolverine	5/9/23	SA		23	2	730	DNA/RNA Shield
+WOL-61-MGE	wolverine	5/9/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+IRI-61-DRS	iris	5/9/23	SA		23	3	730	DNA/RNA Shield
+IRI-61-MGE	iris	5/9/23	SA		23	3	730	Molecular Grade (95%) Ethanol
+GOO-61-DRS	goose	5/9/23	SA		23	2	800	DNA/RNA Shield
+GOO-61-MGE	goose	5/9/23	SA		23	2	800	Molecular Grade (95%) Ethanol
+LAM-61-DRS	lambchop	5/9/23	SA		23	3	800	DNA/RNA Shield
+LAM-61-MGE	lambchop	5/9/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+FRA-61-DRS	franc	5/9/23	SA		23	2	800	DNA/RNA Shield
+FRA-61-MGE	franc	5/9/23	SA		23	2	800	Molecular Grade (95%) Ethanol
+IVY-61-DRS	ivy	5/9/23	SA		23	3	800	DNA/RNA Shield
+IVY-61-MGE	ivy	5/9/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+CHA-61-DRS	charles	5/9/23	SA		23	2	800	DNA/RNA Shield
+CHA-61-MGE	charles	5/9/23	SA		23	2	800	Molecular Grade (95%) Ethanol
+GRO-61-DRS	grogu	5/9/23	SA		23	4	800	DNA/RNA Shield
+GRO-61-MGE	grogu	5/9/23	SA		23	4	800	Molecular Grade (95%) Ethanol
+MAR-61-DRS	marshmallow	5/9/23	SA		23	3	800	DNA/RNA Shield
+MAR-61-MGE	marshmallow	5/9/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+BUD-61-DRS	buddy	5/9/23	SA		23	3	800	DNA/RNA Shield
+BUD-61-MGE	buddy	5/9/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+JOA-61-DRS	joans	5/9/23	SA		23	3	800	DNA/RNA Shield
+JOA-61-MGE	joans	5/9/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+HEN-61-DRS	henry	5/9/23	SA		23	3	800	DNA/RNA Shield
+HEN-61-MGE	henry	5/9/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+GIN-61-DRS	ginger	5/9/23	SA		23	3	800	DNA/RNA Shield
+GIN-61-MGE	ginger	5/9/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+HAM-62-DRS	hamlet	5/10/23	SA		23	2	730	DNA/RNA Shield
+HAM-62-MGE	hamlet	5/10/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+HER-62-DRS	hera	5/10/23	SA		23	2	730	DNA/RNA Shield
+HER-62-MGE	hera	5/10/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+JAR-62-DRS	jarjarbinks	5/10/23	SA		23	2	730	DNA/RNA Shield
+JAR-62-MGE	jarjarbinks	5/10/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+OPH-62-DRS	ophelia	5/10/23	SA		23	2	730	DNA/RNA Shield
+OPH-62-MGE	ophelia	5/10/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+KUB-62-DRS	kubo	5/10/23	SA		23	2	730	DNA/RNA Shield
+KUB-62-MGE	kubo	5/10/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+KOR-62-DRS	korra	5/10/23	SA		23	3	730	DNA/RNA Shield
+KOR-62-MGE	korra	5/10/23	SA		23	3	730	Molecular Grade (95%) Ethanol
+WOL-62-DRS	wolverine	5/10/23	SA		23	2	730	DNA/RNA Shield
+WOL-62-MGE	wolverine	5/10/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+IRI-62-DRS	iris	5/10/23	SA		23	2	730	DNA/RNA Shield
+IRI-62-MGE	iris	5/10/23	SA		23	2	730	Molecular Grade (95%) Ethanol
+GOO-62-DRS	goose	5/10/23	SA		23	3	800	DNA/RNA Shield
+GOO-62-MGE	goose	5/10/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+LAM-62-DRS	lambchop	5/10/23	SA		23	3	800	DNA/RNA Shield
+LAM-62-MGE	lambchop	5/10/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+FRA-62-DRS	franc	5/10/23	SA		23	3	800	DNA/RNA Shield
+FRA-62-MGE	franc	5/10/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+IVY-62-DRS	ivy	5/10/23	SA		23	4	800	DNA/RNA Shield
+IVY-62-MGE	ivy	5/10/23	SA		23	4	800	Molecular Grade (95%) Ethanol
+CHA-62-DRS	charles	5/10/23	SA		23	2	800	DNA/RNA Shield
+CHA-62-MGE	charles	5/10/23	SA		23	2	800	Molecular Grade (95%) Ethanol
+GRO-62-DRS	grogu	5/10/23	SA		23	2	800	DNA/RNA Shield
+GRO-62-MGE	grogu	5/10/23	SA		23	2	800	Molecular Grade (95%) Ethanol
+MAR-62-DRS	marshmallow	5/10/23	SA		23	3	800	DNA/RNA Shield
+MAR-62-MGE	marshmallow	5/10/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+BUD-62-DRS	buddy	5/10/23	SA		23	2	800	DNA/RNA Shield
+BUD-62-MGE	buddy	5/10/23	SA		23	2	800	Molecular Grade (95%) Ethanol
+JOA-62-DRS	joans	5/10/23	SA		23	3	800	DNA/RNA Shield
+JOA-62-MGE	joans	5/10/23	SA		23	3	800	Molecular Grade (95%) Ethanol
+HEN-62-DRS	henry	5/10/23	SA		23	4	800	DNA/RNA Shield
+HEN-62-MGE	henry	5/10/23	SA		23	4	800	Molecular Grade (95%) Ethanol
+GIN-62-DRS	ginger	5/10/23	SA		23	2	800	DNA/RNA Shield
+GIN-62-MGE	ginger	5/10/23	SA		23	2	800	Molecular Grade (95%) Ethanol
+HAM-63-DRS	hamlet	5/11/23	SA		23	2	830	DNA/RNA Shield
+HAM-63-MGE	hamlet	5/11/23	SA		23	2	830	Molecular Grade (95%) Ethanol
+HER-63-DRS	hera	5/11/23	SA		23	3	830	DNA/RNA Shield
+HER-63-MGE	hera	5/11/23	SA		23	3	830	Molecular Grade (95%) Ethanol
+JAR-63-DRS	jarjarbinks	5/11/23	SA		23	3	830	DNA/RNA Shield
+JAR-63-MGE	jarjarbinks	5/11/23	SA		23	3	830	Molecular Grade (95%) Ethanol
+OPH-63-DRS	ophelia	5/11/23	SA		23	2	830	DNA/RNA Shield
+OPH-63-MGE	ophelia	5/11/23	SA		24	2	830	Molecular Grade (95%) Ethanol
+KUB-63-DRS	kubo	5/11/23	SA		24	2	830	DNA/RNA Shield
+KUB-63-MGE	kubo	5/11/23	SA		24	2	830	Molecular Grade (95%) Ethanol
+KOR-63-DRS	korra	5/11/23	SA		24	3	830	DNA/RNA Shield
+KOR-63-MGE	korra	5/11/23	SA		24	3	830	Molecular Grade (95%) Ethanol
+WOL-63-DRS	wolverine	5/11/23	SA		24	2	830	DNA/RNA Shield
+WOL-63-MGE	wolverine	5/11/23	SA		24	2	830	Molecular Grade (95%) Ethanol
+IRI-63-DRS	iris	5/11/23	SA		24	2	830	DNA/RNA Shield
+IRI-63-MGE	iris	5/11/23	SA		24	2	830	Molecular Grade (95%) Ethanol
+HAM-64-DRS	hamlet	5/12/23	SA/GR		24	2	800	DNA/RNA Shield
+HAM-64-MGE	hamlet	5/12/23	SA/GR		24	2	800	Molecular Grade (95%) Ethanol
+HER-64-DRS	hera	5/12/23	SA/GR		24	3	800	DNA/RNA Shield
+HER-64-MGE	hera	5/12/23	SA/GR		24	3	800	Molecular Grade (95%) Ethanol
+JAR-64-DRS	jarjarbinks	5/12/23	SA/GR		24	2	800	DNA/RNA Shield
+JAR-64-MGE	jarjarbinks	5/12/23	SA/GR		24	2	800	Molecular Grade (95%) Ethanol
+OPH-64-DRS	ophelia	5/12/23	SA/GR		24	2	800	DNA/RNA Shield
+OPH-64-MGE	ophelia	5/12/23	SA/GR		24	2	800	Molecular Grade (95%) Ethanol
+KUB-64-DRS	kubo	5/12/23	SA/GR		24	3	800	DNA/RNA Shield
+KUB-64-MGE	kubo	5/12/23	SA/GR		24	3	800	Molecular Grade (95%) Ethanol
+KOR-64-DRS	korra	5/12/23	SA/GR		24	3	800	DNA/RNA Shield
+KOR-64-MGE	korra	5/12/23	SA/GR		24	3	800	Molecular Grade (95%) Ethanol
+WOL-64-DRS	wolverine	5/12/23	SA/GR		24	2	800	DNA/RNA Shield
+WOL-64-MGE	wolverine	5/12/23	SA/GR		24	2	800	Molecular Grade (95%) Ethanol
+IRI-64-DRS	iris	5/12/23	SA/GR		24	3	800	DNA/RNA Shield
+IRI-64-MGE	iris	5/12/23	SA/GR		24	3	800	Molecular Grade (95%) Ethanol
+GOO-64-DRS	goose	5/12/23	SA/GR		24	3	730	DNA/RNA Shield
+GOO-64-MGE	goose	5/12/23	SA/GR		24	3	730	Molecular Grade (95%) Ethanol
+LAM-64-DRS	lambchop	5/12/23	SA/GR		24	3	730	DNA/RNA Shield
+LAM-64-MGE	lambchop	5/12/23	SA/GR		24	3	730	Molecular Grade (95%) Ethanol
+FRA-64-DRS	franc	5/12/23	SA/GR		24	2	730	DNA/RNA Shield
+FRA-64-MGE	franc	5/12/23	SA/GR		24	2	730	Molecular Grade (95%) Ethanol
+IVY-64-DRS	ivy	5/12/23	SA/GR		24	3	730	DNA/RNA Shield
+IVY-64-MGE	ivy	5/12/23	SA/GR		24	3	730	Molecular Grade (95%) Ethanol
+CHA-64-DRS	charles	5/12/23	SA/GR		24	3	730	DNA/RNA Shield
+CHA-64-MGE	charles	5/12/23	SA/GR		24	3	730	Molecular Grade (95%) Ethanol
+GRO-64-DRS	grogu	5/12/23	SA/GR		24	3	730	DNA/RNA Shield
+GRO-64-MGE	grogu	5/12/23	SA/GR		24	3	730	Molecular Grade (95%) Ethanol
+MAR-64-DRS	marshmallow	5/12/23	SA/GR		24	3	730	DNA/RNA Shield
+MAR-64-MGE	marshmallow	5/12/23	SA/GR		24	3	730	Molecular Grade (95%) Ethanol
+HEN-64-DRS	henry	5/12/23	SA/GR		24	2	730	DNA/RNA Shield
+HEN-64-MGE	henry	5/12/23	SA/GR		24	2	730	Molecular Grade (95%) Ethanol
+GIN-64-DRS	ginger	5/12/23	SA/GR		24	2	730	DNA/RNA Shield
+GIN-64-MGE	ginger	5/12/23	SA/GR		24	2	730	Molecular Grade (95%) Ethanol
+HAM-65-DRS	hamlet	5/13/23	SA		24	2	800	DNA/RNA Shield
+HAM-65-MGE	hamlet	5/13/23	SA		24	2	800	Molecular Grade (95%) Ethanol
+HER-65-DRS	hera	5/13/23	SA		24	2	800	DNA/RNA Shield
+HER-65-MGE	hera	5/13/23	SA		24	2	800	Molecular Grade (95%) Ethanol
+JAR-65-DRS	jarjarbinks	5/13/23	SA		24	3	800	DNA/RNA Shield
+JAR-65-MGE	jarjarbinks	5/13/23	SA		24	3	800	Molecular Grade (95%) Ethanol
+OPH-65-DRS	ophelia	5/13/23	SA		24	2	800	DNA/RNA Shield
+OPH-65-MGE	ophelia	5/13/23	SA		24	2	800	Molecular Grade (95%) Ethanol
+KUB-65-DRS	kubo	5/13/23	SA		24	2	800	DNA/RNA Shield
+KUB-65-MGE	kubo	5/13/23	SA		24	2	800	Molecular Grade (95%) Ethanol
+KOR-65-DRS	korra	5/13/23	SA		24	3	800	DNA/RNA Shield
+KOR-65-MGE	korra	5/13/23	SA		24	3	800	Molecular Grade (95%) Ethanol
+WOL-65-DRS	wolverine	5/13/23	SA		24	3	800	DNA/RNA Shield
+WOL-65-MGE	wolverine	5/13/23	SA		24	3	800	Molecular Grade (95%) Ethanol
+IRI-65-DRS	iris	5/13/23	SA		24	3	800	DNA/RNA Shield
+IRI-65-MGE	iris	5/13/23	SA		24	3	800	Molecular Grade (95%) Ethanol
+GOO-65-DRS	goose	5/13/23	SA		24	2	730	DNA/RNA Shield
+GOO-65-MGE	goose	5/13/23	SA		24	2	730	Molecular Grade (95%) Ethanol
+LAM-65-DRS	lambchop	5/13/23	SA		24	3	730	DNA/RNA Shield
+LAM-65-MGE	lambchop	5/13/23	SA		24	3	730	Molecular Grade (95%) Ethanol
+FRA-65-DRS	franc	5/13/23	SA		24	2	730	DNA/RNA Shield
+FRA-65-MGE	franc	5/13/23	SA		24	2	730	Molecular Grade (95%) Ethanol
+IVY-65-DRS	ivy	5/13/23	SA		24	3	730	DNA/RNA Shield
+IVY-65-MGE	ivy	5/13/23	SA		24	3	730	Molecular Grade (95%) Ethanol
+GRO-65-DRS	grogu	5/13/23	SA		24	2	730	DNA/RNA Shield
+GRO-65-MGE	grogu	5/13/23	SA		24	2	730	Molecular Grade (95%) Ethanol
+MAR-65-DRS	marshmallow	5/13/23	SA		24	4	730	DNA/RNA Shield
+MAR-65-MGE	marshmallow	5/13/23	SA		24	4	730	Molecular Grade (95%) Ethanol
+BUD-65-DRS	buddy	5/13/23	SA		24	3	730	DNA/RNA Shield
+BUD-65-MGE	buddy	5/13/23	SA		24	3	730	Molecular Grade (95%) Ethanol
+JOA-65-DRS	joans	5/13/23	SA		24	3	730	DNA/RNA Shield
+JOA-65-MGE	joans	5/13/23	SA		24	3	730	Molecular Grade (95%) Ethanol
+HEN-65-DRS	henry	5/13/23	SA		24	2	730	DNA/RNA Shield
+HEN-65-MGE	henry	5/13/23	SA		24	2	730	Molecular Grade (95%) Ethanol
+GIN-65-DRS	ginger	5/13/23	SA		24	2	730	DNA/RNA Shield
+GIN-65-MGE	ginger	5/13/23	SA		24	2	730	Molecular Grade (95%) Ethanol
+HAM-66-DRS	hamlet	5/14/23	SA		24	1	730	DNA/RNA Shield
+HAM-66-MGE	hamlet	5/14/23	SA		24	1	730	Molecular Grade (95%) Ethanol
+HER-66-DRS	hera	5/14/23	SA		25	2	730	DNA/RNA Shield
+HER-66-MGE	hera	5/14/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+JAR-66-DRS	jarjarbinks	5/14/23	SA		25	3	730	DNA/RNA Shield
+JAR-66-MGE	jarjarbinks	5/14/23	SA		25	3	730	Molecular Grade (95%) Ethanol
+OPH-66-DRS	ophelia	5/14/23	SA		25	2	730	DNA/RNA Shield
+OPH-66-MGE	ophelia	5/14/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+KUB-66-DRS	kubo	5/14/23	SA		25	2	730	DNA/RNA Shield
+KUB-66-MGE	kubo	5/14/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+KOR-66-DRS	korra	5/14/23	SA		25	3	730	DNA/RNA Shield
+KOR-66-MGE	korra	5/14/23	SA		25	3	730	Molecular Grade (95%) Ethanol
+WOL-66-DRS	wolverine	5/14/23	SA		25	2	730	DNA/RNA Shield
+WOL-66-MGE	wolverine	5/14/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+IRI-66-DRS	iris	5/14/23	SA		25	2	730	DNA/RNA Shield
+IRI-66-MGE	iris	5/14/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+GOO-66-DRS	goose	5/14/23	SA		25	3	800	DNA/RNA Shield
+GOO-66-MGE	goose	5/14/23	SA		25	3	800	Molecular Grade (95%) Ethanol
+LAM-66-DRS	lambchop	5/14/23	SA		25	3	800	DNA/RNA Shield
+LAM-66-MGE	lambchop	5/14/23	SA		25	3	800	Molecular Grade (95%) Ethanol
+FRA-66-DRS	franc	5/14/23	SA		25	2	800	DNA/RNA Shield
+FRA-66-MGE	franc	5/14/23	SA		25	2	800	Molecular Grade (95%) Ethanol
+IVY-66-DRS	ivy	5/14/23	SA		25	3	800	DNA/RNA Shield
+IVY-66-MGE	ivy	5/14/23	SA		25	3	800	Molecular Grade (95%) Ethanol
+CHA-66-DRS	charles	5/14/23	SA		25	2	800	DNA/RNA Shield
+CHA-66-MGE	charles	5/14/23	SA		25	2	800	Molecular Grade (95%) Ethanol
+GRO-66-DRS	grogu	5/14/23	SA		25	2	800	DNA/RNA Shield
+GRO-66-MGE	grogu	5/14/23	SA		25	2	800	Molecular Grade (95%) Ethanol
+MAR-66-DRS	marshmallow	5/14/23	SA		25	3	800	DNA/RNA Shield
+MAR-66-MGE	marshmallow	5/14/23	SA		25	3	800	Molecular Grade (95%) Ethanol
+BUD-66-DRS	buddy	5/14/23	SA		25	4	800	DNA/RNA Shield
+BUD-66-MGE	buddy	5/14/23	SA		25	4	800	Molecular Grade (95%) Ethanol
+JOA-66-DRS	joans	5/14/23	SA		25	2	800	DNA/RNA Shield
+JOA-66-MGE	joans	5/14/23	SA		25	2	800	Molecular Grade (95%) Ethanol
+HEN-66-DRS	henry	5/14/23	SA		25	2	800	DNA/RNA Shield
+HEN-66-MGE	henry	5/14/23	SA		25	2	800	Molecular Grade (95%) Ethanol
+GIN-66-DRS	ginger	5/14/23	SA		25	2	800	DNA/RNA Shield
+GIN-66-MGE	ginger	5/14/23	SA		25	2	800	Molecular Grade (95%) Ethanol
+HAM-67-DRS	hamlet	5/15/23	SA/GR		25	2	730	DNA/RNA Shield
+HAM-67-MGE	hamlet	5/15/23	SA/GR		25	2	730	Molecular Grade (95%) Ethanol
+HER-67-DRS	hera	5/15/23	SA/GR		25	2	730	DNA/RNA Shield
+HER-67-MGE	hera	5/15/23	SA/GR		25	2	730	Molecular Grade (95%) Ethanol
+JAR-67-DRS	jarjarbinks	5/15/23	SA/GR		25	2	730	DNA/RNA Shield
+JAR-67-MGE	jarjarbinks	5/15/23	SA/GR		25	2	730	Molecular Grade (95%) Ethanol
+OPH-67-DRS	ophelia	5/15/23	SA/GR		25	1	730	DNA/RNA Shield
+OPH-67-MGE	ophelia	5/15/23	SA/GR		25	1	730	Molecular Grade (95%) Ethanol
+KUB-67-DRS	kubo	5/15/23	SA/GR		25	2	730	DNA/RNA Shield
+KUB-67-MGE	kubo	5/15/23	SA/GR		25	2	730	Molecular Grade (95%) Ethanol
+KOR-67-DRS	korra	5/15/23	SA/GR		25	3	730	DNA/RNA Shield
+KOR-67-MGE	korra	5/15/23	SA/GR		25	3	730	Molecular Grade (95%) Ethanol
+WOL-67-DRS	wolverine	5/15/23	SA/GR		25	2	730	DNA/RNA Shield
+WOL-67-MGE	wolverine	5/15/23	SA/GR		25	2	730	Molecular Grade (95%) Ethanol
+IRI-67-DRS	iris	5/15/23	SA/GR		25	3	730	DNA/RNA Shield
+IRI-67-MGE	iris	5/15/23	SA/GR		25	3	730	Molecular Grade (95%) Ethanol
+GOO-67-DRS	goose	5/15/23	SA/GR		25	3	800	DNA/RNA Shield
+GOO-67-MGE	goose	5/15/23	SA/GR		25	3	800	Molecular Grade (95%) Ethanol
+LAM-67-DRS	lambchop	5/15/23	SA/GR		25	3	800	DNA/RNA Shield
+LAM-67-MGE	lambchop	5/15/23	SA/GR		25	3	800	Molecular Grade (95%) Ethanol
+FRA-67-DRS	franc	5/15/23	SA/GR		25	2	800	DNA/RNA Shield
+FRA-67-MGE	franc	5/15/23	SA/GR		25	2	800	Molecular Grade (95%) Ethanol
+IVY-67-DRS	ivy	5/15/23	SA/GR		25	2	800	DNA/RNA Shield
+IVY-67-MGE	ivy	5/15/23	SA/GR		25	2	800	Molecular Grade (95%) Ethanol
+CHA-67-DRS	charles	5/15/23	SA/GR		25	2	800	DNA/RNA Shield
+CHA-67-MGE	charles	5/15/23	SA/GR		25	2	800	Molecular Grade (95%) Ethanol
+GRO-67-DRS	grogu	5/15/23	SA/GR		25	2	800	DNA/RNA Shield
+GRO-67-MGE	grogu	5/15/23	SA/GR		25	2	800	Molecular Grade (95%) Ethanol
+MAR-67-DRS	marshmallow	5/15/23	SA/GR		25	2	800	DNA/RNA Shield
+MAR-67-MGE	marshmallow	5/15/23	SA/GR		25	2	800	Molecular Grade (95%) Ethanol
+HEN-67-DRS	henry	5/15/23	SA/GR		25	3	800	DNA/RNA Shield
+HEN-67-MGE	henry	5/15/23	SA/GR		25	3	800	Molecular Grade (95%) Ethanol
+GIN-67-DRS	ginger	5/15/23	SA/GR		25	2	800	DNA/RNA Shield
+GIN-67-MGE	ginger	5/15/23	SA/GR		25	2	800	Molecular Grade (95%) Ethanol
+HAM-68-DRS	hamlet	5/16/23	SA		25	2	730	DNA/RNA Shield
+HAM-68-MGE	hamlet	5/16/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+HER-68-DRS	hera	5/16/23	SA		25	2	730	DNA/RNA Shield
+HER-68-MGE	hera	5/16/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+JAR-68-DRS	jarjarbinks	5/16/23	SA		25	2	730	DNA/RNA Shield
+JAR-68-MGE	jarjarbinks	5/16/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+OPH-68-DRS	ophelia	5/16/23	SA		25	2	730	DNA/RNA Shield
+OPH-68-MGE	ophelia	5/16/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+KUB-68-DRS	kubo	5/16/23	SA		25	2	730	DNA/RNA Shield
+KUB-68-MGE	kubo	5/16/23	SA		25	2	730	Molecular Grade (95%) Ethanol
+KOR-68-DRS	korra	5/16/23	SA		25	3	730	DNA/RNA Shield
+KOR-68-MGE	korra	5/16/23	SA		26	3	730	Molecular Grade (95%) Ethanol
+WOL-68-DRS	wolverine	5/16/23	SA		26	2	730	DNA/RNA Shield
+WOL-68-MGE	wolverine	5/16/23	SA		26	2	730	Molecular Grade (95%) Ethanol
+IRI-68-DRS	iris	5/16/23	SA		26	2	730	DNA/RNA Shield
+IRI-68-MGE	iris	5/16/23	SA		26	2	730	Molecular Grade (95%) Ethanol
+GOO-68-DRS	goose	5/16/23	SA		26	3	800	DNA/RNA Shield
+GOO-68-MGE	goose	5/16/23	SA		26	3	800	Molecular Grade (95%) Ethanol
+LAM-68-DRS	lambchop	5/16/23	SA		26	3	800	DNA/RNA Shield
+LAM-68-MGE	lambchop	5/16/23	SA		26	3	800	Molecular Grade (95%) Ethanol
+FRA-68-DRS	franc	5/16/23	SA		26	3	800	DNA/RNA Shield
+FRA-68-MGE	franc	5/16/23	SA		26	3	800	Molecular Grade (95%) Ethanol
+IVY-68-DRS	ivy	5/16/23	SA		26	3	800	DNA/RNA Shield
+IVY-68-MGE	ivy	5/16/23	SA		26	3	800	Molecular Grade (95%) Ethanol
+CHA-68-DRS	charles	5/16/23	SA		26	2	800	DNA/RNA Shield
+CHA-68-MGE	charles	5/16/23	SA		26	2	800	Molecular Grade (95%) Ethanol
+GRO-68-DRS	grogu	5/16/23	SA		26	3	800	DNA/RNA Shield
+GRO-68-MGE	grogu	5/16/23	SA		26	3	800	Molecular Grade (95%) Ethanol
+MAR-68-DRS	marshmallow	5/16/23	SA		26	2	800	DNA/RNA Shield
+MAR-68-MGE	marshmallow	5/16/23	SA		26	2	800	Molecular Grade (95%) Ethanol
+HEN-68-DRS	henry	5/16/23	SA		26	2	800	DNA/RNA Shield
+HEN-68-MGE	henry	5/16/23	SA		26	2	800	Molecular Grade (95%) Ethanol
+GIN-68-DRS	ginger	5/16/23	SA		26	2	800	DNA/RNA Shield
+GIN-68-MGE	ginger	5/16/23	SA		26	2	800	Molecular Grade (95%) Ethanol
+HAM-69-DRS	hamlet	5/17/23	SA/GR		26	2	730	DNA/RNA Shield
+HAM-69-MGE	hamlet	5/17/23	SA/GR		26	2	730	Molecular Grade (95%) Ethanol
+HER-69-DRS	hera	5/17/23	SA/GR		26	2	730	DNA/RNA Shield
+HER-69-MGE	hera	5/17/23	SA/GR		26	2	730	Molecular Grade (95%) Ethanol
+JAR-69-DRS	jarjarbinks	5/17/23	SA/GR		26	2	730	DNA/RNA Shield
+JAR-69-MGE	jarjarbinks	5/17/23	SA/GR		26	2	730	Molecular Grade (95%) Ethanol
+OPH-69-DRS	ophelia	5/17/23	SA/GR		26	2	730	DNA/RNA Shield
+OPH-69-MGE	ophelia	5/17/23	SA/GR		26	2	730	Molecular Grade (95%) Ethanol
+KUB-69-DRS	kubo	5/17/23	SA/GR		26	2	730	DNA/RNA Shield
+KUB-69-MGE	kubo	5/17/23	SA/GR		26	2	730	Molecular Grade (95%) Ethanol
+KOR-69-DRS	korra	5/17/23	SA/GR		26	3	730	DNA/RNA Shield
+KOR-69-MGE	korra	5/17/23	SA/GR		26	3	730	Molecular Grade (95%) Ethanol
+WOL-69-DRS	wolverine	5/17/23	SA/GR		26	2	730	DNA/RNA Shield
+WOL-69-MGE	wolverine	5/17/23	SA/GR		26	2	730	Molecular Grade (95%) Ethanol
+IRI-69-DRS	iris	5/17/23	SA/GR		26	3	730	DNA/RNA Shield
+IRI-69-MGE	iris	5/17/23	SA/GR		26	3	730	Molecular Grade (95%) Ethanol
+GOO-69-DRS	goose	5/17/23	SA/GR		26	3	800	DNA/RNA Shield
+GOO-69-MGE	goose	5/17/23	SA/GR		26	3	800	Molecular Grade (95%) Ethanol
+LAM-69-DRS	lambchop	5/17/23	SA/GR		26	3	800	DNA/RNA Shield
+LAM-69-MGE	lambchop	5/17/23	SA/GR		26	3	800	Molecular Grade (95%) Ethanol
+FRA-69-DRS	franc	5/17/23	SA/GR		26	5	800	DNA/RNA Shield
+FRA-69-MGE	franc	5/17/23	SA/GR		26	5	800	Molecular Grade (95%) Ethanol
+IVY-69-DRS	ivy	5/17/23	SA/GR		26	2	800	DNA/RNA Shield
+IVY-69-MGE	ivy	5/17/23	SA/GR		26	2	800	Molecular Grade (95%) Ethanol
+CHA-69-DRS	charles	5/17/23	SA/GR		26	2	800	DNA/RNA Shield
+CHA-69-MGE	charles	5/17/23	SA/GR		26	2	800	Molecular Grade (95%) Ethanol
+GRO-69-DRS	grogu	5/17/23	SA/GR		26	2	800	DNA/RNA Shield
+GRO-69-MGE	grogu	5/17/23	SA/GR		26	2	800	Molecular Grade (95%) Ethanol
+MAR-69-DRS	marshmallow	5/17/23	SA/GR		26	2	800	DNA/RNA Shield
+MAR-69-MGE	marshmallow	5/17/23	SA/GR		26	2	800	Molecular Grade (95%) Ethanol
+BUD-69-DRS	buddy	5/17/23	SA/GR		26	2	800	DNA/RNA Shield
+BUD-69-MGE	buddy	5/17/23	SA/GR		26	2	800	Molecular Grade (95%) Ethanol
+JOA-69-DRS	joans	5/17/23	SA/GR		26	2	800	DNA/RNA Shield
+JOA-69-MGE	joans	5/17/23	SA/GR		26	2	800	Molecular Grade (95%) Ethanol
+HEN-69-DRS	henry	5/17/23	SA/GR		26	2	800	DNA/RNA Shield
+HEN-69-MGE	henry	5/17/23	SA/GR		26	2	800	Molecular Grade (95%) Ethanol
+GIN-69-DRS	ginger	5/17/23	SA/GR		26	2	800	DNA/RNA Shield
+GIN-69-MGE	ginger	5/17/23	SA/GR		26	2	800	Molecular Grade (95%) Ethanol
+HAM-70-DRS	hamlet	5/18/23	SA		26	2	800	DNA/RNA Shield
+HAM-70-MGE	hamlet	5/18/23	SA		26	2	800	Molecular Grade (95%) Ethanol
+HER-70-DRS	hera	5/18/23	SA		26	2	800	DNA/RNA Shield
+HER-70-MGE	hera	5/18/23	SA		26	2	800	Molecular Grade (95%) Ethanol
+JAR-70-DRS	jarjarbinks	5/18/23	SA		26	3	800	DNA/RNA Shield
+JAR-70-MGE	jarjarbinks	5/18/23	SA		26	3	800	Molecular Grade (95%) Ethanol
+OPH-70-DRS	ophelia	5/18/23	SA		26	1	800	DNA/RNA Shield
+OPH-70-MGE	ophelia	5/18/23	SA		26	1	800	Molecular Grade (95%) Ethanol
+KUB-70-DRS	kubo	5/18/23	SA		26	2	800	DNA/RNA Shield
+KUB-70-MGE	kubo	5/18/23	SA		26	2	800	Molecular Grade (95%) Ethanol
+KOR-70-DRS	korra	5/18/23	SA		26	3	800	DNA/RNA Shield
+KOR-70-MGE	korra	5/18/23	SA		26	3	800	Molecular Grade (95%) Ethanol
+WOL-70-DRS	wolverine	5/18/23	SA		26	2	800	DNA/RNA Shield
+WOL-70-MGE	wolverine	5/18/23	SA		26	2	800	Molecular Grade (95%) Ethanol
+IRI-70-DRS	iris	5/18/23	SA		26	3	800	DNA/RNA Shield
+IRI-70-MGE	iris	5/18/23	SA		26	3	800	Molecular Grade (95%) Ethanol
+GOO-70-DRS	goose	5/18/23	SA		26	3	730	DNA/RNA Shield
+GOO-70-MGE	goose	5/18/23	SA		26	3	730	Molecular Grade (95%) Ethanol
+LAM-70-DRS	lambchop	5/18/23	SA		26	3	730	DNA/RNA Shield
+LAM-70-MGE	lambchop	5/18/23	SA		26	3	730	Molecular Grade (95%) Ethanol
+FRA-70-DRS	franc	5/18/23	SA		27	2	730	DNA/RNA Shield
+FRA-70-MGE	franc	5/18/23	SA		27	2	730	Molecular Grade (95%) Ethanol
+IVY-70-DRS	ivy	5/18/23	SA		27	2	730	DNA/RNA Shield
+IVY-70-MGE	ivy	5/18/23	SA		27	2	730	Molecular Grade (95%) Ethanol
+CHA-70-DRS	charles	5/18/23	SA		27	2	730	DNA/RNA Shield
+CHA-70-MGE	charles	5/18/23	SA		27	2	730	Molecular Grade (95%) Ethanol
+GRO-70-DRS	grogu	5/18/23	SA		27	3	730	DNA/RNA Shield
+GRO-70-MGE	grogu	5/18/23	SA		27	3	730	Molecular Grade (95%) Ethanol
+MAR-70-DRS	marshmallow	5/18/23	SA		27	2	730	DNA/RNA Shield
+MAR-70-MGE	marshmallow	5/18/23	SA		27	2	730	Molecular Grade (95%) Ethanol
+BUD-70-DRS	buddy	5/18/23	SA		27	2	730	DNA/RNA Shield
+BUD-70-MGE	buddy	5/18/23	SA		27	2	730	Molecular Grade (95%) Ethanol
+JOA-70-DRS	joans	5/18/23	SA		27	2	730	DNA/RNA Shield
+JOA-70-MGE	joans	5/18/23	SA		27	2	730	Molecular Grade (95%) Ethanol
+HEN-70-DRS	henry	5/18/23	SA		27	2	730	DNA/RNA Shield
+HEN-70-MGE	henry	5/18/23	SA		27	2	730	Molecular Grade (95%) Ethanol
+GIN-70-DRS	ginger	5/18/23	SA		27	2	730	DNA/RNA Shield
+GIN-70-MGE	ginger	5/18/23	SA		27	2	730	Molecular Grade (95%) Ethanol
