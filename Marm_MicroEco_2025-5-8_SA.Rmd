@@ -100,7 +100,11 @@ bray.int <- trans_beta$new(
 ```{r}
 bray.int$cal_group_distance(within_group = TRUE)
 bray.int$cal_group_distance_diff(method = "wilcox")
-bray.int$plot_group_distance(add = "mean")
+bray.box.int <- bray.int$plot_group_distance(add = "mean")
+bray.box.int
+```
+```{r}
+ggsave("visuals/box_bray-wlcx_int.png", bray.box.int)
 ```
 ```{r}
 bray.int$cal_ordination(method = "PCoA")
@@ -130,6 +134,10 @@ bray.int.pcoa + labs(
         plot.title = element_text(hjust = 0.5),
         legend.text = element_text(size = 12),
         legend.title = element_text(size = 14))
+bray.int.pcoa
+```
+```{r}
+ggsave("visuals/pcoa_bray_int.png", bray.int.pcoa)
 ```
 # Abundance
 ## Taxonomic
