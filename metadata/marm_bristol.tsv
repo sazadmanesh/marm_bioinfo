@@ -6,7 +6,7 @@ study_day	date	time	room	subject	diet_trial	group_phase	group	bristol	cage	sex	r
 5	3/14/23	830	rmb	hamlet	run-in	baseline	g1	1	b1	male		nebraska	pair
 6	3/15/23	800	rmb	hamlet	run-in	baseline	g1	2	b1	male		nebraska	pair
 7	3/16/23	800	rmb	hamlet	run-in	baseline	g1	1	b1	male		nebraska	pair
-9	3/18/23	730	rmb	hamlet	run-in	baseline	g1	2	b1	male		nebraska	pair
+9	3/18/13	730	rmb	hamlet	run-in	baseline	g1	2	b1	male		nebraska	pair
 11	3/20/23	730	rmb	hamlet	run-in	baseline	g1	2	b1	male		nebraska	pair
 14	3/23/23	730	rmb	hamlet	run-in	baseline	g1	1	b1	male		nebraska	pair
 15	3/24/23	730	rmb	hamlet	intervention_1	gum	g1	1	b1	male		nebraska	pair

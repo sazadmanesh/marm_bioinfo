@@ -59,12 +59,12 @@ swan:
   marm_mb_tree: "/work/richlab/azadmanesh/marm_bioinfo/data/taxonomy/refseqs_tree.newick"
 
 marmoset:
-  bristol: "metadata/marm_bristol.tsv"
-  extracts: "metadata/marm_extracts.tsv"
-  libraries: "metadata/marm_libraries.tsv"
-  samples: "metadata/marm_samples.tsv"
-  seqruns: "metadata/marm_seqruns.tsv"
-  compilation: "metadata/compilation_marmoset.tsv"
+  bristol: "metadata/marmoset_bristol.tsv"
+  extracts: "metadata/marmoset_extracts.tsv"
+  libraries: "metadata/marmoset_libraries.tsv"
+  samples: "metadata/marmoset_samples.tsv"
+  seqruns: "metadata/marmoset_seqruns.tsv"
+  compilation: "metadata/marmoset_compilation.tsv"
   libraries_csv: "../data/libraries_marmoset.csv"
   seqruns_csv: "../data/seqruns_marmoset.csv"
   compilation_csv: "../data/compilation_marmoset.csv"

@@ -35,6 +35,10 @@ samples <- read.table("metadata/marm_samples.tsv",
           as.integer(str_sub(SampleTimeFormatted, 1, 2)),
           as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
   dplyr::select(-c("SampleDate", "SampleNotes", "SampleTime", "SampleTimeFormatted"))
+write.table(samples,
+            "metadata/marmoset_samples.tsv",
+            row.names = FALSE,
+            sep = "\t")
 ```
 ```{r}
 extracts <- read.table("metadata/marm_extracts.tsv",
@@ -43,11 +47,20 @@ extracts <- read.table("metadata/marm_extracts.tsv",
   mutate(extractdate = as.Date(ExtractDate,
                                format = "%m/%d/%y")) %>%
   dplyr::select(-c("ExtractDate", "ExtractNotes"))
+write.table(samples,
+            "metadata/marmoset_extracts.tsv",
+            row.names = FALSE,
+            sep = "\t")
 ```
 ```{r}
 libraries <- read.table("metadata/marm_libraries.tsv",
                       header = T,
-                      sep = "\t") 
+                      sep = "\t") %>%
+  dplyr::select(-"Run.ID")
+write.table(samples,
+            "metadata/marmoset_libraries.tsv",
+            row.names = FALSE,
+            sep = "\t")
 
 seqruns <- read.table("metadata/marm_seqruns.tsv",
                       header = T,
@@ -56,6 +69,10 @@ seqruns <- read.table("metadata/marm_seqruns.tsv",
   mutate(rundate = as.Date(Run.Date,
                            format = "%m/%d/%y")) %>%
   dplyr::select(-c("Pipeline", "Run.Notes", "Run.Date"))
+write.table(samples,
+            "metadata/marmoset_seqruns.tsv",
+            row.names = FALSE,
+            sep = "\t")
 
 subjects <- read.table("metadata/marm_subjects.tsv",
                       header = T,
@@ -66,8 +83,14 @@ subjects <- read.table("metadata/marm_subjects.tsv",
     subject = factor(subject, levels = unique(subject)),
     sex = factor(sex, levels = unique(sex)),
     housing = factor(housing, levels = unique(housing)),
-    group = factor(group, levels = unique(group))
-  )
+    group = factor(group, levels = unique(group)),
+    subj_dob = as.Date(DOB, format = "%m/%d/%y")
+  ) %>%
+  dplyr::select(-"DOB")
+write.table(samples,
+            "metadata/marmoset_subjects.tsv",
+            row.names = FALSE,
+            sep = "\t")
 ```
 ```{r}
 metadata <- libraries %>%
@@ -99,7 +122,10 @@ metadata <- libraries %>%
     origin = factor(origin, levels = unique(origin)),
     bristol = factor(Bristol, levels = unique(Bristol))
   ) %>%
-  dplyr::select(-c("Run.ID.x")) %>%
-  rename(Final.Library.Concentration = LibraryConc,
-         Volume.Added.to.Pool..uL. = PooledVol, )
+  rename(Library_Conc = Final.Library.Concentration,
+         Pooled_Vol = Volume.Added.to.Pool..uL.) 
+write.table(samples,
+            "metadata/marmoset_compilation.tsv",
+            row.names = FALSE,
+            sep = "\t")
 ```

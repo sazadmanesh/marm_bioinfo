@@ -1,21 +1,22 @@
 cage	subjectcode	subject	sex	housing	group	DOB	Age	contraception	origin	previousexp	notes
-b1	ham	hamlet	male	pair	g1	3/5/2017	6.016438356		nebraska		
-b1	her	hera	female	pair	g1	8/29/2019	3.531506849	estrumate	texas		
-b2	jar	jarjarbinks	male	pair	g1	1/25/2020	3.123287671		texas		
-b2	oph	ophelia	female	pair	g1	8/6/2017	5.594520548	estrumate	nebraska		
-b3	kub	kubo	male	pair	g1	2/2/2019	4.101369863		nebraska		
-b3	kor	korra	female	pair	g1	4/17/2017	5.898630137	estrumate	nebraska		Gave birth to 4 stillborn babies 4/29/23
-b4	wol	wolverine	male	pair	g1	9/28/2014	8.452054795		nebraska	abx-ctrl	
-b4	iri	iris	female	pair	g1	5/10/2016	6.835616438	estrumate	texas	abx-ctrl	
-f1	goo	goose	male	family	g1	6/24/2016	6.712328767		texas	abx-ctrl	
-f1	lam	lambchop	female	family	g1	5/13/2017	5.82739726	estrumate	texas		
-f2	fra	franc	male	pair	g2	11/6/2016	6.342465753		texas	abx	
-f2	ivy	ivy	female	pair	g2	12/27/2018	4.202739726	estrumate	nebraska		
-f3	cha	charles	male	pair	g2	12/17/2018	4.230136986		nebraska		Re-paired with Bubblegum 3/31/23
-f3	pad	padme	female	pair	g2	8/2/2018	4.657534247	estrumate	texas		Euthanized 3/29/23 (Renal failure)
-f4	gro	grogu	male	pair	g2	8/10/2018	4.583561644		texas		
-f4	mar	marshmallow	female	pair	g2	2/2/2019	4.101369863	estrumate	nebraska		
-f5	bud	buddy	male	family	g2	10/17/2016	6.397260274		texas		
-f5	joa	joans	female	family	g2	3/23/2017	5.967123288	estrumate	nebraska		Gave birth to 1 baby, given oxytocin to help induce contractions, given 1 non-bio baby from Venus 5/11/23
-f6	hen	henry	male	pair	g2	12/25/2018	4.208219178		nebraska		
-f6	gin	ginger	female	pair	g2	1/27/2017	6.117808219	estrumate	nebraska	abx	
+b1	ham	hamlet	male	pair	g1	3/5/17	6.016438356		nebraska		
+b1	her	hera	female	pair	g1	8/29/19	3.531506849	estrumate	texas		
+b2	jar	jarjarbinks	male	pair	g1	1/25/20	3.123287671		texas		
+b2	oph	ophelia	female	pair	g1	8/6/17	5.594520548	estrumate	nebraska		
+b3	kub	kubo	male	pair	g1	2/2/19	4.101369863		nebraska		
+b3	kor	korra	female	pair	g1	4/17/17	5.898630137	estrumate	nebraska		Gave birth to 4 stillborn babies 4/29/23
+b4	wol	wolverine	male	pair	g1	9/28/14	8.452054795		nebraska	abx-ctrl	
+b4	iri	iris	female	pair	g1	5/10/16	6.835616438	estrumate	texas	abx-ctrl	
+f1	goo	goose	male	family	g1	6/24/16	6.712328767		texas	abx-ctrl	
+f1	lam	lambchop	female	family	g1	5/13/17	5.82739726	estrumate	texas		
+f2	fra	franc	male	pair	g2	11/6/16	6.342465753		texas	abx	
+f2	ivy	ivy	female	pair	g2	12/27/18	4.202739726	estrumate	nebraska		
+f3	cha	charles	male	pair	g2	12/17/18	4.230136986		nebraska		Re-paired with Bubblegum 3/31/23
+f3	pad	padme	female	pair	g2	8/2/18	4.657534247	estrumate	texas		Euthanized 3/29/23 (Renal failure)
+f4	gro	grogu	male	pair	g2	8/10/18	4.583561644		texas		
+f4	mar	marshmallow	female	pair	g2	2/2/19	4.101369863	estrumate	nebraska		
+f5	bud	buddy	male	family	g2	10/17/16	6.397260274		texas		
+f5	joa	joans	female	family	g2	3/23/17	5.967123288	estrumate	nebraska		Gave birth to 1 baby, given oxytocin to help induce contractions, given 1 non-bio baby from Venus 5/11/23
+f6	hen	henry	male	pair	g2	12/25/18	4.208219178		nebraska		
+f6	gin	ginger	female	pair	g2	1/27/17	6.117808219	estrumate	nebraska	abx	
+						1/27/17					
