@@ -17,30 +17,87 @@ source(here::here(global$setup))
 ```
 # Metadata
 ```{r}
-samples <- read.table(marmoset$samples,
+samples <- read.table("metadata/marm_samples.tsv",
                       header = T,
-                      sep = "\t")
+                      sep = "\t") %>%
+  rename(subject = SampleSubject) %>%
+  mutate(sampledate = as.Date(SampleDate,
+                        format = "%m/%d/%y"),
+         studyday = str_extract(SampleID, "(?<=-)[0-9]+(?=-)"),
+         subj_day = fct(str_glue("{subject}", "_", "{studyday}")),
+         SampleTimeFormatted = str_pad(SampleTime, 4, pad = "0"),
+         sampletime = as_hms(sprintf("%02d:%02d:00",
+          as.integer(str_sub(SampleTimeFormatted, 1, 2)),
+          as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
+  dplyr::select(-c("SampleDate", "SampleNotes", "SampleTime", "SampleTimeFormatted"))
 
-extracts <- read.table(marmoset$extracts,
+extracts <- read.table("metadata/marm_extracts.tsv",
                       header = T,
-                      sep = "\t")
+                      sep = "\t") %>%
+  mutate(extractdate = as.Date(ExtractDate,
+                               format = "%m/%d/%y")) %>%
+  dplyr::select(-c("ExtractDate", "ExtractNotes"))
 
-libraries <- read.table(marmoset$libraries,
+libraries <- read.table("metadata/marm_libraries.tsv",
                       header = T,
-                      sep = "\t") 
+                      sep = "\t") %>%
+  dplyr::select(-"Run.ID")
 
-seqruns <- read.table(marmoset$seqruns,
+seqruns <- read.table("metadata/marm_seqruns.tsv",
                       header = T,
-                      sep = "\t")
+                      sep = "\t") %>%
+  rename(Seq.ID = Pooled.Library.Code) %>%
+  mutate(rundate = as.Date(Run.Date,
+                           format = "%m/%d/%y")) %>%
+  dplyr::select(-c("Pipeline", "Run.Notes", "Run.Date"))
 
-subjects <- read.table(marmoset$subjects,
+subjects <- read.table("metadata/marm_subjects.tsv",
                       header = T,
-                      sep = "\t")
+                      sep = "\t") %>%
+  mutate(
+    room = str_glue("room {str_extract(cage, '^[a-zA-Z]')}"),
+    subjectcode = factor(subjectcode, levels = unique(subjectcode)),
+    subject = factor(subject, levels = unique(subject)),
+    sex = factor(sex, levels = unique(sex)),
+    housing = factor(housing, levels = unique(housing)),
+    group = factor(group, levels = unique(group)),
+    subj_dob = as.Date(DOB, format = "%m/%d/%y")
+  ) %>%
+  dplyr::select(-"DOB")
 
-metadata <- read.table(marmoset$compilation,
-                       header = T, 
-                       sep = "\t")
+metadata <- libraries %>%
+  left_join(samples, by = "SampleID") %>%
+  left_join(subjects, by = "subject") %>%
+  left_join(seqruns, by = "Seq.ID") %>%
+  mutate(diet_trial = case_when(
+    sampledate >= as.Date("2023-03-10") & sampledate <= as.Date("2023-03-23") ~ "run-in",
+    sampledate >= as.Date("2023-03-24") & sampledate <= as.Date("2023-04-06") ~ "intervention-1",
+    sampledate >= as.Date("2023-04-07") & sampledate <= as.Date("2023-04-20") ~ "washout-1",
+    sampledate >= as.Date("2023-04-21") & sampledate <= as.Date("2023-05-04") ~ "intervention-2",
+    sampledate >= as.Date("2023-05-05") & sampledate <= as.Date("2023-05-18") ~ "washout-2"
+  )) %>%
+  mutate(group_phase = case_when(
+    diet_trial == "run-in" & group == "g1" ~ "baseline",
+    diet_trial == "run-in" & group == "g2" ~ "baseline",
+    diet_trial == "intervention-1" & group == "g1" ~ "gum",
+    diet_trial == "intervention-1" & group == "g2" ~ "control",
+    diet_trial == "washout-1" & group == "g1" ~ "gum-washout",
+    diet_trial == "washout-1" & group == "g2" ~ "control-washout",
+    diet_trial == "intervention-2" & group == "g1" ~ "control",
+    diet_trial == "intervention-2" & group == "g2" ~ "gum",
+    diet_trial == "washout-2" & group == "g1" ~ "control-washout",
+    diet_trial == "washout-2" & group == "g2" ~ "gum-washout"
+  )) %>%
+  mutate(
+    diet_trial = factor(diet_trial, levels = unique(diet_trial)),
+    group_phase = factor(group_phase, levels = unique(group_phase)),
+    origin = factor(origin, levels = unique(origin)),
+    bristol = factor(Bristol, levels = unique(Bristol))
+  ) %>%
+  rename(Library_Conc = Final.Library.Concentration,
+         Pooled_Vol = Volume.Added.to.Pool..uL.) 
 ```
+
 ## Metadata Subsets
 # Sample Subsets
 ```{r}
@@ -166,11 +223,11 @@ samples.rmf <- sample.list.rmf %>% unlist()
 ```
 # Alignment Files
 ```{r}
-alignment.files.list <- list.files(path = marmoset$barcode_alignments,
+alignment.files.list <- list.files(path = "data/read_alignments/",
                                    pattern = "*_wf-metagenomics-alignment.csv$",
                                    full.names = TRUE)
 
-alignment.filenames <- list.files(path = marmoset$barcode_alignments,
+alignment.filenames <- list.files(path = "data/read_alignments/",
                                    pattern = "*_wf-metagenomics-alignment.csv$",
                                    full.names = FALSE)
 
