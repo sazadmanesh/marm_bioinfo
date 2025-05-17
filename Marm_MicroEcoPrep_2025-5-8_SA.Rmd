@@ -17,7 +17,7 @@ source(here::here(global$setup))
 ```
 # Metadata
 ```{r}
-samples <- read.table("metadata/marm_samples.tsv",
+samples <- read.table(marmoset$samples_raw,
                       header = T,
                       sep = "\t") %>%
   rename(subject = SampleSubject) %>%
@@ -31,19 +31,19 @@ samples <- read.table("metadata/marm_samples.tsv",
           as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
   dplyr::select(-c("SampleDate", "SampleNotes", "SampleTime", "SampleTimeFormatted"))
 
-extracts <- read.table("metadata/marm_extracts.tsv",
+extracts <- read.table(marmoset$extracts_raw,
                       header = T,
                       sep = "\t") %>%
   mutate(extractdate = as.Date(ExtractDate,
                                format = "%m/%d/%y")) %>%
   dplyr::select(-c("ExtractDate", "ExtractNotes"))
 
-libraries <- read.table("metadata/marm_libraries.tsv",
+libraries <- read.table(marmoset$libraries_raw,
                       header = T,
                       sep = "\t") %>%
   dplyr::select(-"Run.ID")
 
-seqruns <- read.table("metadata/marm_seqruns.tsv",
+seqruns <- read.table(marmoset$seqruns_raw,
                       header = T,
                       sep = "\t") %>%
   rename(Seq.ID = Pooled.Library.Code) %>%
@@ -51,7 +51,7 @@ seqruns <- read.table("metadata/marm_seqruns.tsv",
                            format = "%m/%d/%y")) %>%
   dplyr::select(-c("Pipeline", "Run.Notes", "Run.Date"))
 
-subjects <- read.table("metadata/marm_subjects.tsv",
+subjects <- read.table(marmoset$subjects_raw,
                       header = T,
                       sep = "\t") %>%
   mutate(
@@ -375,8 +375,8 @@ write.fasta(sequences = new.refseqs,
 ```
 # Phylogenetic Tree and Representative Fasta
 ```{r}
-tax.tree <- read.tree("data/taxonomy/refseqs_tree.newick")
-rep.seqs <- read.fasta("data/taxonomy/refseqs_aligned.fasta")
+tax.tree <- read.tree(marmoset$refseq_tree)
+rep.seqs <- read.fasta(marmoset$refseq_fasta)
 rep.seqs.tax4fun <- lapply(rep.seqs, function(seq) {gsub("-", "", seq)})
 ```
 # Taxonomy
@@ -400,7 +400,7 @@ taxonomy.list <- alignments %>%
                  relocate(Organism, Kingdom)
 
 write.table(taxonomy.list,
-            "data/taxonomy/tax_table.tsv",
+            marmoset$taxonomy_list,
             row.names = FALSE,
             sep = "\t")
 ```
@@ -441,7 +441,7 @@ sample.table <- metadata %>%
                 mutate(day = as.character(studyday)) %>%
   column_to_rownames("SequenceID") 
 
-write.table(sample.table, "data/metadata")
+write.table(sample.table, marmoset$sample_table)
 ```
 # Sample Subsets
 ```{r}
@@ -452,7 +452,7 @@ sample.table.merged <- sample.table %>%
   filter(!is.na(subj_day)) %>%
   column_to_rownames("subj_day") 
 
-write.table(sample.table.merged, "data/metadata")
+write.table(sample.table.merged, marmoset$sample_table)
   
 ```
 ```{r}
@@ -632,19 +632,19 @@ rarefaction_plot
 ggsave("visuals/marm_rarefaction.png", rarefaction_plot)
 ```
 ```{r}
-dataset.main$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.g1$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.g2$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.baseline$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.gum$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.gumwash$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.control$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.controlwash$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.int$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.ne$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.tx$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.rmb$rarefy_samples(method = "SRS", sample.size = 4000)
-dataset.rmf$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.main$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.g1$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.g2$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.baseline$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.gum$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.gumwash$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.control$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.controlwash$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.int$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.ne$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.tx$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.rmb$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.rmf$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 ```
 # Technical Replicates
 ```{r}
@@ -694,112 +694,112 @@ dataset.rmb$cal_abund()
 dataset.rmf$cal_abund()
 ```
 ```{r}
-dataset.main$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.g1$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.g2$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.baseline$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.gum$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.gumwash$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.control$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.controlwash$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.int$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.ne$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.tx$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.rmb$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
-dataset.rmf$filter_taxa(rel_abund = 0.00001,
-                         freq = 1,
-                         include_lowest = TRUE)
+dataset.main$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.g1$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.g2$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.baseline$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.gum$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.gumwash$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.control$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.controlwash$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.int$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.ne$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.tx$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.rmb$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.rmf$filter_taxa(rel_abund = methods_16s$marm$min_abund,
+                         freq = methods_16s$marm$min_freq,
+                         include_lowest = methods_16s$marm$include_lowest)
 ```
 # Diversity
 ```{r}
-dataset.main$cal_alphadiv(PD = TRUE)
-dataset.g1$cal_alphadiv(PD = TRUE)
-dataset.g2$cal_alphadiv(PD = TRUE)
-dataset.baseline$cal_alphadiv(PD = TRUE)
-dataset.gum$cal_alphadiv(PD = TRUE)
-dataset.gumwash$cal_alphadiv(PD = TRUE)
-dataset.control$cal_alphadiv(PD = TRUE)
-dataset.controlwash$cal_alphadiv(PD = TRUE)
-dataset.int$cal_alphadiv(PD = TRUE)
-dataset.ne$cal_alphadiv(PD = TRUE)
-dataset.tx$cal_alphadiv(PD = TRUE)
-dataset.rmb$cal_alphadiv(PD = TRUE)
-dataset.rmf$cal_alphadiv(PD = TRUE)
+dataset.main$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.g1$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.g2$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.baseline$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.gum$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.gumwash$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.control$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.controlwash$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.int$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.ne$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.tx$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.rmb$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
+dataset.rmf$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
 
-dataset.main$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.main$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.g1$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.g1$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.g2$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.g2$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.baseline$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.baseline$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.gum$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.gum$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.gumwash$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.gumwash$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.control$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.control$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.controlwash$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.controlwash$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.int$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.int$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.ne$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.ne$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.tx$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.tx$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.rmb$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.rmb$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.rmf$cal_betadiv(unifrac = TRUE,
-                         method = "aitchison")
+dataset.rmf$cal_betadiv(unifrac = methods_16s$marm$unifrac,
+                         method = methods_16s$marm$betadiv)
 ```
 ```{r}
 dataset.main$save_table("microeco/datasets/dataset_main", sep = "\t")
