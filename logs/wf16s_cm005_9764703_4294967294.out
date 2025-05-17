@@ -1,0 +1,1219 @@
+
+ N E X T F L O W   ~  version 24.04.3
+
+Launching `https://github.com/epi2me-labs/wf-16s` [modest_dijkstra] DSL2 - revision: a20a5156b9 [master]
+
+WARN: NEXTFLOW RECURSION IS A PREVIEW FEATURE - SYNTAX AND FUNCTIONALITY CAN CHANGE IN FUTURE RELEASES
+
+||||||||||   _____ ____ ___ ____  __  __ _____      _       _
+||||||||||  | ____|  _ \_ _|___ \|  \/  | ____|    | | __ _| |__  ___
+|||||       |  _| | |_) | |  __) | |\/| |  _| _____| |/ _` | '_ \/ __|
+|||||       | |___|  __/| | / __/| |  | | |__|_____| | (_| | |_) \__ \
+||||||||||  |_____|_|  |___|_____|_|  |_|_____|    |_|\__,_|_.__/|___/
+||||||||||  wf-16s v1.4.0-ga20a515
+--------------------------------------------------------------------------------
+Core Nextflow options
+  revision             : master
+  runName              : modest_dijkstra
+  containerEngine      : singularity
+  container            : [withLabel:wfmetagenomics:ontresearch/wf-metagenomics:sha1adcb94088d2397b0d61c0393035f51b1013226a, withLabel:wf_common:ontresearch/wf-common:shabadd33adae761be6f2d59c6ecfb44b19cf472cfc]
+  launchDir            : /lustre/work/richlab/azadmanesh/marm_bioinfo
+  workDir              : /lustre/work/richlab/azadmanesh/marm_bioinfo/work
+  projectDir           : /work/richlab/azadmanesh/assets/epi2me-labs/wf-16s
+  userName             : azadmanesh
+  profile              : singularity
+  configFiles          : /work/richlab/azadmanesh/assets/epi2me-labs/wf-16s/nextflow.config
+
+Input Options
+  fastq                : /work/richlab/azadmanesh/marm_bioinfo/ont_reads/filtered/cm005/
+
+Reference Options
+  taxonomic_rank       : S
+
+Minimap2 Options
+  keep_bam             : true
+  minimap2_by_reference: true
+  min_percent_identity : 85
+  min_ref_coverage     : 80
+
+Report Options
+  abundance_threshold  : 0
+  n_taxa_barplot       : 12
+
+Output Options
+  out_dir              : ../marm_bioinfo/data/outputs_wf16s/cm005/
+
+Advanced Options
+  min_len              : 1000
+  min_read_qual        : 7
+  threads              : 32
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+--------------------------------------------------------------------------------
+If you use epi2me-labs/wf-16s for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+
+--------------------------------------------------------------------------------
+This is epi2me-labs/wf-16s v1.4.0-ga20a515.
+--------------------------------------------------------------------------------
+Checking inputs.
+Searching input for [.fastq, .fastq.gz, .fq, .fq.gz] files.
+[-        ] fastcat -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+
+[-        ] fastcat                        -
+[-        ] pre…s:download_unpack_taxonomy -
+[-        ] pre…wnload_reference_ref2taxid -
+[-        ] min…ine:run_common:getVersions -
+[-        ] min…eline:run_common:getParams -
+[-        ] minimap_pipeline:minimap       -
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+[-        ] fastcat                        | 0 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[-        ] min…ine:run_common:getVersions | 0 of 1
+[-        ] min…eline:run_common:getParams | 0 of 1
+[-        ] minimap_pipeline:minimap       -
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (8)
+[a5/a61cfc] fastcat (14)                   | 0 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[-        ] min…ine:run_common:getVersions | 0 of 1
+[-        ] min…eline:run_common:getParams | 0 of 1
+[-        ] minimap_pipeline:minimap       -
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (8)
+[a5/a61cfc] fastcat (14)                   | 0 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[-        ] min…ine:run_common:getVersions | 0 of 1
+[-        ] min…eline:run_common:getParams | 0 of 1
+[-        ] minimap_pipeline:minimap       -
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (9)
+[57/cc0973] fastcat (8)                    | 1 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[-        ] min…ine:run_common:getVersions | 0 of 1
+[-        ] min…eline:run_common:getParams | 0 of 1
+[-        ] minimap_pipeline:minimap       -
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (10)
+[5e/61c698] fastcat (19)                   | 1 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[-        ] min…ine:run_common:getVersions | 0 of 1
+[-        ] min…eline:run_common:getParams | 0 of 1
+[-        ] minimap_pipeline:minimap       | 0 of 1
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (17)
+[e0/80a415] fastcat (15)                   | 8 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 0 of 1
+[-        ] minimap_pipeline:minimap       | 0 of 8
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (17)
+[e0/80a415] fastcat (15)                   | 8 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 0 of 1
+[-        ] minimap_pipeline:minimap       | 0 of 8
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (17)
+[e0/80a415] fastcat (15)                   | 8 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 8
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (18)
+[2f/079474] fastcat (20)                   | 9 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 9
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (22)
+[11/4d5c20] fastcat (4)                    | 13 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 13
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (24)
+[d9/c494a2] fastcat (16)                   | 15 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 15
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (24)
+[d9/c494a2] fastcat (16)                   | 15 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 15
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (25)
+[54/c3c43f] fastcat (11)                   | 16 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 16
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (26)
+[65/3b69f9] fastcat (6)                    | 18 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 18
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (26)
+[d9/c494a2] fastcat (16)                   | 21 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 20
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (26)
+[d9/c494a2] fastcat (16)                   | 21 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 21
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (26)
+[17/ea048f] fastcat (22)                   | 23 of 24
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 23
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (26)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 0 of 1
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[-        ] minimap_pipeline:minimap       | 0 of 24
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (27)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[c3/791969] min…eline:minimap (CM-NTC-005) | 0 of 24
+[-        ] min…pipeline:getAlignmentStats -
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (28)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[c3/791969] min…eline:minimap (CM-NTC-005) | 1 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 1
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (28)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[c3/791969] min…eline:minimap (CM-NTC-005) | 1 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 1
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (29)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[75/125adc] min…e:minimap (GIN-14-MGE-S75) | 2 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 2
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+Note: Empty files or those files whose reads have been discarded after filtering based on read length and/or read quality will not appear in the report and will be excluded from subsequent analysis.
+Minimap2 pipeline.
+Preparing databases.
+Using default taxonomy database.
+Using a default database.
+
+executor >  local (30)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[75/125adc] min…e:minimap (GIN-14-MGE-S75) | 3 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 3
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+
+
+
+
+
+executor >  local (31)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[2a/2381c5] min…e:minimap (MAR-24-DRS-S91) | 4 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 4
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+
+
+
+
+
+executor >  local (31)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[2a/2381c5] min…e:minimap (MAR-24-DRS-S91) | 4 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 4
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (32)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[e9/cd9d1b] min…ne:minimap (IRI-7-MGE-S86) | 5 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 5
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (33)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[03/deffa1] min…ne:minimap (GIN-7-MGE-S88) | 6 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 6
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (34)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[03/deffa1] min…ne:minimap (GIN-7-MGE-S88) | 7 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 7
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (34)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[03/deffa1] min…ne:minimap (GIN-7-MGE-S88) | 7 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 7
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (35)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[20/f8d200] min…e:minimap (PAD-11-MGE-S73) | 8 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 8
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (36)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[f2/198d26] min…e:minimap (IVY-24-DRS-S92) | 9 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 9
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (37)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[7e/f79285] min…ne:minimap (PAD-5-MGE-S82) | 10 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 10
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (37)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[7e/f79285] min…ne:minimap (PAD-5-MGE-S82) | 10 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 10
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (38)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[07/d5deab] min…e:minimap (JOA-21-MGE-S89) | 11 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 11
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (39)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[bf/c853eb] min…e:minimap (KUB-14-MGE-S74) | 12 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 12
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (40)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[bf/c853eb] min…e:minimap (KUB-14-MGE-S74) | 13 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 13
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (41)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[7d/288502] min…e:minimap (JAR-49-DRS-S70) | 14 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 14
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (42)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[28/cf4c4f] min…ne:minimap (FRA-9-MGE-S71) | 15 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 15
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (43)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[85/98681d] min…ne:minimap (KOR-6-MGE-S84) | 16 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 16
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (44)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[62/724dd4] min…e:minimap (IRI-46-MGE-S80) | 17 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 17
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (45)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[a4/534b36] min…ne:minimap (IRI-7-DRS-S85) | 18 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 18
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (45)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[a4/534b36] min…ne:minimap (IRI-7-DRS-S85) | 18 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 18
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (46)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[77/88da1b] min…e:minimap (OPH-45-MGE-S79) | 19 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 19
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (46)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[77/88da1b] min…e:minimap (OPH-45-MGE-S79) | 19 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 19
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (47)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[f8/9368e6] min…e:minimap (HER-11-MGE-S72) | 20 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 20
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (48)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[01/2bbe2c] min…e:minimap (GOO-42-MGE-S76) | 21 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 21
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (49)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[f7/aedd5c] min…ne:minimap (KOR-6-DRS-S83) | 22 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 22
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (50)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[92/d72af0] min…ne:minimap (GIN-7-DRS-S87) | 23 of 24
+[-        ] min…pipeline:getAlignmentStats | 0 of 23
+[-        ] min…line:createAbundanceTables -
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (51)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[43/451d73] min…lignmentStats (CM-NTC-005) | 0 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (52)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[43/451d73] min…lignmentStats (CM-NTC-005) | 1 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (53)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[20/8db2db] min…mentStats (GIN-14-MGE-S75) | 2 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (54)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[20/8db2db] min…mentStats (GIN-14-MGE-S75) | 3 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (54)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[20/8db2db] min…mentStats (GIN-14-MGE-S75) | 3 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (55)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[41/4409cf] min…mentStats (MAR-24-DRS-S91) | 4 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (55)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[41/4409cf] min…mentStats (MAR-24-DRS-S91) | 4 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (56)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[cf/9be872] min…mentStats (LAM-44-DRS-S77) | 5 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (56)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[cf/9be872] min…mentStats (LAM-44-DRS-S77) | 5 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (57)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[cf/9be872] min…mentStats (LAM-44-DRS-S77) | 6 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (58)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[6a/024474] min…mentStats (PAD-11-MGE-S73) | 7 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (58)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[6a/024474] min…mentStats (PAD-11-MGE-S73) | 7 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (59)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[6a/024474] min…mentStats (PAD-11-MGE-S73) | 8 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (60)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[38/8aa13d] min…mentStats (IVY-24-DRS-S92) | 9 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (60)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[38/8aa13d] min…mentStats (IVY-24-DRS-S92) | 9 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (61)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[1d/684daf] min…mentStats (JOA-21-MGE-S89) | 10 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (61)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[1d/684daf] min…mentStats (JOA-21-MGE-S89) | 10 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (62)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[1d/684daf] min…mentStats (JOA-21-MGE-S89) | 11 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (63)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[3c/aa8932] min…mentStats (KUB-14-MGE-S74) | 12 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (63)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[3c/aa8932] min…mentStats (KUB-14-MGE-S74) | 12 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (64)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[3c/aa8932] min…mentStats (KUB-14-MGE-S74) | 13 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (64)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[3c/aa8932] min…mentStats (KUB-14-MGE-S74) | 13 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (65)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[9f/8f8049] min…nmentStats (FRA-9-MGE-S71) | 14 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (66)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[9f/8f8049] min…nmentStats (FRA-9-MGE-S71) | 15 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (67)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[92/d8ab7a] min…nmentStats (KOR-6-MGE-S84) | 16 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (67)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[92/d8ab7a] min…nmentStats (KOR-6-MGE-S84) | 16 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (68)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[d2/d5bc76] min…nmentStats (IRI-7-DRS-S85) | 17 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (68)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[d2/d5bc76] min…nmentStats (IRI-7-DRS-S85) | 17 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (68)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[d2/d5bc76] min…nmentStats (IRI-7-DRS-S85) | 18 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (69)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[6e/5409f1] min…mentStats (OPH-45-MGE-S79) | 18 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (70)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[ee/a6ed24] min…mentStats (HER-11-MGE-S72) | 19 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (71)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[ee/a6ed24] min…mentStats (HER-11-MGE-S72) | 20 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (72)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[61/5541b3] min…mentStats (GOO-42-MGE-S76) | 21 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (72)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[61/5541b3] min…mentStats (GOO-42-MGE-S76) | 21 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (73)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[93/98dd5a] min…nmentStats (KOR-6-DRS-S83) | 22 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (73)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[93/98dd5a] min…nmentStats (KOR-6-DRS-S83) | 22 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (74)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[76/104a3b] min…mentStats (BUD-46-MGE-S81) | 23 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (74)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[76/104a3b] min…mentStats (BUD-46-MGE-S81) | 23 of 24
+[-        ] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (75)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[76/104a3b] min…mentStats (BUD-46-MGE-S81) | 24 of 24 ✔
+[ca/21fdca] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (75)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[76/104a3b] min…mentStats (BUD-46-MGE-S81) | 24 of 24 ✔
+[ca/21fdca] min…line:createAbundanceTables | 0 of 1
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (75)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[76/104a3b] min…mentStats (BUD-46-MGE-S81) | 24 of 24 ✔
+[ca/21fdca] min…line:createAbundanceTables | 1 of 1 ✔
+[-        ] minimap_pipeline:makeReport    -
+
+executor >  local (76)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[76/104a3b] min…mentStats (BUD-46-MGE-S81) | 24 of 24 ✔
+[ca/21fdca] min…line:createAbundanceTables | 1 of 1 ✔
+[9e/4ff960] min…ap_pipeline:makeReport (1) | 0 of 1
+
+executor >  local (76)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[76/104a3b] min…mentStats (BUD-46-MGE-S81) | 24 of 24 ✔
+[ca/21fdca] min…line:createAbundanceTables | 1 of 1 ✔
+[9e/4ff960] min…ap_pipeline:makeReport (1) | 1 of 1 ✔
+
+executor >  local (76)
+[0d/1216c6] fastcat (23)                   | 24 of 24 ✔
+[skipped  ] pre…s:download_unpack_taxonomy | 1 of 1, stored: 1 ✔
+[skipped  ] pre…wnload_reference_ref2taxid | 1 of 1, stored: 1 ✔
+[1c/62e2c8] min…ine:run_common:getVersions | 1 of 1 ✔
+[43/f75ee8] min…eline:run_common:getParams | 1 of 1 ✔
+[d1/b8bc88] min…e:minimap (BUD-46-MGE-S81) | 24 of 24 ✔
+[76/104a3b] min…mentStats (BUD-46-MGE-S81) | 24 of 24 ✔
+[ca/21fdca] min…line:createAbundanceTables | 1 of 1 ✔
+[9e/4ff960] min…ap_pipeline:makeReport (1) | 1 of 1 ✔
+Completed at: 24-Mar-2025 11:15:29
+Duration    : 21m
+CPU hours   : 6.4
+Succeeded   : 76
+
+

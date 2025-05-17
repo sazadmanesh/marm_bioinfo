@@ -1,0 +1,61 @@
+Kept 6509 reads out of 6650 reads
+Kept 6714 reads out of 6876 reads
+Kept 8439 reads out of 8592 reads
+Kept 35 reads out of 45 reads
+Kept 5557 reads out of 5653 reads
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1482 out of range for slice of length 1424
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Kept 5798 reads out of 5913 reads
+Kept 6599 reads out of 6764 reads
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1454 out of range for slice of length 1430
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Kept 8418 reads out of 8598 reads
+Kept 3314 reads out of 3394 reads
+Kept 4388 reads out of 4465 reads
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1696 out of range for slice of length 1410
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1485 out of range for slice of length 1479
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1201 out of range for slice of length 137
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread '<unnamed>' panicked at src/main.rs:168:41:
+ERROR: problem parsing fastq record: MissingAt
+thread '<unnamed>' panicked at src/main.rs:168:41:
+ERROR: problem parsing fastq record: MissingAt
+thread '<unnamed>' panicked at src/main.rs:168:41:
+ERROR: problem parsing fastq record: MissingAt
+Kept 5309 reads out of 5425 reads
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1489 out of range for slice of length 1467
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1504 out of range for slice of length 1464
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1481 out of range for slice of length 1479
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1472 out of range for slice of length 1414
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1471 out of range for slice of length 1445
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Kept 5439 reads out of 5571 reads
+Kept 4481 reads out of 4574 reads
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1548 out of range for slice of length 1440
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Kept 4376 reads out of 4452 reads
+thread '<unnamed>' panicked at src/main.rs:168:41:
+ERROR: problem parsing fastq record: MissingAt
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread '<unnamed>' panicked at src/main.rs:168:41:
+ERROR: problem parsing fastq record: MissingAt
+thread '<unnamed>' panicked at src/main.rs:168:41:
+ERROR: problem parsing fastq record: MissingAt
+thread '<unnamed>' panicked at src/main.rs:215:43:
+range end index 1677 out of range for slice of length 1587
+Kept 7987 reads out of 8111 reads

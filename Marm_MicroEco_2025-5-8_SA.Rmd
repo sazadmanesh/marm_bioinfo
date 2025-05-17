@@ -56,7 +56,21 @@ njc.int <- read.f.microtable("function", "njc", "intervention")
 # Data Visualization
 ## Alpha Diversity
 ```{r}
-
+alpha.main <- trans_alpha$new(dataset = dataset.main,
+                              group = "group_phase"
+                              )
+alpha.main$cal_diff(method = "KW_dunn",
+                    KW_dunn_letter = FALSE)
+```
+```{r}
+alpha.int <- trans_alpha$new(dataset = dataset.int,
+                             group = "group_phase")
+alpha.int$cal_diff(method = "wilcox")
+alpha.intervention <- alpha.int$plot_alpha(measure = "Shannon")
+alpha.intervention
+```
+```{r}
+ggsave("visuals/sha_wlcx_int.png", alpha.intervention)
 ```
 ```{r}
 chao.int <- trans_alpha$new(
@@ -64,6 +78,11 @@ chao.int <- trans_alpha$new(
   group = "group_phase"
 )
 chao.int$cal_diff(method = "wilcox")
+chao.intervention <- chao.int$plot_alpha(measure = "Chao1")
+```
+```{r}
+ggsave("visuals/chao_wlcx_int.png", chao.intervention)
+
 ```
 ## Beta Diversity
 ```{r}
@@ -77,7 +96,7 @@ bray.main <- trans_beta$new(
 ```
 ```{r}
 bray.main$cal_group_distance(within_group = TRUE)
-bray.main$cal_group_distance_diff(method = "KW")
+bray.main$cal_group_distance_diff(method = "wilcox")
 bray.main$plot_group_distance(add = "mean")
 ```
 ```{r}
@@ -151,63 +170,71 @@ ordered.samples <- as.ordered(sample.table.order$ID)
 ```
 ```{r}
 phy.abund <- trans_abund$new(dataset = dataset.main,
-                             taxrank = "Phylum")
+                             taxrank = "Phylum", groupmean = "group_phase")
+
+
+
+
+cla.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Class")
+ord.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Order")
+fam.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Family")
+gen.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Genus")
+spe.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Species")
+```
+```{r}
 phy.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
                         facet = c("group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-phy.rad <- trans_abund$new(dataset = dataset.main,
-                           taxrank = "Phylum",
-                          ntaxa = 8,
-                          groupmean = "group_phase")
-phy.rad$plot_radar(values.radar = c("0%", "25%", "50%"),
-                   grid.min = 0,
-                   grid.mid = 0.25,
-                   grid.max = 0.5)
+cla.abund <- trans_abund$new(dataset = dataset.main,
+                             taxrank = "Order", groupmean = "group_phase")
+cla.abund$plot_bar()
 ```
 ```{r}
-cla.abund <- trans_abund$new(dataset = dataset.main,
-                             taxrank = "Class")
+phy.abund$plot_line(order_x = c(ordered.samples))
+```
+```{r}
 cla.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
                         facet = c("group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-cla.rad <- trans_abund$new(dataset = dataset.main,
-                           taxrank = "Class",
-                          ntaxa = 8,
-                          groupmean = "group_phase")
-cla.rad$plot_radar(values.radar = c("0%", "25%", "50%"),
-                   grid.min = 0,
-                   grid.mid = 0.25,
-                   grid.max = 0.5)
-```
-```{r}
-ord.abund <- trans_abund$new(dataset = dataset.main,
-                             taxrank = "Order")
 ord.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
                         facet = c("group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-fam.abund <- trans_abund$new(dataset = dataset.main,
-                             taxrank = "Family")
 fam.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
                         facet = c("group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-gen.abund <- trans_abund$new(dataset = dataset.main,
-                             taxrank = "Genus")
 gen.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
                         facet = c("group"),
                         order_x = c(ordered.samples))
+```
+```{r}
+wlcx.int <- trans_diff$new(
+  dataset = dataset.int,
+  method = "wilcox",
+  group = "group_phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+wlcx.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.intervention <- wlcx.int$plot_diff_abund(plot_type = "barerrorbar",
+                                              use_number = 1:15,
+                                              add_sig = TRUE)
 ```
 ## Functional
 ### KEGG
@@ -309,7 +336,7 @@ gen.phy.int <- trans_abund$new(
   dataset = dataset.int,
   ntaxa = 30,
   taxrank = "Genus",
-  high_level = "Phylum",
+  high_level = "Class",
   groupmean = "group_phase",
   group_morestats = T)
 gen.phy.int$plot_bar(ggnested = T,

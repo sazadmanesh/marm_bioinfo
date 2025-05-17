@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --time=00:45:00
+#SBATCH --job-name=demux_trim_cm001
+#SBATCH --error=/work/richlab/azadmanesh/marm_bioinfo/logs/demux_trim_cm001_%A_%a.err
+#SBATCH --output=/work/richlab/azadmanesh/marm_bioinfo/logs/demux_trim_cm001_%A_%a.out
+#SBATCH --partition=guest
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --mem=100GB
+
+module purge
+module load dorado/0.7
+
+basecalled="/work/richlab/azadmanesh/marm_bioinfo/ont_reads/basecalled/cm001/cm001.bam"
+sample_sheet="/work/richlab/azadmanesh/marm_bioinfo/dataframes/sample_sheets/cm001_sample_sheet.csv"
+trimmed="/work/richlab/azadmanesh/marm_bioinfo/ont_reads/trimmed/cm001/"
+
+dorado demux "$basecalled" \
+    --output-dir "$trimmed" \
+    --kit-name "EXP-PBC096" \
+    --sample-sheet "$sample_sheet" \
+    --emit-fastq --emit-summary

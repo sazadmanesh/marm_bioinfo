@@ -1,0 +1,3 @@
+[2025-03-20 10:35:10.483] [info] Running: "basecaller" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/dna_r9.4.1_e8_sup@v3.6/" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/marm_raw/cm002/" "--recursive" "--no-trim"
+[2025-03-20 10:35:10.650] [info] > Creating basecall pipeline
+[2025-03-20 10:35:12.270] [error] Sample rate for model (4000) and data (5000) are not compatible.

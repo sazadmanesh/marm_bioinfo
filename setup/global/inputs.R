@@ -4,10 +4,8 @@ sample_merge_cols <- c(
   "subject",
   "sampledate",
   "bristol",
-  "SampleTime",
   "studyday",
   "subj_day",
-  "location",
   "subjectcode",
   "sex",
   "housing",
@@ -17,7 +15,8 @@ sample_merge_cols <- c(
   "origin",
   "previousexp",
   "diet_trial",
-  "group_phase"
+  "group_phase",
+  "room"
 )
 
 subjects <- list(

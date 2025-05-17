@@ -1,0 +1,5 @@
+[2025-03-18 12:44:18.004] [info] Running: "demux" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/basecalled/cm011/" "--output-dir" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/trimmed/cm011/" "--kit-name" "'SQK-16S114-24'" "--sample-sheet" "/work/richlab/azadmanesh/marm_bioinfo/dataframes/sample_sheets/cm011_sample_sheet.csv" "--emit-fastq" "--emit-summary"
+[2025-03-18 12:44:18.019] [info] num input files: 1
+[W::bam_hdr_read] EOF marker is absent. The input is probably truncated
+[2025-03-18 12:44:18.039] [info] > starting barcode demuxing
+> Output records written: 0/var/spool/slurmd/job9706020/slurm_script: line 22: 275735 Aborted                 (core dumped) dorado demux "$basecalled" --output-dir "$trimmed" --kit-name "'SQK-16S114-24'" --sample-sheet "$sample_sheet" --emit-fastq --emit-summary

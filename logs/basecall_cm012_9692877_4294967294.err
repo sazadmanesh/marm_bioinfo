@@ -1,0 +1,5 @@
+[2025-03-17 19:56:15.340] [info] Running: "basecaller" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/dna_r10.4.1_e8.2_400bps_sup@v5.0.0/" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/marm_raw/cm012/" "--recursive" "--no-trim"
+[2025-03-17 19:56:15.487] [info] > Creating basecall pipeline
+[2025-03-17 19:56:38.942] [info] cuda:0 using chunk size 12288, batch size 160
+[2025-03-17 19:56:41.841] [info] cuda:0 using chunk size 6144, batch size 288
+slurmstepd: error: *** JOB 9692877 ON c1313 CANCELLED AT 2025-03-17T21:56:35 DUE TO TIME LIMIT ***

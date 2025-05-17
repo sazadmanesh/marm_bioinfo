@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH --time=03:00:00
+#SBATCH --job-name=wf16s_cm010
+#SBATCH --error=/work/richlab/azadmanesh/marm_bioinfo/logs/wf16s_cm010_%A_%a.err
+#SBATCH --output=/work/richlab/azadmanesh/marm_bioinfo/logs/wf16s_cm010_%A_%a.out
+#SBATCH --partition=guest
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=350GB
+
+module purge
+module load nextflow
+
+filtered="/work/richlab/azadmanesh/marm_bioinfo/ont_reads/filtered/cm010/"
+
+cd "/work/richlab/azadmanesh/marm_bioinfo/"
+
+processed="../marm_bioinfo/data/outputs_wf16s/cm010/"
+
+nextflow run epi2me-labs/wf-16s \
+-profile singularity \
+--fastq "$filtered" \
+--taxonomic_rank S \
+--keep_bam \
+--minimap2_by_reference \
+--out_dir "$processed" \
+--min_len 1000 \
+--max_len 2000 \
+--abundance_threshold 0 \
+--min_read_qual 7 \
+--min_percent_identity 85 \
+--min_ref_coverage 80 \
+--n_taxa_barplot 12 \
+--threads 32

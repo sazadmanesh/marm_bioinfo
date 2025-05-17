@@ -8,8 +8,7 @@ knitr::knit_engines$set(terminal = function(options) {
   patterns <- list(
     global        = global,
     params        = params,
-    methods_16s_r9  = methods_16s_r9,
-    methods_16S_r10 = methods_16s_r10,
+    methods_16s  = methods_16s,
     swan          = swan,
     sample_sheets = sample_sheets,
     microbiome         = microbiome,

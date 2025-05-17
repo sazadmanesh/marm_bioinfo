@@ -1,0 +1,8 @@
+[2025-03-23 19:18:52.396] [info] Running: "basecaller" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/dna_r10.4.1_e8.2_400bps_sup@v5.0.0/" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/marm_raw/cm008/" "--recursive" "--no-trim"
+[2025-03-23 19:18:52.577] [info] > Creating basecall pipeline
+[2025-03-23 19:19:18.081] [info] cuda:0 using chunk size 12288, batch size 256
+[2025-03-23 19:19:19.383] [info] cuda:0 using chunk size 6144, batch size 256
+[2025-03-23 19:51:51.563] [info] > Simplex reads basecalled: 179464
+[2025-03-23 19:51:51.566] [info] > Basecalled @ Samples/s: 1.794142e+06
+[2025-03-23 19:51:51.608] [info] > Finished
+[2025-03-23 19:51:54.020] [info] Running: "summary" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/basecalled/cm008//cm008.bam"

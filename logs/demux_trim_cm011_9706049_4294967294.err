@@ -1,0 +1,8 @@
+[2025-03-18 12:54:52.869] [info] Running: "demux" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/basecalled/cm011/cm011.bam" "--output-dir" "/work/richlab/azadmanesh/marm_bioinfo/ont_reads/trimmed/cm011/" "--kit-name" "'SQK-16S114-24'" "--sample-sheet" "/work/richlab/azadmanesh/marm_bioinfo/dataframes/sample_sheets/cm011_sample_sheet.csv" "--emit-fastq" "--emit-summary"
+[W::bam_hdr_read] EOF marker is absent. The input is probably truncated
+[2025-03-18 12:54:52.878] [info] num input files: 1
+[W::bam_hdr_read] EOF marker is absent. The input is probably truncated
+[2025-03-18 12:54:52.889] [info] > starting barcode demuxing
+> Output records written: 0terminate called after throwing an instance of 'std::runtime_error'
+  what():  Could not find 'SQK-16S114-24' in pre-built or custom kits
+/var/spool/slurmd/job9706049/slurm_script: line 22: 3455709 Aborted                 (core dumped) dorado demux "$basecalled" --output-dir "$trimmed" --kit-name "'SQK-16S114-24'" --sample-sheet "$sample_sheet" --emit-fastq --emit-summary

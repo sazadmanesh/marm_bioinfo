@@ -620,7 +620,7 @@ dataset.rmf <- microtable$new(
 ```
 # Rarefaction
 ```{r}
-rarefaction_depths <- c(seq.int(0, 8000, by = 500))
+rarefaction_depths <- c(seq.int(0, 10000, by = 500))
 
 rarefaction.main <- trans_rarefy$new(dataset.main,
                                      alphadiv = "Observed",
@@ -632,19 +632,19 @@ rarefaction_plot
 ggsave("visuals/marm_rarefaction.png", rarefaction_plot)
 ```
 ```{r}
-dataset.main$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.g1$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.g2$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.baseline$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.gum$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.gumwash$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.control$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.controlwash$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.int$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.ne$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.tx$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.rmb$rarefy_samples(method = "SRS", sample.size = 4500)
-dataset.rmf$rarefy_samples(method = "SRS", sample.size = 4500)
+dataset.main$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.g1$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.g2$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.baseline$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.gum$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.gumwash$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.control$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.controlwash$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.int$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.ne$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.tx$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.rmb$rarefy_samples(method = "SRS", sample.size = 4000)
+dataset.rmf$rarefy_samples(method = "SRS", sample.size = 4000)
 ```
 # Technical Replicates
 ```{r}
@@ -798,7 +798,7 @@ dataset.rmb$cal_betadiv(unifrac = TRUE,
                          method = "aitchison")
 ```
 ```{r}
-dataset.rmb$cal_betadiv(unifrac = TRUE,
+dataset.rmf$cal_betadiv(unifrac = TRUE,
                          method = "aitchison")
 ```
 ```{r}
@@ -854,7 +854,7 @@ dataset.gumwash$save_betadiv("microeco/betadiversity/gumwash")
 dataset.control$save_betadiv("microeco/betadiversity/control")
 dataset.controlwash$save_betadiv("microeco/betadiversity/controlwash")
 dataset.int$save_betadiv("microeco/betadiversity/intervention")
-dataset.tx$save_betadiv("microeco/betadiversity/texasx")
+dataset.tx$save_betadiv("microeco/betadiversity/texas")
 dataset.ne$save_betadiv("microeco/betadiversity/nebraska")
 dataset.rmb$save_betadiv("microeco/betadiversity/roomb")
 dataset.rmf$save_betadiv("microeco/betadiversity/roomf")

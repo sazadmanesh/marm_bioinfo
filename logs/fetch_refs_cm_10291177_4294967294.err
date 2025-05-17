@@ -1,0 +1,4 @@
+cut: /work/richlab/azadmanesh/marm_bioinfo/tmp/fetch_references.txt: No such file or directory
+[INFO][0m read key-value file: /work/richlab/azadmanesh/marm_bioinfo/tmp/fetch_references.txt
+[31m[ERRO][0m read key-value file: stat /work/richlab/azadmanesh/marm_bioinfo/tmp/fetch_references.txt: no such file or directory
+mv: cannot stat '/work/richlab/azadmanesh/marm_bioinfo/tmp/tmp2.fasta': No such file or directory
