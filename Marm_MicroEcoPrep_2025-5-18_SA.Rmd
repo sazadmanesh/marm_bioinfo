@@ -1,5 +1,5 @@
 ---
-title: "Marm_MicroecoPrep_2025-5-8_SA"
+title: "Marm_MicroecoPrep_2025-5-18_SA"
 author: "Shayda"
 date: "`r Sys.Date()`"
 params:
@@ -11,7 +11,7 @@ Chunk errors = knitting error
 ```{r}
 global <- config::get(config = "default")
 
-here::i_am("Marm_MicroecoPrep_2025-5-8_SA.Rmd")
+here::i_am("Marm_MicroecoPrep_2025-5-18_SA.Rmd")
 source(here::here(global$setup))
 
 ```
@@ -223,11 +223,11 @@ samples.rmf <- sample.list.rmf %>% unlist()
 ```
 # Alignment Files
 ```{r}
-alignment.files.list <- list.files(path = "data/read_alignments/",
+alignment.files.list <- list.files(path = marmoset$read_alignments,
                                    pattern = "*_wf-metagenomics-alignment.csv$",
                                    full.names = TRUE)
 
-alignment.filenames <- list.files(path = "data/read_alignments/",
+alignment.filenames <- list.files(path = marmoset$read_alignments,
                                    pattern = "*_wf-metagenomics-alignment.csv$",
                                    full.names = FALSE)
 
@@ -697,39 +697,51 @@ dataset.rmf$cal_abund()
 dataset.main$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.g1$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.g2$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.baseline$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.gum$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.gumwash$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.control$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.controlwash$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.int$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.ne$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.tx$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.rmb$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
+
 dataset.rmf$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
@@ -802,62 +814,62 @@ dataset.rmf$cal_betadiv(unifrac = methods_16s$marm$unifrac,
                          method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.main$save_table("microeco/datasets/dataset_main", sep = "\t")
-dataset.g1$save_table("microeco/datasets/dataset_group1", sep = "\t")
-dataset.g2$save_table("microeco/datasets/dataset_group2", sep = "\t")
-dataset.baseline$save_table("microeco/datasets/dataset_baseline", sep = "\t")
-dataset.gum$save_table("microeco/datasets/dataset_gum", sep = "\t")
-dataset.gumwash$save_table("microeco/datasets/dataset_gumwash", sep = "\t")
-dataset.control$save_table("microeco/datasets/dataset_control", sep = "\t")
-dataset.controlwash$save_table("microeco/datasets/dataset_controlwash", sep = "\t")
-dataset.int$save_table("microeco/datasets/dataset_intervention", sep = "\t")
-dataset.tx$save_table("microeco/datasets/dataset_texas", sep = "\t")
-dataset.ne$save_table("microeco/datasets/dataset_nebraska", sep = "\t")
-dataset.rmb$save_table("microeco/datasets/dataset_roomb", sep = "\t")
-dataset.rmf$save_table("microeco/datasets/dataset_roomf", sep = "\t")
+dataset.main$save_table(marmoset$microeco$data$main, sep = "\t")
+dataset.g1$save_table(marmoset$microeco$data$g1, sep = "\t")
+dataset.g2$save_table(marmoset$microeco$data$g2, sep = "\t")
+dataset.baseline$save_table(marmoset$microeco$data$base, sep = "\t")
+dataset.gum$save_table(marmoset$microeco$data$gum, sep = "\t")
+dataset.gumwash$save_table(marmoset$microeco$data$gumwash, sep = "\t")
+dataset.control$save_table(marmoset$microeco$data$ctrl, sep = "\t")
+dataset.controlwash$save_table(marmoset$microeco$data$ctrlwash, sep = "\t")
+dataset.int$save_table(marmoset$microeco$data$int, sep = "\t")
+dataset.tx$save_table(marmoset$microeco$data$tx, sep = "\t")
+dataset.ne$save_table(marmoset$microeco$data$ne, sep = "\t")
+dataset.rmb$save_table(marmoset$microeco$data$rmb, sep = "\t")
+dataset.rmf$save_table(marmoset$microeco$data$rmf, sep = "\t")
 
 
-dataset.main$save_abund("microeco/abundance/main", sep = "\t")
-dataset.g1$save_abund("microeco/abundance/group1", sep = "\t")
-dataset.g2$save_abund("microeco/abundance/group2", sep = "\t")
-dataset.baseline$save_abund("microeco/abundance/baseline", sep = "\t")
-dataset.gum$save_abund("microeco/abundance/gum", sep = "\t")
-dataset.gumwash$save_abund("microeco/abundance/gumwash", sep = "\t")
-dataset.control$save_abund("microeco/abundance/control", sep = "\t")
-dataset.controlwash$save_abund("microeco/abundance/controlwash", sep = "\t")
-dataset.int$save_abund("microeco/abundance/intervention", sep = "\t")
-dataset.tx$save_abund("microeco/abundance/texas", sep = "\t")
-dataset.ne$save_abund("microeco/abundance/nebraska", sep = "\t")
-dataset.rmb$save_abund("microeco/abundance/roomb", sep = "\t")
-dataset.rmf$save_abund("microeco/abundance/roomf", sep = "\t")
+dataset.main$save_abund(marmoset$microeco$abund$main, sep = "\t")
+dataset.g1$save_abund(marmoset$microeco$abund$g1, sep = "\t")
+dataset.g2$save_abund(marmoset$microeco$abund$g2, sep = "\t")
+dataset.baseline$save_abund(marmoset$microeco$abund$base, sep = "\t")
+dataset.gum$save_abund(marmoset$microeco$abund$gum, sep = "\t")
+dataset.gumwash$save_abund(marmoset$microeco$abund$gumwash, sep = "\t")
+dataset.control$save_abund(marmoset$microeco$abund$ctrl, sep = "\t")
+dataset.controlwash$save_abund(marmoset$microeco$abund$ctrlwash, sep = "\t")
+dataset.int$save_abund(marmoset$microeco$abund$int, sep = "\t")
+dataset.tx$save_abund(marmoset$microeco$abund$tx, sep = "\t")
+dataset.ne$save_abund(marmoset$microeco$abund$ne, sep = "\t")
+dataset.rmb$save_abund(marmoset$microeco$abund$rmb, sep = "\t")
+dataset.rmf$save_abund(marmoset$microeco$abund$rmf, sep = "\t")
 
-dataset.main$save_alphadiv("microeco/alphadiversity/main")
-dataset.g1$save_alphadiv("microeco/alphadiversity/group1")
-dataset.g2$save_alphadiv("microeco/alphadiversity/group2")
-dataset.baseline$save_alphadiv("microeco/alphadiversity/baseline")
-dataset.gum$save_alphadiv("microeco/alphadiversity/gum")
-dataset.gumwash$save_alphadiv("microeco/alphadiversity/gumwash")
-dataset.control$save_alphadiv("microeco/alphadiversity/control")
-dataset.controlwash$save_alphadiv("microeco/alphadiversity/controlwash")
-dataset.int$save_alphadiv("microeco/alphadiversity/intervention")
-dataset.tx$save_alphadiv("microeco/alphadiversity/texas")
-dataset.ne$save_alphadiv("microeco/alphadiversity/nebraska")
-dataset.rmb$save_alphadiv("microeco/alphadiversity/roomb")
-dataset.rmf$save_alphadiv("microeco/alphadiversity/roomf")
+dataset.main$save_alphadiv(marmoset$microeco$alpha$main)
+dataset.g1$save_alphadiv(marmoset$microeco$alpha$g1)
+dataset.g2$save_alphadiv(marmoset$microeco$alpha$g2)
+dataset.baseline$save_alphadiv(marmoset$microeco$alpha$base)
+dataset.gum$save_alphadiv(marmoset$microeco$alpha$gum)
+dataset.gumwash$save_alphadiv(marmoset$microeco$alpha$gumwash)
+dataset.control$save_alphadiv(marmoset$microeco$alpha$ctrl)
+dataset.controlwash$save_alphadiv(marmoset$microeco$alpha$ctrlwash)
+dataset.int$save_alphadiv(marmoset$microeco$alpha$int)
+dataset.tx$save_alphadiv(marmoset$microeco$alpha$tx)
+dataset.ne$save_alphadiv(marmoset$microeco$alpha$ne)
+dataset.rmb$save_alphadiv(marmoset$microeco$alpha$rmb)
+dataset.rmf$save_alphadiv(marmoset$microeco$alpha$rmf)
 
-dataset.main$save_betadiv("microeco/betadiversity/main")
-dataset.g1$save_betadiv("microeco/betadiversity/group1")
-dataset.g2$save_betadiv("microeco/betadiversity/group2")
-dataset.baseline$save_betadiv("microeco/betadiversity/baseline")
-dataset.gum$save_betadiv("microeco/betadiversity/gum")
-dataset.gumwash$save_betadiv("microeco/betadiversity/gumwash")
-dataset.control$save_betadiv("microeco/betadiversity/control")
-dataset.controlwash$save_betadiv("microeco/betadiversity/controlwash")
-dataset.int$save_betadiv("microeco/betadiversity/intervention")
-dataset.tx$save_betadiv("microeco/betadiversity/texas")
-dataset.ne$save_betadiv("microeco/betadiversity/nebraska")
-dataset.rmb$save_betadiv("microeco/betadiversity/roomb")
-dataset.rmf$save_betadiv("microeco/betadiversity/roomf")
+dataset.main$save_betadiv(marmoset$microeco$beta$main)
+dataset.g1$save_betadiv(marmoset$microeco$beta$g1)
+dataset.g2$save_betadiv(marmoset$microeco$beta$g2)
+dataset.baseline$save_betadiv(marmoset$microeco$beta$base)
+dataset.gum$save_betadiv(marmoset$microeco$beta$gum)
+dataset.gumwash$save_betadiv(marmoset$microeco$beta$gumwash)
+dataset.control$save_betadiv(marmoset$microeco$beta$ctrl)
+dataset.controlwash$save_betadiv(marmoset$microeco$beta$ctrlwash)
+dataset.int$save_betadiv(marmoset$microeco$beta$int)
+dataset.tx$save_betadiv(marmoset$microeco$beta$tx)
+dataset.ne$save_betadiv(marmoset$microeco$beta$ne)
+dataset.rmb$save_betadiv(marmoset$microeco$beta$rmb)
+dataset.rmf$save_betadiv(marmoset$microeco$beta$rmf)
 ```
 # Functional Profiles
 ## KEGG
