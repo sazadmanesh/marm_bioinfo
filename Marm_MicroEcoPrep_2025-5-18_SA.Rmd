@@ -871,6 +871,476 @@ dataset.ne$save_betadiv(marmoset$microeco$beta$ne)
 dataset.rmb$save_betadiv(marmoset$microeco$beta$rmb)
 dataset.rmf$save_betadiv(marmoset$microeco$beta$rmf)
 ```
+# Taxonomic Level Subsets
+```{r}
+phy.data.main <- clone(dataset.main, deep = T)
+phy.data.g1 <- clone(dataset.g1, deep = T)
+phy.data.g2 <- clone(dataset.g2, deep = T)
+phy.data.baseline <- clone(dataset.baseline, deep = T)
+phy.data.gum <- clone(dataset.gum, deep = T)
+phy.data.gumwash <- clone(dataset.gumwash, deep = T)
+phy.data.control <- clone(dataset.control, deep = T)
+phy.data.controlwash <- clone(dataset.controlwash, deep = T)
+phy.data.int <- clone(dataset.int, deep = T)
+phy.data.tx <- clone(dataset.tx, deep = T)
+phy.data.ne <- clone(dataset.ne, deep = T)
+phy.data.rmb <- clone(dataset.rmb, deep = T)
+phy.data.rmf <- clone(dataset.rmf, deep = T)
+
+phy.main <- phy.data.main$merge_taxa(taxa = "Phylum")
+phy.main$tax_table %<>% .[.$Phylum != "p__", ]
+phy.main$tidy_dataset()
+rownames(phy.main$otu_table) <- phy.main$tax_table[rownames(phy.main$otu_table), "Phylum"]
+rownames(phy.main$tax_table) <- phy.main$tax_table[, "Phylum"]
+
+phy.g1 <- phy.data.g1$merge_taxa(taxa = "Phylum")
+phy.g1$tax_table %<>% .[.$Phylum != "p__", ]
+phy.g1$tidy_dataset()
+rownames(phy.g1$otu_table) <- phy.g1$tax_table[rownames(phy.g1$otu_table), "Phylum"]
+rownames(phy.g1$tax_table) <- phy.g1$tax_table[, "Phylum"]
+
+phy.g2 <- phy.data.g2$merge_taxa(taxa = "Phylum")
+phy.g2$tax_table %<>% .[.$Phylum != "p__", ]
+phy.g2$tidy_dataset()
+rownames(phy.g2$otu_table) <- phy.g2$tax_table[rownames(phy.g2$otu_table), "Phylum"]
+rownames(phy.g2$tax_table) <- phy.g2$tax_table[, "Phylum"]
+
+phy.baseline <- phy.data.baseline$merge_taxa(taxa = "Phylum")
+phy.baseline$tax_table %<>% .[.$Phylum != "p__", ]
+phy.baseline$tidy_dataset()
+rownames(phy.baseline$otu_table) <- phy.baseline$tax_table[rownames(phy.baseline$otu_table), "Phylum"]
+rownames(phy.baseline$tax_table) <- phy.baseline$tax_table[, "Phylum"]
+
+phy.gum <- phy.data.gum$merge_taxa(taxa = "Phylum")
+phy.gum$tax_table %<>% .[.$Phylum != "p__", ]
+phy.gum$tidy_dataset()
+rownames(phy.gum$otu_table) <- phy.gum$tax_table[rownames(phy.gum$otu_table), "Phylum"]
+rownames(phy.gum$tax_table) <- phy.gum$tax_table[, "Phylum"]
+
+phy.gumwash <- phy.data.gumwash$merge_taxa(taxa = "Phylum")
+phy.gumwash$tax_table %<>% .[.$Phylum != "p__", ]
+phy.gumwash$tidy_dataset()
+rownames(phy.gumwash$otu_table) <- phy.gumwash$tax_table[rownames(phy.gumwash$otu_table), "Phylum"]
+rownames(phy.gumwash$tax_table) <- phy.gumwash$tax_table[, "Phylum"]
+
+phy.control <- phy.data.control$merge_taxa(taxa = "Phylum")
+phy.control$tax_table %<>% .[.$Phylum != "p__", ]
+phy.control$tidy_dataset()
+rownames(phy.control$otu_table) <- phy.control$tax_table[rownames(phy.control$otu_table), "Phylum"]
+rownames(phy.control$tax_table) <- phy.control$tax_table[, "Phylum"]
+
+phy.controlwash <- phy.data.controlwash$merge_taxa(taxa = "Phylum")
+phy.controlwash$tax_table %<>% .[.$Phylum != "p__", ]
+phy.controlwash$tidy_dataset()
+rownames(phy.controlwash$otu_table) <- phy.controlwash$tax_table[rownames(phy.controlwash$otu_table), "Phylum"]
+rownames(phy.controlwash$tax_table) <- phy.controlwash$tax_table[, "Phylum"]
+
+phy.int <- phy.data.int$merge_taxa(taxa = "Phylum")
+phy.int$tax_table %<>% .[.$Phylum != "p__", ]
+phy.int$tidy_dataset()
+rownames(phy.int$otu_table) <- phy.int$tax_table[rownames(phy.int$otu_table), "Phylum"]
+rownames(phy.int$tax_table) <- phy.int$tax_table[, "Phylum"]
+
+phy.tx <- phy.data.tx$merge_taxa(taxa = "Phylum")
+phy.tx$tax_table %<>% .[.$Phylum != "p__", ]
+phy.tx$tidy_dataset()
+rownames(phy.tx$otu_table) <- phy.tx$tax_table[rownames(phy.tx$otu_table), "Phylum"]
+rownames(phy.tx$tax_table) <- phy.tx$tax_table[, "Phylum"]
+
+phy.ne <- phy.data.ne$merge_taxa(taxa = "Phylum")
+phy.ne$tax_table %<>% .[.$Phylum != "p__", ]
+phy.ne$tidy_dataset()
+rownames(phy.ne$otu_table) <- phy.ne$tax_table[rownames(phy.ne$otu_table), "Phylum"]
+rownames(phy.ne$tax_table) <- phy.ne$tax_table[, "Phylum"]
+
+phy.rmb <- phy.data.rmb$merge_taxa(taxa = "Phylum")
+phy.rmb$tax_table %<>% .[.$Phylum != "p__", ]
+phy.rmb$tidy_dataset()
+rownames(phy.rmb$otu_table) <- phy.rmb$tax_table[rownames(phy.rmb$otu_table), "Phylum"]
+rownames(phy.rmb$tax_table) <- phy.rmb$tax_table[, "Phylum"]
+
+phy.rmf <- phy.data.rmf$merge_taxa(taxa = "Phylum")
+phy.rmf$tax_table %<>% .[.$Phylum != "p__", ]
+phy.rmf$tidy_dataset()
+rownames(phy.rmf$otu_table) <- phy.rmf$tax_table[rownames(phy.rmf$otu_table), "Phylum"]
+rownames(phy.rmf$tax_table) <- phy.rmf$tax_table[, "Phylum"]
+
+```
+```{r}
+cla.data.main <- clone(dataset.main, deep = T)
+cla.data.g1 <- clone(dataset.g1, deep = T)
+cla.data.g2 <- clone(dataset.g2, deep = T)
+cla.data.baseline <- clone(dataset.baseline, deep = T)
+cla.data.gum <- clone(dataset.gum, deep = T)
+cla.data.gumwash <- clone(dataset.gumwash, deep = T)
+cla.data.control <- clone(dataset.control, deep = T)
+cla.data.controlwash <- clone(dataset.controlwash, deep = T)
+cla.data.int <- clone(dataset.int, deep = T)
+cla.data.tx <- clone(dataset.tx, deep = T)
+cla.data.ne <- clone(dataset.ne, deep = T)
+cla.data.rmb <- clone(dataset.rmb, deep = T)
+cla.data.rmf <- clone(dataset.rmf, deep = T)
+
+cla.main <- cla.data.main$merge_taxa(taxa = "Class")
+cla.main$tax_table %<>% .[.$Class != "c__", ]
+cla.main$tidy_dataset()
+rownames(cla.main$otu_table) <- cla.main$tax_table[rownames(cla.main$otu_table), "Class"]
+rownames(cla.main$tax_table) <- cla.main$tax_table[, "Class"]
+
+cla.g1 <- cla.data.g1$merge_taxa(taxa = "Class")
+cla.g1$tax_table %<>% .[.$Class != "c__", ]
+cla.g1$tidy_dataset()
+rownames(cla.g1$otu_table) <- cla.g1$tax_table[rownames(cla.g1$otu_table), "Class"]
+rownames(cla.g1$tax_table) <- cla.g1$tax_table[, "Class"]
+
+cla.g2 <- cla.data.g2$merge_taxa(taxa = "Class")
+cla.g2$tax_table %<>% .[.$Class != "c__", ]
+cla.g2$tidy_dataset()
+rownames(cla.g2$otu_table) <- cla.g2$tax_table[rownames(cla.g2$otu_table), "Class"]
+rownames(cla.g2$tax_table) <- cla.g2$tax_table[, "Class"]
+
+cla.baseline <- cla.data.baseline$merge_taxa(taxa = "Class")
+cla.baseline$tax_table %<>% .[.$Class != "c__", ]
+cla.baseline$tidy_dataset()
+rownames(cla.baseline$otu_table) <- cla.baseline$tax_table[rownames(cla.baseline$otu_table), "Class"]
+rownames(cla.baseline$tax_table) <- cla.baseline$tax_table[, "Class"]
+
+cla.gum <- cla.data.gum$merge_taxa(taxa = "Class")
+cla.gum$tax_table %<>% .[.$Class != "c__", ]
+cla.gum$tidy_dataset()
+rownames(cla.gum$otu_table) <- cla.gum$tax_table[rownames(cla.gum$otu_table), "Class"]
+rownames(cla.gum$tax_table) <- cla.gum$tax_table[, "Class"]
+
+cla.gumwash <- cla.data.gumwash$merge_taxa(taxa = "Class")
+cla.gumwash$tax_table %<>% .[.$Class != "c__", ]
+cla.gumwash$tidy_dataset()
+rownames(cla.gumwash$otu_table) <- cla.gumwash$tax_table[rownames(cla.gumwash$otu_table), "Class"]
+rownames(cla.gumwash$tax_table) <- cla.gumwash$tax_table[, "Class"]
+
+cla.control <- cla.data.control$merge_taxa(taxa = "Class")
+cla.control$tax_table %<>% .[.$Class != "c__", ]
+cla.control$tidy_dataset()
+rownames(cla.control$otu_table) <- cla.control$tax_table[rownames(cla.control$otu_table), "Class"]
+rownames(cla.control$tax_table) <- cla.control$tax_table[, "Class"]
+
+cla.controlwash <- cla.data.controlwash$merge_taxa(taxa = "Class")
+cla.controlwash$tax_table %<>% .[.$Class != "c__", ]
+cla.controlwash$tidy_dataset()
+rownames(cla.controlwash$otu_table) <- cla.controlwash$tax_table[rownames(cla.controlwash$otu_table), "Class"]
+rownames(cla.controlwash$tax_table) <- cla.controlwash$tax_table[, "Class"]
+
+cla.int <- cla.data.int$merge_taxa(taxa = "Class")
+cla.int$tax_table %<>% .[.$Class != "c__", ]
+cla.int$tidy_dataset()
+rownames(cla.int$otu_table) <- cla.int$tax_table[rownames(cla.int$otu_table), "Class"]
+rownames(cla.int$tax_table) <- cla.int$tax_table[, "Class"]
+
+cla.tx <- cla.data.tx$merge_taxa(taxa = "Class")
+cla.tx$tax_table %<>% .[.$Class != "c__", ]
+cla.tx$tidy_dataset()
+rownames(cla.tx$otu_table) <- cla.tx$tax_table[rownames(cla.tx$otu_table), "Class"]
+rownames(cla.tx$tax_table) <- cla.tx$tax_table[, "Class"]
+
+cla.ne <- cla.data.ne$merge_taxa(taxa = "Class")
+cla.ne$tax_table %<>% .[.$Class != "c__", ]
+cla.ne$tidy_dataset()
+rownames(cla.ne$otu_table) <- cla.ne$tax_table[rownames(cla.ne$otu_table), "Class"]
+rownames(cla.ne$tax_table) <- cla.ne$tax_table[, "Class"]
+
+cla.rmb <- cla.data.rmb$merge_taxa(taxa = "Class")
+cla.rmb$tax_table %<>% .[.$Class != "c__", ]
+cla.rmb$tidy_dataset()
+rownames(cla.rmb$otu_table) <- cla.rmb$tax_table[rownames(cla.rmb$otu_table), "Class"]
+rownames(cla.rmb$tax_table) <- cla.rmb$tax_table[, "Class"]
+
+cla.rmf <- cla.data.rmf$merge_taxa(taxa = "Class")
+cla.rmf$tax_table %<>% .[.$Class != "c__", ]
+cla.rmf$tidy_dataset()
+rownames(cla.rmf$otu_table) <- cla.rmf$tax_table[rownames(cla.rmf$otu_table), "Class"]
+rownames(cla.rmf$tax_table) <- cla.rmf$tax_table[, "Class"]
+
+```
+```{r}
+ord.data.main <- clone(dataset.main, deep = T)
+ord.data.g1 <- clone(dataset.g1, deep = T)
+ord.data.g2 <- clone(dataset.g2, deep = T)
+ord.data.baseline <- clone(dataset.baseline, deep = T)
+ord.data.gum <- clone(dataset.gum, deep = T)
+ord.data.gumwash <- clone(dataset.gumwash, deep = T)
+ord.data.control <- clone(dataset.control, deep = T)
+ord.data.controlwash <- clone(dataset.controlwash, deep = T)
+ord.data.int <- clone(dataset.int, deep = T)
+ord.data.tx <- clone(dataset.tx, deep = T)
+ord.data.ne <- clone(dataset.ne, deep = T)
+ord.data.rmb <- clone(dataset.rmb, deep = T)
+ord.data.rmf <- clone(dataset.rmf, deep = T)
+
+ord.main <- ord.data.main$merge_taxa(taxa = "Order")
+ord.main$tax_table %<>% .[.$Order != "o__", ]
+ord.main$tidy_dataset()
+rownames(ord.main$otu_table) <- ord.main$tax_table[rownames(ord.main$otu_table), "Order"]
+rownames(ord.main$tax_table) <- ord.main$tax_table[, "Order"]
+
+ord.g1 <- ord.data.g1$merge_taxa(taxa = "Order")
+ord.g1$tax_table %<>% .[.$Order != "o__", ]
+ord.g1$tidy_dataset()
+rownames(ord.g1$otu_table) <- ord.g1$tax_table[rownames(ord.g1$otu_table), "Order"]
+rownames(ord.g1$tax_table) <- ord.g1$tax_table[, "Order"]
+
+ord.g2 <- ord.data.g2$merge_taxa(taxa = "Order")
+ord.g2$tax_table %<>% .[.$Order != "o__", ]
+ord.g2$tidy_dataset()
+rownames(ord.g2$otu_table) <- ord.g2$tax_table[rownames(ord.g2$otu_table), "Order"]
+rownames(ord.g2$tax_table) <- ord.g2$tax_table[, "Order"]
+
+ord.baseline <- ord.data.baseline$merge_taxa(taxa = "Order")
+ord.baseline$tax_table %<>% .[.$Order != "o__", ]
+ord.baseline$tidy_dataset()
+rownames(ord.baseline$otu_table) <- ord.baseline$tax_table[rownames(ord.baseline$otu_table), "Order"]
+rownames(ord.baseline$tax_table) <- ord.baseline$tax_table[, "Order"]
+
+ord.gum <- ord.data.gum$merge_taxa(taxa = "Order")
+ord.gum$tax_table %<>% .[.$Order != "o__", ]
+ord.gum$tidy_dataset()
+rownames(ord.gum$otu_table) <- ord.gum$tax_table[rownames(ord.gum$otu_table), "Order"]
+rownames(ord.gum$tax_table) <- ord.gum$tax_table[, "Order"]
+
+ord.gumwash <- ord.data.gumwash$merge_taxa(taxa = "Order")
+ord.gumwash$tax_table %<>% .[.$Order != "o__", ]
+ord.gumwash$tidy_dataset()
+rownames(ord.gumwash$otu_table) <- ord.gumwash$tax_table[rownames(ord.gumwash$otu_table), "Order"]
+rownames(ord.gumwash$tax_table) <- ord.gumwash$tax_table[, "Order"]
+
+ord.control <- ord.data.control$merge_taxa(taxa = "Order")
+ord.control$tax_table %<>% .[.$Order != "o__", ]
+ord.control$tidy_dataset()
+rownames(ord.control$otu_table) <- ord.control$tax_table[rownames(ord.control$otu_table), "Order"]
+rownames(ord.control$tax_table) <- ord.control$tax_table[, "Order"]
+
+ord.controlwash <- ord.data.controlwash$merge_taxa(taxa = "Order")
+ord.controlwash$tax_table %<>% .[.$Order != "o__", ]
+ord.controlwash$tidy_dataset()
+rownames(ord.controlwash$otu_table) <- ord.controlwash$tax_table[rownames(ord.controlwash$otu_table), "Order"]
+rownames(ord.controlwash$tax_table) <- ord.controlwash$tax_table[, "Order"]
+
+ord.int <- ord.data.int$merge_taxa(taxa = "Order")
+ord.int$tax_table %<>% .[.$Order != "o__", ]
+ord.int$tidy_dataset()
+rownames(ord.int$otu_table) <- ord.int$tax_table[rownames(ord.int$otu_table), "Order"]
+rownames(ord.int$tax_table) <- ord.int$tax_table[, "Order"]
+
+ord.tx <- ord.data.tx$merge_taxa(taxa = "Order")
+ord.tx$tax_table %<>% .[.$Order != "o__", ]
+ord.tx$tidy_dataset()
+rownames(ord.tx$otu_table) <- ord.tx$tax_table[rownames(ord.tx$otu_table), "Order"]
+rownames(ord.tx$tax_table) <- ord.tx$tax_table[, "Order"]
+
+ord.ne <- ord.data.ne$merge_taxa(taxa = "Order")
+ord.ne$tax_table %<>% .[.$Order != "o__", ]
+ord.ne$tidy_dataset()
+rownames(ord.ne$otu_table) <- ord.ne$tax_table[rownames(ord.ne$otu_table), "Order"]
+rownames(ord.ne$tax_table) <- ord.ne$tax_table[, "Order"]
+
+ord.rmb <- ord.data.rmb$merge_taxa(taxa = "Order")
+ord.rmb$tax_table %<>% .[.$Order != "o__", ]
+ord.rmb$tidy_dataset()
+rownames(ord.rmb$otu_table) <- ord.rmb$tax_table[rownames(ord.rmb$otu_table), "Order"]
+rownames(ord.rmb$tax_table) <- ord.rmb$tax_table[, "Order"]
+
+ord.rmf <- ord.data.rmf$merge_taxa(taxa = "Order")
+ord.rmf$tax_table %<>% .[.$Order != "o__", ]
+ord.rmf$tidy_dataset()
+rownames(ord.rmf$otu_table) <- ord.rmf$tax_table[rownames(ord.rmf$otu_table), "Order"]
+rownames(ord.rmf$tax_table) <- ord.rmf$tax_table[, "Order"]
+```
+```{r}
+fam.data.main <- clone(dataset.main, deep = T)
+fam.data.g1 <- clone(dataset.g1, deep = T)
+fam.data.g2 <- clone(dataset.g2, deep = T)
+fam.data.baseline <- clone(dataset.baseline, deep = T)
+fam.data.gum <- clone(dataset.gum, deep = T)
+fam.data.gumwash <- clone(dataset.gumwash, deep = T)
+fam.data.control <- clone(dataset.control, deep = T)
+fam.data.controlwash <- clone(dataset.controlwash, deep = T)
+fam.data.int <- clone(dataset.int, deep = T)
+fam.data.tx <- clone(dataset.tx, deep = T)
+fam.data.ne <- clone(dataset.ne, deep = T)
+fam.data.rmb <- clone(dataset.rmb, deep = T)
+fam.data.rmf <- clone(dataset.rmf, deep = T)
+
+fam.main <- fam.data.main$merge_taxa(taxa = "Family")
+fam.main$tax_table %<>% .[.$Family != "f__", ]
+fam.main$tidy_dataset()
+rownames(fam.main$otu_table) <- fam.main$tax_table[rownames(fam.main$otu_table), "Family"]
+rownames(fam.main$tax_table) <- fam.main$tax_table[, "Family"]
+
+fam.g1 <- fam.data.g1$merge_taxa(taxa = "Family")
+fam.g1$tax_table %<>% .[.$Family != "f__", ]
+fam.g1$tidy_dataset()
+rownames(fam.g1$otu_table) <- fam.g1$tax_table[rownames(fam.g1$otu_table), "Family"]
+rownames(fam.g1$tax_table) <- fam.g1$tax_table[, "Family"]
+
+fam.g2 <- fam.data.g2$merge_taxa(taxa = "Family")
+fam.g2$tax_table %<>% .[.$Family != "f__", ]
+fam.g2$tidy_dataset()
+rownames(fam.g2$otu_table) <- fam.g2$tax_table[rownames(fam.g2$otu_table), "Family"]
+rownames(fam.g2$tax_table) <- fam.g2$tax_table[, "Family"]
+
+fam.baseline <- fam.data.baseline$merge_taxa(taxa = "Family")
+fam.baseline$tax_table %<>% .[.$Family != "f__", ]
+fam.baseline$tidy_dataset()
+rownames(fam.baseline$otu_table) <- fam.baseline$tax_table[rownames(fam.baseline$otu_table), "Family"]
+rownames(fam.baseline$tax_table) <- fam.baseline$tax_table[, "Family"]
+
+fam.gum <- fam.data.gum$merge_taxa(taxa = "Family")
+fam.gum$tax_table %<>% .[.$Family != "f__", ]
+fam.gum$tidy_dataset()
+rownames(fam.gum$otu_table) <- fam.gum$tax_table[rownames(fam.gum$otu_table), "Family"]
+rownames(fam.gum$tax_table) <- fam.gum$tax_table[, "Family"]
+
+fam.gumwash <- fam.data.gumwash$merge_taxa(taxa = "Family")
+fam.gumwash$tax_table %<>% .[.$Family != "f__", ]
+fam.gumwash$tidy_dataset()
+rownames(fam.gumwash$otu_table) <- fam.gumwash$tax_table[rownames(fam.gumwash$otu_table), "Family"]
+rownames(fam.gumwash$tax_table) <- fam.gumwash$tax_table[, "Family"]
+
+fam.control <- fam.data.control$merge_taxa(taxa = "Family")
+fam.control$tax_table %<>% .[.$Family != "f__", ]
+fam.control$tidy_dataset()
+rownames(fam.control$otu_table) <- fam.control$tax_table[rownames(fam.control$otu_table), "Family"]
+rownames(fam.control$tax_table) <- fam.control$tax_table[, "Family"]
+
+fam.controlwash <- fam.data.controlwash$merge_taxa(taxa = "Family")
+fam.controlwash$tax_table %<>% .[.$Family != "f__", ]
+fam.controlwash$tidy_dataset()
+rownames(fam.controlwash$otu_table) <- fam.controlwash$tax_table[rownames(fam.controlwash$otu_table), "Family"]
+rownames(fam.controlwash$tax_table) <- fam.controlwash$tax_table[, "Family"]
+
+fam.int <- fam.data.int$merge_taxa(taxa = "Family")
+fam.int$tax_table %<>% .[.$Family != "f__", ]
+fam.int$tidy_dataset()
+rownames(fam.int$otu_table) <- fam.int$tax_table[rownames(fam.int$otu_table), "Family"]
+rownames(fam.int$tax_table) <- fam.int$tax_table[, "Family"]
+
+fam.tx <- fam.data.tx$merge_taxa(taxa = "Family")
+fam.tx$tax_table %<>% .[.$Family != "f__", ]
+fam.tx$tidy_dataset()
+rownames(fam.tx$otu_table) <- fam.tx$tax_table[rownames(fam.tx$otu_table), "Family"]
+rownames(fam.tx$tax_table) <- fam.tx$tax_table[, "Family"]
+
+fam.ne <- fam.data.ne$merge_taxa(taxa = "Family")
+fam.ne$tax_table %<>% .[.$Family != "f__", ]
+fam.ne$tidy_dataset()
+rownames(fam.ne$otu_table) <- fam.ne$tax_table[rownames(fam.ne$otu_table), "Family"]
+rownames(fam.ne$tax_table) <- fam.ne$tax_table[, "Family"]
+
+fam.rmb <- fam.data.rmb$merge_taxa(taxa = "Family")
+fam.rmb$tax_table %<>% .[.$Family != "f__", ]
+fam.rmb$tidy_dataset()
+rownames(fam.rmb$otu_table) <- fam.rmb$tax_table[rownames(fam.rmb$otu_table), "Family"]
+rownames(fam.rmb$tax_table) <- fam.rmb$tax_table[, "Family"]
+
+fam.rmf <- fam.data.rmf$merge_taxa(taxa = "Family")
+fam.rmf$tax_table %<>% .[.$Family != "f__", ]
+fam.rmf$tidy_dataset()
+rownames(fam.rmf$otu_table) <- fam.rmf$tax_table[rownames(fam.rmf$otu_table), "Family"]
+rownames(fam.rmf$tax_table) <- fam.rmf$tax_table[, "Family"]
+
+```
+```{r}
+gen.data.main <- clone(dataset.main, deep = T)
+gen.data.g1 <- clone(dataset.g1, deep = T)
+gen.data.g2 <- clone(dataset.g2, deep = T)
+gen.data.baseline <- clone(dataset.baseline, deep = T)
+gen.data.gum <- clone(dataset.gum, deep = T)
+gen.data.gumwash <- clone(dataset.gumwash, deep = T)
+gen.data.control <- clone(dataset.control, deep = T)
+gen.data.controlwash <- clone(dataset.controlwash, deep = T)
+gen.data.int <- clone(dataset.int, deep = T)
+gen.data.tx <- clone(dataset.tx, deep = T)
+gen.data.ne <- clone(dataset.ne, deep = T)
+gen.data.rmb <- clone(dataset.rmb, deep = T)
+gen.data.rmf <- clone(dataset.rmf, deep = T)
+
+gen.main <- gen.data.main$merge_taxa(taxa = "Genus")
+gen.main$tax_table %<>% .[.$Genus != "g__", ]
+gen.main$tidy_dataset()
+rownames(gen.main$otu_table) <- gen.main$tax_table[rownames(gen.main$otu_table), "Genus"]
+rownames(gen.main$tax_table) <- gen.main$tax_table[, "Genus"]
+
+gen.g1 <- gen.data.g1$merge_taxa(taxa = "Genus")
+gen.g1$tax_table %<>% .[.$Genus != "g__", ]
+gen.g1$tidy_dataset()
+rownames(gen.g1$otu_table) <- gen.g1$tax_table[rownames(gen.g1$otu_table), "Genus"]
+rownames(gen.g1$tax_table) <- gen.g1$tax_table[, "Genus"]
+
+gen.g2 <- gen.data.g2$merge_taxa(taxa = "Genus")
+gen.g2$tax_table %<>% .[.$Genus != "g__", ]
+gen.g2$tidy_dataset()
+rownames(gen.g2$otu_table) <- gen.g2$tax_table[rownames(gen.g2$otu_table), "Genus"]
+rownames(gen.g2$tax_table) <- gen.g2$tax_table[, "Genus"]
+
+gen.baseline <- gen.data.baseline$merge_taxa(taxa = "Genus")
+gen.baseline$tax_table %<>% .[.$Genus != "g__", ]
+gen.baseline$tidy_dataset()
+rownames(gen.baseline$otu_table) <- gen.baseline$tax_table[rownames(gen.baseline$otu_table), "Genus"]
+rownames(gen.baseline$tax_table) <- gen.baseline$tax_table[, "Genus"]
+
+gen.gum <- gen.data.gum$merge_taxa(taxa = "Genus")
+gen.gum$tax_table %<>% .[.$Genus != "g__", ]
+gen.gum$tidy_dataset()
+rownames(gen.gum$otu_table) <- gen.gum$tax_table[rownames(gen.gum$otu_table), "Genus"]
+rownames(gen.gum$tax_table) <- gen.gum$tax_table[, "Genus"]
+
+gen.gumwash <- gen.data.gumwash$merge_taxa(taxa = "Genus")
+gen.gumwash$tax_table %<>% .[.$Genus != "g__", ]
+gen.gumwash$tidy_dataset()
+rownames(gen.gumwash$otu_table) <- gen.gumwash$tax_table[rownames(gen.gumwash$otu_table), "Genus"]
+rownames(gen.gumwash$tax_table) <- gen.gumwash$tax_table[, "Genus"]
+
+gen.control <- gen.data.control$merge_taxa(taxa = "Genus")
+gen.control$tax_table %<>% .[.$Genus != "g__", ]
+gen.control$tidy_dataset()
+rownames(gen.control$otu_table) <- gen.control$tax_table[rownames(gen.control$otu_table), "Genus"]
+rownames(gen.control$tax_table) <- gen.control$tax_table[, "Genus"]
+
+gen.controlwash <- gen.data.controlwash$merge_taxa(taxa = "Genus")
+gen.controlwash$tax_table %<>% .[.$Genus != "g__", ]
+gen.controlwash$tidy_dataset()
+rownames(gen.controlwash$otu_table) <- gen.controlwash$tax_table[rownames(gen.controlwash$otu_table), "Genus"]
+rownames(gen.controlwash$tax_table) <- gen.controlwash$tax_table[, "Genus"]
+
+gen.int <- gen.data.int$merge_taxa(taxa = "Genus")
+gen.int$tax_table %<>% .[.$Genus != "g__", ]
+gen.int$tidy_dataset()
+rownames(gen.int$otu_table) <- gen.int$tax_table[rownames(gen.int$otu_table), "Genus"]
+rownames(gen.int$tax_table) <- gen.int$tax_table[, "Genus"]
+
+gen.tx <- gen.data.tx$merge_taxa(taxa = "Genus")
+gen.tx$tax_table %<>% .[.$Genus != "g__", ]
+gen.tx$tidy_dataset()
+rownames(gen.tx$otu_table) <- gen.tx$tax_table[rownames(gen.tx$otu_table), "Genus"]
+rownames(gen.tx$tax_table) <- gen.tx$tax_table[, "Genus"]
+
+gen.ne <- gen.data.ne$merge_taxa(taxa = "Genus")
+gen.ne$tax_table %<>% .[.$Genus != "g__", ]
+gen.ne$tidy_dataset()
+rownames(gen.ne$otu_table) <- gen.ne$tax_table[rownames(gen.ne$otu_table), "Genus"]
+rownames(gen.ne$tax_table) <- gen.ne$tax_table[, "Genus"]
+
+gen.rmb <- gen.data.rmb$merge_taxa(taxa = "Genus")
+gen.rmb$tax_table %<>% .[.$Genus != "g__", ]
+gen.rmb$tidy_dataset()
+rownames(gen.rmb$otu_table) <- gen.rmb$tax_table[rownames(gen.rmb$otu_table), "Genus"]
+rownames(gen.rmb$tax_table) <- gen.rmb$tax_table[, "Genus"]
+
+gen.rmf <- gen.data.rmf$merge_taxa(taxa = "Genus")
+gen.rmf$tax_table %<>% .[.$Genus != "g__", ]
+gen.rmf$tidy_dataset()
+rownames(gen.rmf$otu_table) <- gen.rmf$tax_table[rownames(gen.rmf$otu_table), "Genus"]
+rownames(gen.rmf$tax_table) <- gen.rmf$tax_table[, "Genus"]
+
+```
 # Functional Profiles
 ## KEGG
 ```{r}
