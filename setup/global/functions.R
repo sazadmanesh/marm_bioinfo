@@ -282,7 +282,7 @@ env.cols.main <- c(
 
 
 #Loading Microeco Datasets & Recalculating Abundances
-read.microtable <- function(format, suffix){
+read.main.microtable <- function(format, suffix){
   base_path <- "/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets"
   
   if (format == "tax") {
@@ -304,7 +304,29 @@ read.microtable <- function(format, suffix){
   return(dataset)
 }
 
-read.f.microtable <- function(format, prefix, suffix){
+read.tax.microtable <- function(format, prefix, suffix){
+  base_path <- "/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets"
+  
+  if (format == "tax") {
+    phylo_tree  <- read.tree(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/phylo_tree.tre")))
+    rep_fasta   <- read.fasta(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/rep_fasta.fasta")))
+    sample_tab  <- read.table(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/sample_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
+    tax_table   <- read.table(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/tax_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
+    otu_table   <- read.table(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/feature_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
+    
+    dataset  <- microtable$new(
+      sample_table = sample_tab,
+      otu_table    = otu_table,
+      tax_table    = tax_table,
+      phylo_tree   = phylo_tree,
+      rep_fasta    = rep_fasta,
+      auto_tidy    = T)
+  }
+  dataset$cal_abund()
+  return(dataset)
+}
+
+read.func.microtable <- function(format, prefix, suffix){
   base_path <- "/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets"
   
   if (format == "function") {
@@ -357,10 +379,10 @@ diff.abund  <- function(dataset, taxrank) {
            Species          = replace_na(Species, ""),
            Enriched         = if_else(P.adj > 0.05, "ns", Enriched)) %>%
     mutate(Enriched_icon = case_when(
-      Enriched == "ns"                                 ~ "minus"                         ,
-      Enriched == "gum" & P.adj >  0.01                  ~ "gum,caret-up"                    ,
-      Enriched == "gum" & P.adj <= 0.01 & P.adj > 0.001  ~ "gum,caret-up,caret-up"           ,
-      Enriched == "gum" & P.adj <= 0.001                 ~ "gum,caret-up,caret-up,caret-up"  ,
+      Enriched == "ns"                                       ~ "minus"                         ,
+      Enriched == "gum" & P.adj >  0.01                      ~ "gum,caret-up"                    ,
+      Enriched == "gum" & P.adj <= 0.01 & P.adj > 0.001      ~ "gum,caret-up,caret-up"           ,
+      Enriched == "gum" & P.adj <= 0.001                     ~ "gum,caret-up,caret-up,caret-up"  ,
       Enriched == "control" & P.adj >  0.01                  ~ "ctrl,caret-up"                    ,
       Enriched == "control" & P.adj <= 0.01 & P.adj > 0.001  ~ "ctrl,caret-up,caret-up"           ,
       Enriched == "control" & P.adj <= 0.001                 ~ "ctrl,caret-up,caret-up,caret-up"  )) %>%
@@ -400,10 +422,10 @@ diff.abund.function  <- function(dataset, taxrank) {
     filter(!is.na(Significance)) %>% 
     mutate(Enriched         = if_else(P.adj > 0.05, "ns", Enriched)) %>%
     mutate(Enriched_icon = case_when(
-      Enriched == "ns"                                 ~ "minus"                         ,
-      Enriched == "gum" & P.adj >  0.01                  ~ "gum,caret-up"                    ,
-      Enriched == "gum" & P.adj <= 0.01 & P.adj > 0.001  ~ "gum,caret-up,caret-up"           ,
-      Enriched == "gum" & P.adj <= 0.001                 ~ "gum,caret-up,caret-up,caret-up"  ,
+      Enriched == "ns"                                       ~ "minus"                         ,
+      Enriched == "gum" & P.adj >  0.01                      ~ "gum,caret-up"                    ,
+      Enriched == "gum" & P.adj <= 0.01 & P.adj > 0.001      ~ "gum,caret-up,caret-up"           ,
+      Enriched == "gum" & P.adj <= 0.001                     ~ "gum,caret-up,caret-up,caret-up"  ,
       Enriched == "control" & P.adj >  0.01                  ~ "ctrl,caret-up"                    ,
       Enriched == "control" & P.adj <= 0.01 & P.adj > 0.001  ~ "ctrl,caret-up,caret-up"           ,
       Enriched == "control" & P.adj <= 0.001                 ~ "ctrl,caret-up,caret-up,caret-up"  )) %>%
