@@ -308,8 +308,6 @@ read.tax.microtable <- function(format, prefix, suffix){
   base_path <- "/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets"
   
   if (format == "tax") {
-    phylo_tree  <- read.tree(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/phylo_tree.tre")))
-    rep_fasta   <- read.fasta(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/rep_fasta.fasta")))
     sample_tab  <- read.table(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/sample_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
     tax_table   <- read.table(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/tax_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
     otu_table   <- read.table(file.path(base_path, paste0(prefix, "_dataset_", suffix, "/feature_table.tsv")), sep = "\t", header = TRUE, row.names = 1)
@@ -318,8 +316,6 @@ read.tax.microtable <- function(format, prefix, suffix){
       sample_table = sample_tab,
       otu_table    = otu_table,
       tax_table    = tax_table,
-      phylo_tree   = phylo_tree,
-      rep_fasta    = rep_fasta,
       auto_tidy    = T)
   }
   dataset$cal_abund()

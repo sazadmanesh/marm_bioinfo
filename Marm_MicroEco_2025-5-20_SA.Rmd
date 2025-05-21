@@ -162,8 +162,7 @@ bray.main.pcoa <- bray.main$plot_ordination(plot_color = "group_phase",
 ```
 ```{r}
 dataset.int$cal_betadiv()
-```
-```{r}
+
 bray.int <- trans_beta$new(
   dataset = dataset.int,
   group = "group_phase",
