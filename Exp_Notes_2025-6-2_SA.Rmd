@@ -1,5 +1,5 @@
 ---
-title: "Exp_Notes_2025-6-2_SA"
+title: "Experiment Notes & Observations"
 output:
    html_notebook:
      code_folding: hide
@@ -15,7 +15,7 @@ source(here::here(global$setup))
 # Diet Trial Notes {.tabset}
 ## Pre-Experiment 
 
-### 2023-2-24: Syringe Administration Test
+### Syringe Administration Test (2023-2-24)
 
 #### Materials 
 - 1 mL Syringes
