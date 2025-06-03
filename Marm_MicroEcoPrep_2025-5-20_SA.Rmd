@@ -17,54 +17,84 @@ source(here::here(global$setup))
 ```
 # Metadata
 ```{r}
-samples <- read.table(marmoset$samples_raw,
-                      header = T,
-                      sep = "\t") %>%
-  rename(subject = SampleSubject) %>%
-  mutate(sampledate = as.Date(SampleDate,
-                        format = "%m/%d/%y"),
-         studyday = str_extract(SampleID, "(?<=-)[0-9]+(?=-)"),
-         subj_day = fct(str_glue("{subject}", "_", "{studyday}")),
-         SampleTimeFormatted = str_pad(SampleTime, 4, pad = "0"),
-         sampletime = as_hms(sprintf("%02d:%02d:00",
-          as.integer(str_sub(SampleTimeFormatted, 1, 2)),
-          as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
-  dplyr::select(-c("SampleDate", "SampleNotes", "SampleTime", "SampleTimeFormatted"))
-
-extracts <- read.table(marmoset$extracts_raw,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(extractdate = as.Date(ExtractDate,
-                               format = "%m/%d/%y")) %>%
-  dplyr::select(-c("ExtractDate", "ExtractNotes"))
-
-libraries <- read.table(marmoset$libraries_raw,
-                      header = T,
-                      sep = "\t") %>%
-  dplyr::select(-"Run.ID")
-
-seqruns <- read.table(marmoset$seqruns_raw,
-                      header = T,
-                      sep = "\t") %>%
-  rename(Seq.ID = Pooled.Library.Code) %>%
-  mutate(rundate = as.Date(Run.Date,
-                           format = "%m/%d/%y")) %>%
-  dplyr::select(-c("Pipeline", "Run.Notes", "Run.Date"))
-
-subjects <- read.table(marmoset$subjects_raw,
+subjects <- read.table(marmoset$subjects,
                       header = T,
                       sep = "\t") %>%
   mutate(
-    room = str_glue("room {str_extract(cage, '^[a-zA-Z]')}"),
-    subjectcode = factor(subjectcode, levels = unique(subjectcode)),
-    subject = factor(subject, levels = unique(subject)),
-    sex = factor(sex, levels = unique(sex)),
-    housing = factor(housing, levels = unique(housing)),
-    group = factor(group, levels = unique(group)),
-    subj_dob = as.Date(DOB, format = "%m/%d/%y")
+    Room = str_glue("Room{str_extract(Cage, '^[a-zA-Z]')}"),
+    Subject_Code = factor(Subject_Code, levels = unique(Subject_Code)),
+    Subject = factor(Subject, levels = unique(Subject)),
+    Sex = factor(Sex, levels = unique(Sex)),
+    Housing = factor(Housing, levels = unique(Housing)),
+    Group = factor(Group, levels = unique(Group)),
+    Subj_DOB = as.Date(DOB, format = "%m/%d/%y") 
   ) %>%
   dplyr::select(-"DOB")
+```
+```{r}
+samples <- read.table(marmoset$samples,
+                      header = T,
+                      sep = "\t") %>%
+  mutate(Sample_Date = as.Date(Sample_Date,
+                        format = "%m/%d/%y"),
+         Study_Day = str_extract(Sample_ID, "(?<=-)[0-9]+(?=-)"),
+         Subj_Day = fct(str_glue("{Subject}", "_", "{Study_Day}")),
+         SampleTimeFormatted = str_pad(Sample_Time, 4, pad = "0"),
+         Sample_Time = as_hms(sprintf("%02d:%02d:00",
+          as.integer(str_sub(SampleTimeFormatted, 1, 2)),
+          as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
+  dplyr::select(-"SampleTimeFormatted")
+```
+```{r}
+extracts <- read.table(marmoset$extracts,
+                      header = T,
+                      sep = "\t") %>%
+  mutate(Extract_Date = as.Date(Extract_Date,
+                               format = "%m/%d/%y"))
+```
+```{r}
+libraries <- read.table(marmoset$libraries,
+                      header = T,
+                      sep = "\t")
+```
+```{r}
+seqruns <- read.table(marmoset$seqruns,
+                      header = T,
+                      sep = "\t") %>%
+  mutate(Run_Date = as.Date(Run_Date,
+                               format = "%m/%d/%y"))
+```
+```{r}
+weights <- read.table(marmoset$weights,
+                      header = T,
+                      sep = "\t") %>%
+  mutate(Date_Weighed = as.Date(Date,
+                                format = "%m/%d/%y")) %>%
+  dplyr::select(-"Date")
+```
+```{r}
+leftover_food <- read.table(marmoset$leftover_food,
+                      header = T,
+                      sep = "\t") %>%
+  mutate(Record_Date = as.Date(Date,
+                                format = "%m/%d/%y")) %>%
+  dplyr::select(-"Date")
+```
+```{r}
+bristol <- read.table(marmoset$bristol,
+                      header = T,
+                      sep = "\t") %>%
+  mutate(Study_Date = as.Date(Date,
+                                format = "%m/%d/%y"),
+         Subj_Day = fct(str_glue("{Subject}", "_", "{Study_Day}")),
+         SampleTimeFormatted = str_pad(Time, 4, pad = "0"),
+         Sample_Time = as_hms(sprintf("%02d:%02d:00",
+          as.integer(str_sub(SampleTimeFormatted, 1, 2)),
+          as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
+  dplyr::select(-c("SampleTimeFormatted", "Date", "Time"))
 
+```
+```{r}
 metadata <- libraries %>%
   left_join(samples, by = "SampleID") %>%
   left_join(subjects, by = "subject") %>%

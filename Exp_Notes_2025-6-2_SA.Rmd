@@ -422,6 +422,7 @@ data.frame(Cage = c(
 
 ### Day 55 (2023-5-3)
 - Samples collected from 19/19 monkeys.
+- Weighed monkeys.
 
 ### Day 56 (2023-5-4)
 - Samples collected from 19/19 monkeys.
@@ -461,7 +462,7 @@ data.frame(Cage = c(
   - Had only given birth to one baby when I found her and periodically checked on her.
   - Will likely give birth to at least one more, but appears to be struggling to push anything else out.
     - She keeps straining to push something out of her, then checks herself and behind/below her to see if anything came out to no avail.
-  - No placenta yet, Beth and Noel notified.
+  - No placenta yet, Beth and Noel notified since Haley is out.
   - Gave a couple extra hammocks to make her more comfortable. 
   - Buddy has been carrying the one baby with Joans periodically cleaning them with him.
   - Kirby and Loki perpetually infant crying.
@@ -494,6 +495,7 @@ data.frame(Cage = c(
 
 ### Day 66 (2023-5-14)
 - Samples collected from 19/19 monkeys.
+- Weighed monkeys.
 
 ### Day 67 (2023-5-15)
 - Samples collected from 17/19 monkeys.
@@ -518,7 +520,7 @@ data.frame(Cage = c(
 - I was informed that mealworms were given to animals in room F by accident on Monday (day 67 3/15/2023).
   - This means that this would be reflected on day 68 and potentially onwards.
 - Buddy and Joans’ babies are doing good!
-- I was sifting through bedding in their home and Joans grabbed my head with both of her hands and then eventually let go.
+- I was sifting through bedding in their home and Joans grabbed my head with both of her hands and then eventually let go. Pretty cute.
   - Buddy fecal sample collected from bedding.
 - Attempted to take weights for all monkeys on my project, but the scale was giving an error and I could not fix it despite my efforts.
 - Samples collected from 19/19 monkeys.
