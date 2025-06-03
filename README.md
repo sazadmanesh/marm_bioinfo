@@ -1,6 +1,9 @@
 Marmoset Microbiome Bioinformatics and Data Analysis
 ========================================
-Shayda Azadmanesh marmoset microbiome dietary gum study
+Shayda Azadmanesh - Marmoset Microbiome Dietary Gum
+
+## Information
+>Diet Trial Notes & Observations
 
 ## Read Processing
 
