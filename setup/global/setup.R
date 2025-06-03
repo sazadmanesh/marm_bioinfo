@@ -21,5 +21,14 @@ opts_chunk$set(message = FALSE,
                eval    = TRUE,
                comment = "")
 
+theme_set(theme_classic())
+thematic_rmd()
+thematic_on(accent = "#8785B2FF", fg = "black")
+
+font_add_google("Noto Sans Symbols", family = "NotoSym")
+font_add_google("Six Caps", family = "Six Caps")
+font_add_google("Gafata", family = "Gafata")
+showtext_auto()
+
 setwd("~/work/marm_bioinfo")
 

@@ -1,0 +1,259 @@
+---
+title: "Marm_Tables_2025-5-24_SA"
+author: "Shayda"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Setup and Datasets
+```{r}
+global <- config::get(config = "default")
+
+here::i_am("Marm_Tables_2025-5-24_SA.Rmd")
+source(here::here(global$setup))
+```
+# Diet Table
+```{r}
+marm_foods <- list(
+  "Zupreem^\u00AE Marmoset Diet" = list(
+    "Commercially formulated diet made up of wheat, soybean, egg, alfalfa, and various vitamins",
+    1,
+    "slice"
+  ),
+  "Mazuri^\u00AE Callitrichid Gel Diet" = list(
+    "Commercially formulated diet made up of soybean, corn, wheat, gelatin, and various vitamins",
+    1,
+    "slice"
+  ),
+  "Apple" = list(
+    "Cut into 1-cm^2 cubes",
+    4,
+    "pieces"
+  ),
+  "Sweet Potato" = list(
+    "Cut into 1-cm^2 cubes",
+    4,
+    "pieces"
+  ),
+  "Eggs" = list(
+    "Scrambled and microwave-cooked",
+    2,
+    "tsp"
+  )
+) %>%
+  enframe(name = "Food_Item", value = "Details") %>%
+  unnest_wider(Details, names_sep = "_") %>%
+  rename(Details = Details_1, Amount = Details_2, Unit = Details_3) %>%
+  gt(rowname_col = "Food_Item") %>%
+  fmt_units() %>%
+  cols_merge(columns = c("Amount", "Unit"), pattern = "{1} {2}") %>%
+  tab_stubhead("Food Item") %>%
+  
+  cols_width(
+    stub()  ~ px(250),
+    Details ~ px(400),
+    Amount  ~ px(100)
+  ) %>%
+  
+  cols_align("left") %>%
+  
+  opt_stylize(style = 3,
+              color = "blue") %>%
+  
+  tab_style(style = cell_text(weight = "bold",
+                              v_align = "top"),
+            locations = cells_stub()) %>%
+  
+  tab_style(style = cell_text(v_align = "top"),
+            locations = cells_body()) %>%
+  
+  tab_header(title = "Table 2",
+             subtitle = "Standardized Diet per Marmoset Pair") %>%
+  
+  tab_style(style = cell_text(align = "left",
+                              style = "italic",
+                              size = "18px"),
+            locations = cells_title(groups = "subtitle")) %>%
+  
+  tab_style(style = cell_text(align = "left",
+                              weight = "bold",
+                              size = "18px"),
+            locations = cells_title(groups = "title"))
+marm_foods
+```
+# 
+```{r}
+marm_diet_trials <- list(
+  list(
+    "Days"    = c(1, 14),
+    "Trials" = list(
+      "Group 1" = "Run-in",
+      "Group 2" = "Run-in"
+    )
+  ),
+  list(
+    "Days"    = c(15, 28),
+    "Trials" = list(
+      "Group 1" = "Intervention",
+      "Group 2" = "Control"
+      )
+  ),
+  list(
+    "Days"    = c(29, 42),
+    "Trials" = list(
+      "Group 1" = "Washout",
+      "Group 2" = "Washout"
+    )
+  ),
+  list(
+    "Days"    = c(43, 56),
+    "Trials" = list(
+      "Group 1" = "Control",
+      "Group 2" = "Intervention"
+    )
+  ),
+  list(
+    "Days"    = c(57, 70),
+    "Trials" = list(
+      "Group 1" = "Washout",
+      "Group 2" = "Washout"
+    )
+  )
+) %>%
+  enframe(name = NULL) %>%
+  unnest_wider(value) %>%
+  unnest_wider(Trials) %>%
+  pivot_longer(c("Group 1", "Group 2"), names_to = "Group") %>%
+  mutate(Days = str_replace_all(str_remove_all(as.character(Days), "[c()]"), ", ", " - ")) %>%
+  pivot_wider(names_from = "Days", values_from = "value") %>%
+  gt(rowname_col = "Group") %>%
+  
+  cols_align("center") %>%
+  tab_stubhead("Days") %>%
+  
+  tab_header(title = "Table 1",
+             subtitle = "Timeline of Study") %>%
+  
+  tab_style(style = cell_text(align = "left",
+                              style = "italic",
+                              size = "18px"),
+            locations = cells_title(groups = "subtitle")) %>%
+  
+  tab_style(style = cell_text(align = "left",
+                              weight = "bold",
+                              size = "18px"),
+            locations = cells_title(groups = "title")) %>%
+  
+  tab_style(style = cell_borders(sides = "top",
+                                 color = "lightgrey",
+                                 weight = px(2)),
+            locations = cells_column_labels()) %>%
+  
+  tab_style(style = cell_borders(sides = "bottom",
+                                 color = "lightgrey",
+                                 weight = px(2)),
+            locations = cells_column_labels()) %>%
+  
+  tab_style(style = cell_borders(sides = "bottom",
+                                 color = "lightgrey",
+                                 weight = px(2)),
+            locations = cells_stubhead()) %>%
+  
+    tab_style(style = cell_borders(sides = "right",
+                                 color = "lightgrey",
+                                 weight = px(2)),
+            locations = cells_stub()) %>%
+  
+  tab_style(style = cell_borders(sides = "bottom",
+                                 color = "lightgrey"),
+            locations = cells_stub(rows = 1)) %>%
+  
+  tab_style(style = cell_borders(sides = "bottom",
+                                 color = "lightgrey"),
+            locations = cells_body(rows = 1)) %>%
+  
+  tab_style(style = cell_borders(sides = "right",
+                                 color = "lightgrey",
+                                 weight = px(2)),
+            locations = cells_stubhead()) %>%
+  tab_style_body(style = list(cell_text(transform = "capitalize"), 
+                              cell_fill("#F0C6A9")),
+                 pattern = "Intervention") %>%
+  
+  tab_style_body(style = list(cell_text(transform = "capitalize"), 
+                              cell_fill("#B6E9CB")),
+                 pattern = "Control") %>%
+  
+  tab_style_body(style = list(cell_text(style = "normal"), 
+                              cell_fill("#E0EAF2")),
+                 pattern = "Washout") %>%
+  
+  tab_style_body(style = list(cell_text(style = "normal"), 
+                              cell_fill("#F8F3EA")),
+                 pattern = "Run-in") %>%
+  
+  tab_style(style = list(cell_text(size = "small",
+                                   transform = "capitalize",
+                                   weight = "bold",
+                                   color = "#4D4D4D")),
+            locations = cells_column_labels()) %>%
+  
+  tab_style(style = list(cell_text(size = "small",
+                                   transform = "capitalize",
+                                   weight = "bold",
+                                   color = "#4D4D4D")),
+            locations = cells_stub()) %>%
+  
+  tab_style(style = list(cell_text(size = "small",
+                                   transform = "capitalize",
+                                   weight = "bold",
+                                   color = "#4D4D4D")),
+            locations = cells_stubhead()) %>%
+  
+  tab_style(style = list(cell_text(align = "left"),
+                         cell_borders(sides = "bottom")),
+            locations = cells_title(groups = "subtitle"))
+
+marm_diet_trials
+```
+```{r}
+marm_pred <- list(
+  "Increase" = list(
+    "Anaerobiospirillum",
+    "Decreased in MDDS",
+    "Artim et al., 2019; Sheh et al., 2022"
+  ),
+  "Increase" = list(
+    "Bifidobacterium",
+    "Decreased in chronic diarrhea and gut dysbiosis",
+    "Hayer et al., 2024; Shigeno et al., 2018"
+  ),
+  "Decrease" = list(
+    "Fusobacterium",
+    "Increased in gut dysbiosis and MWS",
+    "Bakker et al., 2025; Hayer et al., 2024"
+  ),
+  "Increase" = list(
+    "Megasphaera",
+    "Decreased in dysbiosis and shifts associated with IBD",
+    "Hayer et al., 2024; Sheh et al., 2022"
+  ),
+  "Decrease" = list(
+    "Prevotella",
+    "Increased in MWS and IBD",
+    "Cooper et al., 2019; Sheh et al., 2022"
+  )
+) %>%
+  enframe(name = "Prediction", value = "Details") %>%
+  unnest_wider(Details, names_sep = "_") %>%
+  rename(Taxa = Details_1, Significance = Details_2, References = Details_3) %>%
+  gt(rowname_col = "Prediction") %>%
+  tab_stubhead("Prediction") %>%
+  cols_align("left") %>%
+  opt_stylize(style = 3, color = "blue") %>%
+  tab_style(style = cell_text(weight = "bold", v_align = "top"), locations = cells_stub()) %>%
+  tab_style(style = cell_text(v_align = "top"), locations = cells_body()) %>%
+  tab_header("Table X: Hypothesis Predictions") %>%
+  tab_style(style = cell_text(align = "left"), locations = cells_title())
+marm_pred
+```

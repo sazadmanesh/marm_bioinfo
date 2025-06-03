@@ -1,0 +1,524 @@
+---
+title: "Exp_Notes_2025-6-2_SA"
+output:
+   html_notebook:
+     code_folding: hide
+  editor_options: 
+  chunk_output_type: inline
+---
+```{r, warning = FALSE}
+global <- config::get(config = "default")
+
+here::i_am("Exp_Notes_2025-6-2_SA.Rmd")
+source(here::here(global$setup))
+```
+# Diet Trial Notes {.tabset}
+## Pre-Experiment 
+
+### 2023-2-24: Syringe Administration Test
+
+#### Materials 
+- 1 mL Syringes
+- Grape Prang (Flavored Oral Rehydrator)
+- Marshmallow Fluff
+- Disposable Paper Cups
+- Popsicle Sticks
+
+#### Procedure
+1. Mix grape Prang powder with water in a paper cup and fill syringes.
+2. Using a popsicle stick, scoop some marshmallow fluff into a separate paper cup.
+3. Take syringes and marshmallow fluff cup to the monkey room(s). Dip syringe tips into marshmallow fluff right before presenting to animals.
+4. Present a syringe to each monkey in the cage at the same time to ensure that pairmates do not steal from each other.
+5. As monkeys are licking marshmallow fluff from the tips, slowly depress the syringe plunger to administer Prang.
+6. Leave syringes in cage once the monkeys are done to allow them to investigate and familiarize themselves with the objects.
+
+#### Observations & Notes
+```{r}
+options(knitr.kable.NA = '')
+data.frame(Cage = c(
+             "B1",
+             "B1",
+             "B2",
+             "B2",
+             "B3",
+             "B3",
+             "B4",
+             "B4",
+             "F1",
+             "F1",
+             "F2",
+             "F2",
+             "F3",
+             "F3",
+             "F4",
+             "F4",
+             "F5",
+             "F5",
+             "F6",
+             "F6"
+             ),
+           Subject = c(
+             "Hamlet",
+             "Hera",
+             "JarJar Binks",
+             "Ophelia",
+             "Kubo",
+             "Korra",
+             "Wolverine",
+             "Iris",
+             "Goose",
+             "Lambchop",
+             "Franc",
+             "Ivy",
+             "Charles",
+             "Padme",
+             "Grogu",
+             "Marshmallow",
+             "Buddy",
+             "Joans",
+             "Henry",
+             "Ginger"
+             ),
+           Amount_Prang_Consumed = c(
+             "None",
+             "Some",
+             "All",
+             "All",
+             "Most",
+             "Some",
+             "Most",
+             "Some",
+             "Some",
+             "Some",
+             "Some",
+             "Most",
+             "All",
+             "Most",
+             "Most",
+             "All",
+             "All",
+             "All",
+             "All",
+             "All"
+             ), 
+           Observations = c(
+             "Would not approach syringe at all, alarm response",
+             "Did not ingest very much after licking off marshmallow fluff, was intentionally adjusting her mouth to avoid Prang when being administered",
+             "Consumed all, no problems",
+             "Consumed all, no problems",
+             "Consumed until marshmallow fluff was gone, tried to consume marshmallow fluff off of Korra’s syringe",
+             "Began licking marshmallow fluff, but ran away once Prang was being administered",
+             "Happy chirps, consumed until marshmallow fluff was gone",
+             "Wary of syringe and approached slowly, ran away when Prang was administered, was observing how Wolverine was interacting with syringe ",
+             "Licked some marshmallow fluff, ran away once Prang was administered; kid (Octavia) began consuming",
+             "Consumed some while licking off marshmallow fluff; kid (Octavia) began consuming",
+             "Wary of syringe, some marshmallow fluff and Prang consumed, was observing how Ivy was interacting with syringe",
+             "Consumed until marshmallow fluff was gone",
+             "Consumed all, tried to ingest additional Prang from Padme’s syringe",
+             "Was consuming until Charles tried to ingest after finishing his",
+             "Consumed until marshmallow fluff was gone",
+             "Consumed all, no problems",
+             "Consumed all, no problems with kids (Kirby & Loki) trying to ingest",
+             "Consumed all, no problems with kids (Kirby & Loki) trying to ingest",
+             "Consumed all, no problems",
+             "Consumed all, no problems"
+             )) |>
+  knitr::kable(col.names = c(
+    'Location',
+    'Subject',
+    'Amount Consumed',
+    'Observations'
+  ),
+  align = "l")
+```
+## Run-in (Days 1-14)
+
+### Day 1 (2023-3-10)
+- Two tubes per sample: one with 900 uL Molecular Grade (96%) Ethanol (MGE) and the other with 900 uL DNA/RNA Shield (DRS).
+- Room F should be first priority because it has a window.
+- Failed to get sample from every monkey in room F because lots of noise was made when looking for supplies, they were awake before samples were collected.
+- Fill CRC spray bottle with 70% EtOH from bottle in right cabinet on physicals side to spray pans in hood after washing.
+- Difficulty homogenizing — make sure to try and mix fecal sample in liquid with stick when collecting from pans.
+- Get ice from ice machine in AH408.
+- Kirby and Loki (Buddy and Joans offspring) like to jump on pans and dislodge them from shelf — take some bungees to box in pans.
+- Samples collected from 11/20 monkeys.
+
+### Day 2 (2023-3-11)
+- Due to a miscommunication, monkeys on project were given gum normally (1 mL per monkey mixed in with food) until today.
+  - Meaning that gum was given the day before day 1 samples and the day before day 2 samples.
+  - Can use this as an opportunity to see how gut microbiota levels out after typical gum is discontinued?
+- Difficulty separating Buddy and Joans from kids, but pans effectively stayed on shelf after using bungees to keep in place even with Kirby and Loki jumping on them.
+- Some blood in stool found in Henry and Ginger’s cage — fecal samples collected from each do not have blood in them.
+- Sample collection had to be aborted early due to monkey emergency (monkey not involved in project but in room B — Leia)
+- Feeders may not be writing that animals in project are receiving sweet potatoes and apples on feeding sheet, but they are indeed receiving sweet potatoes and apples after clarification.
+- Samples collected from 12/20 monkeys.
+
+### Day 3 (2023-3-12)
+- Samples collected from 18/20 monkeys.
+
+### Day 4 (2023-3-13)
+- Henry had some blood in his stool.
+- Ginger has been aggressive towards Henry while they are both in the back, and Henry has been doing anxiety flips in response.
+- Samples collected from 16/20 monkeys.
+
+### Day 5 (2023-3-14)
+- Ginger has been aggressive towards Henry while they are both in the back, and Henry has been doing anxiety flips in response.
+- Lights turned on at a different time than expected, so monkeys were awake before being able to collect samples.
+- Samples collected from 2/20 monkeys.
+
+### Day 6 (2023-3-15)
+- Used back cage divider for Henry and Ginger’s cage — aggression and anxiety behaviors have significantly reduced.
+  - Will be using cage divider for this pair from now on.
+- Samples collected from 10/20 monkeys.
+
+### Day 7 (2023-3-16)
+- Buddy had some blood in his stool (type 5 Bristol fecal score).
+- Samples collected from 17/20 monkeys.
+
+### Day 8 (2023-3-17)
+- Monkeys have been irritable — taking a break from sample collection, will resume tomorrow.
+
+### Day 9 (2023-3-18)
+- Samples collected from 20/20 monkeys.
+
+### Day 11 (2023-3-20)
+- Samples collected from 14/20 monkeys.
+
+### Day 14 (2023-3-23)
+- Samples collected from 13/20 monkeys.
+
+## Intervention 1 (Days 15-28)
+
+### Day 15 (2023-3-24)
+- Some drops of blood in Padme’s stool — Haley notified, she collected some of the sample to do further tests on.
+- First day of intervention 1 — gum was administered to monkeys in group 1.
+  - Most had no problem with ingesting the gum.
+  - Hamlet and Iris were the most difficult to give gum, behavior points to them being confused by liquid coming out of a syringe (CRC syringes are smaller and look different compared to the ones being used).
+    - Had to be given by coating small pieces of marshmallow in it.
+  - Syringes given to monkeys once all their gum was ingested.
+- Samples collected from 7/10 monkeys. 
+
+### Day 16 (2023-3-25)
+- Padme has been lethargic, climbing weird where she isn’t using her back legs, and threw up a couple times.
+  - Sample collection was not done with Charles and Padme, and Haley was notified.
+  - Padme was doing better by the time Haley came in.
+  - Padme will be closely monitored from hereon-out; sample collection will not be attempted if she is not doing well in the future.
+  - Unsure what is causing these symptoms, but they are similar to spinal/renal problems a couple other individuals experienced in the past couple years.
+- Korra has been increasingly aggressive towards Kubo, similar to how Ginger had been towards Henry when the divider wasn’t used.
+  - Korra scratched Kubo’s face.
+  - Will try divider tomorrow.
+- Samples collected from 9/20 monkeys.
+
+### Day 17 (2023-3-26)
+- Did not need to use divider for Korra and Kubo.
+- Samples collected from 20/20 monkeys.
+
+### Day 18 (2023-3-27)
+- Samples collected from 13/20 monkeys.
+
+### Day 19 (2023-3-28)
+- Samples collected from 7/20 monkeys.
+
+### Day 20 (2023-3-29)
+- Padme euthanized 💔 (control group of intervention 1; age 4.6 years)
+  - Renal failure
+  - Gallbladder problems
+- Charles howdying with Bubblegum (pregnant by a member of Quinoa family; cross-fostered by Quinoa family, born to Bug family).
+  - Charles’ microbiome will likely be altered by this change.
+  - Quinoa has had a hysterectomy, so she cannot suppress the ovulation cycles of other females in her family group — resulting in Bubblegum becoming pregnant by a male in the family group (not biologically related, only raised by).
+  - Can attempt to collect samples from Charles in the future, but will be an outlier.
+    - Cannot collect while howdying and the first few days of being re-paired.
+- Samples collected from 14/20 monkeys.
+  
+### Day 21 (2023-3-30)
+- Charles howdying with Bubblegum.
+- Closed room F window before leaving for the day.
+- Samples collected from 10/19 monkeys.
+
+### Day 22 (2023-3-31)
+- Charles re-paired with Bubblegum.
+- Samples collected from 18/19 monkeys
+
+### Day 23 (2023-4-1)
+- Room F window blinds open — attempted sample collection, but no one provided a sample, so they were most likely awake for a while before I could get in there.
+- Updates on how everyone is taking the gum:
+  - Hamlet’s gum has to be put into a paper cup with some marshmallow fluff to get him to eat it.
+    - Will not eat it if you are looking at him/in the room.
+  - Hera typically eats the gum, but has recently been hesitant to.
+  - JarJar immediately eats it with no problems.
+  - Ophelia started out having no issues with the gum, but has more recently been adverse to the syringe — gum has had to be put into a paper cup with some marshmallow fluff.
+  - Kubo immediately eats it with no problems.
+  - Korra typically eats the gum, but sometimes is hesitant to, so have had to put it in a paper cup with some marshmallow fluff.
+  - Wolverine typically eats the gum, but has recently been hesitant, most likely because I have had to separate him from Iris so he does not eat her gum.
+  - Iris’ gum has to be put into a paper cup with some marshmallow fluff to get her to try to eat it, is grumpy the entire time.
+    - Will not eat it if you are looking at her/in the room.
+  - Goose and Lambchop are both excited to eat the gum and immediately eat it with no problems.
+- Hamlet/Hera have been having some diarrhea.
+- Samples collected from 6/19 monkeys.
+
+### Day 24 (2023-4-2)
+- Hamlet/Hera - diarrhea appears to have gone away
+- According to feeders, Hamlet was a little aggressive towards them this morning.
+  - Personally did not experience this whatsoever.
+- Samples collected from 18/19 monkeys.
+
+### Day 25 (2023-4-3)
+- Samples collected from 18/19 monkeys.
+
+### Day 27 (2023-4-5)
+- Samples collected from 18/19 monkeys.
+
+### Day 28 (2023-4-6)
+- Samples collected from 12/19 monkeys.
+
+## Washout 1 (Days 29-42)
+
+### Day 29 (2023-4-7)
+- Samples collected from 18/19 monkeys.
+
+### Day 30 (2023-4-8)
+- Samples collected from 19/19 monkeys.
+
+### Day 31 (2023-4-9)
+- Animal care forgot to close window in room F during afternoon checks yesterday, so monkeys were awake.
+  - No one provided a fresh fecal sample; used scoops to pick up the freshest feces in the bedding at the bottom of the cage for animals in room F and did best to ID them based on yesterday’s bristol scores/appearance.
+    - Feces not collected from Buddy and Joans’ cage since there are too many monkeys (4 total) to ensure that feces are from Buddy/Joans.
+  - No certainty with the ID and amount of contamination in samples from room F.
+- Room B - no problems.
+- Samples collected from 17/19 monkeys.
+
+### Day 32 (2024-4-10)
+- Samples collected from 19/19 monkeys.
+
+### Day 33 (2023-4-11)
+- Hurt back prior to sample collection, was only able to collect from animals in group 1 and Charles before having to stop.
+- Samples collected from 11/19 monkeys.
+
+### Day 34 (2023-4-12)
+- Will begin recording weights from now on.
+- Samples collected from 19/19 monkeys.
+
+### Day 35 (2023-4-13)
+- Scale not charged — weights will be taken tomorrow.
+- Samples collected from 19/19 monkeys.
+- Halfway done!
+
+### Day 36 (2023-4-14)
+- Weights of everyone taken, no problems.
+- Samples collected from 19/19 monkeys.
+
+### Day 37 (2023-4-15)
+- Joans began tackling Buddy at some point while in the back cage, and they began fighting.
+  - Ran to grab a divider, separated them, and they both calmed down.
+  - No injuries.
+- Samples collected from 19/19 monkeys.
+
+### Day 38 (2023-4-16)
+- Did not need to use divider again for Buddy and Joans.
+- Korra has been appearing unusually bigger and rounder — pregnant?
+- Samples collected from 19/19 monkeys. 
+
+### Day 39 (2023-4-17)
+- Samples collected from 19/19 monkeys.
+
+### Day 40 (2023-4-18)
+- Way too much to do before teaching lab at 10, had to forgo sample collection to prepare.
+- Took weights for all monkeys on project.
+
+### Day 41 (2023-4-19)
+- Samples collected from 19/19 monkeys.
+
+### Day 42 (2023-4-20)
+- Came in late, prioritized room F samples since 5 cages in that room will be receiving gum starting tomorrow.
+- Since the lights had been on for a few minutes, several were not able to provide fresh samples, so I took the freshest off the bottom of the cage and ID’d them to the best of my ability based on previous fecal scores and appearance.
+- Joans was attacking Buddy again, so had to use divider for them.
+- Samples collected from 10/19 monkeys.
+
+## Intervention 2 (Days 43-56)
+
+### Day 43 (2023-4-21)
+- Gum given to group 2 — no problems with any of them eating the gum.
+- Samples collected from 19/19 monkeys.
+
+### Day 44 (2023-4-22)
+- Some problems with getting Franc to ingest the gum.
+  - Will approach and sniff the gum, start licking the marshmallow fluff, but once the liquid starts coming out of the syringe, he recoils and runs away.
+  - While hesitant, took and ate marshmallows that I put his gum in.
+  - Appeared to be shaking while consuming it.
+- Samples collected from 19/19 monkeys.
+
+### Day 45 (2023-4-23)
+- Animal care accidentally left the window blinds open in room F, so the monkeys in that room were awake before I went in.
+  - Tried to collect fresh samples, but most samples from room F were taken from the floor bedding and ID’d based on previous bristol scores and appearance.
+- Took weights.
+  - Had to separate JarJar and Ophelia from each other so that JarJar could have the chance to stand on the scale.
+    - Ophelia agitated by this, was doing flips in the back.
+  - Some difficulty weighing Buddy and Joans because something set off Buddy and he began alarm (mob) calling resulting in others in the room alarm calling.
+- Franc (F2) and Ginger (F6) in group 2 that are now getting gum have had a bit of trouble consuming the gum.
+  - These are the two monkeys that were given antibiotics in a previous project.
+  - Franc
+    - Will approach and sniff the gum, start licking the marshmallow fluff, but once the liquid starts coming out of the syringe, he recoils and runs away.
+    - While hesitant, took and ate marshmallows that I put his gum in.
+  - Ginger
+    - Will consume some while hesitant, had to put the last in a marshmallow for her to eat it.
+- Samples collected from 19/19 monkeys.
+ 
+### Day 46 (2023-4-24)
+- Franc
+  - Not as apprehensive about the gum, will take most of it but had to put some in a marshmallow.
+- Ginger
+  - Wanted nothing to do with the gum once it started coming out of the syringe; once she noticed the liquid, she squints, salivates/drools, shakes her head, and flaps her arms like she is trying to smack something but isn’t hitting anything.
+  - While slow and hesitant, she gradually took and ate marshmallows with gum in it.
+- Samples collected from 19/19 monkeys.
+
+### Day 47 (2023-4-25)
+- Not enough time to collect samples from everyone and prep for a lab I TA at 10 am; only collected from group 2 in room F.
+- Haley confirmed that Korra is pregnant — she is now getting prenatals.
+- Franc
+  - Will approach a lick a little out of the syringe, but would not consume more than that.
+  - Took and ate marshmallows I put the gum in.
+- Ginger
+  - Wanted nothing to do with the gum including the marshmallow fluff on the tip of the syringe.
+  - Once seeing the syringe, she squints, shakes her head, and flaps her arms like she is trying to smack something but isn’t hitting anything.
+  - Put gum in a small paper cup mixed with marshmallow fluff and she ate it no problem.
+- Samples collected from 9/19 monkeys.
+
+### Day 48 (2023-4-26)
+- Samples collected from 19/19 monkeys.
+
+### Day 49 (2023-4-27)
+- Samples collected from 19/19 monkeys.
+
+### Day 50 (2023-4-28)
+- Korra bit Gaby when she was giving her a marshmallow.
+  - Likely to give birth soon.
+  - Filled out incident report.
+- Samples collected from 19/19 monkeys.
+
+### Day 51 (2023-4-29)
+- Korra gave birth to 4 stillborn babies.
+  - Placenta and carcasses put in bag in fridge with death tags.
+  - Skipped sample collection in room B.
+  - Korra okay aside from some blood around genitals.
+- Since had to put those away, had to start in room F late so many samples were taken off of the bottom in the bedding of the cage and ID’d based on appearance and previous fecal scores.
+- Franc has no problem and enjoys consuming the gum now.
+  - Now Ivy is creeped out by the syringe, had to put in marshmallow for her to eat it.
+- Ginger’s gum mixed with marshmallow fluff in a small cup for her.
+- Samples collected from 11/19 monkeys.
+
+### Day 52 (2023-4-30)
+- Some droplets of blood in Korra’s stool — likely from some blood still around genitals from giving birth.
+- Samples collected from 19/19 monkeys.
+
+### Day 53 (2024-5-1)
+- Ivy still having some trouble with wanting to ingest the gum.
+  - Have had to put in marshmallows for her to eat.
+- Franc has no problems anymore with taking the gum.
+- Gum mixed with marshmallow fluff in paper cup for Ginger.
+- Samples collected from 19/19 monkeys. 
+
+### Day 54 (2023-5-2)
+- Samples collected from 9/19 monkeys.
+
+### Day 55 (2023-5-3)
+- Samples collected from 19/19 monkeys.
+
+### Day 56 (2023-5-4)
+- Samples collected from 19/19 monkeys.
+
+## Washout 2 (Days 57-70)
+
+### Day 57 (2023-5-5)
+- Samples collected from 19/19 monkeys.
+
+### Day 58 (2023-5-6)
+- Some difficulty getting monkeys situated.
+- Some fighting among pair-mates (Henry and Ginger, Buddy and Joans, JarJar and Ophelia).
+  - Female aggression towards male mate.
+- Ginger appeared very perplexed that I didn’t give her gum.
+  - Was looking at me expectantly and looking through old paper cups that I put gum + marshmallow fluff in previously.
+- Samples collected from 19/19 monkeys.
+
+### Day 59 (2023-5-7)
+- Samples collected from 19/19 monkeys.
+
+### Day 60 (2023-5-8)
+- Samples collected from 19/19 monkeys.
+
+### Day 61 (2023-5-9)
+- Samples collected from 19/19 monkeys.
+
+### Day 62 (2023-5-10)
+- Hera has been sneezing a lot recently with some snotty mucus around her face.
+- Ophelia has recently not been allowing JarJar in the back with her because she asserts dominance (ehrr-ehrring) over marshmallows I offer them.
+- Iris appeared to be having trouble pooping.
+- Buddy has been hesitant with coming into the back.
+  - Likely because Joans keeps randomly tackling him.
+- Samples collected from 19/19 monkeys.
+
+### Day 63 (2023-5-11)
+- Joans was in the middle of labor when I went into room F this morning, so skipped sample collection in room F.
+  - Had only given birth to one baby when I found her and periodically checked on her.
+  - Will likely give birth to at least one more, but appears to be struggling to push anything else out.
+    - She keeps straining to push something out of her, then checks herself and behind/below her to see if anything came out to no avail.
+  - No placenta yet, Beth and Noel notified.
+  - Gave a couple extra hammocks to make her more comfortable. 
+  - Buddy has been carrying the one baby with Joans periodically cleaning them with him.
+  - Kirby and Loki perpetually infant crying.
+  - Joans is now receiving prenatals.
+  - Update:
+    - Ultrasound shows that there is not a second baby (which is very unusual), but there is still a placenta.
+    - Joans given injection of oxytocin to help induce contractions.
+- Samples collected late from room B since I was dealing with Venus giving birth to 3 alive babies and 1 dead baby as well as observing Joans.
+  - Samples collected from the bottom of the cages and ID’d based on previous fecal scores and appearance.
+- Samples collected from 8/19 monkeys.
+
+### Day 64 (2023-5-12)
+- One of the feeders texted me saying that someone informed her that she accidentally mixed up the food bowls yesterday when feeding.
+  - This means that the monkeys in room B on day 63 got the diet that the non-project monkeys are getting (different fruits and vegetables, yogurt, mealworms, and gum in different amounts since room C has a different number of monkeys per food bowl).
+- Bubblegum appears to have some problems moving around; she will likely give birth soon.
+- Skipped Buddy and Joans.
+  - One baby was twisted around/stuck in the 1x1 back wall of cage.
+  - They kept trying to pull on them so I got the family away from them, entered the cage to reach the back wall to untangle the baby, then pulled the cage out to retrieve the baby since they were now on the outside.
+  - Returned baby to Joans and she made a lot of happy chirps 🥰.
+- Found Joans' placenta.
+- Samples collected from 17/19 monkeys.
+
+### Day 65 (2023-5-13)
+- Bubblegum gave birth to two stillborn babies, found placenta.
+  - Skipped sample collection for Charles.
+- Animal care forgot to close the window in room F so all samples from that room were collected from the ground.
+- Because of having to deal with dead babies, collected from room B late so the monkeys were already awake.
+  - Had to take all samples except Wolverine and Iris samples from the bedding.
+- Samples collected from 18/19 monkeys.
+
+### Day 66 (2023-5-14)
+- Samples collected from 19/19 monkeys.
+
+### Day 67 (2023-5-15)
+- Samples collected from 17/19 monkeys.
+  
+### Day 68 (2023-5-16)
+- Attempted sample collection from Buddy and Joans, but they did not provide despite being restricted to the nesting box (with babies and water) for longer than usual (~15-20 min).
+  - They were nursing and grooming their babies and did not appear agitated in any way.
+  - Tried to give them as much privacy as possible by not staring at them, but they did not appear to move from their positions (an area open from the bottom to the pans) from the moment I turned on the lights.
+    - It is therefore unlikely that they produced fecal samples that I cannot locate.
+- Samples collected from 17/19 monkeys.
+
+### Day 69 (2023-5-17)
+- Type 5 diarrhea collected from F2, but unsure whether or not Franc or Ivy produced it.
+  - Labelled as Franc since he was spatially the closest to it.
+  - If not, Ivy and Franc’s fecal samples are switched.
+- Buddy and Joans produced fecal samples.
+  - Buddy was carrying the babies this morning.
+- Ginger was very aggressive to Henry this morning.
+- Samples collected from 19/19 monkeys.
+
+### Day 70 (2023-5-18)
+- I was informed that mealworms were given to animals in room F by accident on Monday (day 67 3/15/2023).
+  - This means that this would be reflected on day 68 and potentially onwards.
+- Buddy and Joans’ babies are doing good!
+- I was sifting through bedding in their home and Joans grabbed my head with both of her hands and then eventually let go.
+  - Buddy fecal sample collected from bedding.
+- Attempted to take weights for all monkeys on my project, but the scale was giving an error and I could not fix it despite my efforts.
+- Samples collected from 19/19 monkeys.
