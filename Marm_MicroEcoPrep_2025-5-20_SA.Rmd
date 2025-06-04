@@ -27,15 +27,32 @@ subjects <- read.table(marmoset$subjects,
     Sex = factor(Sex, levels = unique(Sex)),
     Housing = factor(Housing, levels = unique(Housing)),
     Group = factor(Group, levels = unique(Group)),
-    Subj_DOB = as.Date(DOB, format = "%m/%d/%y") 
+    Subj_DOB = as.Date(DOB, format = "%m/%d/%y"),
+    Room = factor(Room, levels = unique(Room))
   ) %>%
-  dplyr::select(-"DOB")
+  dplyr::select(Group,
+                Room,
+                Cage,
+                Subject,
+                Subject_Code,
+                Sex,
+                Housing,
+                Origin,
+                Subj_DOB,
+                Age,
+                Contraception,
+                Previous_Exp,
+                Subject_Notes
+                )
+```
+```{r}
+write.csv(subjects, "metadata/subjects.csv")
 ```
 ```{r}
 samples <- read.table(marmoset$samples,
                       header = T,
                       sep = "\t") %>%
-  mutate(Sample_Date = as.Date(Sample_Date,
+  mutate(Date = as.Date(Sample_Date,
                         format = "%m/%d/%y"),
          Study_Day = str_extract(Sample_ID, "(?<=-)[0-9]+(?=-)"),
          Subj_Day = fct(str_glue("{Subject}", "_", "{Study_Day}")),
@@ -43,42 +60,130 @@ samples <- read.table(marmoset$samples,
          Sample_Time = as_hms(sprintf("%02d:%02d:00",
           as.integer(str_sub(SampleTimeFormatted, 1, 2)),
           as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
-  dplyr::select(-"SampleTimeFormatted")
+  dplyr::select(Sample_ID,
+                Date,
+                Study_Day,
+                Sample_Time,
+                Subject,
+                Sample_Collected_By,
+                Bristol,
+                Sample_Stabilizer,
+                Sample_Box,
+                Sample_Notes,
+                Diet_Trial,
+                Group_Phase,
+                Subj_Day
+                )
+```
+```{r}
+write.csv(samples, "metadata/samples.csv")
 ```
 ```{r}
 extracts <- read.table(marmoset$extracts,
                       header = T,
                       sep = "\t") %>%
   mutate(Extract_Date = as.Date(Extract_Date,
-                               format = "%m/%d/%y"))
+                               format = "%m/%d/%y"),
+         Extract_Conc_ng_uL = Extract_Conc_.ng.uL.) %>%
+  dplyr::select(Extract_ID,
+                Sample_ID,
+                Extract_Type,
+                Extract_Date,
+                Extracted_By,
+                Extract_Conc_ng_uL,
+                Extract_Kit,
+                Extract_Box,
+                Extract_Notes
+                )
+```
+```{r}
+write.csv(extracts, "metadata/extracts.csv")
 ```
 ```{r}
 libraries <- read.table(marmoset$libraries,
                       header = T,
-                      sep = "\t")
+                      sep = "\t") %>%
+  mutate(Final_Lib_Conc_ng_uL = Final_Lib_Conc_.ng.uL.,
+         Vol_Added_Pool_uL = Vol_Added_Pool_.uL.) %>%
+  dplyr::select(Sequence_ID,
+                Extract_ID,
+                Sample_ID,
+                Seq_ID,
+                Pipeline,
+                Library_Tube,
+                Library_Tube_ID,
+                Library_Barcode,
+                F_Primer,
+                R_Primer,
+                Run_ID,
+                Final_Lib_Conc_ng_uL,
+                Vol_Added_Pool_uL
+                )
+```
+```{r}
+write.csv(libraries, "metadata/libraries.csv")
 ```
 ```{r}
 seqruns <- read.table(marmoset$seqruns,
                       header = T,
                       sep = "\t") %>%
   mutate(Run_Date = as.Date(Run_Date,
-                               format = "%m/%d/%y"))
+                               format = "%m/%d/%y"),
+         Seq_ID = Pooled_Library_Code,
+         Full_Seq_ID = Pooled_Library_ID) %>%
+  dplyr::select(Run_ID,
+                Full_Seq_ID,
+                Seq_ID,
+                Pipeline,
+                Kit,
+                Sequencer,
+                MinION_Position,
+                Flow_Cell_Type,
+                Flongle_Adapter,
+                Flow_Cell_ID,
+                Run_Date,
+                Loaded_By
+                )
+```
+```{r}
+write.csv(seqruns, "metadata/seqruns.csv")
 ```
 ```{r}
 weights <- read.table(marmoset$weights,
                       header = T,
                       sep = "\t") %>%
-  mutate(Date_Weighed = as.Date(Date,
-                                format = "%m/%d/%y")) %>%
-  dplyr::select(-"Date")
+  mutate(Date = as.Date(Date,
+                        format = "%m/%d/%y")) %>%
+  dplyr::select(Date,
+                Study_Day,
+                Subject,
+                Weight_g,
+                Weight_Collected_By,
+                Weight_Notes)
+```
+```{r}
+write.csv(weights, "metadata/weights.csv")
 ```
 ```{r}
 leftover_food <- read.table(marmoset$leftover_food,
                       header = T,
                       sep = "\t") %>%
-  mutate(Record_Date = as.Date(Date,
-                                format = "%m/%d/%y")) %>%
-  dplyr::select(-"Date")
+  mutate(Date = as.Date(Date,
+                                format = "%m/%d/%y"),
+         Leftover_Gel_Zupreem = Gel.Zupreem,
+         Leftover_Apple = Apple,
+         Leftover_Sweet_Potato = Sweet_Potato,
+         Leftover_Eggs = Eggs) %>%
+  dplyr::select(Date,
+                Cage,
+                Leftover_Gel_Zupreem,
+                Leftover_Apple,
+                Leftover_Sweet_Potato,
+                Leftover_Eggs,
+                Diet_Notes)
+```
+```{r}
+write.csv(leftover_food, "metadata/leftover_food.csv")
 ```
 ```{r}
 bristol <- read.table(marmoset$bristol,
@@ -86,168 +191,65 @@ bristol <- read.table(marmoset$bristol,
                       sep = "\t") %>%
   mutate(Study_Date = as.Date(Date,
                                 format = "%m/%d/%y"),
-         Subj_Day = fct(str_glue("{Subject}", "_", "{Study_Day}")),
          SampleTimeFormatted = str_pad(Time, 4, pad = "0"),
          Sample_Time = as_hms(sprintf("%02d:%02d:00",
           as.integer(str_sub(SampleTimeFormatted, 1, 2)),
           as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
-  dplyr::select(-c("SampleTimeFormatted", "Date", "Time"))
-
+  dplyr::select(Study_Date,
+                Study_Day,
+                Sample_Time,
+                Subject,
+                Bristol
+                )
 ```
 ```{r}
-metadata <- libraries %>%
-  left_join(samples, by = "SampleID") %>%
-  left_join(subjects, by = "subject") %>%
-  left_join(seqruns, by = "Seq.ID") %>%
-  mutate(diet_trial = case_when(
-    sampledate >= as.Date("2023-03-10") & sampledate <= as.Date("2023-03-23") ~ "run-in",
-    sampledate >= as.Date("2023-03-24") & sampledate <= as.Date("2023-04-06") ~ "intervention-1",
-    sampledate >= as.Date("2023-04-07") & sampledate <= as.Date("2023-04-20") ~ "washout-1",
-    sampledate >= as.Date("2023-04-21") & sampledate <= as.Date("2023-05-04") ~ "intervention-2",
-    sampledate >= as.Date("2023-05-05") & sampledate <= as.Date("2023-05-18") ~ "washout-2"
-  )) %>%
-  mutate(group_phase = case_when(
-    diet_trial == "run-in" & group == "g1" ~ "baseline",
-    diet_trial == "run-in" & group == "g2" ~ "baseline",
-    diet_trial == "intervention-1" & group == "g1" ~ "gum",
-    diet_trial == "intervention-1" & group == "g2" ~ "control",
-    diet_trial == "washout-1" & group == "g1" ~ "gum-washout",
-    diet_trial == "washout-1" & group == "g2" ~ "control-washout",
-    diet_trial == "intervention-2" & group == "g1" ~ "control",
-    diet_trial == "intervention-2" & group == "g2" ~ "gum",
-    diet_trial == "washout-2" & group == "g1" ~ "control-washout",
-    diet_trial == "washout-2" & group == "g2" ~ "gum-washout"
-  )) %>%
-  mutate(
-    diet_trial = factor(diet_trial, levels = unique(diet_trial)),
-    group_phase = factor(group_phase, levels = unique(group_phase)),
-    origin = factor(origin, levels = unique(origin)),
-    bristol = factor(Bristol, levels = unique(Bristol))
-  ) %>%
-  rename(Library_Conc = Final.Library.Concentration,
-         Pooled_Vol = Volume.Added.to.Pool..uL.) 
+write.csv(bristol, "metadata/bristol.csv")
 ```
+```{r}
+seq_metadata <- libraries %>%
+  left_join(seqruns, by = c("Seq_ID", "Run_ID")) %>%
+  dplyr::select(-"Pipeline.x") %>%
+  mutate(Pipeline = Pipeline.y) %>%
+  dplyr::select(-"Pipeline.y")
+```
+```{r}
+metadata <- seq_metadata %>%
+  left_join(extracts, by = c("Extract_ID", "Sample_ID")) %>%
+  left_join(samples, by = "Sample_ID") %>%
+  left_join(subjects, by = "Subject")
+```
+
 ## Sample Subsets
 ```{r}
 sample.list.g1 <- metadata %>%
-  filter(group == "g1") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
+  filter(Group == "Group1") %>%
+  distinct(Sequence_ID, Study_Day) %>%
+  arrange(Study_Day) %>%
+  distinct(Sequence_ID) %>%
   map(\(x) as.list(x)) %>%
   list_flatten(name_spec = "")
 
 samples.g1 <- sample.list.g1 %>% unlist()
 
 sample.list.g2 <- metadata %>%
-  filter(group == "g2") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
+  filter(Group == "Group2") %>%
+  distinct(Sequence_ID, Study_Day) %>%
+  arrange(Study_Day) %>%
+  distinct(Sequence_ID) %>%
   map(\(x) as.list(x)) %>%
   list_flatten(name_spec = "")
 
 samples.g2 <- sample.list.g2 %>% unlist()
 
-sample.list.baseline <- metadata %>%
-  filter(group_phase == "baseline") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.baseline <- sample.list.baseline %>% unlist()
-
-sample.list.gum <- metadata %>%
-  filter(group_phase == "gum") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.gum <- sample.list.gum %>% unlist()
-
 sample.list.int <- metadata %>%
-  filter(group_phase == c("gum", "control")) %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
+  filter(Group_Phase == c("gum", "control")) %>%
+  distinct(Sequence_ID, Study_Day) %>%
+  arrange(Study_Day) %>%
+  distinct(Sequence_ID) %>%
   map(\(x) as.list(x)) %>%
   list_flatten(name_spec = "")
 
 samples.int <- sample.list.int %>% unlist()
-
-sample.list.gum.wash <- metadata %>%
-  filter(group_phase == "gum-washout") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.gum.wash <- sample.list.gum.wash %>% unlist()
-
-sample.list.control <- metadata %>%
-  filter(group_phase == "control") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.control <- sample.list.control %>% unlist()
-
-sample.list.control.wash <- metadata %>%
-  filter(group_phase == "control-washout") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.control.wash <- sample.list.control.wash %>% unlist()
-
-sample.list.ne <- metadata %>%
-  filter(origin == "nebraska") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.ne <- sample.list.ne %>% unlist()
-
-sample.list.tx <- metadata %>%
-  filter(origin == "texas") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.tx <- sample.list.tx %>% unlist()
-
-sample.list.rmb <- metadata %>%
-  filter(room == "room b") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.rmb <- sample.list.rmb %>% unlist()
-
-sample.list.rmf <- metadata %>%
-  filter(room == "room f") %>%
-  distinct(SequenceID, studyday) %>%
-  arrange(studyday) %>%
-  distinct(SequenceID) %>%
-  map(\(x) as.list(x)) %>%
-  list_flatten(name_spec = "")
-
-samples.rmf <- sample.list.rmf %>% unlist()
 ```
 # Alignment
 *Generated from the wf-16s workflow*
