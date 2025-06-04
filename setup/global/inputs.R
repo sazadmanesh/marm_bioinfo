@@ -1,22 +1,26 @@
 # /setup/global/inputs.R
 
 sample_merge_cols <- c(
-  "subject",
-  "sampledate",
-  "bristol",
-  "studyday",
-  "subj_day",
-  "subjectcode",
-  "sex",
-  "housing",
-  "group",
+  "Subject",
+  "Date",
+  "Bristol",
+  "Study_Day",
+  "Subj_Day",
+  "Subject_Code",
+  "Sex",
+  "Housing",
+  "Group",
   "Age",
-  "contraception",
-  "origin",
-  "previousexp",
-  "diet_trial",
-  "group_phase",
-  "room"
+  "Contraception",
+  "Origin",
+  "Previous_Exp",
+  "Diet_Trial",
+  "Group_Phase",
+  "Room",
+  "Cage",
+  "Housing",
+  "Subj_DOB",
+  "Age"
 )
 
 subjects <- list(

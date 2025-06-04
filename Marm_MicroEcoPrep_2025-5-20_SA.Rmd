@@ -49,6 +49,9 @@ subjects <- read.table(marmoset$subjects,
 write.csv(subjects, "metadata/subjects.csv")
 ```
 ```{r}
+saveRDS(subjects, file = "data/subjects.rds")
+```
+```{r}
 samples <- read.table(marmoset$samples,
                       header = T,
                       sep = "\t") %>%
@@ -79,6 +82,9 @@ samples <- read.table(marmoset$samples,
 write.csv(samples, "metadata/samples.csv")
 ```
 ```{r}
+saveRDS(samples, file = "data/samples.rds")
+```
+```{r}
 extracts <- read.table(marmoset$extracts,
                       header = T,
                       sep = "\t") %>%
@@ -98,6 +104,9 @@ extracts <- read.table(marmoset$extracts,
 ```
 ```{r}
 write.csv(extracts, "metadata/extracts.csv")
+```
+```{r}
+saveRDS(extracts, file = "data/extracts.rds")
 ```
 ```{r}
 libraries <- read.table(marmoset$libraries,
@@ -122,6 +131,9 @@ libraries <- read.table(marmoset$libraries,
 ```
 ```{r}
 write.csv(libraries, "metadata/libraries.csv")
+```
+```{r}
+saveRDS(libraries, file = "data/libraries.rds")
 ```
 ```{r}
 seqruns <- read.table(marmoset$seqruns,
@@ -149,6 +161,9 @@ seqruns <- read.table(marmoset$seqruns,
 write.csv(seqruns, "metadata/seqruns.csv")
 ```
 ```{r}
+saveRDS(seqruns, file = "data/seqruns.rds")
+```
+```{r}
 weights <- read.table(marmoset$weights,
                       header = T,
                       sep = "\t") %>%
@@ -163,6 +178,9 @@ weights <- read.table(marmoset$weights,
 ```
 ```{r}
 write.csv(weights, "metadata/weights.csv")
+```
+```{r}
+saveRDS(weights, file = "data/weights.rds")
 ```
 ```{r}
 leftover_food <- read.table(marmoset$leftover_food,
@@ -186,6 +204,9 @@ leftover_food <- read.table(marmoset$leftover_food,
 write.csv(leftover_food, "metadata/leftover_food.csv")
 ```
 ```{r}
+saveRDS(leftover_food, file = "data/leftover_food.rds")
+```
+```{r}
 bristol <- read.table(marmoset$bristol,
                       header = T,
                       sep = "\t") %>%
@@ -206,6 +227,9 @@ bristol <- read.table(marmoset$bristol,
 write.csv(bristol, "metadata/bristol.csv")
 ```
 ```{r}
+saveRDS(bristol, file = "data/bristol.rds")
+```
+```{r}
 seq_metadata <- libraries %>%
   left_join(seqruns, by = c("Seq_ID", "Run_ID")) %>%
   dplyr::select(-"Pipeline.x") %>%
@@ -217,6 +241,12 @@ metadata <- seq_metadata %>%
   left_join(extracts, by = c("Extract_ID", "Sample_ID")) %>%
   left_join(samples, by = "Sample_ID") %>%
   left_join(subjects, by = "Subject")
+```
+```{r}
+write.csv(metadata, "metadata/metadata.csv")
+```
+```{r}
+saveRDS(metadata, file = "data/metadata.rds")
 ```
 
 ## Sample Subsets
@@ -293,12 +323,12 @@ alignments.long <- dplyr::select(alignments.clean,
                                class,
                                phylum,
                                superkingdom,
-                               SequenceID = alias,
+                               Sequence_ID = alias,
                                pc.coverage,
                                n_reads = number.of.reads) %>%
- left_join(dplyr::select(metadata, SequenceID), 
-            by = join_by(SequenceID)) %>%
-  dplyr::filter(pc.coverage >= methods_16s$min_cov & !is.na(SequenceID)) %>%
+ left_join(dplyr::select(metadata, Sequence_ID), 
+            by = join_by(Sequence_ID)) %>%
+  dplyr::filter(pc.coverage >= methods_16s$min_cov & !is.na(Sequence_ID)) %>%
   group_by(reference,
            taxid,
            species,
@@ -308,10 +338,10 @@ alignments.long <- dplyr::select(alignments.clean,
            class,
            phylum,
            superkingdom,
-           SequenceID) %>%
+           Sequence_ID) %>%
   summarize(samp_cov = mean(pc.coverage),
             samp_n_reads = mean(n_reads)) %>% ungroup() %>%
-  arrange(SequenceID) %>%
+  arrange(Sequence_ID) %>%
   sort.taxa()
 ```
 *Simplify into a table with one row per reference*
@@ -352,7 +382,7 @@ alignments    <- alignments.long %>%
                                  family,
                                  genus,
                                  species,
-                                 SequenceID) %>%
+                                 Sequence_ID) %>%
                           summarize(counts = sum(samp_n_reads)) %>%
                           ungroup() %>%
                           left_join(alignment.refs,
@@ -367,7 +397,7 @@ alignments    <- alignments.long %>%
                                                taxid,
                                                all_of(taxonomy.ordered),
                                                ref_mean_cov),
-                                names_from  = SequenceID,
+                                names_from  = Sequence_ID,
                                 values_from = counts) %>%
                     sort.taxa() %>%
                     mutate(across(where(is.numeric), ~replace_na(.x, 0)),
@@ -376,16 +406,16 @@ alignments    <- alignments.long %>%
 ## Sequencing Depth
 ```{r}
 depth <- alignments.long %>%
-  filter(!is.na(SequenceID)) %>%
-  select(SequenceID,
+  filter(!is.na(Sequence_ID)) %>%
+  select(Sequence_ID,
          samp_cov,
          samp_n_reads) %>%
-  group_by(SequenceID) %>%
+  group_by(Sequence_ID) %>%
   summarize(depth         = round(sum(samp_n_reads), digits = 0),
             mean_coverage = round(mean(samp_cov), digits = 2)) %>%
   mutate(mean_coverage = mean_coverage/100) %>%
   ungroup() %>%
-  left_join(metadata, by = join_by(SequenceID))
+  left_join(metadata, by = join_by(Sequence_ID))
 ```
 ## Reference Sequences
 *Generate an accession reference table for sequences to retrieve*
@@ -446,9 +476,9 @@ write.table(taxonomy.list,
 ## OTUs
 ```{r}
 sample.list <- metadata %>%
-  distinct(SequenceID, subject, studyday) %>%
-  arrange(subject, studyday) %>%
-  distinct(SequenceID) %>%
+  distinct(Sequence_ID, Subject, Study_Day) %>%
+  arrange(Subject, Study_Day) %>%
+  distinct(Sequence_ID) %>%
   map(\(x) as.list(x)) %>%
   list_flatten(name_spec = "")
 
@@ -467,18 +497,18 @@ otu.sample.list <- as.list(names(otu.table))
 samples.filtered <- setdiff(sample.list, otu.sample.list)
 
 excluded <- metadata %>%
-  filter(SequenceID %in% samples.filtered)
+  filter(Sequence_ID %in% samples.filtered)
 ```
 ```{r}
 sample.table <- metadata %>%
-  filter(SequenceID %in% otu.sample.list) %>%
+  filter(Sequence_ID %in% otu.sample.list) %>%
   rename_with(~str_replace_all(., " ", "_")) %>%
                 rename_with(~str_replace_all(., "-", "_")) %>%
                 rename_with(~str_remove_all(., fixed(")"))) %>%
                 rename_with(~str_remove_all(., fixed("("))) %>%
-                arrange(studyday, subject) %>%
-                mutate(day = as.character(studyday)) %>%
-  column_to_rownames("SequenceID") 
+                arrange(Study_Day, Subject) %>%
+                mutate(day = as.character(Study_Day)) %>%
+  column_to_rownames("Sequence_ID") 
 
 write.table(sample.table, marmoset$sample_table)
 ```
@@ -488,8 +518,8 @@ sample.table.merged <- sample.table %>%
   remove_rownames() %>%
   select(all_of(sample_merge_cols)) %>%
   distinct() %>%
-  filter(!is.na(subj_day)) %>%
-  column_to_rownames("subj_day") 
+  filter(!is.na(Subj_Day)) %>%
+  column_to_rownames("Subj_Day") 
 
 write.table(sample.table.merged, marmoset$sample_table)
   
@@ -501,56 +531,22 @@ otu.g1 <- otu.table %>%
 otu.g2 <- otu.table %>%
   select(any_of(samples.g2))
 
-otu.baseline <- otu.table %>%
-  select(any_of(samples.baseline))
-otu.gum <- otu.table %>%
-  select(any_of(samples.gum))
-otu.gumwash <- otu.table %>%
-  select(any_of(samples.gum.wash))
-otu.control <- otu.table %>%
-  select(any_of(samples.control))
-otu.controlwash <- otu.table %>%
-  select(any_of(samples.control.wash))
+
 otu.int <- otu.table %>%
   select(any_of(samples.int))
 
-otu.ne <- otu.table %>%
-  select(any_of(samples.ne))
-otu.tx <- otu.table %>%
-  select(any_of(samples.tx))
 
-otu.rmb <- otu.table %>%
-  select(any_of(samples.rmb))
-otu.rmf <- otu.table %>%
-  select(any_of(samples.rmf))
 
 samp.table.g1 <- sample.table %>%
   filter(group == "g1")
 samp.table.g2 <- sample.table %>%
   filter(group == "g2")
 
-samp.table.baseline <- sample.table %>%
-  filter(group_phase == "baseline")
-samp.table.gum <- sample.table %>%
-  filter(group_phase == "gum")
-samp.table.gumwash <- sample.table %>%
-  filter(group_phase == "gum-washout")
-samp.table.control <- sample.table %>%
-  filter(group_phase == "control")
-samp.table.controlwash <- sample.table %>%
-  filter(group_phase == "control-washout")
+
 samp.table.int <- sample.table %>%
   filter(group_phase == c("gum", "control"))
 
-samp.table.ne <- sample.table %>%
-  filter(origin == "nebraska")
-samp.table.tx <- sample.table %>%
-  filter(origin == "texas")
 
-samp.table.rmb <- sample.table %>%
-  filter(room == "room b")
-samp.table.rmf <- sample.table %>%
-  filter(room == "room f")
 ```
 # Assemble MicroEco Datasets
 ```{r}
@@ -578,81 +574,9 @@ dataset.g2 <- microtable$new(
   rep_fasta = rep.seqs,
   auto_tidy = T)
 
-dataset.baseline <- microtable$new(
-  sample_table = samp.table.baseline,
-  otu_table = otu.baseline,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
-dataset.gum <- microtable$new(
-  sample_table = samp.table.gum,
-  otu_table = otu.gum,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
-dataset.gumwash <- microtable$new(
-  sample_table = samp.table.gumwash,
-  otu_table = otu.gumwash,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
-dataset.control <- microtable$new(
-  sample_table = samp.table.control,
-  otu_table = otu.control,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
-dataset.controlwash <- microtable$new(
-  sample_table = samp.table.controlwash,
-  otu_table = otu.controlwash,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
 dataset.int <- microtable$new(
   sample_table = samp.table.int,
   otu_table = otu.int,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
-dataset.ne <- microtable$new(
-  sample_table = samp.table.ne,
-  otu_table = otu.ne,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
-dataset.tx <- microtable$new(
-  sample_table = samp.table.tx,
-  otu_table = otu.tx,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
-dataset.rmb <- microtable$new(
-  sample_table = samp.table.rmb,
-  otu_table = otu.rmb,
-  tax_table = tax.table,
-  phylo_tree = tax.tree,
-  rep_fasta = rep.seqs,
-  auto_tidy = T)
-
-dataset.rmf <- microtable$new(
-  sample_table = samp.table.rmf,
-  otu_table = otu.rmf,
   tax_table = tax.table,
   phylo_tree = tax.tree,
   rep_fasta = rep.seqs,
@@ -678,16 +602,8 @@ ggsave("visuals/marm_rarefaction.png", rarefaction_plot)
 dataset.main$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.g1$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.g2$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.baseline$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.gum$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.gumwash$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.control$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.controlwash$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.int$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.ne$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.tx$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.rmb$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.rmf$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+
 ```
 ## Technical Replicates
 *Merge samples for duplicate observations*
@@ -695,47 +611,21 @@ dataset.rmf$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods
 dataset.main <- dataset.main$merge_samples("subj_day")
 dataset.g1 <- dataset.g1$merge_samples("subj_day")
 dataset.g2 <- dataset.g2$merge_samples("subj_day")
-dataset.baseline <- dataset.baseline$merge_samples("subj_day")
-dataset.gum <- dataset.gum$merge_samples("subj_day")
-dataset.gumwash <- dataset.gumwash$merge_samples("subj_day")
-dataset.control <- dataset.control$merge_samples("subj_day")
-dataset.controlwash <- dataset.controlwash$merge_samples("subj_day")
 dataset.int <- dataset.int$merge_samples("subj_day")
-dataset.ne <- dataset.ne$merge_samples("subj_day")
-dataset.tx <- dataset.tx$merge_samples("subj_day")
-dataset.rmb <- dataset.rmb$merge_samples("subj_day")
-dataset.rmf <- dataset.rmf$merge_samples("subj_day")
 ```
 ```{r}
 dataset.main$sample_table <- data.frame(sample.table.merged[rownames(dataset.main$sample_table), ])
 dataset.g1$sample_table <- data.frame(sample.table.merged[rownames(dataset.g1$sample_table), ])
 dataset.g2$sample_table <- data.frame(sample.table.merged[rownames(dataset.g2$sample_table), ])
-dataset.baseline$sample_table <- data.frame(sample.table.merged[rownames(dataset.baseline$sample_table), ])
-dataset.gum$sample_table <- data.frame(sample.table.merged[rownames(dataset.gum$sample_table), ])
-dataset.gumwash$sample_table <- data.frame(sample.table.merged[rownames(dataset.gumwash$sample_table), ])
-dataset.control$sample_table <- data.frame(sample.table.merged[rownames(dataset.control$sample_table), ])
-dataset.controlwash$sample_table <- data.frame(sample.table.merged[rownames(dataset.controlwash$sample_table), ])
 dataset.int$sample_table <- data.frame(sample.table.merged[rownames(dataset.int$sample_table), ])
-dataset.ne$sample_table <- data.frame(sample.table.merged[rownames(dataset.ne$sample_table), ])
-dataset.tx$sample_table <- data.frame(sample.table.merged[rownames(dataset.tx$sample_table), ])
-dataset.rmb$sample_table <- data.frame(sample.table.merged[rownames(dataset.rmb$sample_table), ])
-dataset.rmf$sample_table <- data.frame(sample.table.merged[rownames(dataset.rmf$sample_table), ])
 ```
 ## Relative Abundance
 ```{r}
 dataset.main$cal_abund()
 dataset.g1$cal_abund()
 dataset.g2$cal_abund()
-dataset.baseline$cal_abund()
-dataset.gum$cal_abund()
-dataset.gumwash$cal_abund()
-dataset.control$cal_abund()
-dataset.controlwash$cal_abund()
 dataset.int$cal_abund()
-dataset.ne$cal_abund()
-dataset.tx$cal_abund()
-dataset.rmb$cal_abund()
-dataset.rmf$cal_abund()
+
 ```
 ### Filter Taxa
 *Remove taxa below an abundance of 0.00001 and a frequency of 1*
@@ -752,43 +642,7 @@ dataset.g2$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
 
-dataset.baseline$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
-dataset.gum$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
-dataset.gumwash$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
-dataset.control$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
-dataset.controlwash$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
 dataset.int$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
-dataset.ne$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
-dataset.tx$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
-dataset.rmb$filter_taxa(rel_abund = methods_16s$marm$min_abund,
-                         freq = methods_16s$marm$min_freq,
-                         include_lowest = methods_16s$marm$include_lowest)
-
-dataset.rmf$filter_taxa(rel_abund = methods_16s$marm$min_abund,
                          freq = methods_16s$marm$min_freq,
                          include_lowest = methods_16s$marm$include_lowest)
 ```
@@ -799,16 +653,7 @@ dataset.rmf$filter_taxa(rel_abund = methods_16s$marm$min_abund,
 dataset.main$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
 dataset.g1$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
 dataset.g2$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.baseline$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.gum$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.gumwash$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.control$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.controlwash$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
 dataset.int$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.ne$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.tx$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.rmb$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
-dataset.rmf$cal_alphadiv(PD = methods_16s$marm$alpha_pd)
 ```
 ### Beta Diversity
 *Calculate beta diversity (unifrac = TRUE, method = aitchison)*
@@ -825,43 +670,7 @@ dataset.g2$cal_betadiv(unifrac = methods_16s$marm$unifrac,
                          method = methods_16s$marm$betadiv)
 ```
 ```{r}
-dataset.baseline$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
-dataset.gum$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
-dataset.gumwash$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
-dataset.control$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
-dataset.controlwash$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
 dataset.int$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
-dataset.ne$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
-dataset.tx$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
-dataset.rmb$cal_betadiv(unifrac = methods_16s$marm$unifrac,
-                         method = methods_16s$marm$betadiv)
-```
-```{r}
-dataset.rmf$cal_betadiv(unifrac = methods_16s$marm$unifrac,
                          method = methods_16s$marm$betadiv)
 ```
 ## Export Main Datasets
@@ -869,58 +678,23 @@ dataset.rmf$cal_betadiv(unifrac = methods_16s$marm$unifrac,
 dataset.main$save_table(marmoset$microeco$data$main, sep = "\t")
 dataset.g1$save_table(marmoset$microeco$data$g1, sep = "\t")
 dataset.g2$save_table(marmoset$microeco$data$g2, sep = "\t")
-dataset.baseline$save_table(marmoset$microeco$data$base, sep = "\t")
-dataset.gum$save_table(marmoset$microeco$data$gum, sep = "\t")
-dataset.gumwash$save_table(marmoset$microeco$data$gumwash, sep = "\t")
-dataset.control$save_table(marmoset$microeco$data$ctrl, sep = "\t")
-dataset.controlwash$save_table(marmoset$microeco$data$ctrlwash, sep = "\t")
 dataset.int$save_table(marmoset$microeco$data$int, sep = "\t")
-dataset.tx$save_table(marmoset$microeco$data$tx, sep = "\t")
-dataset.ne$save_table(marmoset$microeco$data$ne, sep = "\t")
-dataset.rmb$save_table(marmoset$microeco$data$rmb, sep = "\t")
-dataset.rmf$save_table(marmoset$microeco$data$rmf, sep = "\t")
 
 dataset.main$save_abund(marmoset$microeco$abund$main, sep = "\t")
 dataset.g1$save_abund(marmoset$microeco$abund$g1, sep = "\t")
 dataset.g2$save_abund(marmoset$microeco$abund$g2, sep = "\t")
-dataset.baseline$save_abund(marmoset$microeco$abund$base, sep = "\t")
-dataset.gum$save_abund(marmoset$microeco$abund$gum, sep = "\t")
-dataset.gumwash$save_abund(marmoset$microeco$abund$gumwash, sep = "\t")
-dataset.control$save_abund(marmoset$microeco$abund$ctrl, sep = "\t")
-dataset.controlwash$save_abund(marmoset$microeco$abund$ctrlwash, sep = "\t")
 dataset.int$save_abund(marmoset$microeco$abund$int, sep = "\t")
-dataset.tx$save_abund(marmoset$microeco$abund$tx, sep = "\t")
-dataset.ne$save_abund(marmoset$microeco$abund$ne, sep = "\t")
-dataset.rmb$save_abund(marmoset$microeco$abund$rmb, sep = "\t")
-dataset.rmf$save_abund(marmoset$microeco$abund$rmf, sep = "\t")
 
 dataset.main$save_alphadiv(marmoset$microeco$alpha$main)
 dataset.g1$save_alphadiv(marmoset$microeco$alpha$g1)
 dataset.g2$save_alphadiv(marmoset$microeco$alpha$g2)
-dataset.baseline$save_alphadiv(marmoset$microeco$alpha$base)
-dataset.gum$save_alphadiv(marmoset$microeco$alpha$gum)
-dataset.gumwash$save_alphadiv(marmoset$microeco$alpha$gumwash)
-dataset.control$save_alphadiv(marmoset$microeco$alpha$ctrl)
-dataset.controlwash$save_alphadiv(marmoset$microeco$alpha$ctrlwash)
 dataset.int$save_alphadiv(marmoset$microeco$alpha$int)
-dataset.tx$save_alphadiv(marmoset$microeco$alpha$tx)
-dataset.ne$save_alphadiv(marmoset$microeco$alpha$ne)
-dataset.rmb$save_alphadiv(marmoset$microeco$alpha$rmb)
-dataset.rmf$save_alphadiv(marmoset$microeco$alpha$rmf)
+
 
 dataset.main$save_betadiv(marmoset$microeco$beta$main)
 dataset.g1$save_betadiv(marmoset$microeco$beta$g1)
 dataset.g2$save_betadiv(marmoset$microeco$beta$g2)
-dataset.baseline$save_betadiv(marmoset$microeco$beta$base)
-dataset.gum$save_betadiv(marmoset$microeco$beta$gum)
-dataset.gumwash$save_betadiv(marmoset$microeco$beta$gumwash)
-dataset.control$save_betadiv(marmoset$microeco$beta$ctrl)
-dataset.controlwash$save_betadiv(marmoset$microeco$beta$ctrlwash)
 dataset.int$save_betadiv(marmoset$microeco$beta$int)
-dataset.tx$save_betadiv(marmoset$microeco$beta$tx)
-dataset.ne$save_betadiv(marmoset$microeco$beta$ne)
-dataset.rmb$save_betadiv(marmoset$microeco$beta$rmb)
-dataset.rmf$save_betadiv(marmoset$microeco$beta$rmf)
 ```
 ## Taxonomic Level Subsets
 *Create dataframe subsets for each taxonomic level*
@@ -929,16 +703,7 @@ dataset.rmf$save_betadiv(marmoset$microeco$beta$rmf)
 phy.data.main <- clone(dataset.main, deep = T)
 phy.data.g1 <- clone(dataset.g1, deep = T)
 phy.data.g2 <- clone(dataset.g2, deep = T)
-phy.data.baseline <- clone(dataset.baseline, deep = T)
-phy.data.gum <- clone(dataset.gum, deep = T)
-phy.data.gumwash <- clone(dataset.gumwash, deep = T)
-phy.data.control <- clone(dataset.control, deep = T)
-phy.data.controlwash <- clone(dataset.controlwash, deep = T)
 phy.data.int <- clone(dataset.int, deep = T)
-phy.data.tx <- clone(dataset.tx, deep = T)
-phy.data.ne <- clone(dataset.ne, deep = T)
-phy.data.rmb <- clone(dataset.rmb, deep = T)
-phy.data.rmf <- clone(dataset.rmf, deep = T)
 
 phy.main <- phy.data.main$merge_taxa(taxa = "Phylum")
 phy.main$tax_table %<>% .[.$Phylum != "p__", ]
@@ -958,81 +723,18 @@ phy.g2$tidy_dataset()
 rownames(phy.g2$otu_table) <- phy.g2$tax_table[rownames(phy.g2$otu_table), "Phylum"]
 rownames(phy.g2$tax_table) <- phy.g2$tax_table[, "Phylum"]
 
-phy.baseline <- phy.data.baseline$merge_taxa(taxa = "Phylum")
-phy.baseline$tax_table %<>% .[.$Phylum != "p__", ]
-phy.baseline$tidy_dataset()
-rownames(phy.baseline$otu_table) <- phy.baseline$tax_table[rownames(phy.baseline$otu_table), "Phylum"]
-rownames(phy.baseline$tax_table) <- phy.baseline$tax_table[, "Phylum"]
-
-phy.gum <- phy.data.gum$merge_taxa(taxa = "Phylum")
-phy.gum$tax_table %<>% .[.$Phylum != "p__", ]
-phy.gum$tidy_dataset()
-rownames(phy.gum$otu_table) <- phy.gum$tax_table[rownames(phy.gum$otu_table), "Phylum"]
-rownames(phy.gum$tax_table) <- phy.gum$tax_table[, "Phylum"]
-
-phy.gumwash <- phy.data.gumwash$merge_taxa(taxa = "Phylum")
-phy.gumwash$tax_table %<>% .[.$Phylum != "p__", ]
-phy.gumwash$tidy_dataset()
-rownames(phy.gumwash$otu_table) <- phy.gumwash$tax_table[rownames(phy.gumwash$otu_table), "Phylum"]
-rownames(phy.gumwash$tax_table) <- phy.gumwash$tax_table[, "Phylum"]
-
-phy.control <- phy.data.control$merge_taxa(taxa = "Phylum")
-phy.control$tax_table %<>% .[.$Phylum != "p__", ]
-phy.control$tidy_dataset()
-rownames(phy.control$otu_table) <- phy.control$tax_table[rownames(phy.control$otu_table), "Phylum"]
-rownames(phy.control$tax_table) <- phy.control$tax_table[, "Phylum"]
-
-phy.controlwash <- phy.data.controlwash$merge_taxa(taxa = "Phylum")
-phy.controlwash$tax_table %<>% .[.$Phylum != "p__", ]
-phy.controlwash$tidy_dataset()
-rownames(phy.controlwash$otu_table) <- phy.controlwash$tax_table[rownames(phy.controlwash$otu_table), "Phylum"]
-rownames(phy.controlwash$tax_table) <- phy.controlwash$tax_table[, "Phylum"]
-
 phy.int <- phy.data.int$merge_taxa(taxa = "Phylum")
 phy.int$tax_table %<>% .[.$Phylum != "p__", ]
 phy.int$tidy_dataset()
 rownames(phy.int$otu_table) <- phy.int$tax_table[rownames(phy.int$otu_table), "Phylum"]
 rownames(phy.int$tax_table) <- phy.int$tax_table[, "Phylum"]
-
-phy.tx <- phy.data.tx$merge_taxa(taxa = "Phylum")
-phy.tx$tax_table %<>% .[.$Phylum != "p__", ]
-phy.tx$tidy_dataset()
-rownames(phy.tx$otu_table) <- phy.tx$tax_table[rownames(phy.tx$otu_table), "Phylum"]
-rownames(phy.tx$tax_table) <- phy.tx$tax_table[, "Phylum"]
-
-phy.ne <- phy.data.ne$merge_taxa(taxa = "Phylum")
-phy.ne$tax_table %<>% .[.$Phylum != "p__", ]
-phy.ne$tidy_dataset()
-rownames(phy.ne$otu_table) <- phy.ne$tax_table[rownames(phy.ne$otu_table), "Phylum"]
-rownames(phy.ne$tax_table) <- phy.ne$tax_table[, "Phylum"]
-
-phy.rmb <- phy.data.rmb$merge_taxa(taxa = "Phylum")
-phy.rmb$tax_table %<>% .[.$Phylum != "p__", ]
-phy.rmb$tidy_dataset()
-rownames(phy.rmb$otu_table) <- phy.rmb$tax_table[rownames(phy.rmb$otu_table), "Phylum"]
-rownames(phy.rmb$tax_table) <- phy.rmb$tax_table[, "Phylum"]
-
-phy.rmf <- phy.data.rmf$merge_taxa(taxa = "Phylum")
-phy.rmf$tax_table %<>% .[.$Phylum != "p__", ]
-phy.rmf$tidy_dataset()
-rownames(phy.rmf$otu_table) <- phy.rmf$tax_table[rownames(phy.rmf$otu_table), "Phylum"]
-rownames(phy.rmf$tax_table) <- phy.rmf$tax_table[, "Phylum"]
 ```
 ### Class
 ```{r}
 cla.data.main <- clone(dataset.main, deep = T)
 cla.data.g1 <- clone(dataset.g1, deep = T)
 cla.data.g2 <- clone(dataset.g2, deep = T)
-cla.data.baseline <- clone(dataset.baseline, deep = T)
-cla.data.gum <- clone(dataset.gum, deep = T)
-cla.data.gumwash <- clone(dataset.gumwash, deep = T)
-cla.data.control <- clone(dataset.control, deep = T)
-cla.data.controlwash <- clone(dataset.controlwash, deep = T)
 cla.data.int <- clone(dataset.int, deep = T)
-cla.data.tx <- clone(dataset.tx, deep = T)
-cla.data.ne <- clone(dataset.ne, deep = T)
-cla.data.rmb <- clone(dataset.rmb, deep = T)
-cla.data.rmf <- clone(dataset.rmf, deep = T)
 
 cla.main <- cla.data.main$merge_taxa(taxa = "Class")
 cla.main$tax_table %<>% .[.$Class != "c__", ]
@@ -1052,81 +754,18 @@ cla.g2$tidy_dataset()
 rownames(cla.g2$otu_table) <- cla.g2$tax_table[rownames(cla.g2$otu_table), "Class"]
 rownames(cla.g2$tax_table) <- cla.g2$tax_table[, "Class"]
 
-cla.baseline <- cla.data.baseline$merge_taxa(taxa = "Class")
-cla.baseline$tax_table %<>% .[.$Class != "c__", ]
-cla.baseline$tidy_dataset()
-rownames(cla.baseline$otu_table) <- cla.baseline$tax_table[rownames(cla.baseline$otu_table), "Class"]
-rownames(cla.baseline$tax_table) <- cla.baseline$tax_table[, "Class"]
-
-cla.gum <- cla.data.gum$merge_taxa(taxa = "Class")
-cla.gum$tax_table %<>% .[.$Class != "c__", ]
-cla.gum$tidy_dataset()
-rownames(cla.gum$otu_table) <- cla.gum$tax_table[rownames(cla.gum$otu_table), "Class"]
-rownames(cla.gum$tax_table) <- cla.gum$tax_table[, "Class"]
-
-cla.gumwash <- cla.data.gumwash$merge_taxa(taxa = "Class")
-cla.gumwash$tax_table %<>% .[.$Class != "c__", ]
-cla.gumwash$tidy_dataset()
-rownames(cla.gumwash$otu_table) <- cla.gumwash$tax_table[rownames(cla.gumwash$otu_table), "Class"]
-rownames(cla.gumwash$tax_table) <- cla.gumwash$tax_table[, "Class"]
-
-cla.control <- cla.data.control$merge_taxa(taxa = "Class")
-cla.control$tax_table %<>% .[.$Class != "c__", ]
-cla.control$tidy_dataset()
-rownames(cla.control$otu_table) <- cla.control$tax_table[rownames(cla.control$otu_table), "Class"]
-rownames(cla.control$tax_table) <- cla.control$tax_table[, "Class"]
-
-cla.controlwash <- cla.data.controlwash$merge_taxa(taxa = "Class")
-cla.controlwash$tax_table %<>% .[.$Class != "c__", ]
-cla.controlwash$tidy_dataset()
-rownames(cla.controlwash$otu_table) <- cla.controlwash$tax_table[rownames(cla.controlwash$otu_table), "Class"]
-rownames(cla.controlwash$tax_table) <- cla.controlwash$tax_table[, "Class"]
-
 cla.int <- cla.data.int$merge_taxa(taxa = "Class")
 cla.int$tax_table %<>% .[.$Class != "c__", ]
 cla.int$tidy_dataset()
 rownames(cla.int$otu_table) <- cla.int$tax_table[rownames(cla.int$otu_table), "Class"]
 rownames(cla.int$tax_table) <- cla.int$tax_table[, "Class"]
-
-cla.tx <- cla.data.tx$merge_taxa(taxa = "Class")
-cla.tx$tax_table %<>% .[.$Class != "c__", ]
-cla.tx$tidy_dataset()
-rownames(cla.tx$otu_table) <- cla.tx$tax_table[rownames(cla.tx$otu_table), "Class"]
-rownames(cla.tx$tax_table) <- cla.tx$tax_table[, "Class"]
-
-cla.ne <- cla.data.ne$merge_taxa(taxa = "Class")
-cla.ne$tax_table %<>% .[.$Class != "c__", ]
-cla.ne$tidy_dataset()
-rownames(cla.ne$otu_table) <- cla.ne$tax_table[rownames(cla.ne$otu_table), "Class"]
-rownames(cla.ne$tax_table) <- cla.ne$tax_table[, "Class"]
-
-cla.rmb <- cla.data.rmb$merge_taxa(taxa = "Class")
-cla.rmb$tax_table %<>% .[.$Class != "c__", ]
-cla.rmb$tidy_dataset()
-rownames(cla.rmb$otu_table) <- cla.rmb$tax_table[rownames(cla.rmb$otu_table), "Class"]
-rownames(cla.rmb$tax_table) <- cla.rmb$tax_table[, "Class"]
-
-cla.rmf <- cla.data.rmf$merge_taxa(taxa = "Class")
-cla.rmf$tax_table %<>% .[.$Class != "c__", ]
-cla.rmf$tidy_dataset()
-rownames(cla.rmf$otu_table) <- cla.rmf$tax_table[rownames(cla.rmf$otu_table), "Class"]
-rownames(cla.rmf$tax_table) <- cla.rmf$tax_table[, "Class"]
 ```
 ### Order
 ```{r}
 ord.data.main <- clone(dataset.main, deep = T)
 ord.data.g1 <- clone(dataset.g1, deep = T)
 ord.data.g2 <- clone(dataset.g2, deep = T)
-ord.data.baseline <- clone(dataset.baseline, deep = T)
-ord.data.gum <- clone(dataset.gum, deep = T)
-ord.data.gumwash <- clone(dataset.gumwash, deep = T)
-ord.data.control <- clone(dataset.control, deep = T)
-ord.data.controlwash <- clone(dataset.controlwash, deep = T)
 ord.data.int <- clone(dataset.int, deep = T)
-ord.data.tx <- clone(dataset.tx, deep = T)
-ord.data.ne <- clone(dataset.ne, deep = T)
-ord.data.rmb <- clone(dataset.rmb, deep = T)
-ord.data.rmf <- clone(dataset.rmf, deep = T)
 
 ord.main <- ord.data.main$merge_taxa(taxa = "Order")
 ord.main$tax_table %<>% .[.$Order != "o__", ]
@@ -1146,81 +785,18 @@ ord.g2$tidy_dataset()
 rownames(ord.g2$otu_table) <- ord.g2$tax_table[rownames(ord.g2$otu_table), "Order"]
 rownames(ord.g2$tax_table) <- ord.g2$tax_table[, "Order"]
 
-ord.baseline <- ord.data.baseline$merge_taxa(taxa = "Order")
-ord.baseline$tax_table %<>% .[.$Order != "o__", ]
-ord.baseline$tidy_dataset()
-rownames(ord.baseline$otu_table) <- ord.baseline$tax_table[rownames(ord.baseline$otu_table), "Order"]
-rownames(ord.baseline$tax_table) <- ord.baseline$tax_table[, "Order"]
-
-ord.gum <- ord.data.gum$merge_taxa(taxa = "Order")
-ord.gum$tax_table %<>% .[.$Order != "o__", ]
-ord.gum$tidy_dataset()
-rownames(ord.gum$otu_table) <- ord.gum$tax_table[rownames(ord.gum$otu_table), "Order"]
-rownames(ord.gum$tax_table) <- ord.gum$tax_table[, "Order"]
-
-ord.gumwash <- ord.data.gumwash$merge_taxa(taxa = "Order")
-ord.gumwash$tax_table %<>% .[.$Order != "o__", ]
-ord.gumwash$tidy_dataset()
-rownames(ord.gumwash$otu_table) <- ord.gumwash$tax_table[rownames(ord.gumwash$otu_table), "Order"]
-rownames(ord.gumwash$tax_table) <- ord.gumwash$tax_table[, "Order"]
-
-ord.control <- ord.data.control$merge_taxa(taxa = "Order")
-ord.control$tax_table %<>% .[.$Order != "o__", ]
-ord.control$tidy_dataset()
-rownames(ord.control$otu_table) <- ord.control$tax_table[rownames(ord.control$otu_table), "Order"]
-rownames(ord.control$tax_table) <- ord.control$tax_table[, "Order"]
-
-ord.controlwash <- ord.data.controlwash$merge_taxa(taxa = "Order")
-ord.controlwash$tax_table %<>% .[.$Order != "o__", ]
-ord.controlwash$tidy_dataset()
-rownames(ord.controlwash$otu_table) <- ord.controlwash$tax_table[rownames(ord.controlwash$otu_table), "Order"]
-rownames(ord.controlwash$tax_table) <- ord.controlwash$tax_table[, "Order"]
-
 ord.int <- ord.data.int$merge_taxa(taxa = "Order")
 ord.int$tax_table %<>% .[.$Order != "o__", ]
 ord.int$tidy_dataset()
 rownames(ord.int$otu_table) <- ord.int$tax_table[rownames(ord.int$otu_table), "Order"]
 rownames(ord.int$tax_table) <- ord.int$tax_table[, "Order"]
-
-ord.tx <- ord.data.tx$merge_taxa(taxa = "Order")
-ord.tx$tax_table %<>% .[.$Order != "o__", ]
-ord.tx$tidy_dataset()
-rownames(ord.tx$otu_table) <- ord.tx$tax_table[rownames(ord.tx$otu_table), "Order"]
-rownames(ord.tx$tax_table) <- ord.tx$tax_table[, "Order"]
-
-ord.ne <- ord.data.ne$merge_taxa(taxa = "Order")
-ord.ne$tax_table %<>% .[.$Order != "o__", ]
-ord.ne$tidy_dataset()
-rownames(ord.ne$otu_table) <- ord.ne$tax_table[rownames(ord.ne$otu_table), "Order"]
-rownames(ord.ne$tax_table) <- ord.ne$tax_table[, "Order"]
-
-ord.rmb <- ord.data.rmb$merge_taxa(taxa = "Order")
-ord.rmb$tax_table %<>% .[.$Order != "o__", ]
-ord.rmb$tidy_dataset()
-rownames(ord.rmb$otu_table) <- ord.rmb$tax_table[rownames(ord.rmb$otu_table), "Order"]
-rownames(ord.rmb$tax_table) <- ord.rmb$tax_table[, "Order"]
-
-ord.rmf <- ord.data.rmf$merge_taxa(taxa = "Order")
-ord.rmf$tax_table %<>% .[.$Order != "o__", ]
-ord.rmf$tidy_dataset()
-rownames(ord.rmf$otu_table) <- ord.rmf$tax_table[rownames(ord.rmf$otu_table), "Order"]
-rownames(ord.rmf$tax_table) <- ord.rmf$tax_table[, "Order"]
 ```
 ### Family
 ```{r}
 fam.data.main <- clone(dataset.main, deep = T)
 fam.data.g1 <- clone(dataset.g1, deep = T)
 fam.data.g2 <- clone(dataset.g2, deep = T)
-fam.data.baseline <- clone(dataset.baseline, deep = T)
-fam.data.gum <- clone(dataset.gum, deep = T)
-fam.data.gumwash <- clone(dataset.gumwash, deep = T)
-fam.data.control <- clone(dataset.control, deep = T)
-fam.data.controlwash <- clone(dataset.controlwash, deep = T)
 fam.data.int <- clone(dataset.int, deep = T)
-fam.data.tx <- clone(dataset.tx, deep = T)
-fam.data.ne <- clone(dataset.ne, deep = T)
-fam.data.rmb <- clone(dataset.rmb, deep = T)
-fam.data.rmf <- clone(dataset.rmf, deep = T)
 
 fam.main <- fam.data.main$merge_taxa(taxa = "Family")
 fam.main$tax_table %<>% .[.$Family != "f__", ]
@@ -1240,81 +816,18 @@ fam.g2$tidy_dataset()
 rownames(fam.g2$otu_table) <- fam.g2$tax_table[rownames(fam.g2$otu_table), "Family"]
 rownames(fam.g2$tax_table) <- fam.g2$tax_table[, "Family"]
 
-fam.baseline <- fam.data.baseline$merge_taxa(taxa = "Family")
-fam.baseline$tax_table %<>% .[.$Family != "f__", ]
-fam.baseline$tidy_dataset()
-rownames(fam.baseline$otu_table) <- fam.baseline$tax_table[rownames(fam.baseline$otu_table), "Family"]
-rownames(fam.baseline$tax_table) <- fam.baseline$tax_table[, "Family"]
-
-fam.gum <- fam.data.gum$merge_taxa(taxa = "Family")
-fam.gum$tax_table %<>% .[.$Family != "f__", ]
-fam.gum$tidy_dataset()
-rownames(fam.gum$otu_table) <- fam.gum$tax_table[rownames(fam.gum$otu_table), "Family"]
-rownames(fam.gum$tax_table) <- fam.gum$tax_table[, "Family"]
-
-fam.gumwash <- fam.data.gumwash$merge_taxa(taxa = "Family")
-fam.gumwash$tax_table %<>% .[.$Family != "f__", ]
-fam.gumwash$tidy_dataset()
-rownames(fam.gumwash$otu_table) <- fam.gumwash$tax_table[rownames(fam.gumwash$otu_table), "Family"]
-rownames(fam.gumwash$tax_table) <- fam.gumwash$tax_table[, "Family"]
-
-fam.control <- fam.data.control$merge_taxa(taxa = "Family")
-fam.control$tax_table %<>% .[.$Family != "f__", ]
-fam.control$tidy_dataset()
-rownames(fam.control$otu_table) <- fam.control$tax_table[rownames(fam.control$otu_table), "Family"]
-rownames(fam.control$tax_table) <- fam.control$tax_table[, "Family"]
-
-fam.controlwash <- fam.data.controlwash$merge_taxa(taxa = "Family")
-fam.controlwash$tax_table %<>% .[.$Family != "f__", ]
-fam.controlwash$tidy_dataset()
-rownames(fam.controlwash$otu_table) <- fam.controlwash$tax_table[rownames(fam.controlwash$otu_table), "Family"]
-rownames(fam.controlwash$tax_table) <- fam.controlwash$tax_table[, "Family"]
-
 fam.int <- fam.data.int$merge_taxa(taxa = "Family")
 fam.int$tax_table %<>% .[.$Family != "f__", ]
 fam.int$tidy_dataset()
 rownames(fam.int$otu_table) <- fam.int$tax_table[rownames(fam.int$otu_table), "Family"]
 rownames(fam.int$tax_table) <- fam.int$tax_table[, "Family"]
-
-fam.tx <- fam.data.tx$merge_taxa(taxa = "Family")
-fam.tx$tax_table %<>% .[.$Family != "f__", ]
-fam.tx$tidy_dataset()
-rownames(fam.tx$otu_table) <- fam.tx$tax_table[rownames(fam.tx$otu_table), "Family"]
-rownames(fam.tx$tax_table) <- fam.tx$tax_table[, "Family"]
-
-fam.ne <- fam.data.ne$merge_taxa(taxa = "Family")
-fam.ne$tax_table %<>% .[.$Family != "f__", ]
-fam.ne$tidy_dataset()
-rownames(fam.ne$otu_table) <- fam.ne$tax_table[rownames(fam.ne$otu_table), "Family"]
-rownames(fam.ne$tax_table) <- fam.ne$tax_table[, "Family"]
-
-fam.rmb <- fam.data.rmb$merge_taxa(taxa = "Family")
-fam.rmb$tax_table %<>% .[.$Family != "f__", ]
-fam.rmb$tidy_dataset()
-rownames(fam.rmb$otu_table) <- fam.rmb$tax_table[rownames(fam.rmb$otu_table), "Family"]
-rownames(fam.rmb$tax_table) <- fam.rmb$tax_table[, "Family"]
-
-fam.rmf <- fam.data.rmf$merge_taxa(taxa = "Family")
-fam.rmf$tax_table %<>% .[.$Family != "f__", ]
-fam.rmf$tidy_dataset()
-rownames(fam.rmf$otu_table) <- fam.rmf$tax_table[rownames(fam.rmf$otu_table), "Family"]
-rownames(fam.rmf$tax_table) <- fam.rmf$tax_table[, "Family"]
 ```
 ### Genus
 ```{r}
 gen.data.main <- clone(dataset.main, deep = T)
 gen.data.g1 <- clone(dataset.g1, deep = T)
 gen.data.g2 <- clone(dataset.g2, deep = T)
-gen.data.baseline <- clone(dataset.baseline, deep = T)
-gen.data.gum <- clone(dataset.gum, deep = T)
-gen.data.gumwash <- clone(dataset.gumwash, deep = T)
-gen.data.control <- clone(dataset.control, deep = T)
-gen.data.controlwash <- clone(dataset.controlwash, deep = T)
 gen.data.int <- clone(dataset.int, deep = T)
-gen.data.tx <- clone(dataset.tx, deep = T)
-gen.data.ne <- clone(dataset.ne, deep = T)
-gen.data.rmb <- clone(dataset.rmb, deep = T)
-gen.data.rmf <- clone(dataset.rmf, deep = T)
 
 gen.main <- gen.data.main$merge_taxa(taxa = "Genus")
 gen.main$tax_table %<>% .[.$Genus != "g__", ]
@@ -1334,351 +847,117 @@ gen.g2$tidy_dataset()
 rownames(gen.g2$otu_table) <- gen.g2$tax_table[rownames(gen.g2$otu_table), "Genus"]
 rownames(gen.g2$tax_table) <- gen.g2$tax_table[, "Genus"]
 
-gen.baseline <- gen.data.baseline$merge_taxa(taxa = "Genus")
-gen.baseline$tax_table %<>% .[.$Genus != "g__", ]
-gen.baseline$tidy_dataset()
-rownames(gen.baseline$otu_table) <- gen.baseline$tax_table[rownames(gen.baseline$otu_table), "Genus"]
-rownames(gen.baseline$tax_table) <- gen.baseline$tax_table[, "Genus"]
-
-gen.gum <- gen.data.gum$merge_taxa(taxa = "Genus")
-gen.gum$tax_table %<>% .[.$Genus != "g__", ]
-gen.gum$tidy_dataset()
-rownames(gen.gum$otu_table) <- gen.gum$tax_table[rownames(gen.gum$otu_table), "Genus"]
-rownames(gen.gum$tax_table) <- gen.gum$tax_table[, "Genus"]
-
-gen.gumwash <- gen.data.gumwash$merge_taxa(taxa = "Genus")
-gen.gumwash$tax_table %<>% .[.$Genus != "g__", ]
-gen.gumwash$tidy_dataset()
-rownames(gen.gumwash$otu_table) <- gen.gumwash$tax_table[rownames(gen.gumwash$otu_table), "Genus"]
-rownames(gen.gumwash$tax_table) <- gen.gumwash$tax_table[, "Genus"]
-
-gen.control <- gen.data.control$merge_taxa(taxa = "Genus")
-gen.control$tax_table %<>% .[.$Genus != "g__", ]
-gen.control$tidy_dataset()
-rownames(gen.control$otu_table) <- gen.control$tax_table[rownames(gen.control$otu_table), "Genus"]
-rownames(gen.control$tax_table) <- gen.control$tax_table[, "Genus"]
-
-gen.controlwash <- gen.data.controlwash$merge_taxa(taxa = "Genus")
-gen.controlwash$tax_table %<>% .[.$Genus != "g__", ]
-gen.controlwash$tidy_dataset()
-rownames(gen.controlwash$otu_table) <- gen.controlwash$tax_table[rownames(gen.controlwash$otu_table), "Genus"]
-rownames(gen.controlwash$tax_table) <- gen.controlwash$tax_table[, "Genus"]
-
 gen.int <- gen.data.int$merge_taxa(taxa = "Genus")
 gen.int$tax_table %<>% .[.$Genus != "g__", ]
 gen.int$tidy_dataset()
 rownames(gen.int$otu_table) <- gen.int$tax_table[rownames(gen.int$otu_table), "Genus"]
 rownames(gen.int$tax_table) <- gen.int$tax_table[, "Genus"]
-
-gen.tx <- gen.data.tx$merge_taxa(taxa = "Genus")
-gen.tx$tax_table %<>% .[.$Genus != "g__", ]
-gen.tx$tidy_dataset()
-rownames(gen.tx$otu_table) <- gen.tx$tax_table[rownames(gen.tx$otu_table), "Genus"]
-rownames(gen.tx$tax_table) <- gen.tx$tax_table[, "Genus"]
-
-gen.ne <- gen.data.ne$merge_taxa(taxa = "Genus")
-gen.ne$tax_table %<>% .[.$Genus != "g__", ]
-gen.ne$tidy_dataset()
-rownames(gen.ne$otu_table) <- gen.ne$tax_table[rownames(gen.ne$otu_table), "Genus"]
-rownames(gen.ne$tax_table) <- gen.ne$tax_table[, "Genus"]
-
-gen.rmb <- gen.data.rmb$merge_taxa(taxa = "Genus")
-gen.rmb$tax_table %<>% .[.$Genus != "g__", ]
-gen.rmb$tidy_dataset()
-rownames(gen.rmb$otu_table) <- gen.rmb$tax_table[rownames(gen.rmb$otu_table), "Genus"]
-rownames(gen.rmb$tax_table) <- gen.rmb$tax_table[, "Genus"]
-
-gen.rmf <- gen.data.rmf$merge_taxa(taxa = "Genus")
-gen.rmf$tax_table %<>% .[.$Genus != "g__", ]
-gen.rmf$tidy_dataset()
-rownames(gen.rmf$otu_table) <- gen.rmf$tax_table[rownames(gen.rmf$otu_table), "Genus"]
-rownames(gen.rmf$tax_table) <- gen.rmf$tax_table[, "Genus"]
 ```
 ## Export Taxonomic Subsets
 ```{r}
 phy.main$save_table(marmoset$microeco$data$phylum$main, sep = "\t")
 phy.g1$save_table(marmoset$microeco$data$phylum$g1, sep = "\t")
 phy.g2$save_table(marmoset$microeco$data$phylum$g2, sep = "\t")
-phy.baseline$save_table(marmoset$microeco$data$phylum$base, sep = "\t")
-phy.gum$save_table(marmoset$microeco$data$phylum$gum, sep = "\t")
-phy.gumwash$save_table(marmoset$microeco$data$phylum$gumwash, sep = "\t")
-phy.control$save_table(marmoset$microeco$data$phylum$ctrl, sep = "\t")
-phy.controlwash$save_table(marmoset$microeco$data$phylum$ctrlwash, sep = "\t")
 phy.int$save_table(marmoset$microeco$data$phylum$int, sep = "\t")
-phy.tx$save_table(marmoset$microeco$data$phylum$tx, sep = "\t")
-phy.ne$save_table(marmoset$microeco$data$phylum$ne, sep = "\t")
-phy.rmb$save_table(marmoset$microeco$data$phylum$rmb, sep = "\t")
-phy.rmf$save_table(marmoset$microeco$data$phylum$rmf, sep = "\t")
 
 phy.main$save_abund(marmoset$microeco$abund$phylum$main, sep = "\t")
 phy.g1$save_abund(marmoset$microeco$abund$phylum$g1, sep = "\t")
 phy.g2$save_abund(marmoset$microeco$abund$phylum$g2, sep = "\t")
-phy.baseline$save_abund(marmoset$microeco$abund$phylum$base, sep = "\t")
-phy.gum$save_abund(marmoset$microeco$abund$phylum$gum, sep = "\t")
-phy.gumwash$save_abund(marmoset$microeco$abund$phylum$gumwash, sep = "\t")
-phy.control$save_abund(marmoset$microeco$abund$phylum$ctrl, sep = "\t")
-phy.controlwash$save_abund(marmoset$microeco$abund$phylum$ctrlwash, sep = "\t")
 phy.int$save_abund(marmoset$microeco$abund$phylum$int, sep = "\t")
-phy.tx$save_abund(marmoset$microeco$abund$phylum$tx, sep = "\t")
-phy.ne$save_abund(marmoset$microeco$abund$phylum$ne, sep = "\t")
-phy.rmb$save_abund(marmoset$microeco$abund$phylum$rmb, sep = "\t")
-phy.rmf$save_abund(marmoset$microeco$abund$phylum$rmf, sep = "\t")
 
 phy.main$save_alphadiv(marmoset$microeco$alpha$phylum$main)
 phy.g1$save_alphadiv(marmoset$microeco$alpha$phylum$g1)
 phy.g2$save_alphadiv(marmoset$microeco$alpha$phylum$g2)
-phy.baseline$save_alphadiv(marmoset$microeco$alpha$phylum$base)
-phy.gum$save_alphadiv(marmoset$microeco$alpha$phylum$gum)
-phy.gumwash$save_alphadiv(marmoset$microeco$alpha$phylum$gumwash)
-phy.control$save_alphadiv(marmoset$microeco$alpha$phylum$ctrl)
-phy.controlwash$save_alphadiv(marmoset$microeco$alpha$phylum$ctrlwash)
 phy.int$save_alphadiv(marmoset$microeco$alpha$phylum$int)
-phy.tx$save_alphadiv(marmoset$microeco$alpha$phylum$tx)
-phy.ne$save_alphadiv(marmoset$microeco$alpha$phylum$ne)
-phy.rmb$save_alphadiv(marmoset$microeco$alpha$phylum$rmb)
-phy.rmf$save_alphadiv(marmoset$microeco$alpha$phylum$rmf)
 
 phy.main$save_betadiv(marmoset$microeco$beta$phylum$main)
 phy.g1$save_betadiv(marmoset$microeco$beta$phylum$g1)
 phy.g2$save_betadiv(marmoset$microeco$beta$phylum$g2)
-phy.baseline$save_betadiv(marmoset$microeco$beta$phylum$base)
-phy.gum$save_betadiv(marmoset$microeco$beta$phylum$gum)
-phy.gumwash$save_betadiv(marmoset$microeco$beta$phylum$gumwash)
-phy.control$save_betadiv(marmoset$microeco$beta$phylum$ctrl)
-phy.controlwash$save_betadiv(marmoset$microeco$beta$phylum$ctrlwash)
 phy.int$save_betadiv(marmoset$microeco$beta$phylum$int)
-phy.tx$save_betadiv(marmoset$microeco$beta$phylum$tx)
-phy.ne$save_betadiv(marmoset$microeco$beta$phylum$ne)
-phy.rmb$save_betadiv(marmoset$microeco$beta$phylum$rmb)
-phy.rmf$save_betadiv(marmoset$microeco$beta$phylum$rmf)
 ```
 ```{r}
 cla.main$save_table(marmoset$microeco$data$class$main, sep = "\t")
 cla.g1$save_table(marmoset$microeco$data$class$g1, sep = "\t")
 cla.g2$save_table(marmoset$microeco$data$class$g2, sep = "\t")
-cla.baseline$save_table(marmoset$microeco$data$class$base, sep = "\t")
-cla.gum$save_table(marmoset$microeco$data$class$gum, sep = "\t")
-cla.gumwash$save_table(marmoset$microeco$data$class$gumwash, sep = "\t")
-cla.control$save_table(marmoset$microeco$data$class$ctrl, sep = "\t")
-cla.controlwash$save_table(marmoset$microeco$data$class$ctrlwash, sep = "\t")
 cla.int$save_table(marmoset$microeco$data$class$int, sep = "\t")
-cla.tx$save_table(marmoset$microeco$data$class$tx, sep = "\t")
-cla.ne$save_table(marmoset$microeco$data$class$ne, sep = "\t")
-cla.rmb$save_table(marmoset$microeco$data$class$rmb, sep = "\t")
-cla.rmf$save_table(marmoset$microeco$data$class$rmf, sep = "\t")
 
 cla.main$save_abund(marmoset$microeco$abund$class$main, sep = "\t")
 cla.g1$save_abund(marmoset$microeco$abund$class$g1, sep = "\t")
 cla.g2$save_abund(marmoset$microeco$abund$class$g2, sep = "\t")
-cla.baseline$save_abund(marmoset$microeco$abund$class$base, sep = "\t")
-cla.gum$save_abund(marmoset$microeco$abund$class$gum, sep = "\t")
-cla.gumwash$save_abund(marmoset$microeco$abund$class$gumwash, sep = "\t")
-cla.control$save_abund(marmoset$microeco$abund$class$ctrl, sep = "\t")
-cla.controlwash$save_abund(marmoset$microeco$abund$class$ctrlwash, sep = "\t")
 cla.int$save_abund(marmoset$microeco$abund$class$int, sep = "\t")
-cla.tx$save_abund(marmoset$microeco$abund$class$tx, sep = "\t")
-cla.ne$save_abund(marmoset$microeco$abund$class$ne, sep = "\t")
-cla.rmb$save_abund(marmoset$microeco$abund$class$rmb, sep = "\t")
-cla.rmf$save_abund(marmoset$microeco$abund$class$rmf, sep = "\t")
 
 cla.main$save_alphadiv(marmoset$microeco$alpha$class$main)
 cla.g1$save_alphadiv(marmoset$microeco$alpha$class$g1)
 cla.g2$save_alphadiv(marmoset$microeco$alpha$class$g2)
-cla.baseline$save_alphadiv(marmoset$microeco$alpha$class$base)
-cla.gum$save_alphadiv(marmoset$microeco$alpha$class$gum)
-cla.gumwash$save_alphadiv(marmoset$microeco$alpha$class$gumwash)
-cla.control$save_alphadiv(marmoset$microeco$alpha$class$ctrl)
-cla.controlwash$save_alphadiv(marmoset$microeco$alpha$class$ctrlwash)
 cla.int$save_alphadiv(marmoset$microeco$alpha$class$int)
-cla.tx$save_alphadiv(marmoset$microeco$alpha$class$tx)
-cla.ne$save_alphadiv(marmoset$microeco$alpha$class$ne)
-cla.rmb$save_alphadiv(marmoset$microeco$alpha$class$rmb)
-cla.rmf$save_alphadiv(marmoset$microeco$alpha$class$rmf)
 
 cla.main$save_betadiv(marmoset$microeco$beta$class$main)
 cla.g1$save_betadiv(marmoset$microeco$beta$class$g1)
 cla.g2$save_betadiv(marmoset$microeco$beta$class$g2)
-cla.baseline$save_betadiv(marmoset$microeco$beta$class$base)
-cla.gum$save_betadiv(marmoset$microeco$beta$class$gum)
-cla.gumwash$save_betadiv(marmoset$microeco$beta$class$gumwash)
-cla.control$save_betadiv(marmoset$microeco$beta$class$ctrl)
-cla.controlwash$save_betadiv(marmoset$microeco$beta$class$ctrlwash)
 cla.int$save_betadiv(marmoset$microeco$beta$class$int)
-cla.tx$save_betadiv(marmoset$microeco$beta$class$tx)
-cla.ne$save_betadiv(marmoset$microeco$beta$class$ne)
-cla.rmb$save_betadiv(marmoset$microeco$beta$class$rmb)
-cla.rmf$save_betadiv(marmoset$microeco$beta$class$rmf)
 ```
 ```{r}
 ord.main$save_table(marmoset$microeco$data$order$main, sep = "\t")
 ord.g1$save_table(marmoset$microeco$data$order$g1, sep = "\t")
 ord.g2$save_table(marmoset$microeco$data$order$g2, sep = "\t")
-ord.baseline$save_table(marmoset$microeco$data$order$base, sep = "\t")
-ord.gum$save_table(marmoset$microeco$data$order$gum, sep = "\t")
-ord.gumwash$save_table(marmoset$microeco$data$order$gumwash, sep = "\t")
-ord.control$save_table(marmoset$microeco$data$order$ctrl, sep = "\t")
-ord.controlwash$save_table(marmoset$microeco$data$order$ctrlwash, sep = "\t")
 ord.int$save_table(marmoset$microeco$data$order$int, sep = "\t")
-ord.tx$save_table(marmoset$microeco$data$order$tx, sep = "\t")
-ord.ne$save_table(marmoset$microeco$data$order$ne, sep = "\t")
-ord.rmb$save_table(marmoset$microeco$data$order$rmb, sep = "\t")
-ord.rmf$save_table(marmoset$microeco$data$order$rmf, sep = "\t")
 
 ord.main$save_abund(marmoset$microeco$abund$order$main, sep = "\t")
 ord.g1$save_abund(marmoset$microeco$abund$order$g1, sep = "\t")
 ord.g2$save_abund(marmoset$microeco$abund$order$g2, sep = "\t")
-ord.baseline$save_abund(marmoset$microeco$abund$order$base, sep = "\t")
-ord.gum$save_abund(marmoset$microeco$abund$order$gum, sep = "\t")
-ord.gumwash$save_abund(marmoset$microeco$abund$order$gumwash, sep = "\t")
-ord.control$save_abund(marmoset$microeco$abund$order$ctrl, sep = "\t")
-ord.controlwash$save_abund(marmoset$microeco$abund$order$ctrlwash, sep = "\t")
 ord.int$save_abund(marmoset$microeco$abund$order$int, sep = "\t")
-ord.tx$save_abund(marmoset$microeco$abund$order$tx, sep = "\t")
-ord.ne$save_abund(marmoset$microeco$abund$order$ne, sep = "\t")
-ord.rmb$save_abund(marmoset$microeco$abund$order$rmb, sep = "\t")
-ord.rmf$save_abund(marmoset$microeco$abund$order$rmf, sep = "\t")
 
 ord.main$save_alphadiv(marmoset$microeco$alpha$order$main)
 ord.g1$save_alphadiv(marmoset$microeco$alpha$order$g1)
 ord.g2$save_alphadiv(marmoset$microeco$alpha$order$g2)
-ord.baseline$save_alphadiv(marmoset$microeco$alpha$order$base)
-ord.gum$save_alphadiv(marmoset$microeco$alpha$order$gum)
-ord.gumwash$save_alphadiv(marmoset$microeco$alpha$order$gumwash)
-ord.control$save_alphadiv(marmoset$microeco$alpha$order$ctrl)
-ord.controlwash$save_alphadiv(marmoset$microeco$alpha$order$ctrlwash)
 ord.int$save_alphadiv(marmoset$microeco$alpha$order$int)
-ord.tx$save_alphadiv(marmoset$microeco$alpha$order$tx)
-ord.ne$save_alphadiv(marmoset$microeco$alpha$order$ne)
-ord.rmb$save_alphadiv(marmoset$microeco$alpha$order$rmb)
-ord.rmf$save_alphadiv(marmoset$microeco$alpha$order$rmf)
 
 ord.main$save_betadiv(marmoset$microeco$beta$order$main)
 ord.g1$save_betadiv(marmoset$microeco$beta$order$g1)
 ord.g2$save_betadiv(marmoset$microeco$beta$order$g2)
-ord.baseline$save_betadiv(marmoset$microeco$beta$order$base)
-ord.gum$save_betadiv(marmoset$microeco$beta$order$gum)
-ord.gumwash$save_betadiv(marmoset$microeco$beta$order$gumwash)
-ord.control$save_betadiv(marmoset$microeco$beta$order$ctrl)
-ord.controlwash$save_betadiv(marmoset$microeco$beta$order$ctrlwash)
 ord.int$save_betadiv(marmoset$microeco$beta$order$int)
-ord.tx$save_betadiv(marmoset$microeco$beta$order$tx)
-ord.ne$save_betadiv(marmoset$microeco$beta$order$ne)
-ord.rmb$save_betadiv(marmoset$microeco$beta$order$rmb)
-ord.rmf$save_betadiv(marmoset$microeco$beta$order$rmf)
 ```
 ```{r}
 fam.main$save_table(marmoset$microeco$data$family$main, sep = "\t")
 fam.g1$save_table(marmoset$microeco$data$family$g1, sep = "\t")
 fam.g2$save_table(marmoset$microeco$data$family$g2, sep = "\t")
-fam.baseline$save_table(marmoset$microeco$data$family$base, sep = "\t")
-fam.gum$save_table(marmoset$microeco$data$family$gum, sep = "\t")
-fam.gumwash$save_table(marmoset$microeco$data$family$gumwash, sep = "\t")
-fam.control$save_table(marmoset$microeco$data$family$ctrl, sep = "\t")
-fam.controlwash$save_table(marmoset$microeco$data$family$ctrlwash, sep = "\t")
 fam.int$save_table(marmoset$microeco$data$family$int, sep = "\t")
-fam.tx$save_table(marmoset$microeco$data$family$tx, sep = "\t")
-fam.ne$save_table(marmoset$microeco$data$family$ne, sep = "\t")
-fam.rmb$save_table(marmoset$microeco$data$family$rmb, sep = "\t")
-fam.rmf$save_table(marmoset$microeco$data$family$rmf, sep = "\t")
 
 fam.main$save_abund(marmoset$microeco$abund$family$main, sep = "\t")
 fam.g1$save_abund(marmoset$microeco$abund$family$g1, sep = "\t")
 fam.g2$save_abund(marmoset$microeco$abund$family$g2, sep = "\t")
-fam.baseline$save_abund(marmoset$microeco$abund$family$base, sep = "\t")
-fam.gum$save_abund(marmoset$microeco$abund$family$gum, sep = "\t")
-fam.gumwash$save_abund(marmoset$microeco$abund$family$gumwash, sep = "\t")
-fam.control$save_abund(marmoset$microeco$abund$family$ctrl, sep = "\t")
-fam.controlwash$save_abund(marmoset$microeco$abund$family$ctrlwash, sep = "\t")
 fam.int$save_abund(marmoset$microeco$abund$family$int, sep = "\t")
-fam.tx$save_abund(marmoset$microeco$abund$family$tx, sep = "\t")
-fam.ne$save_abund(marmoset$microeco$abund$family$ne, sep = "\t")
-fam.rmb$save_abund(marmoset$microeco$abund$family$rmb, sep = "\t")
-fam.rmf$save_abund(marmoset$microeco$abund$family$rmf, sep = "\t")
 
 fam.main$save_alphadiv(marmoset$microeco$alpha$family$main)
 fam.g1$save_alphadiv(marmoset$microeco$alpha$family$g1)
 fam.g2$save_alphadiv(marmoset$microeco$alpha$family$g2)
-fam.baseline$save_alphadiv(marmoset$microeco$alpha$family$base)
-fam.gum$save_alphadiv(marmoset$microeco$alpha$family$gum)
-fam.gumwash$save_alphadiv(marmoset$microeco$alpha$family$gumwash)
-fam.control$save_alphadiv(marmoset$microeco$alpha$family$ctrl)
-fam.controlwash$save_alphadiv(marmoset$microeco$alpha$family$ctrlwash)
 fam.int$save_alphadiv(marmoset$microeco$alpha$family$int)
-fam.tx$save_alphadiv(marmoset$microeco$alpha$family$tx)
-fam.ne$save_alphadiv(marmoset$microeco$alpha$family$ne)
-fam.rmb$save_alphadiv(marmoset$microeco$alpha$family$rmb)
-fam.rmf$save_alphadiv(marmoset$microeco$alpha$family$rmf)
 
 fam.main$save_betadiv(marmoset$microeco$beta$family$main)
 fam.g1$save_betadiv(marmoset$microeco$beta$family$g1)
 fam.g2$save_betadiv(marmoset$microeco$beta$family$g2)
-fam.baseline$save_betadiv(marmoset$microeco$beta$family$base)
-fam.gum$save_betadiv(marmoset$microeco$beta$family$gum)
-fam.gumwash$save_betadiv(marmoset$microeco$beta$family$gumwash)
-fam.control$save_betadiv(marmoset$microeco$beta$family$ctrl)
-fam.controlwash$save_betadiv(marmoset$microeco$beta$family$ctrlwash)
 fam.int$save_betadiv(marmoset$microeco$beta$family$int)
-fam.tx$save_betadiv(marmoset$microeco$beta$family$tx)
-fam.ne$save_betadiv(marmoset$microeco$beta$family$ne)
-fam.rmb$save_betadiv(marmoset$microeco$beta$family$rmb)
-fam.rmf$save_betadiv(marmoset$microeco$beta$family$rmf)
 ```
 ```{r}
 gen.main$save_table(marmoset$microeco$data$genus$main, sep = "\t")
 gen.g1$save_table(marmoset$microeco$data$genus$g1, sep = "\t")
 gen.g2$save_table(marmoset$microeco$data$genus$g2, sep = "\t")
-gen.baseline$save_table(marmoset$microeco$data$genus$base, sep = "\t")
-gen.gum$save_table(marmoset$microeco$data$genus$gum, sep = "\t")
-gen.gumwash$save_table(marmoset$microeco$data$genus$gumwash, sep = "\t")
-gen.control$save_table(marmoset$microeco$data$genus$ctrl, sep = "\t")
-gen.controlwash$save_table(marmoset$microeco$data$genus$ctrlwash, sep = "\t")
 gen.int$save_table(marmoset$microeco$data$genus$int, sep = "\t")
-gen.tx$save_table(marmoset$microeco$data$genus$tx, sep = "\t")
-gen.ne$save_table(marmoset$microeco$data$genus$ne, sep = "\t")
-gen.rmb$save_table(marmoset$microeco$data$genus$rmb, sep = "\t")
-gen.rmf$save_table(marmoset$microeco$data$genus$rmf, sep = "\t")
 
 gen.main$save_abund(marmoset$microeco$abund$genus$main, sep = "\t")
 gen.g1$save_abund(marmoset$microeco$abund$genus$g1, sep = "\t")
 gen.g2$save_abund(marmoset$microeco$abund$genus$g2, sep = "\t")
-gen.baseline$save_abund(marmoset$microeco$abund$genus$base, sep = "\t")
-gen.gum$save_abund(marmoset$microeco$abund$genus$gum, sep = "\t")
-gen.gumwash$save_abund(marmoset$microeco$abund$genus$gumwash, sep = "\t")
-gen.control$save_abund(marmoset$microeco$abund$genus$ctrl, sep = "\t")
-gen.controlwash$save_abund(marmoset$microeco$abund$genus$ctrlwash, sep = "\t")
 gen.int$save_abund(marmoset$microeco$abund$genus$int, sep = "\t")
-gen.tx$save_abund(marmoset$microeco$abund$genus$tx, sep = "\t")
-gen.ne$save_abund(marmoset$microeco$abund$genus$ne, sep = "\t")
-gen.rmb$save_abund(marmoset$microeco$abund$genus$rmb, sep = "\t")
-gen.rmf$save_abund(marmoset$microeco$abund$genus$rmf, sep = "\t")
 
 gen.main$save_alphadiv(marmoset$microeco$alpha$genus$main)
 gen.g1$save_alphadiv(marmoset$microeco$alpha$genus$g1)
 gen.g2$save_alphadiv(marmoset$microeco$alpha$genus$g2)
-gen.baseline$save_alphadiv(marmoset$microeco$alpha$genus$base)
-gen.gum$save_alphadiv(marmoset$microeco$alpha$genus$gum)
-gen.gumwash$save_alphadiv(marmoset$microeco$alpha$genus$gumwash)
-gen.control$save_alphadiv(marmoset$microeco$alpha$genus$ctrl)
-gen.controlwash$save_alphadiv(marmoset$microeco$alpha$genus$ctrlwash)
 gen.int$save_alphadiv(marmoset$microeco$alpha$genus$int)
-gen.tx$save_alphadiv(marmoset$microeco$alpha$genus$tx)
-gen.ne$save_alphadiv(marmoset$microeco$alpha$genus$ne)
-gen.rmb$save_alphadiv(marmoset$microeco$alpha$genus$rmb)
-gen.rmf$save_alphadiv(marmoset$microeco$alpha$genus$rmf)
 
 gen.main$save_betadiv(marmoset$microeco$beta$genus$main)
 gen.g1$save_betadiv(marmoset$microeco$beta$genus$g1)
 gen.g2$save_betadiv(marmoset$microeco$beta$genus$g2)
-gen.baseline$save_betadiv(marmoset$microeco$beta$genus$base)
-gen.gum$save_betadiv(marmoset$microeco$beta$genus$gum)
-gen.gumwash$save_betadiv(marmoset$microeco$beta$genus$gumwash)
-gen.control$save_betadiv(marmoset$microeco$beta$genus$ctrl)
-gen.controlwash$save_betadiv(marmoset$microeco$beta$genus$ctrlwash)
 gen.int$save_betadiv(marmoset$microeco$beta$genus$int)
-gen.tx$save_betadiv(marmoset$microeco$beta$genus$tx)
-gen.ne$save_betadiv(marmoset$microeco$beta$genus$ne)
-gen.rmb$save_betadiv(marmoset$microeco$beta$genus$rmb)
-gen.rmf$save_betadiv(marmoset$microeco$beta$genus$rmf)
 ```
 ## Functional Profiles
 ### KEGG
@@ -1704,72 +983,9 @@ dataset.keg.g2 <- microtable$new(
                                phylo_tree   = tax.tree,
                                rep_fasta    = rep.seqs.tax4fun,
                                auto_tidy    = T)
-dataset.keg.baseline <- microtable$new(
-                               sample_table = samp.table.baseline,
-                               otu_table    = otu.baseline,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
-dataset.keg.gum <- microtable$new(
-                               sample_table = samp.table.gum,
-                               otu_table    = otu.gum,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
-dataset.keg.gumwash <- microtable$new(
-                               sample_table = samp.table.gumwash,
-                               otu_table    = otu.gumwash,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
-dataset.keg.control <- microtable$new(
-                               sample_table = samp.table.control,
-                               otu_table    = otu.control,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
-dataset.keg.controlwash <- microtable$new(
-                               sample_table = samp.table.controlwash,
-                               otu_table    = otu.controlwash,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
 dataset.keg.int <- microtable$new(
                                sample_table = samp.table.int,
                                otu_table    = otu.int,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
-dataset.keg.tx <- microtable$new(
-                               sample_table = samp.table.tx,
-                               otu_table    = otu.tx,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
-dataset.keg.ne <- microtable$new(
-                               sample_table = samp.table.ne,
-                               otu_table    = otu.ne,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
-dataset.keg.rmb <- microtable$new(
-                               sample_table = samp.table.rmb,
-                               otu_table    = otu.rmb,
-                               tax_table    = tax.table,
-                               phylo_tree   = tax.tree,
-                               rep_fasta    = rep.seqs.tax4fun,
-                               auto_tidy    = T)
-dataset.keg.rmf <- microtable$new(
-                               sample_table = samp.table.rmf,
-                               otu_table    = otu.rmf,
                                tax_table    = tax.table,
                                phylo_tree   = tax.tree,
                                rep_fasta    = rep.seqs.tax4fun,
@@ -1779,61 +995,25 @@ dataset.keg.rmf <- microtable$new(
 dataset.keg.main$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.keg.g1$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.keg.g2$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.baseline$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.gum$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.gumwash$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.control$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.controlwash$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.keg.int$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.tx$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.ne$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.rmb$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
-dataset.keg.rmf$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 ```
 ```{r}
 dataset.keg.main <- dataset.keg.main$merge_samples("subj_day")
 dataset.keg.g1 <- dataset.keg.g1$merge_samples("subj_day")
 dataset.keg.g2 <- dataset.keg.g2$merge_samples("subj_day")
-dataset.keg.baseline <- dataset.keg.baseline$merge_samples("subj_day")
-dataset.keg.gum <- dataset.keg.gum$merge_samples("subj_day")
-dataset.keg.gumwash <- dataset.keg.gumwash$merge_samples("subj_day")
-dataset.keg.control <- dataset.keg.control$merge_samples("subj_day")
-dataset.keg.controlwash <- dataset.keg.controlwash$merge_samples("subj_day")
 dataset.keg.int <- dataset.keg.int$merge_samples("subj_day")
-dataset.keg.tx <- dataset.keg.tx$merge_samples("subj_day")
-dataset.keg.ne <- dataset.keg.ne$merge_samples("subj_day")
-dataset.keg.rmb <- dataset.keg.rmb$merge_samples("subj_day")
-dataset.keg.rmf <- dataset.keg.rmf$merge_samples("subj_day")
 ```
 ```{r}
 dataset.keg.main$sample_table <- data.frame(dataset.keg.main$sample_table, sample.table.merged[rownames(dataset.keg.main$sample_table), ])
 dataset.keg.g1$sample_table <- data.frame(dataset.keg.g1$sample_table, sample.table.merged[rownames(dataset.keg.g1$sample_table), ])
 dataset.keg.g2$sample_table <- data.frame(dataset.keg.g2$sample_table, sample.table.merged[rownames(dataset.keg.g2$sample_table), ])
-dataset.keg.baseline$sample_table <- data.frame(dataset.keg.baseline$sample_table, sample.table.merged[rownames(dataset.keg.baseline$sample_table), ])
-dataset.keg.gum$sample_table <- data.frame(dataset.keg.gum$sample_table, sample.table.merged[rownames(dataset.keg.gum$sample_table), ])
-dataset.keg.gumwash$sample_table <- data.frame(dataset.keg.gumwash$sample_table, sample.table.merged[rownames(dataset.keg.gumwash$sample_table), ])
-dataset.keg.control$sample_table <- data.frame(dataset.keg.control$sample_table, sample.table.merged[rownames(dataset.keg.control$sample_table), ])
-dataset.keg.controlwash$sample_table <- data.frame(dataset.keg.controlwash$sample_table, sample.table.merged[rownames(dataset.keg.controlwash$sample_table), ])
 dataset.keg.int$sample_table <- data.frame(dataset.keg.int$sample_table, sample.table.merged[rownames(dataset.keg.int$sample_table), ])
-dataset.keg.tx$sample_table <- data.frame(dataset.keg.tx$sample_table, sample.table.merged[rownames(dataset.keg.tx$sample_table), ])
-dataset.keg.ne$sample_table <- data.frame(dataset.keg.ne$sample_table, sample.table.merged[rownames(dataset.keg.ne$sample_table), ])
-dataset.keg.rmb$sample_table <- data.frame(dataset.keg.rmb$sample_table, sample.table.merged[rownames(dataset.keg.rmb$sample_table), ])
-dataset.keg.rmf$sample_table <- data.frame(dataset.keg.rmf$sample_table, sample.table.merged[rownames(dataset.keg.rmf$sample_table), ])
 ```
 ```{r}
 dataset.keg.main$cal_abund()
 dataset.keg.g1$cal_abund()
 dataset.keg.g2$cal_abund()
-dataset.keg.baseline$cal_abund()
-dataset.keg.gum$cal_abund()
-dataset.keg.gumwash$cal_abund()
-dataset.keg.control$cal_abund()
-dataset.keg.controlwash$cal_abund()
 dataset.keg.int$cal_abund()
-dataset.keg.tx$cal_abund()
-dataset.keg.ne$cal_abund()
-dataset.keg.rmb$cal_abund()
-dataset.keg.rmf$cal_abund()
 ```
 ```{r}
 dataset.keg.main$filter_taxa(
@@ -1848,43 +1028,7 @@ dataset.keg.g2$filter_taxa(
                          rel_abund      = methods_16s$marm$min_abund, 
                          freq           = methods_16s$marm$min_freq, 
                          include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.baseline$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.gum$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.gumwash$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.control$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.controlwash$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
 dataset.keg.int$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.tx$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.ne$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.rmb$filter_taxa(
-                         rel_abund      = methods_16s$marm$min_abund, 
-                         freq           = methods_16s$marm$min_freq, 
-                         include_lowest = methods_16s$marm$include_lowest)
-dataset.keg.rmf$filter_taxa(
                          rel_abund      = methods_16s$marm$min_abund, 
                          freq           = methods_16s$marm$min_freq, 
                          include_lowest = methods_16s$marm$include_lowest)
@@ -1893,16 +1037,8 @@ dataset.keg.rmf$filter_taxa(
 keg.main <- trans_func$new(dataset.keg.main)
 keg.g1 <- trans_func$new(dataset.keg.g1)
 keg.g2 <- trans_func$new(dataset.keg.g2)
-keg.baseline <- trans_func$new(dataset.keg.baseline)
-keg.gum <- trans_func$new(dataset.keg.gum)
-keg.gumwash <- trans_func$new(dataset.keg.gumwash)
-keg.control <- trans_func$new(dataset.keg.control)
-keg.controlwash <- trans_func$new(dataset.keg.controlwash)
 keg.int <- trans_func$new(dataset.keg.int)
-keg.tx <- trans_func$new(dataset.keg.tx)
-keg.ne <- trans_func$new(dataset.keg.ne)
-keg.rmb <- trans_func$new(dataset.keg.rmb)
-keg.rmf <- trans_func$new(dataset.keg.rmf)
+
 ```
 ```{r}
 keg.main$cal_tax4fun2(
@@ -1923,61 +1059,7 @@ keg.g2$cal_tax4fun2(
           database_mode             = methods_16s$marm$tax4fun_db, 
           path_to_temp_folder       = microbiome$test_prediction,
           num_threads               = parallel::detectCores() - 1)
-keg.baseline$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
-keg.gum$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
-keg.gumwash$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
-keg.control$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
-keg.controlwash$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
 keg.int$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
-keg.tx$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
-keg.ne$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
-keg.rmb$cal_tax4fun2(
-          blast_tool_path           = microbiome$blast,
-          path_to_reference_data    = microbiome$tax4fun,
-          database_mode             = methods_16s$marm$tax4fun_db, 
-          path_to_temp_folder       = microbiome$test_prediction,
-          num_threads               = parallel::detectCores() - 1)
-keg.rmf$cal_tax4fun2(
           blast_tool_path           = microbiome$blast,
           path_to_reference_data    = microbiome$tax4fun,
           database_mode             = methods_16s$marm$tax4fun_db, 
@@ -2050,111 +1132,7 @@ keg.data.g2$save_abund(marmoset$microeco$abund$keg$g2, sep = "\t")
 keg.data.g2$save_alphadiv(marmoset$microeco$alpha$keg$g2)
 keg.data.g2$save_betadiv(marmoset$microeco$beta$keg$g2)
 ```
-```{r}
-keg.baseline$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.baseline <- microtable$new(
-  otu_table    = keg.baseline$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.baseline$sample_table)
 
-keg.data.baseline$tidy_dataset()
-
-dataset.keg.baseline$sample_table <- data.frame(dataset.keg.baseline$sample_table, sample.table.merged[rownames(dataset.keg.baseline$sample_table), ])
-
-keg.data.baseline$cal_abund()
-keg.data.baseline$cal_alphadiv()
-keg.data.baseline$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.baseline$save_table(marmoset$microeco$data$keg$base, sep = "\t")
-keg.data.baseline$save_abund(marmoset$microeco$abund$keg$base, sep = "\t")
-keg.data.baseline$save_alphadiv(marmoset$microeco$alpha$keg$base)
-keg.data.baseline$save_betadiv(marmoset$microeco$beta$keg$base)
-```
-```{r}
-keg.gum$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.gum <- microtable$new(
-  otu_table    = keg.gum$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.gum$sample_table)
-
-keg.data.gum$tidy_dataset()
-
-dataset.keg.gum$sample_table <- data.frame(dataset.keg.gum$sample_table, sample.table.merged[rownames(dataset.keg.gum$sample_table), ])
-
-keg.data.gum$cal_abund()
-keg.data.gum$cal_alphadiv()
-keg.data.gum$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.gum$save_table(marmoset$microeco$data$keg$gum, sep = "\t")
-keg.data.gum$save_abund(marmoset$microeco$abund$keg$gum, sep = "\t")
-keg.data.gum$save_alphadiv(marmoset$microeco$alpha$keg$gum)
-keg.data.gum$save_betadiv(marmoset$microeco$beta$keg$gum)
-```
-```{r}
-keg.gumwash$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.gumwash <- microtable$new(
-  otu_table    = keg.gumwash$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.gumwash$sample_table)
-
-keg.data.gumwash$tidy_dataset()
-
-dataset.keg.gumwash$sample_table <- data.frame(dataset.keg.gumwash$sample_table, sample.table.merged[rownames(dataset.keg.gumwash$sample_table), ])
-
-keg.data.gumwash$cal_abund()
-keg.data.gumwash$cal_alphadiv()
-keg.data.gumwash$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.gumwash$save_table(marmoset$microeco$data$keg$gumwash, sep = "\t")
-keg.data.gumwash$save_abund(marmoset$microeco$abund$keg$gumwash, sep = "\t")
-keg.data.gumwash$save_alphadiv(marmoset$microeco$alpha$keg$gumwash)
-keg.data.gumwash$save_betadiv(marmoset$microeco$beta$keg$gumwash)
-```
-```{r}
-keg.control$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.control <- microtable$new(
-  otu_table    = keg.control$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.control$sample_table)
-
-keg.data.control$tidy_dataset()
-
-dataset.keg.control$sample_table <- data.frame(dataset.keg.control$sample_table, sample.table.merged[rownames(dataset.keg.control$sample_table), ])
-
-keg.data.control$cal_abund()
-keg.data.control$cal_alphadiv()
-keg.data.control$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.control$save_table(marmoset$microeco$data$keg$ctrl, sep = "\t")
-keg.data.control$save_abund(marmoset$microeco$abund$keg$ctrl, sep = "\t")
-keg.data.control$save_alphadiv(marmoset$microeco$alpha$keg$ctrl)
-keg.data.control$save_betadiv(marmoset$microeco$beta$keg$ctrl)
-```
-```{r}
-keg.controlwash$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.controlwash <- microtable$new(
-  otu_table    = keg.controlwash$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.controlwash$sample_table)
-
-keg.data.controlwash$tidy_dataset()
-
-dataset.keg.controlwash$sample_table <- data.frame(dataset.keg.controlwash$sample_table, sample.table.merged[rownames(dataset.keg.controlwash$sample_table), ])
-
-keg.data.controlwash$cal_abund()
-keg.data.controlwash$cal_alphadiv()
-keg.data.controlwash$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.controlwash$save_table(marmoset$microeco$data$keg$ctrlwash, sep = "\t")
-keg.data.controlwash$save_abund(marmoset$microeco$abund$keg$ctrlwash, sep = "\t")
-keg.data.controlwash$save_alphadiv(marmoset$microeco$alpha$keg$ctrlwash)
-keg.data.controlwash$save_betadiv(marmoset$microeco$beta$keg$ctrlwash)
-```
 ```{r}
 keg.int$cal_tax4fun2_FRI()
 ```
@@ -2176,204 +1154,48 @@ keg.data.int$save_abund(marmoset$microeco$abund$keg$int, sep = "\t")
 keg.data.int$save_alphadiv(marmoset$microeco$alpha$keg$int)
 keg.data.int$save_betadiv(marmoset$microeco$beta$keg$int)
 ```
-```{r}
-keg.tx$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.tx <- microtable$new(
-  otu_table    = keg.tx$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.tx$sample_table)
-
-keg.data.tx$tidy_dataset()
-
-dataset.keg.tx$sample_table <- data.frame(dataset.keg.tx$sample_table, sample.table.merged[rownames(dataset.keg.tx$sample_table), ])
-
-keg.data.tx$cal_abund()
-keg.data.tx$cal_alphadiv()
-keg.data.tx$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.tx$save_table(marmoset$microeco$data$keg$tx, sep = "\t")
-keg.data.tx$save_abund(marmoset$microeco$abund$keg$tx, sep = "\t")
-keg.data.tx$save_alphadiv(marmoset$microeco$alpha$keg$tx)
-keg.data.tx$save_betadiv(marmoset$microeco$beta$keg$tx)
-```
-```{r}
-keg.ne$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.ne <- microtable$new(
-  otu_table    = keg.ne$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.ne$sample_table)
-
-keg.data.ne$tidy_dataset()
-
-dataset.keg.ne$sample_table <- data.frame(dataset.keg.ne$sample_table, sample.table.merged[rownames(dataset.keg.ne$sample_table), ])
-
-keg.data.ne$cal_abund()
-keg.data.ne$cal_alphadiv()
-keg.data.ne$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.ne$save_table(marmoset$microeco$data$keg$ne, sep = "\t")
-keg.data.ne$save_abund(marmoset$microeco$abund$keg$ne, sep = "\t")
-keg.data.ne$save_alphadiv(marmoset$microeco$alpha$keg$ne)
-keg.data.ne$save_betadiv(marmoset$microeco$beta$keg$ne)
-```
-```{r}
-keg.rmb$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.rmb <- microtable$new(
-  otu_table    = keg.rmb$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.rmb$sample_table)
-
-keg.data.rmb$tidy_dataset()
-
-dataset.keg.rmb$sample_table <- data.frame(dataset.keg.rmb$sample_table, sample.table.merged[rownames(dataset.keg.rmb$sample_table), ])
-
-keg.data.rmb$cal_abund()
-keg.data.rmb$cal_alphadiv()
-keg.data.rmb$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.rmb$save_table(marmoset$microeco$data$keg$rmb, sep = "\t")
-keg.data.rmb$save_abund(marmoset$microeco$abund$keg$rmb, sep = "\t")
-keg.data.rmb$save_alphadiv(marmoset$microeco$alpha$keg$rmb)
-keg.data.rmb$save_betadiv(marmoset$microeco$beta$keg$rmb)
-```
-```{r}
-keg.rmf$cal_tax4fun2_FRI()
-```
-```{r}
-keg.data.rmf <- microtable$new(
-  otu_table    = keg.rmf$res_tax4fun2_pathway,
-  tax_table    = Tax4Fun2_KEGG$ptw_desc,
-  sample_table = dataset.rmf$sample_table)
-
-keg.data.rmf$tidy_dataset()
-
-dataset.keg.rmf$sample_table <- data.frame(dataset.keg.rmf$sample_table, sample.table.merged[rownames(dataset.keg.rmf$sample_table), ])
-
-keg.data.rmf$cal_abund()
-keg.data.rmf$cal_alphadiv()
-keg.data.rmf$cal_betadiv(method = methods_16s$marm$betadiv)
-keg.data.rmf$save_table(marmoset$microeco$data$keg$rmf, sep = "\t")
-keg.data.rmf$save_abund(marmoset$microeco$abund$keg$rmf, sep = "\t")
-keg.data.rmf$save_alphadiv(marmoset$microeco$alpha$keg$rmf)
-keg.data.rmf$save_betadiv(marmoset$microeco$beta$keg$rmf)
-```
 ### FAPROTAX
 ```{r}
 fpt.main        <- trans_func$new(dataset.main)
 fpt.g1          <- trans_func$new(dataset.g1)
 fpt.g2          <- trans_func$new(dataset.g2)
-fpt.baseline    <- trans_func$new(dataset.baseline)
-fpt.gum         <- trans_func$new(dataset.gum)
-fpt.gumwash     <- trans_func$new(dataset.gumwash)
-fpt.control     <- trans_func$new(dataset.control)
-fpt.controlwash <- trans_func$new(dataset.controlwash)
 fpt.int         <- trans_func$new(dataset.int)
-fpt.ne          <- trans_func$new(dataset.ne)
-fpt.tx          <- trans_func$new(dataset.tx)
-fpt.rmb         <- trans_func$new(dataset.rmb)
-fpt.rmf         <- trans_func$new(dataset.rmf)
 
 fpt.main$cal_spe_func(prok_database = "FAPROTAX")
 fpt.g1$cal_spe_func(prok_database = "FAPROTAX")
 fpt.g2$cal_spe_func(prok_database = "FAPROTAX")
-fpt.baseline$cal_spe_func(prok_database = "FAPROTAX")
-fpt.gum$cal_spe_func(prok_database = "FAPROTAX")
-fpt.gumwash$cal_spe_func(prok_database = "FAPROTAX")
-fpt.control$cal_spe_func(prok_database = "FAPROTAX")
-fpt.controlwash$cal_spe_func(prok_database = "FAPROTAX")
 fpt.int$cal_spe_func(prok_database = "FAPROTAX")
-fpt.ne$cal_spe_func(prok_database = "FAPROTAX")
-fpt.tx$cal_spe_func(prok_database = "FAPROTAX")
-fpt.rmb$cal_spe_func(prok_database = "FAPROTAX")
-fpt.rmf$cal_spe_func(prok_database = "FAPROTAX")
 
 fpt.main$cal_spe_func_perc(abundance_weighted = T)
 fpt.g1$cal_spe_func_perc(abundance_weighted = T)
 fpt.g2$cal_spe_func_perc(abundance_weighted = T)
-fpt.baseline$cal_spe_func_perc(abundance_weighted = T)
-fpt.gum$cal_spe_func_perc(abundance_weighted = T)
-fpt.gumwash$cal_spe_func_perc(abundance_weighted = T)
-fpt.control$cal_spe_func_perc(abundance_weighted = T)
-fpt.controlwash$cal_spe_func_perc(abundance_weighted = T)
 fpt.int$cal_spe_func_perc(abundance_weighted = T)
-fpt.ne$cal_spe_func_perc(abundance_weighted = T)
-fpt.tx$cal_spe_func_perc(abundance_weighted = T)
-fpt.rmb$cal_spe_func_perc(abundance_weighted = T)
-fpt.rmf$cal_spe_func_perc(abundance_weighted = T)
 ```
 ```{r}
 fpt.main$trans_spe_func_perc()
 fpt.g1$trans_spe_func_perc()
 fpt.g2$trans_spe_func_perc()
-fpt.baseline$trans_spe_func_perc()
-fpt.gum$trans_spe_func_perc()
-fpt.gumwash$trans_spe_func_perc()
-fpt.control$trans_spe_func_perc()
-fpt.controlwash$trans_spe_func_perc()
 fpt.int$trans_spe_func_perc()
-fpt.ne$trans_spe_func_perc()
-fpt.tx$trans_spe_func_perc()
-fpt.rmb$trans_spe_func_perc()
-fpt.rmf$trans_spe_func_perc()
 
 fpt.main.df        <- as.data.frame(t(fpt.main$res_spe_func_perc), check.names = F)
 fpt.g1.df          <- as.data.frame(t(fpt.g1$res_spe_func_perc), check.names = F)
 fpt.g2.df          <- as.data.frame(t(fpt.g2$res_spe_func_perc), check.names = F)
-fpt.baseline.df    <- as.data.frame(t(fpt.baseline$res_spe_func_perc), check.names = F)
-fpt.gum.df         <- as.data.frame(t(fpt.gum$res_spe_func_perc), check.names = F)
-fpt.gumwash.df     <- as.data.frame(t(fpt.gumwash$res_spe_func_perc), check.names = F)
-fpt.control.df     <- as.data.frame(t(fpt.control$res_spe_func_perc), check.names = F)
-fpt.controlwash.df <- as.data.frame(t(fpt.controlwash$res_spe_func_perc), check.names = F)
 fpt.int.df         <- as.data.frame(t(fpt.int$res_spe_func_perc), check.names = F)
-fpt.ne.df          <- as.data.frame(t(fpt.ne$res_spe_func_perc), check.names = F)
-fpt.tx.df          <- as.data.frame(t(fpt.tx$res_spe_func_perc), check.names = F)
-fpt.rmb.df         <- as.data.frame(t(fpt.rmb$res_spe_func_perc), check.names = F)
-fpt.rmf.df         <- as.data.frame(t(fpt.rmf$res_spe_func_perc), check.names = F)
 
 fpt.main.tax        <- as.data.frame(rownames(fpt.main.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
 fpt.g1.tax          <- as.data.frame(rownames(fpt.g1.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
 fpt.g2.tax          <- as.data.frame(rownames(fpt.g2.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.baseline.tax    <- as.data.frame(rownames(fpt.baseline.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.gum.tax         <- as.data.frame(rownames(fpt.gum.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.gumwash.tax     <- as.data.frame(rownames(fpt.gumwash.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.control.tax     <- as.data.frame(rownames(fpt.control.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.controlwash.tax <- as.data.frame(rownames(fpt.controlwash.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
 fpt.int.tax         <- as.data.frame(rownames(fpt.int.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.ne.tax          <- as.data.frame(rownames(fpt.ne.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.tx.tax          <- as.data.frame(rownames(fpt.tx.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.rmb.tax         <- as.data.frame(rownames(fpt.rmb.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
-fpt.rmf.tax         <- as.data.frame(rownames(fpt.rmf.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
 
 fpt.main.otu        <- fpt.main.df %>% rownames_to_column("Function") %>% left_join(fpt.main.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 fpt.g1.otu          <- fpt.g1.df %>% rownames_to_column("Function") %>% left_join(fpt.g1.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 fpt.g2.otu          <- fpt.g2.df %>% rownames_to_column("Function") %>% left_join(fpt.g2.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.baseline.otu    <- fpt.baseline.df %>% rownames_to_column("Function") %>% left_join(fpt.baseline.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.gum.otu         <- fpt.gum.df %>% rownames_to_column("Function") %>% left_join(fpt.gum.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.gumwash.otu     <- fpt.gumwash.df %>% rownames_to_column("Function") %>% left_join(fpt.gumwash.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.control.otu     <- fpt.control.df %>% rownames_to_column("Function") %>% left_join(fpt.control.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.controlwash.otu <- fpt.controlwash.df %>% rownames_to_column("Function") %>% left_join(fpt.controlwash.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 fpt.int.otu         <- fpt.int.df %>% rownames_to_column("Function") %>% left_join(fpt.int.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.ne.otu          <- fpt.ne.df %>% rownames_to_column("Function") %>% left_join(fpt.ne.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.tx.otu          <- fpt.tx.df %>% rownames_to_column("Function") %>% left_join(fpt.tx.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.rmb.otu         <- fpt.rmb.df %>% rownames_to_column("Function") %>% left_join(fpt.rmb.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-fpt.rmf.otu         <- fpt.rmf.df %>% rownames_to_column("Function") %>% left_join(fpt.rmf.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 
 fpt.main.tax        <- fpt.main.tax %>% column_to_rownames("func_name")
 fpt.g1.tax          <- fpt.g1.tax %>% column_to_rownames("func_name")
 fpt.g2.tax          <- fpt.g2.tax %>% column_to_rownames("func_name")
-fpt.baseline.tax    <- fpt.baseline.tax %>% column_to_rownames("func_name")
-fpt.gum.tax         <- fpt.gum.tax %>% column_to_rownames("func_name")
-fpt.gumwash.tax     <- fpt.gumwash.tax %>% column_to_rownames("func_name")
-fpt.control.tax     <- fpt.control.tax %>% column_to_rownames("func_name")
-fpt.controlwash.tax <- fpt.controlwash.tax %>% column_to_rownames("func_name")
 fpt.int.tax         <- fpt.int.tax %>% column_to_rownames("func_name")
-fpt.ne.tax          <- fpt.ne.tax %>% column_to_rownames("func_name")
-fpt.tx.tax          <- fpt.tx.tax %>% column_to_rownames("func_name")
-fpt.rmb.tax         <- fpt.rmb.tax %>% column_to_rownames("func_name")
-fpt.rmf.tax         <- fpt.rmf.tax %>% column_to_rownames("func_name")
 ```
 ```{r}
 fpt.data.main <- microtable$new(otu_table    = fpt.main.otu, 
@@ -2388,273 +1210,93 @@ fpt.data.g2   <- microtable$new(otu_table    = fpt.g2.otu,
                                 tax_table    = fpt.g2.tax, 
                                 sample_table = dataset.g2$sample_table)
 
-fpt.data.baseline <- microtable$new(otu_table    = fpt.baseline.otu, 
-                                    tax_table    = fpt.baseline.tax, 
-                                    sample_table = dataset.baseline$sample_table)
-
-fpt.data.gum  <- microtable$new(otu_table    = fpt.gum.otu, 
-                                tax_table    = fpt.gum.tax, 
-                                sample_table = dataset.gum$sample_table)
-
-fpt.data.gumwash <- microtable$new(otu_table    = fpt.gumwash.otu, 
-                                   tax_table    = fpt.gumwash.tax, 
-                                   sample_table = dataset.gumwash$sample_table)
-
-fpt.data.control <- microtable$new(otu_table    = fpt.control.otu, 
-                                   tax_table    = fpt.control.tax, 
-                                   sample_table = dataset.control$sample_table)
-
-fpt.data.controlwash <- microtable$new(otu_table    = fpt.controlwash.otu, 
-                                       tax_table    = fpt.controlwash.tax, 
-                                       sample_table = dataset.controlwash$sample_table)
-
 fpt.data.int  <- microtable$new(otu_table    = fpt.int.otu, 
                                 tax_table    = fpt.int.tax, 
                                 sample_table = dataset.int$sample_table)
 
-fpt.data.ne   <- microtable$new(otu_table    = fpt.ne.otu, 
-                                tax_table    = fpt.ne.tax, 
-                                sample_table = dataset.ne$sample_table)
-
-fpt.data.tx   <- microtable$new(otu_table    = fpt.tx.otu, 
-                                tax_table    = fpt.tx.tax, 
-                                sample_table = dataset.tx$sample_table)
-
-fpt.data.rmb  <- microtable$new(otu_table    = fpt.rmb.otu, 
-                                tax_table    = fpt.rmb.tax, 
-                                sample_table = dataset.rmb$sample_table)
-
-fpt.data.rmf  <- microtable$new(otu_table    = fpt.rmf.otu, 
-                                tax_table    = fpt.rmf.tax, 
-                                sample_table = dataset.rmf$sample_table)
-
 fpt.data.main$tidy_dataset()
 fpt.data.g1$tidy_dataset()
 fpt.data.g2$tidy_dataset()
-fpt.data.baseline$tidy_dataset()
-fpt.data.gum$tidy_dataset()
-fpt.data.gumwash$tidy_dataset()
-fpt.data.control$tidy_dataset()
-fpt.data.controlwash$tidy_dataset()
 fpt.data.int$tidy_dataset()
-fpt.data.ne$tidy_dataset()
-fpt.data.tx$tidy_dataset()
-fpt.data.rmb$tidy_dataset()
-fpt.data.rmf$tidy_dataset()
 
 fpt.data.main$cal_abund()
 fpt.data.g1$cal_abund()
 fpt.data.g2$cal_abund()
-fpt.data.baseline$cal_abund()
-fpt.data.gum$cal_abund()
-fpt.data.gumwash$cal_abund()
-fpt.data.control$cal_abund()
-fpt.data.controlwash$cal_abund()
 fpt.data.int$cal_abund()
-fpt.data.ne$cal_abund()
-fpt.data.tx$cal_abund()
-fpt.data.rmb$cal_abund()
-fpt.data.rmf$cal_abund()
 
 fpt.data.main$cal_alphadiv()
 fpt.data.g1$cal_alphadiv()
 fpt.data.g2$cal_alphadiv()
-fpt.data.baseline$cal_alphadiv()
-fpt.data.gum$cal_alphadiv()
-fpt.data.gumwash$cal_alphadiv()
-fpt.data.control$cal_alphadiv()
-fpt.data.controlwash$cal_alphadiv()
 fpt.data.int$cal_alphadiv()
-fpt.data.ne$cal_alphadiv()
-fpt.data.tx$cal_alphadiv()
-fpt.data.rmb$cal_alphadiv()
-fpt.data.rmf$cal_alphadiv()
 
 fpt.data.main$cal_betadiv(method = methods_16s$marm$betadiv)
 fpt.data.g1$cal_betadiv(method = methods_16s$marm$betadiv)
 fpt.data.g2$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.baseline$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.gum$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.gumwash$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.control$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.controlwash$cal_betadiv(method = methods_16s$marm$betadiv)
 fpt.data.int$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.ne$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.tx$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.rmb$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.rmf$cal_betadiv(method = methods_16s$marm$betadiv)
 ```
 ```{r}
 fpt.data.main$save_table(marmoset$microeco$data$fpt$main, sep = "\t")
 fpt.data.g1$save_table(marmoset$microeco$data$fpt$g1, sep = "\t")
 fpt.data.g2$save_table(marmoset$microeco$data$fpt$g2, sep = "\t")
-fpt.data.baseline$save_table(marmoset$microeco$data$fpt$base, sep = "\t")
-fpt.data.gum$save_table(marmoset$microeco$data$fpt$gum, sep = "\t")
-fpt.data.gumwash$save_table(marmoset$microeco$data$fpt$gumwash, sep = "\t")
-fpt.data.control$save_table(marmoset$microeco$data$fpt$ctrl, sep = "\t")
-fpt.data.controlwash$save_table(marmoset$microeco$data$fpt$ctrlwash, sep = "\t")
 fpt.data.int$save_table(marmoset$microeco$data$fpt$int, sep = "\t")
-fpt.data.ne$save_table(marmoset$microeco$data$fpt$ne, sep = "\t")
-fpt.data.tx$save_table(marmoset$microeco$data$fpt$tx, sep = "\t")
-fpt.data.rmb$save_table(marmoset$microeco$data$fpt$rmb, sep = "\t")
-fpt.data.rmf$save_table(marmoset$microeco$data$fpt$rmf, sep = "\t")
 
 fpt.data.main$save_abund(marmoset$microeco$abund$fpt$main, sep = "\t")
 fpt.data.g1$save_abund(marmoset$microeco$abund$fpt$g1, sep = "\t")
 fpt.data.g2$save_abund(marmoset$microeco$abund$fpt$g2, sep = "\t")
-fpt.data.baseline$save_abund(marmoset$microeco$abund$fpt$base, sep = "\t")
-fpt.data.gum$save_abund(marmoset$microeco$abund$fpt$gum, sep = "\t")
-fpt.data.gumwash$save_abund(marmoset$microeco$abund$fpt$gumwash, sep = "\t")
-fpt.data.control$save_abund(marmoset$microeco$abund$fpt$ctrl, sep = "\t")
-fpt.data.controlwash$save_abund(marmoset$microeco$abund$fpt$ctrlwash, sep = "\t")
 fpt.data.int$save_abund(marmoset$microeco$abund$fpt$int, sep = "\t")
-fpt.data.ne$save_abund(marmoset$microeco$abund$fpt$ne, sep = "\t")
-fpt.data.tx$save_abund(marmoset$microeco$abund$fpt$tx, sep = "\t")
-fpt.data.rmb$save_abund(marmoset$microeco$abund$fpt$rmb, sep = "\t")
-fpt.data.rmf$save_abund(marmoset$microeco$abund$fpt$rmf, sep = "\t")
 
 fpt.data.main$save_alphadiv(marmoset$microeco$alpha$fpt$main)
 fpt.data.g1$save_alphadiv(marmoset$microeco$alpha$fpt$g1)
 fpt.data.g2$save_alphadiv(marmoset$microeco$alpha$fpt$g2)
-fpt.data.baseline$save_alphadiv(marmoset$microeco$alpha$fpt$base)
-fpt.data.gum$save_alphadiv(marmoset$microeco$alpha$fpt$gum)
-fpt.data.gumwash$save_alphadiv(marmoset$microeco$alpha$fpt$gumwash)
-fpt.data.control$save_alphadiv(marmoset$microeco$alpha$fpt$ctrl)
-fpt.data.controlwash$save_alphadiv(marmoset$microeco$alpha$fpt$ctrlwash)
 fpt.data.int$save_alphadiv(marmoset$microeco$alpha$fpt$int)
-fpt.data.ne$save_alphadiv(marmoset$microeco$alpha$fpt$ne)
-fpt.data.tx$save_alphadiv(marmoset$microeco$alpha$fpt$tx)
-fpt.data.rmb$save_alphadiv(marmoset$microeco$alpha$fpt$rmb)
-fpt.data.rmf$save_alphadiv(marmoset$microeco$alpha$fpt$rmf)
 
 fpt.data.main$save_betadiv(marmoset$microeco$beta$fpt$main)
 fpt.data.g1$save_betadiv(marmoset$microeco$beta$fpt$g1)
 fpt.data.g2$save_betadiv(marmoset$microeco$beta$fpt$g2)
-fpt.data.baseline$save_betadiv(marmoset$microeco$beta$fpt$base)
-fpt.data.gum$save_betadiv(marmoset$microeco$beta$fpt$gum)
-fpt.data.gumwash$save_betadiv(marmoset$microeco$beta$fpt$gumwash)
-fpt.data.control$save_betadiv(marmoset$microeco$beta$fpt$ctrl)
-fpt.data.controlwash$save_betadiv(marmoset$microeco$beta$fpt$ctrlwash)
 fpt.data.int$save_betadiv(marmoset$microeco$beta$fpt$int)
-fpt.data.ne$save_betadiv(marmoset$microeco$beta$fpt$ne)
-fpt.data.tx$save_betadiv(marmoset$microeco$beta$fpt$tx)
-fpt.data.rmb$save_betadiv(marmoset$microeco$beta$fpt$rmb)
-fpt.data.rmf$save_betadiv(marmoset$microeco$beta$fpt$rmf)
 ```
 ### NJC19
 ```{r}
 njc.main        <- trans_func$new(dataset.main)
 njc.g1          <- trans_func$new(dataset.g1)
 njc.g2          <- trans_func$new(dataset.g2)
-njc.baseline    <- trans_func$new(dataset.baseline)
-njc.gum         <- trans_func$new(dataset.gum)
-njc.gumwash     <- trans_func$new(dataset.gumwash)
-njc.control     <- trans_func$new(dataset.control)
-njc.controlwash <- trans_func$new(dataset.controlwash)
 njc.int         <- trans_func$new(dataset.int)
-njc.ne          <- trans_func$new(dataset.ne)
-njc.tx          <- trans_func$new(dataset.tx)
-njc.rmb         <- trans_func$new(dataset.rmb)
-njc.rmf         <- trans_func$new(dataset.rmf)
 
 njc.main$cal_spe_func(prok_database = "NJC19")
 njc.g1$cal_spe_func(prok_database = "NJC19")
 njc.g2$cal_spe_func(prok_database = "NJC19")
-njc.baseline$cal_spe_func(prok_database = "NJC19")
-njc.gum$cal_spe_func(prok_database = "NJC19")
-njc.gumwash$cal_spe_func(prok_database = "NJC19")
-njc.control$cal_spe_func(prok_database = "NJC19")
-njc.controlwash$cal_spe_func(prok_database = "NJC19")
 njc.int$cal_spe_func(prok_database = "NJC19")
-njc.ne$cal_spe_func(prok_database = "NJC19")
-njc.tx$cal_spe_func(prok_database = "NJC19")
-njc.rmb$cal_spe_func(prok_database = "NJC19")
-njc.rmf$cal_spe_func(prok_database = "NJC19")
 
 njc.main$cal_spe_func_perc(abundance_weighted = T)
 njc.g1$cal_spe_func_perc(abundance_weighted = T)
 njc.g2$cal_spe_func_perc(abundance_weighted = T)
-njc.baseline$cal_spe_func_perc(abundance_weighted = T)
-njc.gum$cal_spe_func_perc(abundance_weighted = T)
-njc.gumwash$cal_spe_func_perc(abundance_weighted = T)
-njc.control$cal_spe_func_perc(abundance_weighted = T)
-njc.controlwash$cal_spe_func_perc(abundance_weighted = T)
 njc.int$cal_spe_func_perc(abundance_weighted = T)
-njc.ne$cal_spe_func_perc(abundance_weighted = T)
-njc.tx$cal_spe_func_perc(abundance_weighted = T)
-njc.rmb$cal_spe_func_perc(abundance_weighted = T)
-njc.rmf$cal_spe_func_perc(abundance_weighted = T)
 ```
 ```{r}
 njc.main$trans_spe_func_perc()
 njc.g1$trans_spe_func_perc()
 njc.g2$trans_spe_func_perc()
-njc.baseline$trans_spe_func_perc()
-njc.gum$trans_spe_func_perc()
-njc.gumwash$trans_spe_func_perc()
-njc.control$trans_spe_func_perc()
-njc.controlwash$trans_spe_func_perc()
 njc.int$trans_spe_func_perc()
-njc.ne$trans_spe_func_perc()
-njc.tx$trans_spe_func_perc()
-njc.rmb$trans_spe_func_perc()
-njc.rmf$trans_spe_func_perc()
 
 njc.main.df        <- as.data.frame(t(njc.main$res_spe_func_perc), check.names = F)
 njc.g1.df          <- as.data.frame(t(njc.g1$res_spe_func_perc), check.names = F)
 njc.g2.df          <- as.data.frame(t(njc.g2$res_spe_func_perc), check.names = F)
-njc.baseline.df    <- as.data.frame(t(njc.baseline$res_spe_func_perc), check.names = F)
-njc.gum.df         <- as.data.frame(t(njc.gum$res_spe_func_perc), check.names = F)
-njc.gumwash.df     <- as.data.frame(t(njc.gumwash$res_spe_func_perc), check.names = F)
-njc.control.df     <- as.data.frame(t(njc.control$res_spe_func_perc), check.names = F)
-njc.controlwash.df <- as.data.frame(t(njc.controlwash$res_spe_func_perc), check.names = F)
 njc.int.df         <- as.data.frame(t(njc.int$res_spe_func_perc), check.names = F)
-njc.ne.df          <- as.data.frame(t(njc.ne$res_spe_func_perc), check.names = F)
-njc.tx.df          <- as.data.frame(t(njc.tx$res_spe_func_perc), check.names = F)
-njc.rmb.df         <- as.data.frame(t(njc.rmb$res_spe_func_perc), check.names = F)
-njc.rmf.df         <- as.data.frame(t(njc.rmf$res_spe_func_perc), check.names = F)
 
 njc.main.tax        <- as.data.frame(rownames(njc.main.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
 njc.g1.tax          <- as.data.frame(rownames(njc.g1.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
 njc.g2.tax          <- as.data.frame(rownames(njc.g2.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.baseline.tax    <- as.data.frame(rownames(njc.baseline.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.gum.tax         <- as.data.frame(rownames(njc.gum.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.gumwash.tax     <- as.data.frame(rownames(njc.gumwash.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.control.tax     <- as.data.frame(rownames(njc.control.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.controlwash.tax <- as.data.frame(rownames(njc.controlwash.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
 njc.int.tax         <- as.data.frame(rownames(njc.int.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.ne.tax          <- as.data.frame(rownames(njc.ne.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.tx.tax          <- as.data.frame(rownames(njc.tx.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.rmb.tax         <- as.data.frame(rownames(njc.rmb.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
-njc.rmf.tax         <- as.data.frame(rownames(njc.rmf.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
 
 njc.main.otu        <- njc.main.df %>% rownames_to_column("Function") %>% left_join(njc.main.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 njc.g1.otu          <- njc.g1.df %>% rownames_to_column("Function") %>% left_join(njc.g1.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 njc.g2.otu          <- njc.g2.df %>% rownames_to_column("Function") %>% left_join(njc.g2.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.baseline.otu    <- njc.baseline.df %>% rownames_to_column("Function") %>% left_join(njc.baseline.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.gum.otu         <- njc.gum.df %>% rownames_to_column("Function") %>% left_join(njc.gum.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.gumwash.otu     <- njc.gumwash.df %>% rownames_to_column("Function") %>% left_join(njc.gumwash.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.control.otu     <- njc.control.df %>% rownames_to_column("Function") %>% left_join(njc.control.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.controlwash.otu <- njc.controlwash.df %>% rownames_to_column("Function") %>% left_join(njc.controlwash.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 njc.int.otu         <- njc.int.df %>% rownames_to_column("Function") %>% left_join(njc.int.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.ne.otu          <- njc.ne.df %>% rownames_to_column("Function") %>% left_join(njc.ne.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.tx.otu          <- njc.tx.df %>% rownames_to_column("Function") %>% left_join(njc.tx.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.rmb.otu         <- njc.rmb.df %>% rownames_to_column("Function") %>% left_join(njc.rmb.tax) %>% column_to_rownames("func_name") %>% select(-Function)
-njc.rmf.otu         <- njc.rmf.df %>% rownames_to_column("Function") %>% left_join(njc.rmf.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 
 njc.main.tax        <- njc.main.tax %>% column_to_rownames("func_name")
 njc.g1.tax          <- njc.g1.tax %>% column_to_rownames("func_name")
 njc.g2.tax          <- njc.g2.tax %>% column_to_rownames("func_name")
-njc.baseline.tax    <- njc.baseline.tax %>% column_to_rownames("func_name")
-njc.gum.tax         <- njc.gum.tax %>% column_to_rownames("func_name")
-njc.gumwash.tax     <- njc.gumwash.tax %>% column_to_rownames("func_name")
-njc.control.tax     <- njc.control.tax %>% column_to_rownames("func_name")
-njc.controlwash.tax <- njc.controlwash.tax %>% column_to_rownames("func_name")
 njc.int.tax         <- njc.int.tax %>% column_to_rownames("func_name")
-njc.ne.tax          <- njc.ne.tax %>% column_to_rownames("func_name")
-njc.tx.tax          <- njc.tx.tax %>% column_to_rownames("func_name")
-njc.rmb.tax         <- njc.rmb.tax %>% column_to_rownames("func_name")
-njc.rmf.tax         <- njc.rmf.tax %>% column_to_rownames("func_name")
 ```
 ```{r}
 njc.data.main <- microtable$new(otu_table    = njc.main.otu, 
@@ -2669,156 +1311,48 @@ njc.data.g2 <- microtable$new(otu_table    = njc.g2.otu,
                                 tax_table    = njc.g2.tax, 
                                 sample_table = dataset.g2$sample_table)
 
-njc.data.baseline <- microtable$new(otu_table    = njc.baseline.otu, 
-                                tax_table    = njc.baseline.tax, 
-                                sample_table = dataset.baseline$sample_table)
-
-njc.data.gum <- microtable$new(otu_table    = njc.gum.otu, 
-                                tax_table    = njc.gum.tax, 
-                                sample_table = dataset.gum$sample_table)
-
-njc.data.gumwash <- microtable$new(otu_table    = njc.gumwash.otu, 
-                                tax_table    = njc.gumwash.tax, 
-                                sample_table = dataset.gumwash$sample_table)
-
-njc.data.control <- microtable$new(otu_table    = njc.control.otu, 
-                                tax_table    = njc.control.tax, 
-                                sample_table = dataset.control$sample_table)
-
-njc.data.controlwash <- microtable$new(otu_table    = njc.controlwash.otu, 
-                                tax_table    = njc.controlwash.tax, 
-                                sample_table = dataset.controlwash$sample_table)
-
 njc.data.int <- microtable$new(otu_table    = njc.int.otu, 
                                 tax_table    = njc.int.tax, 
                                 sample_table = dataset.int$sample_table)
 
-njc.data.ne <- microtable$new(otu_table    = njc.ne.otu, 
-                                tax_table    = njc.ne.tax, 
-                                sample_table = dataset.ne$sample_table)
-
-njc.data.tx <- microtable$new(otu_table    = njc.tx.otu, 
-                                tax_table    = njc.tx.tax, 
-                                sample_table = dataset.tx$sample_table)
-
-njc.data.rmb <- microtable$new(otu_table    = njc.main.otu, 
-                                tax_table    = njc.main.tax, 
-                                sample_table = dataset.main$sample_table)
-
-njc.data.rmf <- microtable$new(otu_table    = njc.rmb.otu, 
-                                tax_table    = njc.rmb.tax, 
-                                sample_table = dataset.rmb$sample_table)
-
 njc.data.main$tidy_dataset()
 njc.data.g1$tidy_dataset()
 njc.data.g2$tidy_dataset()
-njc.data.baseline$tidy_dataset()
-njc.data.gum$tidy_dataset()
-njc.data.gumwash$tidy_dataset()
-njc.data.control$tidy_dataset()
-njc.data.controlwash$tidy_dataset()
 njc.data.int$tidy_dataset()
-njc.data.ne$tidy_dataset()
-njc.data.tx$tidy_dataset()
-njc.data.rmb$tidy_dataset()
-njc.data.rmf$tidy_dataset()
 
 njc.data.main$cal_abund()
 njc.data.g1$cal_abund()
 njc.data.g2$cal_abund()
-njc.data.baseline$cal_abund()
-njc.data.gum$cal_abund()
-njc.data.gumwash$cal_abund()
-njc.data.control$cal_abund()
-njc.data.controlwash$cal_abund()
 njc.data.int$cal_abund()
-njc.data.ne$cal_abund()
-njc.data.tx$cal_abund()
-njc.data.rmb$cal_abund()
-njc.data.rmf$cal_abund()
 
 njc.data.main$cal_alphadiv()
 njc.data.g1$cal_alphadiv()
 njc.data.g2$cal_alphadiv()
-njc.data.baseline$cal_alphadiv()
-njc.data.gum$cal_alphadiv()
-njc.data.gumwash$cal_alphadiv()
-njc.data.control$cal_alphadiv()
-njc.data.controlwash$cal_alphadiv()
 njc.data.int$cal_alphadiv()
-njc.data.ne$cal_alphadiv()
-njc.data.tx$cal_alphadiv()
-njc.data.rmb$cal_alphadiv()
-njc.data.rmf$cal_alphadiv()
 
 njc.data.main$cal_betadiv(method = methods_16s$marm$betadiv)
 njc.data.g1$cal_betadiv(method = methods_16s$marm$betadiv)
 njc.data.g2$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.baseline$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.gum$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.gumwash$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.control$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.controlwash$cal_betadiv(method = methods_16s$marm$betadiv)
 njc.data.int$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.ne$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.tx$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.rmb$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.rmf$cal_betadiv(method = methods_16s$marm$betadiv)
 ```
 ```{r}
 njc.data.main$save_table(marmoset$microeco$data$njc$main, sep = "\t")
 njc.data.g1$save_table(marmoset$microeco$data$njc$g1, sep = "\t")
 njc.data.g2$save_table(marmoset$microeco$data$njc$g2, sep = "\t")
-njc.data.baseline$save_table(marmoset$microeco$data$njc$base, sep = "\t")
-njc.data.gum$save_table(marmoset$microeco$data$njc$gum, sep = "\t")
-njc.data.gumwash$save_table(marmoset$microeco$data$njc$gumwash, sep = "\t")
-njc.data.control$save_table(marmoset$microeco$data$njc$ctrl, sep = "\t")
-njc.data.controlwash$save_table(marmoset$microeco$data$njc$ctrlwash, sep = "\t")
 njc.data.int$save_table(marmoset$microeco$data$njc$int, sep = "\t")
-njc.data.ne$save_table(marmoset$microeco$data$njc$ne, sep = "\t")
-njc.data.tx$save_table(marmoset$microeco$data$njc$tx, sep = "\t")
-njc.data.rmb$save_table(marmoset$microeco$data$njc$rmb, sep = "\t")
-njc.data.rmf$save_table(marmoset$microeco$data$njc$rmf, sep = "\t")
 
 njc.data.main$save_abund(marmoset$microeco$abund$njc$main, sep = "\t")
 njc.data.g1$save_abund(marmoset$microeco$abund$njc$g1, sep = "\t")
 njc.data.g2$save_abund(marmoset$microeco$abund$njc$g2, sep = "\t")
-njc.data.baseline$save_abund(marmoset$microeco$abund$njc$base, sep = "\t")
-njc.data.gum$save_abund(marmoset$microeco$abund$njc$gum, sep = "\t")
-njc.data.gumwash$save_abund(marmoset$microeco$abund$njc$gumwash, sep = "\t")
-njc.data.control$save_abund(marmoset$microeco$abund$njc$ctrl, sep = "\t")
-njc.data.controlwash$save_abund(marmoset$microeco$abund$njc$ctrlwash, sep = "\t")
 njc.data.int$save_abund(marmoset$microeco$abund$njc$int, sep = "\t")
-njc.data.ne$save_abund(marmoset$microeco$abund$njc$ne, sep = "\t")
-njc.data.tx$save_abund(marmoset$microeco$abund$njc$tx, sep = "\t")
-njc.data.rmb$save_abund(marmoset$microeco$abund$njc$rmb, sep = "\t")
-njc.data.rmf$save_abund(marmoset$microeco$abund$njc$rmf, sep = "\t")
 
 njc.data.main$save_alphadiv(marmoset$microeco$alpha$njc$main)
 njc.data.g1$save_alphadiv(marmoset$microeco$alpha$njc$g1)
 njc.data.g2$save_alphadiv(marmoset$microeco$alpha$njc$g2)
-njc.data.baseline$save_alphadiv(marmoset$microeco$alpha$njc$base)
-njc.data.gum$save_alphadiv(marmoset$microeco$alpha$njc$gum)
-njc.data.gumwash$save_alphadiv(marmoset$microeco$alpha$njc$gumwash)
-njc.data.control$save_alphadiv(marmoset$microeco$alpha$njc$ctrl)
-njc.data.controlwash$save_alphadiv(marmoset$microeco$alpha$njc$ctrlwash)
 njc.data.int$save_alphadiv(marmoset$microeco$alpha$njc$int)
-njc.data.ne$save_alphadiv(marmoset$microeco$alpha$njc$ne)
-njc.data.tx$save_alphadiv(marmoset$microeco$alpha$njc$tx)
-njc.data.rmb$save_alphadiv(marmoset$microeco$alpha$njc$rmb)
-njc.data.rmf$save_alphadiv(marmoset$microeco$alpha$njc$rmf)
 
 njc.data.main$save_betadiv(marmoset$microeco$beta$njc$main)
 njc.data.g1$save_betadiv(marmoset$microeco$beta$njc$g1)
 njc.data.g2$save_betadiv(marmoset$microeco$beta$njc$g2)
-njc.data.baseline$save_betadiv(marmoset$microeco$beta$njc$base)
-njc.data.gum$save_betadiv(marmoset$microeco$beta$njc$gum)
-njc.data.gumwash$save_betadiv(marmoset$microeco$beta$njc$gumwash)
-njc.data.control$save_betadiv(marmoset$microeco$beta$njc$ctrl)
-njc.data.controlwash$save_betadiv(marmoset$microeco$beta$njc$ctrlwash)
 njc.data.int$save_betadiv(marmoset$microeco$beta$njc$int)
-njc.data.ne$save_betadiv(marmoset$microeco$beta$njc$ne)
-njc.data.tx$save_betadiv(marmoset$microeco$beta$njc$tx)
-njc.data.rmb$save_betadiv(marmoset$microeco$beta$njc$rmb)
-njc.data.rmf$save_betadiv(marmoset$microeco$beta$njc$rmf)
 ```
