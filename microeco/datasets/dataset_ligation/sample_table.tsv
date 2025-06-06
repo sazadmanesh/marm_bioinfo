@@ -1,0 +1,10 @@
+"ID"	"Subject"	"Date"	"Bristol"	"Study_Day"	"Subject_Code"	"Sex"	"Housing"	"Group"	"Age"	"Contraception"	"Origin"	"Previous_Exp"	"Diet_Trial"	"Group_Phase"	"Room"	"Cage"	"Subj_DOB"
+"Buddy_16"	"Buddy"	2023-03-25	4	"16"	"BUD"	"Male"	"Family"	"Group2"	6.397260274	""	"Texas"	""	"intervention_1"	"control"	"RoomF"	"F5"	2016-10-17
+"Hera_2"	"Hera"	2023-03-11	2	"2"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B1"	2019-08-29
+"JarJarBinks_2"	"JarJarBinks"	2023-03-11	3	"2"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B2"	2020-01-25
+"Lambchop_2"	"Lambchop"	2023-03-11	2	"2"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"baseline"	"run-in"	"RoomF"	"F1"	2017-05-13
+"Goose_4"	"Goose"	2023-03-13	2	"4"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"baseline"	"run-in"	"RoomF"	"F1"	2016-06-24
+"Marshmallow_41"	"Marshmallow"	2023-04-19	3	"41"	"MAR"	"Female"	"Pair"	"Group2"	4.101369863	"Estrumate"	"Nebraska"	""	"washout_1"	"control-washout"	"RoomF"	"F4"	2019-02-02
+"JarJarBinks_44"	"JarJarBinks"	2023-04-22	2	"44"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B2"	2020-01-25
+"Hamlet_67"	"Hamlet"	2023-05-15	2	"67"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"washout_2"	"control-washout"	"RoomB"	"B1"	2017-03-05
+"Grogu_70"	"Grogu"	2023-05-18	3	"70"	"GRO"	"Male"	"Pair"	"Group2"	4.583561644	""	"Texas"	""	"washout_2"	"gum-washout"	"RoomF"	"F4"	2018-08-10

@@ -1,133 +1,129 @@
-"ID"	"subject"	"sampledate"	"bristol"	"studyday"	"subjectcode"	"sex"	"housing"	"group"	"Age"	"contraception"	"origin"	"previousexp"	"diet_trial"	"group_phase"	"room"
-"hera_1"	"hera"	2023-03-10	"1"	"1"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"run-in"	"baseline"	"room b"
-"wolverine_1"	"wolverine"	2023-03-10	"1"	"1"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"run-in"	"baseline"	"room b"
-"hamlet_11"	"hamlet"	2023-03-20	"2"	"11"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"run-in"	"baseline"	"room b"
-"hera_11"	"hera"	2023-03-20	"2"	"11"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"run-in"	"baseline"	"room b"
-"jarjarbinks_11"	"jarjarbinks"	2023-03-20	"1"	"11"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"run-in"	"baseline"	"room b"
-"hera_14"	"hera"	2023-03-23	"1"	"14"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"run-in"	"baseline"	"room b"
-"iris_14"	"iris"	2023-03-23	"2"	"14"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"run-in"	"baseline"	"room b"
-"jarjarbinks_14"	"jarjarbinks"	2023-03-23	"1"	"14"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"run-in"	"baseline"	"room b"
-"kubo_14"	"kubo"	2023-03-23	"2"	"14"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"run-in"	"baseline"	"room b"
-"wolverine_14"	"wolverine"	2023-03-23	"2"	"14"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"run-in"	"baseline"	"room b"
-"jarjarbinks_15"	"jarjarbinks"	2023-03-24	"1"	"15"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-1"	"gum"	"room b"
-"kubo_15"	"kubo"	2023-03-24	"2"	"15"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"iris_17"	"iris"	2023-03-26	"3"	"17"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"kubo_17"	"kubo"	2023-03-26	"1"	"17"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"lambchop_17"	"lambchop"	2023-03-26	"3"	"17"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-1"	"gum"	"room f"
-"wolverine_17"	"wolverine"	2023-03-26	"2"	"17"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"hamlet_18"	"hamlet"	2023-03-27	"2"	"18"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"hera_18"	"hera"	2023-03-27	"3"	"18"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"intervention-1"	"gum"	"room b"
-"iris_18"	"iris"	2023-03-27	"2"	"18"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"jarjarbinks_18"	"jarjarbinks"	2023-03-27	"3"	"18"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-1"	"gum"	"room b"
-"kubo_18"	"kubo"	2023-03-27	"2"	"18"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"lambchop_18"	"lambchop"	2023-03-27	"3"	"18"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-1"	"gum"	"room f"
-"wolverine_18"	"wolverine"	2023-03-27	"2"	"18"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"ophelia_19"	"ophelia"	2023-03-28	"2"	"19"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"wolverine_19"	"wolverine"	2023-03-28	"2"	"19"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"hera_2"	"hera"	2023-03-11	"2"	"2"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"run-in"	"baseline"	"room b"
-"jarjarbinks_2"	"jarjarbinks"	2023-03-11	"3"	"2"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"run-in"	"baseline"	"room b"
-"lambchop_2"	"lambchop"	2023-03-11	"2"	"2"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"run-in"	"baseline"	"room f"
-"goose_20"	"goose"	2023-03-29	"2"	"20"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"intervention-1"	"gum"	"room f"
-"hamlet_20"	"hamlet"	2023-03-29	"1"	"20"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"hera_20"	"hera"	2023-03-29	"2"	"20"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"intervention-1"	"gum"	"room b"
-"iris_20"	"iris"	2023-03-29	"2"	"20"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"korra_20"	"korra"	2023-03-29	"3"	"20"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"ophelia_20"	"ophelia"	2023-03-29	"1"	"20"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"hamlet_21"	"hamlet"	2023-03-30	"2"	"21"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"jarjarbinks_21"	"jarjarbinks"	2023-03-30	"2"	"21"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-1"	"gum"	"room b"
-"korra_21"	"korra"	2023-03-30	"2"	"21"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"kubo_21"	"kubo"	2023-03-30	"2"	"21"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"goose_22"	"goose"	2023-03-31	"2"	"22"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"intervention-1"	"gum"	"room f"
-"hamlet_22"	"hamlet"	2023-03-31	"2"	"22"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"hera_22"	"hera"	2023-03-31	"2"	"22"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"intervention-1"	"gum"	"room b"
-"iris_22"	"iris"	2023-03-31	"3"	"22"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"korra_22"	"korra"	2023-03-31	"3"	"22"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"kubo_22"	"kubo"	2023-03-31	"2"	"22"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"hamlet_23"	"hamlet"	2023-04-01	"5"	"23"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"iris_23"	"iris"	2023-04-01	"3"	"23"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"korra_23"	"korra"	2023-04-01	"3"	"23"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"goose_24"	"goose"	2023-04-02	"2"	"24"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"intervention-1"	"gum"	"room f"
-"hera_24"	"hera"	2023-04-02	"3"	"24"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"intervention-1"	"gum"	"room b"
-"kubo_24"	"kubo"	2023-04-02	"3"	"24"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"ophelia_24"	"ophelia"	2023-04-02	"1"	"24"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"wolverine_24"	"wolverine"	2023-04-02	"2"	"24"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"intervention-1"	"gum"	"room b"
-"kubo_25"	"kubo"	2023-04-03	"2"	"25"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-1"	"gum"	"room b"
-"lambchop_25"	"lambchop"	2023-04-03	"3"	"25"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-1"	"gum"	"room f"
-"jarjarbinks_29"	"jarjarbinks"	2023-04-07	"3"	"29"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"washout-1"	"gum-washout"	"room b"
-"korra_29"	"korra"	2023-04-07	"3"	"29"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"washout-1"	"gum-washout"	"room b"
-"jarjarbinks_3"	"jarjarbinks"	2023-03-12	"1"	"3"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"run-in"	"baseline"	"room b"
-"kubo_30"	"kubo"	2023-04-08	"2"	"30"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"washout-1"	"gum-washout"	"room b"
-"hamlet_31"	"hamlet"	2023-04-09	"2"	"31"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"washout-1"	"gum-washout"	"room b"
-"jarjarbinks_32"	"jarjarbinks"	2023-04-10	"2"	"32"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"washout-1"	"gum-washout"	"room b"
-"goose_37"	"goose"	2023-04-15	"3"	"37"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"washout-1"	"gum-washout"	"room f"
-"hera_37"	"hera"	2023-04-15	"2"	"37"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"washout-1"	"gum-washout"	"room b"
-"kubo_37"	"kubo"	2023-04-15	"2"	"37"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"washout-1"	"gum-washout"	"room b"
-"lambchop_37"	"lambchop"	2023-04-15	"3"	"37"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"washout-1"	"gum-washout"	"room f"
-"ophelia_37"	"ophelia"	2023-04-15	"1"	"37"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"washout-1"	"gum-washout"	"room b"
-"wolverine_37"	"wolverine"	2023-04-15	"1"	"37"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"washout-1"	"gum-washout"	"room b"
-"goose_4"	"goose"	2023-03-13	"2"	"4"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"run-in"	"baseline"	"room f"
-"hamlet_41"	"hamlet"	2023-04-19	"2"	"41"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"washout-1"	"gum-washout"	"room b"
-"hera_41"	"hera"	2023-04-19	"2"	"41"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"washout-1"	"gum-washout"	"room b"
-"goose_42"	"goose"	2023-04-20	"3"	"42"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"washout-1"	"gum-washout"	"room f"
-"lambchop_42"	"lambchop"	2023-04-20	"3"	"42"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"washout-1"	"gum-washout"	"room f"
-"ophelia_43"	"ophelia"	2023-04-21	"2"	"43"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"goose_44"	"goose"	2023-04-22	"3"	"44"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"intervention-2"	"control"	"room f"
-"iris_44"	"iris"	2023-04-22	"2"	"44"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-2"	"control"	"room b"
-"jarjarbinks_44"	"jarjarbinks"	2023-04-22	"2"	"44"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-2"	"control"	"room b"
-"lambchop_44"	"lambchop"	2023-04-22	"3"	"44"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-2"	"control"	"room f"
-"hamlet_45"	"hamlet"	2023-04-23	"2"	"45"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"intervention-2"	"control"	"room b"
-"hera_45"	"hera"	2023-04-23	"2"	"45"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"intervention-2"	"control"	"room b"
-"jarjarbinks_45"	"jarjarbinks"	2023-04-23	"1"	"45"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-2"	"control"	"room b"
-"korra_45"	"korra"	2023-04-23	"3"	"45"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"ophelia_45"	"ophelia"	2023-04-23	"2"	"45"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"goose_46"	"goose"	2023-04-24	"3"	"46"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"intervention-2"	"control"	"room f"
-"hamlet_46"	"hamlet"	2023-04-24	"2"	"46"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"intervention-2"	"control"	"room b"
-"iris_46"	"iris"	2023-04-24	"3"	"46"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-2"	"control"	"room b"
-"lambchop_46"	"lambchop"	2023-04-24	"3"	"46"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-2"	"control"	"room f"
-"hamlet_48"	"hamlet"	2023-04-26	"2"	"48"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"intervention-2"	"control"	"room b"
-"hera_48"	"hera"	2023-04-26	"2"	"48"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"intervention-2"	"control"	"room b"
-"iris_48"	"iris"	2023-04-26	"3"	"48"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-2"	"control"	"room b"
-"jarjarbinks_48"	"jarjarbinks"	2023-04-26	"2"	"48"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-2"	"control"	"room b"
-"korra_48"	"korra"	2023-04-26	"3"	"48"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"kubo_48"	"kubo"	2023-04-26	"2"	"48"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-2"	"control"	"room b"
-"lambchop_48"	"lambchop"	2023-04-26	"3"	"48"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-2"	"control"	"room f"
-"ophelia_48"	"ophelia"	2023-04-26	"1"	"48"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"wolverine_48"	"wolverine"	2023-04-26	"2"	"48"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"intervention-2"	"control"	"room b"
-"iris_49"	"iris"	2023-04-27	"3"	"49"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-2"	"control"	"room b"
-"jarjarbinks_49"	"jarjarbinks"	2023-04-27	"3"	"49"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-2"	"control"	"room b"
-"kubo_49"	"kubo"	2023-04-27	"2"	"49"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-2"	"control"	"room b"
-"ophelia_49"	"ophelia"	2023-04-27	"2"	"49"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"wolverine_49"	"wolverine"	2023-04-27	"2"	"49"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"intervention-2"	"control"	"room b"
-"jarjarbinks_50"	"jarjarbinks"	2023-04-28	"3"	"50"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-2"	"control"	"room b"
-"korra_50"	"korra"	2023-04-28	"3"	"50"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"kubo_50"	"kubo"	2023-04-28	"2"	"50"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-2"	"control"	"room b"
-"lambchop_50"	"lambchop"	2023-04-28	"3"	"50"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-2"	"control"	"room f"
-"ophelia_50"	"ophelia"	2023-04-28	"1"	"50"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"wolverine_50"	"wolverine"	2023-04-28	"2"	"50"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"intervention-2"	"control"	"room b"
-"lambchop_51"	"lambchop"	2023-04-29	"3"	"51"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-2"	"control"	"room f"
-"goose_52"	"goose"	2023-04-30	"3"	"52"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"intervention-2"	"control"	"room f"
-"jarjarbinks_52"	"jarjarbinks"	2023-04-30	"2"	"52"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"intervention-2"	"control"	"room b"
-"kubo_52"	"kubo"	2023-04-30	"2"	"52"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-2"	"control"	"room b"
-"hera_53"	"hera"	2023-05-01	"3"	"53"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"intervention-2"	"control"	"room b"
-"kubo_53"	"kubo"	2023-05-01	"2"	"53"	"kub"	"male"	"pair"	"g1"	4.101369863	""	"nebraska"	""	"intervention-2"	"control"	"room b"
-"iris_55"	"iris"	2023-05-03	"3"	"55"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"intervention-2"	"control"	"room b"
-"lambchop_55"	"lambchop"	2023-05-03	"3"	"55"	"lam"	"female"	"family"	"g1"	5.82739726	"estrumate"	"texas"	""	"intervention-2"	"control"	"room f"
-"ophelia_55"	"ophelia"	2023-05-03	"1"	"55"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"intervention-2"	"control"	"room b"
-"ophelia_57"	"ophelia"	2023-05-05	"2"	"57"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"washout-2"	"control-washout"	"room b"
-"wolverine_57"	"wolverine"	2023-05-05	"2"	"57"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"washout-2"	"control-washout"	"room b"
-"goose_58"	"goose"	2023-05-06	"3"	"58"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"washout-2"	"control-washout"	"room f"
-"wolverine_58"	"wolverine"	2023-05-06	"2"	"58"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"washout-2"	"control-washout"	"room b"
-"goose_59"	"goose"	2023-05-07	"2"	"59"	"goo"	"male"	"family"	"g1"	6.712328767	""	"texas"	"abx-ctrl"	"washout-2"	"control-washout"	"room f"
-"hamlet_59"	"hamlet"	2023-05-07	"2"	"59"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"washout-2"	"control-washout"	"room b"
-"iris_59"	"iris"	2023-05-07	"3"	"59"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"washout-2"	"control-washout"	"room b"
-"ophelia_59"	"ophelia"	2023-05-07	"3"	"59"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"washout-2"	"control-washout"	"room b"
-"korra_6"	"korra"	2023-03-15	"4"	"6"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"run-in"	"baseline"	"room b"
-"iris_60"	"iris"	2023-05-08	"3"	"60"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"washout-2"	"control-washout"	"room b"
-"wolverine_60"	"wolverine"	2023-05-08	"2"	"60"	"wol"	"male"	"pair"	"g1"	8.452054795	""	"nebraska"	"abx-ctrl"	"washout-2"	"control-washout"	"room b"
-"hamlet_67"	"hamlet"	2023-05-15	"2"	"67"	"ham"	"male"	"pair"	"g1"	6.016438356	""	"nebraska"	""	"washout-2"	"control-washout"	"room b"
-"hera_67"	"hera"	2023-05-15	"2"	"67"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"washout-2"	"control-washout"	"room b"
-"jarjarbinks_68"	"jarjarbinks"	2023-05-16	"2"	"68"	"jar"	"male"	"pair"	"g1"	3.123287671	""	"texas"	""	"washout-2"	"control-washout"	"room b"
-"hera_7"	"hera"	2023-03-16	"2"	"7"	"her"	"female"	"pair"	"g1"	3.531506849	"estrumate"	"texas"	""	"run-in"	"baseline"	"room b"
-"iris_7"	"iris"	2023-03-16	"2"	"7"	"iri"	"female"	"pair"	"g1"	6.835616438	"estrumate"	"texas"	"abx-ctrl"	"run-in"	"baseline"	"room b"
-"korra_9"	"korra"	2023-03-18	"2"	"9"	"kor"	"female"	"pair"	"g1"	5.898630137	"estrumate"	"nebraska"	""	"run-in"	"baseline"	"room b"
-"ophelia_9"	"ophelia"	2023-03-18	"1"	"9"	"oph"	"female"	"pair"	"g1"	5.594520548	"estrumate"	"nebraska"	""	"run-in"	"baseline"	"room b"
+"ID"	"Subject"	"Date"	"Bristol"	"Study_Day"	"Subject_Code"	"Sex"	"Housing"	"Group"	"Age"	"Contraception"	"Origin"	"Previous_Exp"	"Diet_Trial"	"Group_Phase"	"Room"	"Cage"	"Subj_DOB"
+"Hera_1"	"Hera"	2023-03-10	1	"1"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B1"	2019-08-29
+"Wolverine_1"	"Wolverine"	2023-03-10	1	"1"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"baseline"	"run-in"	"RoomB"	"B4"	2014-09-28
+"Hamlet_11"	"Hamlet"	2023-03-20	2	"11"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"baseline"	"run-in"	"RoomB"	"B1"	2017-03-05
+"Hera_11"	"Hera"	2023-03-20	2	"11"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B1"	2019-08-29
+"JarJarBinks_11"	"JarJarBinks"	2023-03-20	1	"11"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B2"	2020-01-25
+"Hera_14"	"Hera"	2023-03-23	1	"14"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B1"	2019-08-29
+"Iris_14"	"Iris"	2023-03-23	2	"14"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"baseline"	"run-in"	"RoomB"	"B4"	2016-05-10
+"JarJarBinks_14"	"JarJarBinks"	2023-03-23	1	"14"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B2"	2020-01-25
+"Kubo_14"	"Kubo"	2023-03-23	2	"14"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"baseline"	"run-in"	"RoomB"	"B3"	2019-02-02
+"Wolverine_14"	"Wolverine"	2023-03-23	2	"14"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"baseline"	"run-in"	"RoomB"	"B4"	2014-09-28
+"JarJarBinks_15"	"JarJarBinks"	2023-03-24	1	"15"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_1"	"gum"	"RoomB"	"B2"	2020-01-25
+"Kubo_15"	"Kubo"	2023-03-24	2	"15"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2019-02-02
+"Iris_17"	"Iris"	2023-03-26	3	"17"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2016-05-10
+"Kubo_17"	"Kubo"	2023-03-26	1	"17"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2019-02-02
+"Lambchop_17"	"Lambchop"	2023-03-26	3	"17"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"intervention_1"	"gum"	"RoomF"	"F1"	2017-05-13
+"Wolverine_17"	"Wolverine"	2023-03-26	2	"17"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2014-09-28
+"Hamlet_18"	"Hamlet"	2023-03-27	2	"18"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2017-03-05
+"Hera_18"	"Hera"	2023-03-27	3	"18"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2019-08-29
+"Iris_18"	"Iris"	2023-03-27	2	"18"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2016-05-10
+"JarJarBinks_18"	"JarJarBinks"	2023-03-27	3	"18"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_1"	"gum"	"RoomB"	"B2"	2020-01-25
+"Kubo_18"	"Kubo"	2023-03-27	2	"18"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2019-02-02
+"Lambchop_18"	"Lambchop"	2023-03-27	3	"18"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"intervention_1"	"gum"	"RoomF"	"F1"	2017-05-13
+"Wolverine_18"	"Wolverine"	2023-03-27	2	"18"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2014-09-28
+"Ophelia_19"	"Ophelia"	2023-03-28	2	"19"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B2"	2017-08-06
+"Wolverine_19"	"Wolverine"	2023-03-28	2	"19"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2014-09-28
+"Hera_2"	"Hera"	2023-03-11	2	"2"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B1"	2019-08-29
+"JarJarBinks_2"	"JarJarBinks"	2023-03-11	3	"2"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B2"	2020-01-25
+"Lambchop_2"	"Lambchop"	2023-03-11	2	"2"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"baseline"	"run-in"	"RoomF"	"F1"	2017-05-13
+"Goose_20"	"Goose"	2023-03-29	2	"20"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomF"	"F1"	2016-06-24
+"Hamlet_20"	"Hamlet"	2023-03-29	1	"20"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2017-03-05
+"Hera_20"	"Hera"	2023-03-29	2	"20"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2019-08-29
+"Iris_20"	"Iris"	2023-03-29	2	"20"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2016-05-10
+"Korra_20"	"Korra"	2023-03-29	3	"20"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2017-04-17
+"Ophelia_20"	"Ophelia"	2023-03-29	1	"20"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B2"	2017-08-06
+"Hamlet_21"	"Hamlet"	2023-03-30	2	"21"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2017-03-05
+"JarJarBinks_21"	"JarJarBinks"	2023-03-30	2	"21"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_1"	"gum"	"RoomB"	"B2"	2020-01-25
+"Korra_21"	"Korra"	2023-03-30	2	"21"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2017-04-17
+"Kubo_21"	"Kubo"	2023-03-30	2	"21"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2019-02-02
+"Goose_22"	"Goose"	2023-03-31	2	"22"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomF"	"F1"	2016-06-24
+"Hamlet_22"	"Hamlet"	2023-03-31	2	"22"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2017-03-05
+"Hera_22"	"Hera"	2023-03-31	2	"22"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2019-08-29
+"Iris_22"	"Iris"	2023-03-31	3	"22"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2016-05-10
+"Kubo_22"	"Kubo"	2023-03-31	2	"22"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2019-02-02
+"Hamlet_23"	"Hamlet"	2023-04-01	5	"23"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2017-03-05
+"Iris_23"	"Iris"	2023-04-01	3	"23"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2016-05-10
+"Korra_23"	"Korra"	2023-04-01	3	"23"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2017-04-17
+"Hera_24"	"Hera"	2023-04-02	3	"24"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"intervention_1"	"gum"	"RoomB"	"B1"	2019-08-29
+"Kubo_24"	"Kubo"	2023-04-02	3	"24"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2019-02-02
+"Ophelia_24"	"Ophelia"	2023-04-02	1	"24"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B2"	2017-08-06
+"Wolverine_24"	"Wolverine"	2023-04-02	2	"24"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"intervention_1"	"gum"	"RoomB"	"B4"	2014-09-28
+"Kubo_25"	"Kubo"	2023-04-03	2	"25"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_1"	"gum"	"RoomB"	"B3"	2019-02-02
+"JarJarBinks_29"	"JarJarBinks"	2023-04-07	3	"29"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"washout_1"	"gum-washout"	"RoomB"	"B2"	2020-01-25
+"Korra_29"	"Korra"	2023-04-07	3	"29"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"washout_1"	"gum-washout"	"RoomB"	"B3"	2017-04-17
+"JarJarBinks_3"	"JarJarBinks"	2023-03-12	1	"3"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B2"	2020-01-25
+"Kubo_30"	"Kubo"	2023-04-08	2	"30"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"washout_1"	"gum-washout"	"RoomB"	"B3"	2019-02-02
+"Hamlet_31"	"Hamlet"	2023-04-09	2	"31"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"washout_1"	"gum-washout"	"RoomB"	"B1"	2017-03-05
+"JarJarBinks_32"	"JarJarBinks"	2023-04-10	2	"32"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"washout_1"	"gum-washout"	"RoomB"	"B2"	2020-01-25
+"Goose_37"	"Goose"	2023-04-15	3	"37"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"washout_1"	"gum-washout"	"RoomF"	"F1"	2016-06-24
+"Hera_37"	"Hera"	2023-04-15	2	"37"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"washout_1"	"gum-washout"	"RoomB"	"B1"	2019-08-29
+"Kubo_37"	"Kubo"	2023-04-15	2	"37"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"washout_1"	"gum-washout"	"RoomB"	"B3"	2019-02-02
+"Lambchop_37"	"Lambchop"	2023-04-15	3	"37"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"washout_1"	"gum-washout"	"RoomF"	"F1"	2017-05-13
+"Ophelia_37"	"Ophelia"	2023-04-15	1	"37"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"washout_1"	"gum-washout"	"RoomB"	"B2"	2017-08-06
+"Wolverine_37"	"Wolverine"	2023-04-15	1	"37"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"washout_1"	"gum-washout"	"RoomB"	"B4"	2014-09-28
+"Goose_4"	"Goose"	2023-03-13	2	"4"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"baseline"	"run-in"	"RoomF"	"F1"	2016-06-24
+"Hamlet_41"	"Hamlet"	2023-04-19	2	"41"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"washout_1"	"gum-washout"	"RoomB"	"B1"	2017-03-05
+"Hera_41"	"Hera"	2023-04-19	2	"41"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"washout_1"	"gum-washout"	"RoomB"	"B1"	2019-08-29
+"Goose_42"	"Goose"	2023-04-20	3	"42"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"washout_1"	"gum-washout"	"RoomF"	"F1"	2016-06-24
+"Lambchop_42"	"Lambchop"	2023-04-20	3	"42"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"washout_1"	"gum-washout"	"RoomF"	"F1"	2017-05-13
+"Ophelia_43"	"Ophelia"	2023-04-21	2	"43"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B2"	2017-08-06
+"Goose_44"	"Goose"	2023-04-22	3	"44"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"intervention_2"	"control"	"RoomF"	"F1"	2016-06-24
+"Iris_44"	"Iris"	2023-04-22	2	"44"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_2"	"control"	"RoomB"	"B4"	2016-05-10
+"JarJarBinks_44"	"JarJarBinks"	2023-04-22	2	"44"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B2"	2020-01-25
+"Lambchop_44"	"Lambchop"	2023-04-22	3	"44"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomF"	"F1"	2017-05-13
+"Hamlet_45"	"Hamlet"	2023-04-23	2	"45"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B1"	2017-03-05
+"Hera_45"	"Hera"	2023-04-23	2	"45"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B1"	2019-08-29
+"JarJarBinks_45"	"JarJarBinks"	2023-04-23	1	"45"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B2"	2020-01-25
+"Korra_45"	"Korra"	2023-04-23	3	"45"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B3"	2017-04-17
+"Ophelia_45"	"Ophelia"	2023-04-23	2	"45"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B2"	2017-08-06
+"Goose_46"	"Goose"	2023-04-24	3	"46"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"intervention_2"	"control"	"RoomF"	"F1"	2016-06-24
+"Hamlet_46"	"Hamlet"	2023-04-24	2	"46"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B1"	2017-03-05
+"Iris_46"	"Iris"	2023-04-24	3	"46"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_2"	"control"	"RoomB"	"B4"	2016-05-10
+"Lambchop_46"	"Lambchop"	2023-04-24	3	"46"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomF"	"F1"	2017-05-13
+"Hamlet_48"	"Hamlet"	2023-04-26	2	"48"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B1"	2017-03-05
+"Hera_48"	"Hera"	2023-04-26	2	"48"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B1"	2019-08-29
+"Iris_48"	"Iris"	2023-04-26	3	"48"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_2"	"control"	"RoomB"	"B4"	2016-05-10
+"JarJarBinks_48"	"JarJarBinks"	2023-04-26	2	"48"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B2"	2020-01-25
+"Korra_48"	"Korra"	2023-04-26	3	"48"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B3"	2017-04-17
+"Kubo_48"	"Kubo"	2023-04-26	2	"48"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B3"	2019-02-02
+"Lambchop_48"	"Lambchop"	2023-04-26	3	"48"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomF"	"F1"	2017-05-13
+"Ophelia_48"	"Ophelia"	2023-04-26	1	"48"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B2"	2017-08-06
+"Wolverine_48"	"Wolverine"	2023-04-26	2	"48"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"intervention_2"	"control"	"RoomB"	"B4"	2014-09-28
+"Iris_49"	"Iris"	2023-04-27	3	"49"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_2"	"control"	"RoomB"	"B4"	2016-05-10
+"JarJarBinks_49"	"JarJarBinks"	2023-04-27	3	"49"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B2"	2020-01-25
+"Kubo_49"	"Kubo"	2023-04-27	2	"49"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B3"	2019-02-02
+"Ophelia_49"	"Ophelia"	2023-04-27	2	"49"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B2"	2017-08-06
+"Wolverine_49"	"Wolverine"	2023-04-27	2	"49"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"intervention_2"	"control"	"RoomB"	"B4"	2014-09-28
+"JarJarBinks_50"	"JarJarBinks"	2023-04-28	3	"50"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B2"	2020-01-25
+"Korra_50"	"Korra"	2023-04-28	3	"50"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B3"	2017-04-17
+"Kubo_50"	"Kubo"	2023-04-28	2	"50"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B3"	2019-02-02
+"Lambchop_50"	"Lambchop"	2023-04-28	3	"50"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomF"	"F1"	2017-05-13
+"Ophelia_50"	"Ophelia"	2023-04-28	1	"50"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B2"	2017-08-06
+"Wolverine_50"	"Wolverine"	2023-04-28	2	"50"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"intervention_2"	"control"	"RoomB"	"B4"	2014-09-28
+"Lambchop_51"	"Lambchop"	2023-04-29	3	"51"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomF"	"F1"	2017-05-13
+"Goose_52"	"Goose"	2023-04-30	3	"52"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"intervention_2"	"control"	"RoomF"	"F1"	2016-06-24
+"JarJarBinks_52"	"JarJarBinks"	2023-04-30	2	"52"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B2"	2020-01-25
+"Kubo_52"	"Kubo"	2023-04-30	2	"52"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B3"	2019-02-02
+"Hera_53"	"Hera"	2023-05-01	3	"53"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomB"	"B1"	2019-08-29
+"Kubo_53"	"Kubo"	2023-05-01	2	"53"	"KUB"	"Male"	"Pair"	"Group1"	4.101369863	""	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B3"	2019-02-02
+"Iris_55"	"Iris"	2023-05-03	3	"55"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"intervention_2"	"control"	"RoomB"	"B4"	2016-05-10
+"Lambchop_55"	"Lambchop"	2023-05-03	3	"55"	"LAM"	"Female"	"Family"	"Group1"	5.82739726	"Estrumate"	"Texas"	""	"intervention_2"	"control"	"RoomF"	"F1"	2017-05-13
+"Ophelia_55"	"Ophelia"	2023-05-03	1	"55"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"intervention_2"	"control"	"RoomB"	"B2"	2017-08-06
+"Ophelia_57"	"Ophelia"	2023-05-05	2	"57"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"washout_2"	"control-washout"	"RoomB"	"B2"	2017-08-06
+"Wolverine_57"	"Wolverine"	2023-05-05	2	"57"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"washout_2"	"control-washout"	"RoomB"	"B4"	2014-09-28
+"Goose_58"	"Goose"	2023-05-06	3	"58"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"washout_2"	"control-washout"	"RoomF"	"F1"	2016-06-24
+"Wolverine_58"	"Wolverine"	2023-05-06	2	"58"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"washout_2"	"control-washout"	"RoomB"	"B4"	2014-09-28
+"Goose_59"	"Goose"	2023-05-07	2	"59"	"GOO"	"Male"	"Family"	"Group1"	6.712328767	""	"Texas"	"ABX-CTRL"	"washout_2"	"control-washout"	"RoomF"	"F1"	2016-06-24
+"Hamlet_59"	"Hamlet"	2023-05-07	2	"59"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"washout_2"	"control-washout"	"RoomB"	"B1"	2017-03-05
+"Iris_59"	"Iris"	2023-05-07	3	"59"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"washout_2"	"control-washout"	"RoomB"	"B4"	2016-05-10
+"Ophelia_59"	"Ophelia"	2023-05-07	3	"59"	"OPH"	"Female"	"Pair"	"Group1"	5.594520548	"Estrumate"	"Nebraska"	""	"washout_2"	"control-washout"	"RoomB"	"B2"	2017-08-06
+"Korra_6"	"Korra"	2023-03-15	4	"6"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"baseline"	"run-in"	"RoomB"	"B3"	2017-04-17
+"Iris_60"	"Iris"	2023-05-08	3	"60"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"washout_2"	"control-washout"	"RoomB"	"B4"	2016-05-10
+"Wolverine_60"	"Wolverine"	2023-05-08	2	"60"	"WOL"	"Male"	"Pair"	"Group1"	8.452054795	""	"Nebraska"	"ABX-CTRL"	"washout_2"	"control-washout"	"RoomB"	"B4"	2014-09-28
+"Hamlet_67"	"Hamlet"	2023-05-15	2	"67"	"HAM"	"Male"	"Pair"	"Group1"	6.016438356	""	"Nebraska"	""	"washout_2"	"control-washout"	"RoomB"	"B1"	2017-03-05
+"Hera_67"	"Hera"	2023-05-15	2	"67"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"washout_2"	"control-washout"	"RoomB"	"B1"	2019-08-29
+"JarJarBinks_68"	"JarJarBinks"	2023-05-16	2	"68"	"JAR"	"Male"	"Pair"	"Group1"	3.123287671	""	"Texas"	""	"washout_2"	"control-washout"	"RoomB"	"B2"	2020-01-25
+"Hera_7"	"Hera"	2023-03-16	2	"7"	"HER"	"Female"	"Pair"	"Group1"	3.531506849	"Estrumate"	"Texas"	""	"baseline"	"run-in"	"RoomB"	"B1"	2019-08-29
+"Iris_7"	"Iris"	2023-03-16	2	"7"	"IRI"	"Female"	"Pair"	"Group1"	6.835616438	"Estrumate"	"Texas"	"ABX-CTRL"	"baseline"	"run-in"	"RoomB"	"B4"	2016-05-10
+"Korra_9"	"Korra"	2023-03-18	2	"9"	"KOR"	"Female"	"Pair"	"Group1"	5.898630137	"Estrumate"	"Nebraska"	""	"baseline"	"run-in"	"RoomB"	"B3"	2017-04-17

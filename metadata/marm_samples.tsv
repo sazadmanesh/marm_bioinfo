@@ -1,4 +1,4 @@
-Sample_ID	Subject	Sample_Date	Sample_Collected_By	Diet_Trial	Group_Phase	Sample_Notes	Sample_Box	Bristol	Sample_Time	Sample_Stabilizer
+Sample_ID	Subject	Sample_Date	Sample_Collected_By	Group_Phase	Diet_Trial	Sample_Notes	Sample_Box	Bristol	Sample_Time	Sample_Stabilizer
 HAM-1-DRS	Hamlet	3/10/23	SA	run-in	baseline		1	1	800	DNA/RNA Shield
 HAM-1-MGE	Hamlet	3/10/23	SA	run-in	baseline		1	1	800	Molecular Grade (96%) Ethanol
 HER-1-DRS	Hera	3/10/23	SA	run-in	baseline		1	1	800	DNA/RNA Shield

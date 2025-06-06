@@ -1,5 +1,5 @@
 ---
-title: "Marm_MicroecoPrep_2025-5-20_SA"
+title: "Marm_MicroecoPrep_2025-6-4_SA"
 author: "Shayda"
 date: "`r Sys.Date()`"
 params:
@@ -11,242 +11,9 @@ Chunk errors = knitting error
 ```{r}
 global <- config::get(config = "default")
 
-here::i_am("Marm_MicroecoPrep_2025-5-20_SA.Rmd")
+here::i_am("Marm_MicroecoPrep_2025-6-4_SA.Rmd")
 source(here::here(global$setup))
 
-```
-# Metadata
-```{r}
-subjects <- read.table(marmoset$subjects,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(
-    Room = str_glue("Room{str_extract(Cage, '^[a-zA-Z]')}"),
-    Subject_Code = factor(Subject_Code, levels = unique(Subject_Code)),
-    Subject = factor(Subject, levels = unique(Subject)),
-    Sex = factor(Sex, levels = unique(Sex)),
-    Housing = factor(Housing, levels = unique(Housing)),
-    Group = factor(Group, levels = unique(Group)),
-    Subj_DOB = as.Date(DOB, format = "%m/%d/%y"),
-    Room = factor(Room, levels = unique(Room))
-  ) %>%
-  dplyr::select(Group,
-                Room,
-                Cage,
-                Subject,
-                Subject_Code,
-                Sex,
-                Housing,
-                Origin,
-                Subj_DOB,
-                Age,
-                Contraception,
-                Previous_Exp,
-                Subject_Notes
-                )
-```
-```{r}
-write.csv(subjects, "metadata/subjects.csv")
-```
-```{r}
-saveRDS(subjects, file = "data/subjects.rds")
-```
-```{r}
-samples <- read.table(marmoset$samples,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(Date = as.Date(Sample_Date,
-                        format = "%m/%d/%y"),
-         Study_Day = str_extract(Sample_ID, "(?<=-)[0-9]+(?=-)"),
-         Subj_Day = fct(str_glue("{Subject}", "_", "{Study_Day}")),
-         SampleTimeFormatted = str_pad(Sample_Time, 4, pad = "0"),
-         Sample_Time = as_hms(sprintf("%02d:%02d:00",
-          as.integer(str_sub(SampleTimeFormatted, 1, 2)),
-          as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
-  dplyr::select(Sample_ID,
-                Date,
-                Study_Day,
-                Sample_Time,
-                Subject,
-                Sample_Collected_By,
-                Bristol,
-                Sample_Stabilizer,
-                Sample_Box,
-                Sample_Notes,
-                Diet_Trial,
-                Group_Phase,
-                Subj_Day
-                )
-```
-```{r}
-write.csv(samples, "metadata/samples.csv")
-```
-```{r}
-saveRDS(samples, file = "data/samples.rds")
-```
-```{r}
-extracts <- read.table(marmoset$extracts,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(Extract_Date = as.Date(Extract_Date,
-                               format = "%m/%d/%y"),
-         Extract_Conc_ng_uL = Extract_Conc_.ng.uL.) %>%
-  dplyr::select(Extract_ID,
-                Sample_ID,
-                Extract_Type,
-                Extract_Date,
-                Extracted_By,
-                Extract_Conc_ng_uL,
-                Extract_Kit,
-                Extract_Box,
-                Extract_Notes
-                )
-```
-```{r}
-write.csv(extracts, "metadata/extracts.csv")
-```
-```{r}
-saveRDS(extracts, file = "data/extracts.rds")
-```
-```{r}
-libraries <- read.table(marmoset$libraries,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(Final_Lib_Conc_ng_uL = Final_Lib_Conc_.ng.uL.,
-         Vol_Added_Pool_uL = Vol_Added_Pool_.uL.) %>%
-  dplyr::select(Sequence_ID,
-                Extract_ID,
-                Sample_ID,
-                Seq_ID,
-                Pipeline,
-                Library_Tube,
-                Library_Tube_ID,
-                Library_Barcode,
-                F_Primer,
-                R_Primer,
-                Run_ID,
-                Final_Lib_Conc_ng_uL,
-                Vol_Added_Pool_uL
-                )
-```
-```{r}
-write.csv(libraries, "metadata/libraries.csv")
-```
-```{r}
-saveRDS(libraries, file = "data/libraries.rds")
-```
-```{r}
-seqruns <- read.table(marmoset$seqruns,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(Run_Date = as.Date(Run_Date,
-                               format = "%m/%d/%y"),
-         Seq_ID = Pooled_Library_Code,
-         Full_Seq_ID = Pooled_Library_ID) %>%
-  dplyr::select(Run_ID,
-                Full_Seq_ID,
-                Seq_ID,
-                Pipeline,
-                Kit,
-                Sequencer,
-                MinION_Position,
-                Flow_Cell_Type,
-                Flongle_Adapter,
-                Flow_Cell_ID,
-                Run_Date,
-                Loaded_By
-                )
-```
-```{r}
-write.csv(seqruns, "metadata/seqruns.csv")
-```
-```{r}
-saveRDS(seqruns, file = "data/seqruns.rds")
-```
-```{r}
-weights <- read.table(marmoset$weights,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(Date = as.Date(Date,
-                        format = "%m/%d/%y")) %>%
-  dplyr::select(Date,
-                Study_Day,
-                Subject,
-                Weight_g,
-                Weight_Collected_By,
-                Weight_Notes)
-```
-```{r}
-write.csv(weights, "metadata/weights.csv")
-```
-```{r}
-saveRDS(weights, file = "data/weights.rds")
-```
-```{r}
-leftover_food <- read.table(marmoset$leftover_food,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(Date = as.Date(Date,
-                                format = "%m/%d/%y"),
-         Leftover_Gel_Zupreem = Gel.Zupreem,
-         Leftover_Apple = Apple,
-         Leftover_Sweet_Potato = Sweet_Potato,
-         Leftover_Eggs = Eggs) %>%
-  dplyr::select(Date,
-                Cage,
-                Leftover_Gel_Zupreem,
-                Leftover_Apple,
-                Leftover_Sweet_Potato,
-                Leftover_Eggs,
-                Diet_Notes)
-```
-```{r}
-write.csv(leftover_food, "metadata/leftover_food.csv")
-```
-```{r}
-saveRDS(leftover_food, file = "data/leftover_food.rds")
-```
-```{r}
-bristol <- read.table(marmoset$bristol,
-                      header = T,
-                      sep = "\t") %>%
-  mutate(Study_Date = as.Date(Date,
-                                format = "%m/%d/%y"),
-         SampleTimeFormatted = str_pad(Time, 4, pad = "0"),
-         Sample_Time = as_hms(sprintf("%02d:%02d:00",
-          as.integer(str_sub(SampleTimeFormatted, 1, 2)),
-          as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
-  dplyr::select(Study_Date,
-                Study_Day,
-                Sample_Time,
-                Subject,
-                Bristol
-                )
-```
-```{r}
-write.csv(bristol, "metadata/bristol.csv")
-```
-```{r}
-saveRDS(bristol, file = "data/bristol.rds")
-```
-```{r}
-seq_metadata <- libraries %>%
-  left_join(seqruns, by = c("Seq_ID", "Run_ID")) %>%
-  dplyr::select(-"Pipeline.x") %>%
-  mutate(Pipeline = Pipeline.y) %>%
-  dplyr::select(-"Pipeline.y")
-```
-```{r}
-metadata <- seq_metadata %>%
-  left_join(extracts, by = c("Extract_ID", "Sample_ID")) %>%
-  left_join(samples, by = "Sample_ID") %>%
-  left_join(subjects, by = "Subject")
-```
-```{r}
-write.csv(metadata, "metadata/metadata.csv")
-```
-```{r}
-saveRDS(metadata, file = "data/metadata.rds")
 ```
 
 ## Sample Subsets
@@ -530,23 +297,15 @@ otu.g1 <- otu.table %>%
   select(any_of(samples.g1))
 otu.g2 <- otu.table %>%
   select(any_of(samples.g2))
-
-
 otu.int <- otu.table %>%
   select(any_of(samples.int))
 
-
-
 samp.table.g1 <- sample.table %>%
-  filter(group == "g1")
+  filter(Group == "Group1")
 samp.table.g2 <- sample.table %>%
-  filter(group == "g2")
-
-
+  filter(Group == "Group2")
 samp.table.int <- sample.table %>%
-  filter(group_phase == c("gum", "control"))
-
-
+  filter(Diet_Trial == c("gum", "control"))
 ```
 # Assemble MicroEco Datasets
 ```{r}

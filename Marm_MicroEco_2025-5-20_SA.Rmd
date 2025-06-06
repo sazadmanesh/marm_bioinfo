@@ -16,96 +16,45 @@ source(here::here(global$setup))
 dataset.main     <- read.main.microtable("tax", "main")
 dataset.g1       <- read.main.microtable("tax", "group1")
 dataset.g2       <- read.main.microtable("tax", "group2")
-dataset.base     <- read.main.microtable("tax", "baseline")
-dataset.gum      <- read.main.microtable("tax", "gum")
-dataset.ctrl     <- read.main.microtable("tax", "control")
-dataset.ctrlwash <- read.main.microtable("tax", "controlwash")
-dataset.gumwash  <- read.main.microtable("tax", "gumwash")
 dataset.int      <- read.main.microtable("tax", "intervention")
-
-gen.data.main     <- read.tax.microtable("tax", "gen", "main")
-gen.data.g1       <- read.tax.microtable("tax", "gen", "group1")
-gen.data.g2       <- read.tax.microtable("tax", "gen", "group2")
-gen.data.base     <- read.tax.microtable("tax", "gen", "baseline")
-gen.data.gum      <- read.tax.microtable("tax", "gen", "gum")
-gen.data.ctrl     <- read.tax.microtable("tax", "gen", "control")
-gen.data.ctrlwash <- read.tax.microtable("tax", "gen", "controlwash")
-gen.data.gumwash  <- read.tax.microtable("tax", "gen", "gumwash")
-gen.data.int      <- read.tax.microtable("tax", "gen", "intervention")
-
-fam.data.main     <- read.tax.microtable("tax", "fam", "main")
-fam.data.g1       <- read.tax.microtable("tax", "fam", "group1")
-fam.data.g2       <- read.tax.microtable("tax", "fam", "group2")
-fam.data.base     <- read.tax.microtable("tax", "fam", "baseline")
-fam.data.gum      <- read.tax.microtable("tax", "fam", "gum")
-fam.data.ctrl     <- read.tax.microtable("tax", "fam", "control")
-fam.data.ctrlwash <- read.tax.microtable("tax", "fam", "controlwash")
-fam.data.gumwash  <- read.tax.microtable("tax", "fam", "gumwash")
-fam.data.int      <- read.tax.microtable("tax", "fam", "intervention")
-
-ord.data.main     <- read.tax.microtable("tax", "ord", "main")
-ord.data.g1       <- read.tax.microtable("tax", "ord", "group1")
-ord.data.g2       <- read.tax.microtable("tax", "ord", "group2")
-ord.data.base     <- read.tax.microtable("tax", "ord", "baseline")
-ord.data.gum      <- read.tax.microtable("tax", "ord", "gum")
-ord.data.ctrl     <- read.tax.microtable("tax", "ord", "control")
-ord.data.ctrlwash <- read.tax.microtable("tax", "ord", "controlwash")
-ord.data.gumwash  <- read.tax.microtable("tax", "ord", "gumwash")
-ord.data.int      <- read.tax.microtable("tax", "ord", "intervention")
-
-cla.data.main     <- read.tax.microtable("tax", "cla", "main")
-cla.data.g1       <- read.tax.microtable("tax", "cla", "group1")
-cla.data.g2       <- read.tax.microtable("tax", "cla", "group2")
-cla.data.base     <- read.tax.microtable("tax", "cla", "baseline")
-cla.data.gum      <- read.tax.microtable("tax", "cla", "gum")
-cla.data.ctrl     <- read.tax.microtable("tax", "cla", "control")
-cla.data.ctrlwash <- read.tax.microtable("tax", "cla", "controlwash")
-cla.data.gumwash  <- read.tax.microtable("tax", "cla", "gumwash")
-cla.data.int      <- read.tax.microtable("tax", "cla", "intervention")
-
-phy.data.main     <- read.tax.microtable("tax", "phy", "main")
-phy.data.g1       <- read.tax.microtable("tax", "phy", "group1")
-phy.data.g2       <- read.tax.microtable("tax", "phy", "group2")
-phy.data.base     <- read.tax.microtable("tax", "phy", "baseline")
-phy.data.gum      <- read.tax.microtable("tax", "phy", "gum")
-phy.data.ctrl     <- read.tax.microtable("tax", "phy", "control")
-phy.data.ctrlwash <- read.tax.microtable("tax", "phy", "controlwash")
-phy.data.gumwash  <- read.tax.microtable("tax", "phy", "gumwash")
-phy.data.int      <- read.tax.microtable("tax", "phy", "intervention")
+dataset.lsk      <- read.main.microtable("tax", "ligation")
+dataset.rap      <- read.main.microtable("tax", "rapid")
+dataset.rap.g1   <- read.main.microtable("tax", "rapid_g1")
+dataset.rap.g2   <- read.main.microtable("tax", "rapid_g2")
+dataset.rap.int  <- read.main.microtable("tax", "rapid_intervention")
 ```
 ## Functional Datasets
 ```{r}
 keg.main     <- read.func.microtable("function", "keg", "main")
 keg.g1       <- read.func.microtable("function", "keg", "group1")
 keg.g2       <- read.func.microtable("function", "keg", "group2")
-keg.base     <- read.func.microtable("function", "keg", "baseline")
-keg.gum      <- read.func.microtable("function", "keg", "gum")
-keg.ctrl     <- read.func.microtable("function", "keg", "control")
-keg.ctrlwash <- read.func.microtable("function", "keg", "controlwash")
-keg.gumwash  <- read.func.microtable("function", "keg", "gumwash")
 keg.int      <- read.func.microtable("function", "keg", "intervention")
+keg.lsk      <- read.func.microtable("function", "keg", "ligation")
+keg.rap      <- read.func.microtable("function", "keg", "rapid")
+keg.rap.g1   <- read.func.microtable("function", "keg", "rapid_g1")
+keg.rap.g2   <- read.func.microtable("function", "keg", "rapid_g2")
+keg.rap.int  <- read.func.microtable("function", "keg", "rapid_intervention")
 
 fpt.main     <- read.func.microtable("function", "fpt", "main")
 fpt.g1       <- read.func.microtable("function", "fpt", "group1")
 fpt.g2       <- read.func.microtable("function", "fpt", "group2")
-fpt.base     <- read.func.microtable("function", "fpt", "baseline")
-fpt.gum      <- read.func.microtable("function", "fpt", "gum")
-fpt.ctrl     <- read.func.microtable("function", "fpt", "control")
-fpt.ctrlwash <- read.func.microtable("function", "fpt", "controlwash")
-fpt.gumwash  <- read.func.microtable("function", "fpt", "gumwash")
 fpt.int      <- read.func.microtable("function", "fpt", "intervention")
+fpt.lsk      <- read.func.microtable("function", "keg", "ligation")
+fpt.rap      <- read.func.microtable("function", "keg", "rapid")
+fpt.rap.g1   <- read.func.microtable("function", "keg", "rapid_g1")
+fpt.rap.g2   <- read.func.microtable("function", "keg", "rapid_g2")
+fpt.rap.int  <- read.func.microtable("function", "keg", "rapid_intervention")
 
 njc.main     <- read.func.microtable("function", "njc", "main")
 njc.g1       <- read.func.microtable("function", "njc", "group1")
 njc.g2       <- read.func.microtable("function", "njc", "group2")
-njc.base     <- read.func.microtable("function", "njc", "baseline")
-njc.gum      <- read.func.microtable("function", "njc", "gum")
-njc.ctrl     <- read.func.microtable("function", "njc", "control")
-njc.ctrlwash <- read.func.microtable("function", "njc", "controlwash")
-njc.gumwash  <- read.func.microtable("function", "njc", "gumwash")
 njc.int      <- read.func.microtable("function", "njc", "intervention")
+njc.lsk      <- read.func.microtable("function", "keg", "ligation")
+njc.rap      <- read.func.microtable("function", "keg", "rapid")
+njc.rap.g1   <- read.func.microtable("function", "keg", "rapid_g1")
+njc.rap.g2   <- read.func.microtable("function", "keg", "rapid_g2")
+njc.rap.int  <- read.func.microtable("function", "keg", "rapid_intervention")
 ```
-
 # Data Visualization
 ## Alpha Diversity
 ```{r}
@@ -115,29 +64,55 @@ alpha.main <- trans_alpha$new(dataset = dataset.main,
 alpha.main$cal_diff(method = "KW_dunn",
                     KW_dunn_letter = FALSE)
 ```
+### Both LSK and RAP
 ```{r}
 alpha.int <- trans_alpha$new(dataset = dataset.int,
-                             group = "group_phase")
+                             group = "Group_Phase")
 alpha.int$cal_diff(method = "wilcox")
+```
+```{r}
+saveRDS(alpha.int, "data/data_objects/alpha.int.rds")
+```
+```{r}
 alpha.intervention <- alpha.int$plot_alpha(measure = "Shannon")
 alpha.intervention
 ```
 ```{r}
 ggsave("visuals/sha_wlcx_int.png", alpha.intervention)
 ```
+### RAP
 ```{r}
-chao.int <- trans_alpha$new(
-  dataset = dataset.int,
-  group = "group_phase"
-)
-chao.int$cal_diff(method = "wilcox")
-chao.intervention <- chao.int$plot_alpha(measure = "Chao1")
+alpha.rap.int <- trans_alpha$new(dataset = dataset.rap.int,
+                                 group = "Group_Phase")
+alpha.rap.int$cal_diff(method = "wilcox")
 ```
 ```{r}
-ggsave("visuals/chao_wlcx_int.png", chao.intervention)
+saveRDS(alpha.rap.int, "data/data_objects/alpha.rap.int.rds")
+```
+```{r}
+shan.rap.intervention <- alpha.rap.int$plot_alpha(measure = "Shannon")
+shan.rap.intervention
+```
+```{r}
+ggsave("visuals/sha_wlcx_rap_int.png", shan.rap.intervention)
+```
+#### RAP Groups
+```{r}
+rap.g1.int <- clone(dataset.rap.g1)
+rap.g1.int$sample_table <- dataset.rap.g1$sample_table %>%
+  dplyr::filter(Group_Phase %in% c("gum", "control"))
+rap.g1.int$tidy_dataset()
 
+rap.g2.int <- clone(dataset.rap.g2)
+rap.g2.int$sample_table <- dataset.rap.g2$sample_table %>%
+  dplyr::filter(Group_Phase %in% c("gum", "control"))
+rap.g2.int$tidy_dataset()
 ```
 ## Beta Diversity
+### LSK and RAP
+```{r}
+
+```
 ```{r}
 dataset.main$cal_betadiv()
 
@@ -160,56 +135,112 @@ bray.main.pcoa <- bray.main$plot_ordination(plot_color = "group_phase",
                                           plot_shape = "group_phase",
                                           plot_type = c("point", "ellipse"))
 ```
+### RAP
 ```{r}
-dataset.int$cal_betadiv()
+dataset.rap.int$cal_betadiv()
 
-bray.int <- trans_beta$new(
-  dataset = dataset.int,
-  group = "group_phase",
+bray.rap.int <- trans_beta$new(
+  dataset = dataset.rap.int,
+  group = "Group_Phase",
   measure = "bray"
 )
 ```
 ```{r}
-bray.int$cal_group_distance(within_group = TRUE)
-bray.int$cal_group_distance_diff(method = "wilcox")
-bray.box.int <- bray.int$plot_group_distance(add = "mean")
-bray.box.int
+bray.rap.int$cal_group_distance(within_group = TRUE)
+bray.rap.int$cal_group_distance_diff(method = "wilcox")
+bray.box.rap.int <- bray.rap.int$plot_group_distance(add = "mean")
+bray.box.rap.int
 ```
 ```{r}
-ggsave("visuals/box_bray-wlcx_int.png", bray.box.int)
+ggsave("visuals/box_bray-wlcx_rap_int.png", bray.box.rap.int)
 ```
 ```{r}
-bray.int$cal_ordination(method = "PCoA")
+bray.rap.int$cal_ordination(method = "PCoA")
 ```
 ```{r}
-bray.int.pcoa <- bray.int$plot_ordination(plot_color = "group_phase",
-                                          plot_shape = "group_phase",
+bray.rap.int.pcoa <- bray.rap.int$plot_ordination(plot_color = "Group_Phase",
+                                          plot_shape = "Group_Phase",
                                           plot_type = c("point", "ellipse"))
+bray.rap.int.pcoa
 ```
 ```{r}
-bray.int.pcoa + labs(
-    fill = "Intervention",
-    color = "Intervention",
-    shape = "Intervention",
+bray.rap.int.pcoa + labs(
+    fill = "Intervention Diet",
+    color = "Intervention Diet",
+    shape = "Intervention Diet",
     title = "Principal Coordinate Analysis (PCoA) with Bray-Curtis Dissimilarity") +
   scale_fill_manual(
-    values = c("gum" = "#EE7600", "control" = "#00868B"),
-    labels = c("Gum Diet", "Control Diet")) +
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Control", "Gum")) +
   scale_color_manual(
-    values = c("gum" = "#EE7600", "control" = "#00868B"),
-    labels = c("Gum Diet", "Control Diet")) +
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Control", "Gum")) +
   scale_shape_manual(
-    values = c("gum" = 17, "control" = 16),
-    labels = c("Gum Diet", "Control Diet")) +
+    values = c("control" = 16, "gum" = 17),
+    labels = c("Control", "Gum")) +
   theme(panel.grid = element_blank(),
         panel.background = element_blank(),
-        plot.title = element_text(hjust = 0.5),
-        legend.text = element_text(size = 12),
-        legend.title = element_text(size = 14))
-bray.int.pcoa
+        plot.title = element_text(hjust = 0.5,
+                                  size = 26),
+        legend.text = element_text(size = 22),
+        legend.title = element_text(size = 24),
+        axis.title = element_text(size = 18),
+        axis.text = element_text(size = 18))
 ```
 ```{r}
-ggsave("visuals/pcoa_bray_int.png", bray.int.pcoa)
+ggsave("visuals/pcoa_bray_rap_int.png", bray.rap.int.pcoa)
+```
+#### RAP Group 1
+```{r}
+rap.g1.int$cal_betadiv()
+
+bray.rap.g1.int <- trans_beta$new(
+  dataset = rap.g1.int,
+  group = "Group_Phase",
+  measure = "bray"
+)
+```
+```{r}
+bray.rap.g1.int$cal_group_distance(within_group = TRUE)
+bray.rap.g1.int$cal_group_distance_diff(method = "wilcox")
+bray.box.rap.g1.int <- bray.rap.g1.int$plot_group_distance(add = "mean")
+bray.box.rap.g1.int
+```
+```{r}
+ggsave("visuals/box_bray-wlcx_rap_g1_int.png", bray.box.rap.g1.int)
+```
+```{r}
+bray.rap.g1.int$cal_ordination(method = "PCoA")
+```
+```{r}
+bray.rap.g1.int.pcoa <- bray.rap.g1.int$plot_ordination(plot_color = "Group_Phase",
+                                          plot_shape = "Group_Phase",
+                                          plot_type = c("point", "ellipse"))
+bray.rap.g1.int.pcoa
+```
+```{r}
+bray.rap.g1.int.pcoa + labs(
+    fill = "Intervention Diet",
+    color = "Intervention Diet",
+    shape = "Intervention Diet",
+    title = "Principal Coordinate Analysis (PCoA) with Bray-Curtis Dissimilarity") +
+  scale_fill_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Control", "Gum")) +
+  scale_color_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Control", "Gum")) +
+  scale_shape_manual(
+    values = c("control" = 16, "gum" = 17),
+    labels = c("Control", "Gum")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(hjust = 0.5,
+                                  size = 26),
+        legend.text = element_text(size = 22),
+        legend.title = element_text(size = 24),
+        axis.title = element_text(size = 18),
+        axis.text = element_text(size = 18))
 ```
 # Abundance
 ## Taxonomic
@@ -217,77 +248,102 @@ ggsave("visuals/pcoa_bray_int.png", bray.int.pcoa)
 sample.table.order <- read.table("C:/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets/dataset_main/sample_table.tsv",
                                  header = T,
                                  sep = "\t") %>%
-  arrange(studyday, group_phase, subject)
+  arrange(Study_Day, Group_Phase, Subject)
 
 ordered.samples <- as.ordered(sample.table.order$ID)
 ```
 ```{r}
-phy.abund <- trans_abund$new(dataset = dataset.main,
-                             taxrank = "Phylum", groupmean = "group_phase")
-
-
-
-
-cla.abund <- trans_abund$new(dataset = dataset.main,
+phy.abund.rap <- trans_abund$new(dataset = dataset.rap,
+                             taxrank = "Phylum")
+cla.abund.rap <- trans_abund$new(dataset = dataset.rap,
                              taxrank = "Class")
-ord.abund <- trans_abund$new(dataset = dataset.main,
+ord.abund.rap <- trans_abund$new(dataset = dataset.rap,
                              taxrank = "Order")
-fam.abund <- trans_abund$new(dataset = dataset.main,
+fam.abund.rap <- trans_abund$new(dataset = dataset.rap,
                              taxrank = "Family")
-gen.abund <- trans_abund$new(dataset = dataset.main,
+gen.abund.rap <- trans_abund$new(dataset = dataset.rap,
                              taxrank = "Genus")
-spe.abund <- trans_abund$new(dataset = dataset.main,
+spe.abund.rap <- trans_abund$new(dataset = dataset.rap,
                              taxrank = "Species")
 ```
 ```{r}
-phy.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+phy.abund.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
+                        facet = c("Group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-cla.abund <- trans_abund$new(dataset = dataset.main,
-                             taxrank = "Order", groupmean = "group_phase")
-cla.abund$plot_bar()
-```
-```{r}
-phy.abund$plot_line(order_x = c(ordered.samples))
-```
-```{r}
-cla.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+cla.abund.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
+                        facet = c("Group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-ord.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+ord.abund.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
+                        facet = c("Group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-fam.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+fam.abund.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
+                        facet = c("Group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-gen.abund$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+gen.abund.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
                         color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
+                        facet = c("Group"),
                         order_x = c(ordered.samples))
 ```
 ```{r}
-wlcx.int <- trans_diff$new(
-  dataset = dataset.int,
+wlcx.rap.int <- trans_diff$new(
+  dataset = dataset.rap.int,
   method = "wilcox",
-  group = "group_phase",
+  group = "Group_Phase",
   alpha = 0.05,
   filter_thres = 0.001)
-wlcx.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
-wlcx.intervention <- wlcx.int$plot_diff_abund(plot_type = "barerrorbar",
-                                              use_number = 1:15,
+wlcx.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.rap.intervention <- wlcx.rap.int$plot_diff_abund(
+                                              use_number = 1:16,
                                               add_sig = TRUE)
+```
+```{r}
+rap.g1.int <- clone(dataset.rap.g1)
+rap.g1.int$sample_table <- dataset.rap.g1$sample_table %>%
+  dplyr::filter(Group_Phase %in% c("gum", "control"))
+rap.g1.int$tidy_dataset()
+
+rap.g2.int <- clone(dataset.rap.g2)
+rap.g2.int$sample_table <- dataset.rap.g2$sample_table %>%
+  dplyr::filter(Group_Phase %in% c("gum", "control"))
+rap.g2.int$tidy_dataset()
+```
+```{r}
+wlcx.rap.g1 <- trans_diff$new(
+  dataset = rap.g1.int,
+  method = "wilcox",
+  group = "Group_Phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+wlcx.rap.g1$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.rap.group1 <- wlcx.rap.g1$plot_diff_abund(
+                                              use_number = 1:16,
+                                              add_sig = TRUE)
+wlcx.rap.group1
+```
+```{r}
+wlcx.rap.g2 <- trans_diff$new(
+  dataset = rap.g2.int,
+  method = "wilcox",
+  group = "Group_Phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+wlcx.rap.g2$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.rap.group2 <- wlcx.rap.g2$plot_diff_abund(
+                                              use_number = 1:16,
+                                              add_sig = TRUE)
+wlcx.rap.group2
 ```
 ## Functional
 ### KEGG
@@ -333,11 +389,24 @@ njc.func.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_kee
                         facet = c("group"),
                         order_x = c(ordered.samples))
 ```
+
+
+```{r}
+wlcx.rap.int <- trans_diff$new(
+  dataset = dataset.rap.int,
+  method = "wilcox",
+  group = "Group_Phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+
+wlcx.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.rap.int$plot_diff_abund()
+```
 ```{r}
 wlcx.int <- trans_diff$new(
   dataset = dataset.int,
   method = "wilcox",
-  group = "group_phase",
+  group = "Group_Phase",
   alpha = 0.05,
   filter_thres = 0.001)
 
@@ -345,54 +414,54 @@ wlcx.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
 wlcx.int$plot_diff_abund()
 ```
 ```{r}
-lfs.gp <- trans_diff$new(
-  dataset = dataset.main,
+rap.lfs.gp <- trans_diff$new(
+  dataset = dataset.rap,
   method = "lefse",
-  group = "group_phase",
+  group = "Group_Phase",
   alpha = 0.05,
   filter_thres = 0.001)
 
-lfs.gp$plot_diff_abund()
+rap.lfs.gp$plot_diff_abund()
 ```
 ```{r}
-gen.phy.g1 <- trans_abund$new(
-  dataset = dataset.g1,
+gen.phy.rap.g1 <- trans_abund$new(
+  dataset = dataset.rap.g1,
   ntaxa = 30,
   taxrank = "Genus",
   high_level = "Phylum",
-  groupmean = "group_phase",
+  groupmean = "Group_Phase",
   group_morestats = T)
-gen.phy.g1$plot_bar(ggnested = T,
-                     order_x = c("baseline",
+gen.phy.rap.g1$plot_bar(ggnested = T,
+                     order_x = c("run-in",
                                  "gum",
                                  "gum-washout",
                                  "control",
                                  "control-washout"))
 ```
 ```{r}
-gen.phy.g2 <- trans_abund$new(
-  dataset = dataset.g2,
+gen.phy.rap.g2 <- trans_abund$new(
+  dataset = dataset.rap.g2,
   ntaxa = 30,
   taxrank = "Genus",
   high_level = "Phylum",
-  groupmean = "group_phase",
+  groupmean = "Group_Phase",
   group_morestats = T)
-gen.phy.g2$plot_bar(ggnested = T,
-                     order_x = c("baseline",
+gen.phy.rap.g2$plot_bar(ggnested = T,
+                     order_x = c("run-in",
                                  "control",
                                  "control-washout",
                                  "gum",
                                  "gum-washout"))
 ```
 ```{r}
-gen.phy.int <- trans_abund$new(
-  dataset = dataset.int,
+gen.phy.rap.int <- trans_abund$new(
+  dataset = dataset.rap.int,
   ntaxa = 30,
   taxrank = "Genus",
-  high_level = "Class",
-  groupmean = "group_phase",
+  high_level = "Phylum",
+  groupmean = "Group_Phase",
   group_morestats = T)
-gen.phy.int$plot_bar(ggnested = T,
+gen.phy.rap.int$plot_bar(ggnested = T,
                      order_x = c("control", "gum"))
 ```
 ```{r}
