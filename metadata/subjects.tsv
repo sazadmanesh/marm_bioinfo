@@ -1,0 +1,21 @@
+Group	Room	Cage	Subject	Subject_Code	Sex	Housing	Origin	Subj_DOB	Age	Contraception	Previous_Exp	Subject_Notes
+Group1	RoomB	B1	Hamlet	HAM	Male	Pair	Nebraska	2017-03-05	6.016438356			
+Group1	RoomB	B1	Hera	HER	Female	Pair	Texas	2019-08-29	3.531506849	Estrumate		
+Group1	RoomB	B2	JarJarBinks	JAR	Male	Pair	Texas	2020-01-25	3.123287671			
+Group1	RoomB	B2	Ophelia	OPH	Female	Pair	Nebraska	2017-08-06	5.594520548	Estrumate		
+Group1	RoomB	B3	Kubo	KUB	Male	Pair	Nebraska	2019-02-02	4.101369863			
+Group1	RoomB	B3	Korra	KOR	Female	Pair	Nebraska	2017-04-17	5.898630137	Estrumate		gave birth to 4 stillborn babies 4/29/23
+Group1	RoomB	B4	Wolverine	WOL	Male	Pair	Nebraska	2014-09-28	8.452054795		ABX-CTRL	
+Group1	RoomB	B4	Iris	IRI	Female	Pair	Texas	2016-05-10	6.835616438	Estrumate	ABX-CTRL	
+Group1	RoomF	F1	Goose	GOO	Male	Family	Texas	2016-06-24	6.712328767		ABX-CTRL	
+Group1	RoomF	F1	Lambchop	LAM	Female	Family	Texas	2017-05-13	5.82739726	Estrumate		
+Group2	RoomF	F2	Franc	FRA	Male	Pair	Texas	2016-11-06	6.342465753		ABX	
+Group2	RoomF	F2	Ivy	IVY	Female	Pair	Nebraska	2018-12-27	4.202739726	Estrumate		
+Group2	RoomF	F3	Charles	CHA	Male	Pair	Nebraska	2018-12-17	4.230136986			re-paired with bubblegum 3/31/23
+Group2	RoomF	F3	Padme	PAD	Female	Pair	Texas	2018-08-02	4.657534247	Estrumate		euthanized 3/29/23 (renal failure)
+Group2	RoomF	F4	Grogu	GRO	Male	Pair	Texas	2018-08-10	4.583561644			
+Group2	RoomF	F4	Marshmallow	MAR	Female	Pair	Nebraska	2019-02-02	4.101369863	Estrumate		
+Group2	RoomF	F5	Buddy	BUD	Male	Family	Texas	2016-10-17	6.397260274			
+Group2	RoomF	F5	Joans	JOA	Female	Family	Nebraska	2017-03-23	5.967123288	Estrumate		gave birth to 1 baby, given oxytocin to help induce contractions, given 1 non-bio baby from venus 5/11/23
+Group2	RoomF	F6	Henry	HEN	Male	Pair	Nebraska	2018-12-25	4.208219178			
+Group2	RoomF	F6	Ginger	GIN	Female	Pair	Nebraska	2017-01-27	6.117808219	Estrumate	ABX	

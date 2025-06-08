@@ -44,9 +44,7 @@ subjects <- read.table(marmoset$subjects,
 ```
 ```{r}
 write.csv(subjects, "metadata/subjects.csv")
-```
-```{r}
-saveRDS(subjects, file = "data/subjects.rds")
+write.table(subjects, file = "metadata/subjects.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 samples <- read.table(marmoset$samples,
@@ -77,9 +75,7 @@ samples <- read.table(marmoset$samples,
 ```
 ```{r}
 write.csv(samples, "metadata/samples.csv")
-```
-```{r}
-saveRDS(samples, file = "data/samples.rds")
+write.table(samples, file = "metadata/samples.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 extracts <- read.table(marmoset$extracts,
@@ -101,9 +97,7 @@ extracts <- read.table(marmoset$extracts,
 ```
 ```{r}
 write.csv(extracts, "metadata/extracts.csv")
-```
-```{r}
-saveRDS(extracts, file = "data/extracts.rds")
+write.table(extracts, file = "metadata/extracts.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 libraries <- read.table(marmoset$libraries,
@@ -128,9 +122,7 @@ libraries <- read.table(marmoset$libraries,
 ```
 ```{r}
 write.csv(libraries, "metadata/libraries.csv")
-```
-```{r}
-saveRDS(libraries, file = "data/libraries.rds")
+write.table(libraries, file = "metadata/libraries.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 seqruns <- read.table(marmoset$seqruns,
@@ -156,9 +148,7 @@ seqruns <- read.table(marmoset$seqruns,
 ```
 ```{r}
 write.csv(seqruns, "metadata/seqruns.csv")
-```
-```{r}
-saveRDS(seqruns, file = "data/seqruns.rds")
+write.table(seqruns, file = "metadata/seqruns.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 weights <- read.table(marmoset$weights,
@@ -175,9 +165,7 @@ weights <- read.table(marmoset$weights,
 ```
 ```{r}
 write.csv(weights, "metadata/weights.csv")
-```
-```{r}
-saveRDS(weights, file = "data/weights.rds")
+write.table(weights, file = "metadata/weights.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 leftover_food <- read.table(marmoset$leftover_food,
@@ -199,9 +187,7 @@ leftover_food <- read.table(marmoset$leftover_food,
 ```
 ```{r}
 write.csv(leftover_food, "metadata/leftover_food.csv")
-```
-```{r}
-saveRDS(leftover_food, file = "data/leftover_food.rds")
+write.table(leftover_food, file = "metadata/leftover_food.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 bristol <- read.table(marmoset$bristol,
@@ -222,9 +208,7 @@ bristol <- read.table(marmoset$bristol,
 ```
 ```{r}
 write.csv(bristol, "metadata/bristol.csv")
-```
-```{r}
-saveRDS(bristol, file = "data/bristol.rds")
+write.table(bristol, file = "metadata/bristol.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 seq_metadata <- libraries %>%
@@ -241,7 +225,5 @@ metadata <- seq_metadata %>%
 ```
 ```{r}
 write.csv(metadata, "metadata/metadata.csv")
-```
-```{r}
-saveRDS(metadata, file = "data/metadata.rds")
+write.table(metadata, file = "metadata/metadata.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```

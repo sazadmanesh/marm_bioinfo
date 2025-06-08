@@ -94,12 +94,10 @@ dataset.names <- list(
   "main",
   "group1",
   "group2",
-  "baseline",
-  "gum",
-  "gumwash",
-  "ctrlwash",
   "int",
-  "ne",
-  "tx",
-  ""
+  "lsk",
+  "rap",
+  "rap.g1",
+  "rap.g2",
+  "rap.int"
 )

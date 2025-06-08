@@ -79,6 +79,7 @@ marm_foods <- list(
                               weight = "bold",
                               size = "18px"),
             locations = cells_title(groups = "title"))
+gt::gtsave(filename = "visuals/marm_foods.docx")
 marm_foods
 ```
 # 
@@ -215,45 +216,4 @@ marm_diet_trials <- list(
             locations = cells_title(groups = "subtitle"))
 
 marm_diet_trials
-```
-```{r}
-marm_pred <- list(
-  "Increase" = list(
-    "Anaerobiospirillum",
-    "Decreased in MDDS",
-    "Artim et al., 2019; Sheh et al., 2022"
-  ),
-  "Increase" = list(
-    "Bifidobacterium",
-    "Decreased in chronic diarrhea and gut dysbiosis",
-    "Hayer et al., 2024; Shigeno et al., 2018"
-  ),
-  "Decrease" = list(
-    "Fusobacterium",
-    "Increased in gut dysbiosis and MWS",
-    "Bakker et al., 2025; Hayer et al., 2024"
-  ),
-  "Increase" = list(
-    "Megasphaera",
-    "Decreased in dysbiosis and shifts associated with IBD",
-    "Hayer et al., 2024; Sheh et al., 2022"
-  ),
-  "Decrease" = list(
-    "Prevotella",
-    "Increased in MWS and IBD",
-    "Cooper et al., 2019; Sheh et al., 2022"
-  )
-) %>%
-  enframe(name = "Prediction", value = "Details") %>%
-  unnest_wider(Details, names_sep = "_") %>%
-  rename(Taxa = Details_1, Significance = Details_2, References = Details_3) %>%
-  gt(rowname_col = "Prediction") %>%
-  tab_stubhead("Prediction") %>%
-  cols_align("left") %>%
-  opt_stylize(style = 3, color = "blue") %>%
-  tab_style(style = cell_text(weight = "bold", v_align = "top"), locations = cells_stub()) %>%
-  tab_style(style = cell_text(v_align = "top"), locations = cells_body()) %>%
-  tab_header("Table X: Hypothesis Predictions") %>%
-  tab_style(style = cell_text(align = "left"), locations = cells_title())
-marm_pred
 ```

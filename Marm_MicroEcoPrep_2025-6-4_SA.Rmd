@@ -16,7 +16,9 @@ source(here::here(global$setup))
 ```
 # Metadata
 ```{r}
-readRDS(file = "data/metadata.rds")
+metadata <- read.table("metadata/metadata.tsv",
+                      header = T,
+                      sep = "\t")
 ```
 
 ## Sample Subsets
@@ -633,17 +635,6 @@ dataset.rap.g2$cal_betadiv(unifrac = methods_16s$marm$unifrac)
 ```{r}
 dataset.rap.int$cal_betadiv(unifrac = methods_16s$marm$unifrac)
 ```
-```{r}
-saveRDS(dataset.main, "data/dataset_main.rds")
-saveRDS(dataset.g1, "data/dataset_group1.rds")
-saveRDS(dataset.g2, "data/dataset_group2.rds")
-saveRDS(dataset.int, "data/dataset_intervention.rds")
-saveRDS(dataset.lsk, "data/dataset_ligation.rds")
-saveRDS(dataset.rap, "data/dataset_rapid.rds")
-saveRDS(dataset.rap.g1, "data/dataset_rapid_group1.rds")
-saveRDS(dataset.rap.g2, "data/dataset_rapid_group2.rds")
-saveRDS(dataset.rap.int, "data/dataset_rapid_intervention.rds")
-```
 ## Export Main Datasets
 ```{r}
 dataset.main$save_table(marmoset$microeco$data$main, sep = "\t")
@@ -686,299 +677,6 @@ dataset.rap.g1$save_betadiv(marmoset$microeco$beta$rap_g1)
 dataset.rap.g2$save_betadiv(marmoset$microeco$beta$rap_g2)
 dataset.rap.int$save_betadiv(marmoset$microeco$beta$rap_int)
 ```
-## Taxonomic Level Subsets
-*Create dataframe subsets for each taxonomic level*
-### Phylum
-```{r}
-phy.data.main <- clone(dataset.main, deep = T)
-phy.data.g1 <- clone(dataset.g1, deep = T)
-phy.data.g2 <- clone(dataset.g2, deep = T)
-phy.data.int <- clone(dataset.int, deep = T)
-
-phy.main <- phy.data.main$merge_taxa(taxa = "Phylum")
-phy.main$tax_table %<>% .[.$Phylum != "p__", ]
-phy.main$tidy_dataset()
-rownames(phy.main$otu_table) <- phy.main$tax_table[rownames(phy.main$otu_table), "Phylum"]
-rownames(phy.main$tax_table) <- phy.main$tax_table[, "Phylum"]
-
-phy.g1 <- phy.data.g1$merge_taxa(taxa = "Phylum")
-phy.g1$tax_table %<>% .[.$Phylum != "p__", ]
-phy.g1$tidy_dataset()
-rownames(phy.g1$otu_table) <- phy.g1$tax_table[rownames(phy.g1$otu_table), "Phylum"]
-rownames(phy.g1$tax_table) <- phy.g1$tax_table[, "Phylum"]
-
-phy.g2 <- phy.data.g2$merge_taxa(taxa = "Phylum")
-phy.g2$tax_table %<>% .[.$Phylum != "p__", ]
-phy.g2$tidy_dataset()
-rownames(phy.g2$otu_table) <- phy.g2$tax_table[rownames(phy.g2$otu_table), "Phylum"]
-rownames(phy.g2$tax_table) <- phy.g2$tax_table[, "Phylum"]
-
-phy.int <- phy.data.int$merge_taxa(taxa = "Phylum")
-phy.int$tax_table %<>% .[.$Phylum != "p__", ]
-phy.int$tidy_dataset()
-rownames(phy.int$otu_table) <- phy.int$tax_table[rownames(phy.int$otu_table), "Phylum"]
-rownames(phy.int$tax_table) <- phy.int$tax_table[, "Phylum"]
-```
-```{r}
-saveRDS(phy.main, "data/phy_main.rds")
-saveRDS(phy.g1, "data/phy_group1.rds")
-saveRDS(phy.g2, "data/phy_group2.rds")
-saveRDS(phy.int, "data/phy_intervention.rds")
-```
-### Class
-```{r}
-cla.data.main <- clone(dataset.main, deep = T)
-cla.data.g1 <- clone(dataset.g1, deep = T)
-cla.data.g2 <- clone(dataset.g2, deep = T)
-cla.data.int <- clone(dataset.int, deep = T)
-
-cla.main <- cla.data.main$merge_taxa(taxa = "Class")
-cla.main$tax_table %<>% .[.$Class != "c__", ]
-cla.main$tidy_dataset()
-rownames(cla.main$otu_table) <- cla.main$tax_table[rownames(cla.main$otu_table), "Class"]
-rownames(cla.main$tax_table) <- cla.main$tax_table[, "Class"]
-
-cla.g1 <- cla.data.g1$merge_taxa(taxa = "Class")
-cla.g1$tax_table %<>% .[.$Class != "c__", ]
-cla.g1$tidy_dataset()
-rownames(cla.g1$otu_table) <- cla.g1$tax_table[rownames(cla.g1$otu_table), "Class"]
-rownames(cla.g1$tax_table) <- cla.g1$tax_table[, "Class"]
-
-cla.g2 <- cla.data.g2$merge_taxa(taxa = "Class")
-cla.g2$tax_table %<>% .[.$Class != "c__", ]
-cla.g2$tidy_dataset()
-rownames(cla.g2$otu_table) <- cla.g2$tax_table[rownames(cla.g2$otu_table), "Class"]
-rownames(cla.g2$tax_table) <- cla.g2$tax_table[, "Class"]
-
-cla.int <- cla.data.int$merge_taxa(taxa = "Class")
-cla.int$tax_table %<>% .[.$Class != "c__", ]
-cla.int$tidy_dataset()
-rownames(cla.int$otu_table) <- cla.int$tax_table[rownames(cla.int$otu_table), "Class"]
-rownames(cla.int$tax_table) <- cla.int$tax_table[, "Class"]
-```
-```{r}
-saveRDS(cla.main, "data/cla_main.rds")
-saveRDS(cla.g1, "data/cla_group1.rds")
-saveRDS(cla.g2, "data/cla_group2.rds")
-saveRDS(cla.int, "data/cla_intervention.rds")
-```
-### Order
-```{r}
-ord.data.main <- clone(dataset.main, deep = T)
-ord.data.g1 <- clone(dataset.g1, deep = T)
-ord.data.g2 <- clone(dataset.g2, deep = T)
-ord.data.int <- clone(dataset.int, deep = T)
-
-ord.main <- ord.data.main$merge_taxa(taxa = "Order")
-ord.main$tax_table %<>% .[.$Order != "o__", ]
-ord.main$tidy_dataset()
-rownames(ord.main$otu_table) <- ord.main$tax_table[rownames(ord.main$otu_table), "Order"]
-rownames(ord.main$tax_table) <- ord.main$tax_table[, "Order"]
-
-ord.g1 <- ord.data.g1$merge_taxa(taxa = "Order")
-ord.g1$tax_table %<>% .[.$Order != "o__", ]
-ord.g1$tidy_dataset()
-rownames(ord.g1$otu_table) <- ord.g1$tax_table[rownames(ord.g1$otu_table), "Order"]
-rownames(ord.g1$tax_table) <- ord.g1$tax_table[, "Order"]
-
-ord.g2 <- ord.data.g2$merge_taxa(taxa = "Order")
-ord.g2$tax_table %<>% .[.$Order != "o__", ]
-ord.g2$tidy_dataset()
-rownames(ord.g2$otu_table) <- ord.g2$tax_table[rownames(ord.g2$otu_table), "Order"]
-rownames(ord.g2$tax_table) <- ord.g2$tax_table[, "Order"]
-
-ord.int <- ord.data.int$merge_taxa(taxa = "Order")
-ord.int$tax_table %<>% .[.$Order != "o__", ]
-ord.int$tidy_dataset()
-rownames(ord.int$otu_table) <- ord.int$tax_table[rownames(ord.int$otu_table), "Order"]
-rownames(ord.int$tax_table) <- ord.int$tax_table[, "Order"]
-```
-```{r}
-saveRDS(ord.main, "data/ord_main.rds")
-saveRDS(ord.g1, "data/ord_group1.rds")
-saveRDS(ord.g2, "data/ord_group2.rds")
-saveRDS(ord.int, "data/ord_intervention.rds")
-```
-### Family
-```{r}
-fam.data.main <- clone(dataset.main, deep = T)
-fam.data.g1 <- clone(dataset.g1, deep = T)
-fam.data.g2 <- clone(dataset.g2, deep = T)
-fam.data.int <- clone(dataset.int, deep = T)
-
-fam.main <- fam.data.main$merge_taxa(taxa = "Family")
-fam.main$tax_table %<>% .[.$Family != "f__", ]
-fam.main$tidy_dataset()
-rownames(fam.main$otu_table) <- fam.main$tax_table[rownames(fam.main$otu_table), "Family"]
-rownames(fam.main$tax_table) <- fam.main$tax_table[, "Family"]
-
-fam.g1 <- fam.data.g1$merge_taxa(taxa = "Family")
-fam.g1$tax_table %<>% .[.$Family != "f__", ]
-fam.g1$tidy_dataset()
-rownames(fam.g1$otu_table) <- fam.g1$tax_table[rownames(fam.g1$otu_table), "Family"]
-rownames(fam.g1$tax_table) <- fam.g1$tax_table[, "Family"]
-
-fam.g2 <- fam.data.g2$merge_taxa(taxa = "Family")
-fam.g2$tax_table %<>% .[.$Family != "f__", ]
-fam.g2$tidy_dataset()
-rownames(fam.g2$otu_table) <- fam.g2$tax_table[rownames(fam.g2$otu_table), "Family"]
-rownames(fam.g2$tax_table) <- fam.g2$tax_table[, "Family"]
-
-fam.int <- fam.data.int$merge_taxa(taxa = "Family")
-fam.int$tax_table %<>% .[.$Family != "f__", ]
-fam.int$tidy_dataset()
-rownames(fam.int$otu_table) <- fam.int$tax_table[rownames(fam.int$otu_table), "Family"]
-rownames(fam.int$tax_table) <- fam.int$tax_table[, "Family"]
-```
-```{r}
-saveRDS(fam.main, "data/fam_main.rds")
-saveRDS(fam.g1, "data/fam_group1.rds")
-saveRDS(fam.g2, "data/fam_group2.rds")
-saveRDS(fam.int, "data/fam_intervention.rds")
-```
-### Genus
-```{r}
-gen.data.main <- clone(dataset.main, deep = T)
-gen.data.g1 <- clone(dataset.g1, deep = T)
-gen.data.g2 <- clone(dataset.g2, deep = T)
-gen.data.int <- clone(dataset.int, deep = T)
-
-gen.main <- gen.data.main$merge_taxa(taxa = "Genus")
-gen.main$tax_table %<>% .[.$Genus != "g__", ]
-gen.main$tidy_dataset()
-rownames(gen.main$otu_table) <- gen.main$tax_table[rownames(gen.main$otu_table), "Genus"]
-rownames(gen.main$tax_table) <- gen.main$tax_table[, "Genus"]
-
-gen.g1 <- gen.data.g1$merge_taxa(taxa = "Genus")
-gen.g1$tax_table %<>% .[.$Genus != "g__", ]
-gen.g1$tidy_dataset()
-rownames(gen.g1$otu_table) <- gen.g1$tax_table[rownames(gen.g1$otu_table), "Genus"]
-rownames(gen.g1$tax_table) <- gen.g1$tax_table[, "Genus"]
-
-gen.g2 <- gen.data.g2$merge_taxa(taxa = "Genus")
-gen.g2$tax_table %<>% .[.$Genus != "g__", ]
-gen.g2$tidy_dataset()
-rownames(gen.g2$otu_table) <- gen.g2$tax_table[rownames(gen.g2$otu_table), "Genus"]
-rownames(gen.g2$tax_table) <- gen.g2$tax_table[, "Genus"]
-
-gen.int <- gen.data.int$merge_taxa(taxa = "Genus")
-gen.int$tax_table %<>% .[.$Genus != "g__", ]
-gen.int$tidy_dataset()
-rownames(gen.int$otu_table) <- gen.int$tax_table[rownames(gen.int$otu_table), "Genus"]
-rownames(gen.int$tax_table) <- gen.int$tax_table[, "Genus"]
-```
-```{r}
-saveRDS(gen.main, "data/gen_main.rds")
-saveRDS(gen.g1, "data/gen_group1.rds")
-saveRDS(gen.g2, "data/gen_group2.rds")
-saveRDS(gen.int, "data/gen_intervention.rds")
-```
-## Export Taxonomic Subsets
-```{r}
-phy.main$save_table(marmoset$microeco$data$phylum$main, sep = "\t")
-phy.g1$save_table(marmoset$microeco$data$phylum$g1, sep = "\t")
-phy.g2$save_table(marmoset$microeco$data$phylum$g2, sep = "\t")
-phy.int$save_table(marmoset$microeco$data$phylum$int, sep = "\t")
-
-phy.main$save_abund(marmoset$microeco$abund$phylum$main, sep = "\t")
-phy.g1$save_abund(marmoset$microeco$abund$phylum$g1, sep = "\t")
-phy.g2$save_abund(marmoset$microeco$abund$phylum$g2, sep = "\t")
-phy.int$save_abund(marmoset$microeco$abund$phylum$int, sep = "\t")
-
-phy.main$save_alphadiv(marmoset$microeco$alpha$phylum$main)
-phy.g1$save_alphadiv(marmoset$microeco$alpha$phylum$g1)
-phy.g2$save_alphadiv(marmoset$microeco$alpha$phylum$g2)
-phy.int$save_alphadiv(marmoset$microeco$alpha$phylum$int)
-
-phy.main$save_betadiv(marmoset$microeco$beta$phylum$main)
-phy.g1$save_betadiv(marmoset$microeco$beta$phylum$g1)
-phy.g2$save_betadiv(marmoset$microeco$beta$phylum$g2)
-phy.int$save_betadiv(marmoset$microeco$beta$phylum$int)
-```
-```{r}
-cla.main$save_table(marmoset$microeco$data$class$main, sep = "\t")
-cla.g1$save_table(marmoset$microeco$data$class$g1, sep = "\t")
-cla.g2$save_table(marmoset$microeco$data$class$g2, sep = "\t")
-cla.int$save_table(marmoset$microeco$data$class$int, sep = "\t")
-
-cla.main$save_abund(marmoset$microeco$abund$class$main, sep = "\t")
-cla.g1$save_abund(marmoset$microeco$abund$class$g1, sep = "\t")
-cla.g2$save_abund(marmoset$microeco$abund$class$g2, sep = "\t")
-cla.int$save_abund(marmoset$microeco$abund$class$int, sep = "\t")
-
-cla.main$save_alphadiv(marmoset$microeco$alpha$class$main)
-cla.g1$save_alphadiv(marmoset$microeco$alpha$class$g1)
-cla.g2$save_alphadiv(marmoset$microeco$alpha$class$g2)
-cla.int$save_alphadiv(marmoset$microeco$alpha$class$int)
-
-cla.main$save_betadiv(marmoset$microeco$beta$class$main)
-cla.g1$save_betadiv(marmoset$microeco$beta$class$g1)
-cla.g2$save_betadiv(marmoset$microeco$beta$class$g2)
-cla.int$save_betadiv(marmoset$microeco$beta$class$int)
-```
-```{r}
-ord.main$save_table(marmoset$microeco$data$order$main, sep = "\t")
-ord.g1$save_table(marmoset$microeco$data$order$g1, sep = "\t")
-ord.g2$save_table(marmoset$microeco$data$order$g2, sep = "\t")
-ord.int$save_table(marmoset$microeco$data$order$int, sep = "\t")
-
-ord.main$save_abund(marmoset$microeco$abund$order$main, sep = "\t")
-ord.g1$save_abund(marmoset$microeco$abund$order$g1, sep = "\t")
-ord.g2$save_abund(marmoset$microeco$abund$order$g2, sep = "\t")
-ord.int$save_abund(marmoset$microeco$abund$order$int, sep = "\t")
-
-ord.main$save_alphadiv(marmoset$microeco$alpha$order$main)
-ord.g1$save_alphadiv(marmoset$microeco$alpha$order$g1)
-ord.g2$save_alphadiv(marmoset$microeco$alpha$order$g2)
-ord.int$save_alphadiv(marmoset$microeco$alpha$order$int)
-
-ord.main$save_betadiv(marmoset$microeco$beta$order$main)
-ord.g1$save_betadiv(marmoset$microeco$beta$order$g1)
-ord.g2$save_betadiv(marmoset$microeco$beta$order$g2)
-ord.int$save_betadiv(marmoset$microeco$beta$order$int)
-```
-```{r}
-fam.main$save_table(marmoset$microeco$data$family$main, sep = "\t")
-fam.g1$save_table(marmoset$microeco$data$family$g1, sep = "\t")
-fam.g2$save_table(marmoset$microeco$data$family$g2, sep = "\t")
-fam.int$save_table(marmoset$microeco$data$family$int, sep = "\t")
-
-fam.main$save_abund(marmoset$microeco$abund$family$main, sep = "\t")
-fam.g1$save_abund(marmoset$microeco$abund$family$g1, sep = "\t")
-fam.g2$save_abund(marmoset$microeco$abund$family$g2, sep = "\t")
-fam.int$save_abund(marmoset$microeco$abund$family$int, sep = "\t")
-
-fam.main$save_alphadiv(marmoset$microeco$alpha$family$main)
-fam.g1$save_alphadiv(marmoset$microeco$alpha$family$g1)
-fam.g2$save_alphadiv(marmoset$microeco$alpha$family$g2)
-fam.int$save_alphadiv(marmoset$microeco$alpha$family$int)
-
-fam.main$save_betadiv(marmoset$microeco$beta$family$main)
-fam.g1$save_betadiv(marmoset$microeco$beta$family$g1)
-fam.g2$save_betadiv(marmoset$microeco$beta$family$g2)
-fam.int$save_betadiv(marmoset$microeco$beta$family$int)
-```
-```{r}
-gen.main$save_table(marmoset$microeco$data$genus$main, sep = "\t")
-gen.g1$save_table(marmoset$microeco$data$genus$g1, sep = "\t")
-gen.g2$save_table(marmoset$microeco$data$genus$g2, sep = "\t")
-gen.int$save_table(marmoset$microeco$data$genus$int, sep = "\t")
-
-gen.main$save_abund(marmoset$microeco$abund$genus$main, sep = "\t")
-gen.g1$save_abund(marmoset$microeco$abund$genus$g1, sep = "\t")
-gen.g2$save_abund(marmoset$microeco$abund$genus$g2, sep = "\t")
-gen.int$save_abund(marmoset$microeco$abund$genus$int, sep = "\t")
-
-gen.main$save_alphadiv(marmoset$microeco$alpha$genus$main)
-gen.g1$save_alphadiv(marmoset$microeco$alpha$genus$g1)
-gen.g2$save_alphadiv(marmoset$microeco$alpha$genus$g2)
-gen.int$save_alphadiv(marmoset$microeco$alpha$genus$int)
-
-gen.main$save_betadiv(marmoset$microeco$beta$genus$main)
-gen.g1$save_betadiv(marmoset$microeco$beta$genus$g1)
-gen.g2$save_betadiv(marmoset$microeco$beta$genus$g2)
-gen.int$save_betadiv(marmoset$microeco$beta$genus$int)
-```
 ## Functional Profiles
 ### KEGG
 ```{r}
@@ -1010,30 +708,86 @@ dataset.keg.int <- microtable$new(
                                phylo_tree   = tax.tree,
                                rep_fasta    = rep.seqs.tax4fun,
                                auto_tidy    = T)
+
+dataset.keg.lsk <- microtable$new(
+                               sample_table = samp.table.lsk,
+                               otu_table    = otu.lsk,
+                               tax_table    = tax.table,
+                               phylo_tree   = tax.tree,
+                               rep_fasta    = rep.seqs.tax4fun,
+                               auto_tidy    = T)
+dataset.keg.rap <- microtable$new(
+                               sample_table = samp.table.rap,
+                               otu_table    = otu.rap,
+                               tax_table    = tax.table,
+                               phylo_tree   = tax.tree,
+                               rep_fasta    = rep.seqs.tax4fun,
+                               auto_tidy    = T)
+dataset.keg.rap.g1 <- microtable$new(
+                               sample_table = samp.table.rap.g1,
+                               otu_table    = otu.rap.g1,
+                               tax_table    = tax.table,
+                               phylo_tree   = tax.tree,
+                               rep_fasta    = rep.seqs.tax4fun,
+                               auto_tidy    = T)
+dataset.keg.rap.g2 <- microtable$new(
+                               sample_table = samp.table.rap.g2,
+                               otu_table    = otu.rap.g2,
+                               tax_table    = tax.table,
+                               phylo_tree   = tax.tree,
+                               rep_fasta    = rep.seqs.tax4fun,
+                               auto_tidy    = T)
+dataset.keg.rap.int <- microtable$new(
+                               sample_table = samp.table.rap.int,
+                               otu_table    = otu.rap.int,
+                               tax_table    = tax.table,
+                               phylo_tree   = tax.tree,
+                               rep_fasta    = rep.seqs.tax4fun,
+                               auto_tidy    = T)
 ```
 ```{r}
 dataset.keg.main$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.keg.g1$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.keg.g2$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
 dataset.keg.int$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rarefy)
+dataset.keg.lsk$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$lsk_rarefy)
+dataset.keg.rap$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rap_rarefy)
+dataset.keg.rap.g1$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rap_rarefy)
+dataset.keg.rap.g2$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rap_rarefy)
+dataset.keg.rap.int$rarefy_samples(method = methods_16s$marm$norm, sample.size = methods_16s$marm$rap_rarefy)
 ```
 ```{r}
 dataset.keg.main <- dataset.keg.main$merge_samples("Subj_Day")
 dataset.keg.g1 <- dataset.keg.g1$merge_samples("Subj_Day")
 dataset.keg.g2 <- dataset.keg.g2$merge_samples("Subj_Day")
 dataset.keg.int <- dataset.keg.int$merge_samples("Subj_Day")
+dataset.keg.lsk <- dataset.keg.lsk$merge_samples("Subj_Day")
+dataset.keg.rap <- dataset.keg.rap$merge_samples("Subj_Day")
+dataset.keg.rap.g1 <- dataset.keg.rap.g1$merge_samples("Subj_Day")
+dataset.keg.rap.g2 <- dataset.keg.rap.g2$merge_samples("Subj_Day")
+dataset.keg.rap.int <- dataset.keg.rap.int$merge_samples("Subj_Day")
 ```
 ```{r}
 dataset.keg.main$sample_table <- data.frame(dataset.keg.main$sample_table, sample.table.merged[rownames(dataset.keg.main$sample_table), ])
 dataset.keg.g1$sample_table <- data.frame(dataset.keg.g1$sample_table, sample.table.merged[rownames(dataset.keg.g1$sample_table), ])
 dataset.keg.g2$sample_table <- data.frame(dataset.keg.g2$sample_table, sample.table.merged[rownames(dataset.keg.g2$sample_table), ])
 dataset.keg.int$sample_table <- data.frame(dataset.keg.int$sample_table, sample.table.merged[rownames(dataset.keg.int$sample_table), ])
+dataset.keg.lsk$sample_table <- data.frame(dataset.keg.lsk$sample_table, sample.table.merged[rownames(dataset.keg.lsk$sample_table), ])
+dataset.keg.rap$sample_table <- data.frame(dataset.keg.rap$sample_table, sample.table.merged[rownames(dataset.keg.rap$sample_table), ])
+dataset.keg.rap.g1$sample_table <- data.frame(dataset.keg.rap.g1$sample_table, sample.table.merged[rownames(dataset.keg.rap.g1$sample_table), ])
+dataset.keg.rap.g2$sample_table <- data.frame(dataset.keg.rap.g2$sample_table, sample.table.merged[rownames(dataset.keg.rap.g2$sample_table), ])
+dataset.keg.rap.int$sample_table <- data.frame(dataset.keg.rap.int$sample_table, sample.table.merged[rownames(dataset.keg.rap.int$sample_table), ])
 ```
 ```{r}
 dataset.keg.main$cal_abund()
 dataset.keg.g1$cal_abund()
 dataset.keg.g2$cal_abund()
 dataset.keg.int$cal_abund()
+dataset.keg.lsk$cal_abund()
+dataset.keg.rap$cal_abund()
+dataset.keg.rap.g1$cal_abund()
+dataset.keg.rap.g2$cal_abund()
+dataset.keg.rap.int$cal_abund()
 ```
 ```{r}
 dataset.keg.main$filter_taxa(
@@ -1052,12 +806,37 @@ dataset.keg.int$filter_taxa(
                          rel_abund      = methods_16s$marm$min_abund, 
                          freq           = methods_16s$marm$min_freq, 
                          include_lowest = methods_16s$marm$include_lowest)
+dataset.keg.lsk$filter_taxa(
+                         rel_abund      = methods_16s$marm$min_abund, 
+                         freq           = methods_16s$marm$min_freq, 
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.keg.rap$filter_taxa(
+                         rel_abund      = methods_16s$marm$min_abund, 
+                         freq           = methods_16s$marm$min_freq, 
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.keg.rap.g1$filter_taxa(
+                         rel_abund      = methods_16s$marm$min_abund, 
+                         freq           = methods_16s$marm$min_freq, 
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.keg.rap.g2$filter_taxa(
+                         rel_abund      = methods_16s$marm$min_abund, 
+                         freq           = methods_16s$marm$min_freq, 
+                         include_lowest = methods_16s$marm$include_lowest)
+dataset.keg.rap.int$filter_taxa(
+                         rel_abund      = methods_16s$marm$min_abund, 
+                         freq           = methods_16s$marm$min_freq, 
+                         include_lowest = methods_16s$marm$include_lowest)
 ```
 ```{r}
 keg.main <- trans_func$new(dataset.keg.main)
 keg.g1 <- trans_func$new(dataset.keg.g1)
 keg.g2 <- trans_func$new(dataset.keg.g2)
 keg.int <- trans_func$new(dataset.keg.int)
+keg.lsk <- trans_func$new(dataset.keg.lsk)
+keg.rap <- trans_func$new(dataset.keg.rap)
+keg.rap.g1 <- trans_func$new(dataset.keg.rap.g1)
+keg.rap.g2 <- trans_func$new(dataset.keg.rap.g2)
+keg.rap.int <- trans_func$new(dataset.keg.rap.int)
 
 ```
 ```{r}
@@ -1085,10 +864,42 @@ keg.int$cal_tax4fun2(
           database_mode             = methods_16s$marm$tax4fun_db, 
           path_to_temp_folder       = microbiome$test_prediction,
           num_threads               = parallel::detectCores() - 1)
+
+keg.lsk$cal_tax4fun2(
+          blast_tool_path           = microbiome$blast,
+          path_to_reference_data    = microbiome$tax4fun,
+          database_mode             = methods_16s$marm$tax4fun_db, 
+          path_to_temp_folder       = microbiome$test_prediction,
+          num_threads               = parallel::detectCores() - 1)
+keg.rap$cal_tax4fun2(
+          blast_tool_path           = microbiome$blast,
+          path_to_reference_data    = microbiome$tax4fun,
+          database_mode             = methods_16s$marm$tax4fun_db, 
+          path_to_temp_folder       = microbiome$test_prediction,
+          num_threads               = parallel::detectCores() - 1)
+keg.rap.g1$cal_tax4fun2(
+          blast_tool_path           = microbiome$blast,
+          path_to_reference_data    = microbiome$tax4fun,
+          database_mode             = methods_16s$marm$tax4fun_db, 
+          path_to_temp_folder       = microbiome$test_prediction,
+          num_threads               = parallel::detectCores() - 1)
+keg.rap.g2$cal_tax4fun2(
+          blast_tool_path           = microbiome$blast,
+          path_to_reference_data    = microbiome$tax4fun,
+          database_mode             = methods_16s$marm$tax4fun_db, 
+          path_to_temp_folder       = microbiome$test_prediction,
+          num_threads               = parallel::detectCores() - 1)
+keg.rap.int$cal_tax4fun2(
+          blast_tool_path           = microbiome$blast,
+          path_to_reference_data    = microbiome$tax4fun,
+          database_mode             = methods_16s$marm$tax4fun_db, 
+          path_to_temp_folder       = microbiome$test_prediction,
+          num_threads               = parallel::detectCores() - 1)
 ```
 ```{r}
 data("Tax4Fun2_KEGG")
 ```
+#### Main
 ```{r}
 keg.main$cal_tax4fun2_FRI()
 ```
@@ -1104,12 +915,13 @@ dataset.keg.main$sample_table <- data.frame(dataset.keg.main$sample_table, sampl
 
 keg.data.main$cal_abund()
 keg.data.main$cal_alphadiv()
-keg.data.main$cal_betadiv(method = methods_16s$marm$betadiv)
+keg.data.main$cal_betadiv()
 keg.data.main$save_table(marmoset$microeco$data$keg$main, sep = "\t")
 keg.data.main$save_abund(marmoset$microeco$abund$keg$main, sep = "\t")
 keg.data.main$save_alphadiv(marmoset$microeco$alpha$keg$main)
 keg.data.main$save_betadiv(marmoset$microeco$beta$keg$main)
 ```
+#### Group 1
 ```{r}
 keg.g1$cal_tax4fun2_FRI()
 ```
@@ -1125,12 +937,13 @@ dataset.keg.g1$sample_table <- data.frame(dataset.keg.g1$sample_table, sample.ta
 
 keg.data.g1$cal_abund()
 keg.data.g1$cal_alphadiv()
-keg.data.g1$cal_betadiv(method = methods_16s$marm$betadiv)
+keg.data.g1$cal_betadiv()
 keg.data.g1$save_table(marmoset$microeco$data$keg$g1, sep = "\t")
 keg.data.g1$save_abund(marmoset$microeco$abund$keg$g1, sep = "\t")
 keg.data.g1$save_alphadiv(marmoset$microeco$alpha$keg$g1)
 keg.data.g1$save_betadiv(marmoset$microeco$beta$keg$g1)
 ```
+#### Group 2
 ```{r}
 keg.g2$cal_tax4fun2_FRI()
 ```
@@ -1146,13 +959,13 @@ dataset.keg.g2$sample_table <- data.frame(dataset.keg.g2$sample_table, sample.ta
 
 keg.data.g2$cal_abund()
 keg.data.g2$cal_alphadiv()
-keg.data.g2$cal_betadiv(method = methods_16s$marm$betadiv)
+keg.data.g2$cal_betadiv()
 keg.data.g2$save_table(marmoset$microeco$data$keg$g2, sep = "\t")
 keg.data.g2$save_abund(marmoset$microeco$abund$keg$g2, sep = "\t")
 keg.data.g2$save_alphadiv(marmoset$microeco$alpha$keg$g2)
 keg.data.g2$save_betadiv(marmoset$microeco$beta$keg$g2)
 ```
-
+#### Intervention
 ```{r}
 keg.int$cal_tax4fun2_FRI()
 ```
@@ -1168,11 +981,118 @@ dataset.keg.int$sample_table <- data.frame(dataset.keg.int$sample_table, sample.
 
 keg.data.int$cal_abund()
 keg.data.int$cal_alphadiv()
-keg.data.int$cal_betadiv(method = methods_16s$marm$betadiv)
+keg.data.int$cal_betadiv()
 keg.data.int$save_table(marmoset$microeco$data$keg$int, sep = "\t")
 keg.data.int$save_abund(marmoset$microeco$abund$keg$int, sep = "\t")
 keg.data.int$save_alphadiv(marmoset$microeco$alpha$keg$int)
 keg.data.int$save_betadiv(marmoset$microeco$beta$keg$int)
+```
+#### LSK
+```{r}
+keg.lsk$cal_tax4fun2_FRI()
+```
+```{r}
+keg.data.lsk <- microtable$new(
+  otu_table    = keg.lsk$res_tax4fun2_pathway,
+  tax_table    = Tax4Fun2_KEGG$ptw_desc,
+  sample_table = dataset.lsk$sample_table)
+
+keg.data.lsk$tidy_dataset()
+
+dataset.keg.lsk$sample_table <- data.frame(dataset.keg.lsk$sample_table, sample.table.merged[rownames(dataset.keg.lsk$sample_table), ])
+
+keg.data.lsk$cal_abund()
+keg.data.lsk$cal_alphadiv()
+keg.data.lsk$cal_betadiv()
+keg.data.lsk$save_table(marmoset$microeco$data$keg$lsk, sep = "\t")
+keg.data.lsk$save_abund(marmoset$microeco$abund$keg$lsk, sep = "\t")
+keg.data.lsk$save_alphadiv(marmoset$microeco$alpha$keg$lsk)
+keg.data.lsk$save_betadiv(marmoset$microeco$beta$keg$lsk)
+```
+#### RAP
+```{r}
+keg.rap$cal_tax4fun2_FRI()
+```
+```{r}
+keg.data.rap <- microtable$new(
+  otu_table    = keg.rap$res_tax4fun2_pathway,
+  tax_table    = Tax4Fun2_KEGG$ptw_desc,
+  sample_table = dataset.rap$sample_table)
+
+keg.data.rap$tidy_dataset()
+
+dataset.keg.rap$sample_table <- data.frame(dataset.keg.rap$sample_table, sample.table.merged[rownames(dataset.keg.rap$sample_table), ])
+
+keg.data.rap$cal_abund()
+keg.data.rap$cal_alphadiv()
+keg.data.rap$cal_betadiv()
+keg.data.rap$save_table(marmoset$microeco$data$keg$rap, sep = "\t")
+keg.data.rap$save_abund(marmoset$microeco$abund$keg$rap, sep = "\t")
+keg.data.rap$save_alphadiv(marmoset$microeco$alpha$keg$rap)
+keg.data.rap$save_betadiv(marmoset$microeco$beta$keg$rap)
+```
+```{r}
+keg.rap.g1$cal_tax4fun2_FRI()
+```
+```{r}
+keg.data.rap.g1 <- microtable$new(
+  otu_table    = keg.rap.g1$res_tax4fun2_pathway,
+  tax_table    = Tax4Fun2_KEGG$ptw_desc,
+  sample_table = dataset.rap.g1$sample_table)
+
+keg.data.rap.g1$tidy_dataset()
+
+dataset.keg.rap.g1$sample_table <- data.frame(dataset.keg.rap.g1$sample_table, sample.table.merged[rownames(dataset.keg.rap.g1$sample_table), ])
+
+keg.data.rap.g1$cal_abund()
+keg.data.rap.g1$cal_alphadiv()
+keg.data.rap.g1$cal_betadiv()
+keg.data.rap.g1$save_table(marmoset$microeco$data$keg$rap_g1, sep = "\t")
+keg.data.rap.g1$save_abund(marmoset$microeco$abund$keg$rap_g1, sep = "\t")
+keg.data.rap.g1$save_alphadiv(marmoset$microeco$alpha$keg$rap_g1)
+keg.data.rap.g1$save_betadiv(marmoset$microeco$beta$keg$rap_g1)
+```
+```{r}
+keg.rap.g2$cal_tax4fun2_FRI()
+```
+```{r}
+keg.data.rap.g2 <- microtable$new(
+  otu_table    = keg.rap.g2$res_tax4fun2_pathway,
+  tax_table    = Tax4Fun2_KEGG$ptw_desc,
+  sample_table = dataset.rap.g2$sample_table)
+
+keg.data.rap.g2$tidy_dataset()
+
+dataset.keg.rap.g2$sample_table <- data.frame(dataset.keg.rap.g2$sample_table, sample.table.merged[rownames(dataset.keg.rap.g2$sample_table), ])
+
+keg.data.rap.g2$cal_abund()
+keg.data.rap.g2$cal_alphadiv()
+keg.data.rap.g2$cal_betadiv()
+keg.data.rap.g2$save_table(marmoset$microeco$data$keg$rap_g2, sep = "\t")
+keg.data.rap.g2$save_abund(marmoset$microeco$abund$keg$rap_g2, sep = "\t")
+keg.data.rap.g2$save_alphadiv(marmoset$microeco$alpha$keg$rap_g2)
+keg.data.rap.g2$save_betadiv(marmoset$microeco$beta$keg$rap_g2)
+```
+```{r}
+keg.rap.int$cal_tax4fun2_FRI()
+```
+```{r}
+keg.data.rap.int <- microtable$new(
+  otu_table    = keg.rap.int$res_tax4fun2_pathway,
+  tax_table    = Tax4Fun2_KEGG$ptw_desc,
+  sample_table = dataset.rap.int$sample_table)
+
+keg.data.rap.int$tidy_dataset()
+
+dataset.keg.rap.int$sample_table <- data.frame(dataset.keg.rap.int$sample_table, sample.table.merged[rownames(dataset.keg.rap.int$sample_table), ])
+
+keg.data.rap.int$cal_abund()
+keg.data.rap.int$cal_alphadiv()
+keg.data.rap.int$cal_betadiv()
+keg.data.rap.int$save_table(marmoset$microeco$data$keg$rap_int, sep = "\t")
+keg.data.rap.int$save_abund(marmoset$microeco$abund$keg$rap_int, sep = "\t")
+keg.data.rap.int$save_alphadiv(marmoset$microeco$alpha$keg$rap_int)
+keg.data.rap.int$save_betadiv(marmoset$microeco$beta$keg$rap_int)
 ```
 ### FAPROTAX
 ```{r}
@@ -1180,42 +1100,82 @@ fpt.main        <- trans_func$new(dataset.main)
 fpt.g1          <- trans_func$new(dataset.g1)
 fpt.g2          <- trans_func$new(dataset.g2)
 fpt.int         <- trans_func$new(dataset.int)
+fpt.lsk <- trans_func$new(dataset.lsk)
+fpt.rap <- trans_func$new(dataset.rap)
+fpt.rap.g1 <- trans_func$new(dataset.rap.g1)
+fpt.rap.g2 <- trans_func$new(dataset.rap.g2)
+fpt.rap.int <- trans_func$new(dataset.rap.int)
 
 fpt.main$cal_spe_func(prok_database = "FAPROTAX")
 fpt.g1$cal_spe_func(prok_database = "FAPROTAX")
 fpt.g2$cal_spe_func(prok_database = "FAPROTAX")
 fpt.int$cal_spe_func(prok_database = "FAPROTAX")
+fpt.lsk$cal_spe_func(prok_database = "FAPROTAX")
+fpt.rap$cal_spe_func(prok_database = "FAPROTAX")
+fpt.rap.g1$cal_spe_func(prok_database = "FAPROTAX")
+fpt.rap.g2$cal_spe_func(prok_database = "FAPROTAX")
+fpt.rap.int$cal_spe_func(prok_database = "FAPROTAX")
 
 fpt.main$cal_spe_func_perc(abundance_weighted = T)
 fpt.g1$cal_spe_func_perc(abundance_weighted = T)
 fpt.g2$cal_spe_func_perc(abundance_weighted = T)
 fpt.int$cal_spe_func_perc(abundance_weighted = T)
+fpt.lsk$cal_spe_func_perc(abundance_weighted = T)
+fpt.rap$cal_spe_func_perc(abundance_weighted = T)
+fpt.rap.g1$cal_spe_func_perc(abundance_weighted = T)
+fpt.rap.g2$cal_spe_func_perc(abundance_weighted = T)
+fpt.rap.int$cal_spe_func_perc(abundance_weighted = T)
 ```
 ```{r}
 fpt.main$trans_spe_func_perc()
 fpt.g1$trans_spe_func_perc()
 fpt.g2$trans_spe_func_perc()
 fpt.int$trans_spe_func_perc()
+fpt.lsk$trans_spe_func_perc()
+fpt.rap$trans_spe_func_perc()
+fpt.rap.g1$trans_spe_func_perc()
+fpt.rap.g2$trans_spe_func_perc()
+fpt.rap.int$trans_spe_func_perc()
 
 fpt.main.df        <- as.data.frame(t(fpt.main$res_spe_func_perc), check.names = F)
 fpt.g1.df          <- as.data.frame(t(fpt.g1$res_spe_func_perc), check.names = F)
 fpt.g2.df          <- as.data.frame(t(fpt.g2$res_spe_func_perc), check.names = F)
 fpt.int.df         <- as.data.frame(t(fpt.int$res_spe_func_perc), check.names = F)
+fpt.lsk.df <- as.data.frame(t(fpt.lsk$res_spe_func_perc), check.names = F)
+fpt.rap.df <- as.data.frame(t(fpt.rap$res_spe_func_perc), check.names = F)
+fpt.rap.g1.df <- as.data.frame(t(fpt.rap.g1$res_spe_func_perc), check.names = F)
+fpt.rap.g2.df <- as.data.frame(t(fpt.rap.g2$res_spe_func_perc), check.names = F)
+fpt.rap.int.df <- as.data.frame(t(fpt.rap.int$res_spe_func_perc), check.names = F)
 
 fpt.main.tax        <- as.data.frame(rownames(fpt.main.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
 fpt.g1.tax          <- as.data.frame(rownames(fpt.g1.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
 fpt.g2.tax          <- as.data.frame(rownames(fpt.g2.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
 fpt.int.tax         <- as.data.frame(rownames(fpt.int.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
+fpt.lsk.tax  <- as.data.frame(rownames(fpt.lsk.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
+fpt.rap.tax  <- as.data.frame(rownames(fpt.rap.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
+fpt.rap.g1.tax  <- as.data.frame(rownames(fpt.rap.g1.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
+fpt.rap.g2.tax  <- as.data.frame(rownames(fpt.rap.g2.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
+fpt.rap.int.tax  <- as.data.frame(rownames(fpt.rap.int.df), nm = c("Function")) %>% mutate(func_name = str_glue("fpt", "{row_number()}"))
 
 fpt.main.otu        <- fpt.main.df %>% rownames_to_column("Function") %>% left_join(fpt.main.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 fpt.g1.otu          <- fpt.g1.df %>% rownames_to_column("Function") %>% left_join(fpt.g1.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 fpt.g2.otu          <- fpt.g2.df %>% rownames_to_column("Function") %>% left_join(fpt.g2.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 fpt.int.otu         <- fpt.int.df %>% rownames_to_column("Function") %>% left_join(fpt.int.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+fpt.lsk.otu <- fpt.lsk.df %>% rownames_to_column("Function") %>% left_join(fpt.lsk.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+fpt.rap.otu <- fpt.rap.df %>% rownames_to_column("Function") %>% left_join(fpt.rap.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+fpt.rap.g1.otu <- fpt.rap.g1.df %>% rownames_to_column("Function") %>% left_join(fpt.rap.g1.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+fpt.rap.g2.otu <- fpt.rap.g2.df %>% rownames_to_column("Function") %>% left_join(fpt.rap.g2.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+fpt.rap.int.otu <- fpt.rap.int.df %>% rownames_to_column("Function") %>% left_join(fpt.rap.int.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 
 fpt.main.tax        <- fpt.main.tax %>% column_to_rownames("func_name")
 fpt.g1.tax          <- fpt.g1.tax %>% column_to_rownames("func_name")
 fpt.g2.tax          <- fpt.g2.tax %>% column_to_rownames("func_name")
 fpt.int.tax         <- fpt.int.tax %>% column_to_rownames("func_name")
+fpt.lsk.tax <- fpt.lsk.tax %>% column_to_rownames("func_name")
+fpt.rap.tax <- fpt.rap.tax %>% column_to_rownames("func_name")
+fpt.rap.g1.tax <- fpt.rap.g1.tax %>% column_to_rownames("func_name")
+fpt.rap.g2.tax <- fpt.rap.g2.tax %>% column_to_rownames("func_name")
+fpt.rap.int.tax <- fpt.rap.int.tax %>% column_to_rownames("func_name")
 ```
 ```{r}
 fpt.data.main <- microtable$new(otu_table    = fpt.main.otu, 
@@ -1234,46 +1194,106 @@ fpt.data.int  <- microtable$new(otu_table    = fpt.int.otu,
                                 tax_table    = fpt.int.tax, 
                                 sample_table = dataset.int$sample_table)
 
+fpt.data.lsk  <- microtable$new(otu_table    = fpt.lsk.otu, 
+                                tax_table    = fpt.lsk.tax, 
+                                sample_table = dataset.lsk$sample_table)
+
+fpt.data.rap  <- microtable$new(otu_table    = fpt.rap.otu, 
+                                tax_table    = fpt.rap.tax, 
+                                sample_table = dataset.rap$sample_table)
+
+fpt.data.rap.g1  <- microtable$new(otu_table    = fpt.rap.g1.otu, 
+                                tax_table    = fpt.rap.g1.tax, 
+                                sample_table = dataset.rap.g1$sample_table)
+
+fpt.data.rap.g2  <- microtable$new(otu_table    = fpt.rap.g2.otu, 
+                                tax_table    = fpt.rap.g2.tax, 
+                                sample_table = dataset.rap.g2$sample_table)
+
+fpt.data.rap.int  <- microtable$new(otu_table    = fpt.rap.int.otu, 
+                                tax_table    = fpt.rap.int.tax, 
+                                sample_table = dataset.rap.int$sample_table)
+
 fpt.data.main$tidy_dataset()
 fpt.data.g1$tidy_dataset()
 fpt.data.g2$tidy_dataset()
 fpt.data.int$tidy_dataset()
+fpt.data.lsk$tidy_dataset()
+fpt.data.rap$tidy_dataset()
+fpt.data.rap.g1$tidy_dataset()
+fpt.data.rap.g2$tidy_dataset()
+fpt.data.rap.int$tidy_dataset()
 
 fpt.data.main$cal_abund()
 fpt.data.g1$cal_abund()
 fpt.data.g2$cal_abund()
 fpt.data.int$cal_abund()
+fpt.data.lsk$cal_abund()
+fpt.data.rap$cal_abund()
+fpt.data.rap.g1$cal_abund()
+fpt.data.rap.g2$cal_abund()
+fpt.data.rap.int$cal_abund()
 
 fpt.data.main$cal_alphadiv()
 fpt.data.g1$cal_alphadiv()
 fpt.data.g2$cal_alphadiv()
 fpt.data.int$cal_alphadiv()
+fpt.data.lsk$cal_alphadiv()
+fpt.data.rap$cal_alphadiv()
+fpt.data.rap.g1$cal_alphadiv()
+fpt.data.rap.g2$cal_alphadiv()
+fpt.data.rap.int$cal_alphadiv()
 
-fpt.data.main$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.g1$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.g2$cal_betadiv(method = methods_16s$marm$betadiv)
-fpt.data.int$cal_betadiv(method = methods_16s$marm$betadiv)
+fpt.data.main$cal_betadiv()
+fpt.data.g1$cal_betadiv()
+fpt.data.g2$cal_betadiv()
+fpt.data.int$cal_betadiv()
+fpt.data.lsk$cal_betadiv()
+fpt.data.rap$cal_betadiv()
+fpt.data.rap.g1$cal_betadiv()
+fpt.data.rap.g2$cal_betadiv()
+fpt.data.rap.int$cal_betadiv()
 ```
 ```{r}
 fpt.data.main$save_table(marmoset$microeco$data$fpt$main, sep = "\t")
 fpt.data.g1$save_table(marmoset$microeco$data$fpt$g1, sep = "\t")
 fpt.data.g2$save_table(marmoset$microeco$data$fpt$g2, sep = "\t")
 fpt.data.int$save_table(marmoset$microeco$data$fpt$int, sep = "\t")
+fpt.data.lsk$save_table(marmoset$microeco$data$fpt$lsk, sep = "\t")
+fpt.data.rap$save_table(marmoset$microeco$data$fpt$rap, sep = "\t")
+fpt.data.rap.g1$save_table(marmoset$microeco$data$fpt$rap_g1, sep = "\t")
+fpt.data.rap.g2$save_table(marmoset$microeco$data$fpt$rap_g2, sep = "\t")
+fpt.data.rap.int$save_table(marmoset$microeco$data$fpt$rap_int, sep = "\t")
 
 fpt.data.main$save_abund(marmoset$microeco$abund$fpt$main, sep = "\t")
 fpt.data.g1$save_abund(marmoset$microeco$abund$fpt$g1, sep = "\t")
 fpt.data.g2$save_abund(marmoset$microeco$abund$fpt$g2, sep = "\t")
 fpt.data.int$save_abund(marmoset$microeco$abund$fpt$int, sep = "\t")
+fpt.data.lsk$save_abund(marmoset$microeco$abund$fpt$lsk, sep = "\t")
+fpt.data.rap$save_abund(marmoset$microeco$abund$fpt$rap, sep = "\t")
+fpt.data.rap.g1$save_abund(marmoset$microeco$abund$fpt$rap_g1, sep = "\t")
+fpt.data.rap.g2$save_abund(marmoset$microeco$abund$fpt$rap_g2, sep = "\t")
+fpt.data.rap.int$save_abund(marmoset$microeco$abund$fpt$rap_int, sep = "\t")
 
 fpt.data.main$save_alphadiv(marmoset$microeco$alpha$fpt$main)
 fpt.data.g1$save_alphadiv(marmoset$microeco$alpha$fpt$g1)
 fpt.data.g2$save_alphadiv(marmoset$microeco$alpha$fpt$g2)
 fpt.data.int$save_alphadiv(marmoset$microeco$alpha$fpt$int)
+fpt.data.lsk$save_alphadiv(marmoset$microeco$alpha$fpt$lsk)
+fpt.data.rap$save_alphadiv(marmoset$microeco$alpha$fpt$rap)
+fpt.data.rap.g1$save_alphadiv(marmoset$microeco$alpha$fpt$rap_g1)
+fpt.data.rap.g2$save_alphadiv(marmoset$microeco$alpha$fpt$rap_g2)
+fpt.data.rap.int$save_alphadiv(marmoset$microeco$alpha$fpt$rap_int)
 
 fpt.data.main$save_betadiv(marmoset$microeco$beta$fpt$main)
 fpt.data.g1$save_betadiv(marmoset$microeco$beta$fpt$g1)
 fpt.data.g2$save_betadiv(marmoset$microeco$beta$fpt$g2)
 fpt.data.int$save_betadiv(marmoset$microeco$beta$fpt$int)
+fpt.data.lsk$save_betadiv(marmoset$microeco$beta$fpt$lsk)
+fpt.data.rap$save_betadiv(marmoset$microeco$beta$fpt$rap)
+fpt.data.rap.g1$save_betadiv(marmoset$microeco$beta$fpt$rap_g1)
+fpt.data.rap.g2$save_betadiv(marmoset$microeco$beta$fpt$rap_g2)
+fpt.data.rap.int$save_betadiv(marmoset$microeco$beta$fpt$rap_int)
 ```
 ### NJC19
 ```{r}
@@ -1281,42 +1301,82 @@ njc.main        <- trans_func$new(dataset.main)
 njc.g1          <- trans_func$new(dataset.g1)
 njc.g2          <- trans_func$new(dataset.g2)
 njc.int         <- trans_func$new(dataset.int)
+njc.lsk <- trans_func$new(dataset.lsk)
+njc.rap <- trans_func$new(dataset.rap)
+njc.rap.g1 <- trans_func$new(dataset.rap.g1)
+njc.rap.g2 <- trans_func$new(dataset.rap.g2)
+njc.rap.int <- trans_func$new(dataset.rap.int)
 
 njc.main$cal_spe_func(prok_database = "NJC19")
 njc.g1$cal_spe_func(prok_database = "NJC19")
 njc.g2$cal_spe_func(prok_database = "NJC19")
 njc.int$cal_spe_func(prok_database = "NJC19")
+njc.lsk$cal_spe_func(prok_database = "NJC19")
+njc.rap$cal_spe_func(prok_database = "NJC19")
+njc.rap.g1$cal_spe_func(prok_database = "NJC19")
+njc.rap.g2$cal_spe_func(prok_database = "NJC19")
+njc.rap.int$cal_spe_func(prok_database = "NJC19")
 
 njc.main$cal_spe_func_perc(abundance_weighted = T)
 njc.g1$cal_spe_func_perc(abundance_weighted = T)
 njc.g2$cal_spe_func_perc(abundance_weighted = T)
 njc.int$cal_spe_func_perc(abundance_weighted = T)
+njc.lsk$cal_spe_func_perc(abundance_weighted = T)
+njc.rap$cal_spe_func_perc(abundance_weighted = T)
+njc.rap.g1$cal_spe_func_perc(abundance_weighted = T)
+njc.rap.g2$cal_spe_func_perc(abundance_weighted = T)
+njc.rap.int$cal_spe_func_perc(abundance_weighted = T)
 ```
 ```{r}
 njc.main$trans_spe_func_perc()
 njc.g1$trans_spe_func_perc()
 njc.g2$trans_spe_func_perc()
 njc.int$trans_spe_func_perc()
+njc.lsk$trans_spe_func_perc()
+njc.rap$trans_spe_func_perc()
+njc.rap.g1$trans_spe_func_perc()
+njc.rap.g2$trans_spe_func_perc()
+njc.rap.int$trans_spe_func_perc()
 
 njc.main.df        <- as.data.frame(t(njc.main$res_spe_func_perc), check.names = F)
 njc.g1.df          <- as.data.frame(t(njc.g1$res_spe_func_perc), check.names = F)
 njc.g2.df          <- as.data.frame(t(njc.g2$res_spe_func_perc), check.names = F)
 njc.int.df         <- as.data.frame(t(njc.int$res_spe_func_perc), check.names = F)
+njc.lsk.df <- as.data.frame(t(njc.lsk$res_spe_func_perc), check.names = F)
+njc.rap.df <- as.data.frame(t(njc.rap$res_spe_func_perc), check.names = F)
+njc.rap.g1.df <- as.data.frame(t(njc.rap.g1$res_spe_func_perc), check.names = F)
+njc.rap.g2.df <- as.data.frame(t(njc.rap.g2$res_spe_func_perc), check.names = F)
+njc.rap.int.df <- as.data.frame(t(njc.rap.int$res_spe_func_perc), check.names = F)
 
 njc.main.tax        <- as.data.frame(rownames(njc.main.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
 njc.g1.tax          <- as.data.frame(rownames(njc.g1.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
 njc.g2.tax          <- as.data.frame(rownames(njc.g2.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
 njc.int.tax         <- as.data.frame(rownames(njc.int.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
+njc.lsk.tax <- as.data.frame(rownames(njc.lsk.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
+njc.rap.tax <- as.data.frame(rownames(njc.rap.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
+njc.rap.g1.tax <- as.data.frame(rownames(njc.rap.g1.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
+njc.rap.g2.tax <- as.data.frame(rownames(njc.rap.g2.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
+njc.rap.int.tax <- as.data.frame(rownames(njc.rap.int.df), nm = c("Function")) %>% mutate(func_name = str_glue("njc", "{row_number()}"))
 
 njc.main.otu        <- njc.main.df %>% rownames_to_column("Function") %>% left_join(njc.main.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 njc.g1.otu          <- njc.g1.df %>% rownames_to_column("Function") %>% left_join(njc.g1.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 njc.g2.otu          <- njc.g2.df %>% rownames_to_column("Function") %>% left_join(njc.g2.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 njc.int.otu         <- njc.int.df %>% rownames_to_column("Function") %>% left_join(njc.int.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+njc.lsk.otu <- njc.lsk.df %>% rownames_to_column("Function") %>% left_join(njc.lsk.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+njc.rap.otu <- njc.rap.df %>% rownames_to_column("Function") %>% left_join(njc.rap.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+njc.rap.g1.otu <- njc.rap.g1.df %>% rownames_to_column("Function") %>% left_join(njc.rap.g1.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+njc.rap.g2.otu <- njc.rap.g2.df %>% rownames_to_column("Function") %>% left_join(njc.rap.g2.tax) %>% column_to_rownames("func_name") %>% select(-Function)
+njc.rap.int.otu <- njc.rap.int.df %>% rownames_to_column("Function") %>% left_join(njc.rap.int.tax) %>% column_to_rownames("func_name") %>% select(-Function)
 
 njc.main.tax        <- njc.main.tax %>% column_to_rownames("func_name")
 njc.g1.tax          <- njc.g1.tax %>% column_to_rownames("func_name")
 njc.g2.tax          <- njc.g2.tax %>% column_to_rownames("func_name")
 njc.int.tax         <- njc.int.tax %>% column_to_rownames("func_name")
+njc.lsk.tax <- njc.lsk.tax %>% column_to_rownames("func_name")
+njc.rap.tax <- njc.rap.tax %>% column_to_rownames("func_name")
+njc.rap.g1.tax <- njc.rap.g1.tax %>% column_to_rownames("func_name")
+njc.rap.g2.tax <- njc.rap.g2.tax %>% column_to_rownames("func_name")
+njc.rap.int.tax <- njc.rap.int.tax %>% column_to_rownames("func_name")
 ```
 ```{r}
 njc.data.main <- microtable$new(otu_table    = njc.main.otu, 
@@ -1335,44 +1395,104 @@ njc.data.int <- microtable$new(otu_table    = njc.int.otu,
                                 tax_table    = njc.int.tax, 
                                 sample_table = dataset.int$sample_table)
 
+njc.data.lsk <- microtable$new(otu_table    = njc.lsk.otu, 
+                                tax_table    = njc.lsk.tax, 
+                                sample_table = dataset.lsk$sample_table)
+
+njc.data.rap <- microtable$new(otu_table    = njc.rap.otu, 
+                                tax_table    = njc.rap.tax, 
+                                sample_table = dataset.rap$sample_table)
+
+njc.data.rap.g1 <- microtable$new(otu_table    = njc.rap.g1.otu, 
+                                tax_table    = njc.rap.g1.tax, 
+                                sample_table = dataset.rap.g1$sample_table)
+
+njc.data.rap.g2 <- microtable$new(otu_table    = njc.rap.g2.otu, 
+                                tax_table    = njc.rap.g2.tax, 
+                                sample_table = dataset.rap.g2$sample_table)
+
+njc.data.rap.int <- microtable$new(otu_table    = njc.rap.int.otu, 
+                                tax_table    = njc.rap.int.tax, 
+                                sample_table = dataset.rap.int$sample_table)
+
 njc.data.main$tidy_dataset()
 njc.data.g1$tidy_dataset()
 njc.data.g2$tidy_dataset()
 njc.data.int$tidy_dataset()
+njc.data.lsk$tidy_dataset()
+njc.data.rap$tidy_dataset()
+njc.data.rap.g1$tidy_dataset()
+njc.data.rap.g2$tidy_dataset()
+njc.data.rap.int$tidy_dataset()
 
 njc.data.main$cal_abund()
 njc.data.g1$cal_abund()
 njc.data.g2$cal_abund()
 njc.data.int$cal_abund()
+njc.data.lsk$cal_abund()
+njc.data.rap$cal_abund()
+njc.data.rap.g1$cal_abund()
+njc.data.rap.g2$cal_abund()
+njc.data.rap.int$cal_abund()
 
 njc.data.main$cal_alphadiv()
 njc.data.g1$cal_alphadiv()
 njc.data.g2$cal_alphadiv()
 njc.data.int$cal_alphadiv()
+njc.data.lsk$cal_alphadiv()
+njc.data.rap$cal_alphadiv()
+njc.data.rap.g1$cal_alphadiv()
+njc.data.rap.g2$cal_alphadiv()
+njc.data.rap.int$cal_alphadiv()
 
-njc.data.main$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.g1$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.g2$cal_betadiv(method = methods_16s$marm$betadiv)
-njc.data.int$cal_betadiv(method = methods_16s$marm$betadiv)
+njc.data.main$cal_betadiv()
+njc.data.g1$cal_betadiv()
+njc.data.g2$cal_betadiv()
+njc.data.int$cal_betadiv()
+njc.data.lsk$cal_betadiv()
+njc.data.rap$cal_betadiv()
+njc.data.rap.g1$cal_betadiv()
+njc.data.rap.g2$cal_betadiv()
+njc.data.rap.int$cal_betadiv()
 ```
 ```{r}
 njc.data.main$save_table(marmoset$microeco$data$njc$main, sep = "\t")
 njc.data.g1$save_table(marmoset$microeco$data$njc$g1, sep = "\t")
 njc.data.g2$save_table(marmoset$microeco$data$njc$g2, sep = "\t")
 njc.data.int$save_table(marmoset$microeco$data$njc$int, sep = "\t")
+njc.data.lsk$save_table(marmoset$microeco$data$njc$lsk, sep = "\t")
+njc.data.rap$save_table(marmoset$microeco$data$njc$rap, sep = "\t")
+njc.data.rap.g1$save_table(marmoset$microeco$data$njc$rap_g1, sep = "\t")
+njc.data.rap.g2$save_table(marmoset$microeco$data$njc$rap_g2, sep = "\t")
+njc.data.rap.int$save_table(marmoset$microeco$data$njc$rap_int, sep = "\t")
 
 njc.data.main$save_abund(marmoset$microeco$abund$njc$main, sep = "\t")
 njc.data.g1$save_abund(marmoset$microeco$abund$njc$g1, sep = "\t")
 njc.data.g2$save_abund(marmoset$microeco$abund$njc$g2, sep = "\t")
 njc.data.int$save_abund(marmoset$microeco$abund$njc$int, sep = "\t")
+njc.data.lsk$save_abund(marmoset$microeco$abund$njc$lsk, sep = "\t")
+njc.data.rap$save_abund(marmoset$microeco$abund$njc$rap, sep = "\t")
+njc.data.rap.g1$save_abund(marmoset$microeco$abund$njc$rap_g1, sep = "\t")
+njc.data.rap.g2$save_abund(marmoset$microeco$abund$njc$rap_g2, sep = "\t")
+njc.data.rap.int$save_abund(marmoset$microeco$abund$njc$rap_int, sep = "\t")
 
 njc.data.main$save_alphadiv(marmoset$microeco$alpha$njc$main)
 njc.data.g1$save_alphadiv(marmoset$microeco$alpha$njc$g1)
 njc.data.g2$save_alphadiv(marmoset$microeco$alpha$njc$g2)
 njc.data.int$save_alphadiv(marmoset$microeco$alpha$njc$int)
+njc.data.lsk$save_alphadiv(marmoset$microeco$alpha$njc$lsk)
+njc.data.rap$save_alphadiv(marmoset$microeco$alpha$njc$rap)
+njc.data.rap.g1$save_alphadiv(marmoset$microeco$alpha$njc$rap_g1)
+njc.data.rap.g2$save_alphadiv(marmoset$microeco$alpha$njc$rap_g2)
+njc.data.rap.int$save_alphadiv(marmoset$microeco$alpha$njc$rap_int)
 
 njc.data.main$save_betadiv(marmoset$microeco$beta$njc$main)
 njc.data.g1$save_betadiv(marmoset$microeco$beta$njc$g1)
 njc.data.g2$save_betadiv(marmoset$microeco$beta$njc$g2)
 njc.data.int$save_betadiv(marmoset$microeco$beta$njc$int)
+njc.data.lsk$save_betadiv(marmoset$microeco$beta$njc$lsk)
+njc.data.rap$save_betadiv(marmoset$microeco$beta$njc$rap)
+njc.data.rap.g1$save_betadiv(marmoset$microeco$beta$njc$rap_g1)
+njc.data.rap.g2$save_betadiv(marmoset$microeco$beta$njc$rap_g2)
+njc.data.rap.int$save_betadiv(marmoset$microeco$beta$njc$rap_int)
 ```

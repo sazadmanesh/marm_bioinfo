@@ -55,39 +55,22 @@ njc.rap.g1   <- read.func.microtable("function", "keg", "rapid_g1")
 njc.rap.g2   <- read.func.microtable("function", "keg", "rapid_g2")
 njc.rap.int  <- read.func.microtable("function", "keg", "rapid_intervention")
 ```
+## Ordered Samples
+```{r}
+sample.table.order <- read.table("C:/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets/dataset_main/sample_table.tsv",
+                                 header = T,
+                                 sep = "\t") %>%
+  arrange(Study_Day, Group_Phase, Subject)
+
+ordered.samples <- as.ordered(sample.table.order$ID)
+```
 # Data Visualization
 ## Alpha Diversity
-```{r}
-alpha.main <- trans_alpha$new(dataset = dataset.main,
-                              group = "group_phase"
-                              )
-alpha.main$cal_diff(method = "KW_dunn",
-                    KW_dunn_letter = FALSE)
-```
-### Both LSK and RAP
-```{r}
-alpha.int <- trans_alpha$new(dataset = dataset.int,
-                             group = "Group_Phase")
-alpha.int$cal_diff(method = "wilcox")
-```
-```{r}
-saveRDS(alpha.int, "data/data_objects/alpha.int.rds")
-```
-```{r}
-alpha.intervention <- alpha.int$plot_alpha(measure = "Shannon")
-alpha.intervention
-```
-```{r}
-ggsave("visuals/sha_wlcx_int.png", alpha.intervention)
-```
 ### RAP
 ```{r}
 alpha.rap.int <- trans_alpha$new(dataset = dataset.rap.int,
                                  group = "Group_Phase")
 alpha.rap.int$cal_diff(method = "wilcox")
-```
-```{r}
-saveRDS(alpha.rap.int, "data/data_objects/alpha.rap.int.rds")
 ```
 ```{r}
 shan.rap.intervention <- alpha.rap.int$plot_alpha(measure = "Shannon")
@@ -245,14 +228,6 @@ bray.rap.g1.int.pcoa + labs(
 # Abundance
 ## Taxonomic
 ```{r}
-sample.table.order <- read.table("C:/Users/shayda/Documents/work/marm_bioinfo/microeco/datasets/dataset_main/sample_table.tsv",
-                                 header = T,
-                                 sep = "\t") %>%
-  arrange(Study_Day, Group_Phase, Subject)
-
-ordered.samples <- as.ordered(sample.table.order$ID)
-```
-```{r}
 phy.abund.rap <- trans_abund$new(dataset = dataset.rap,
                              taxrank = "Phylum")
 cla.abund.rap <- trans_abund$new(dataset = dataset.rap,
@@ -296,6 +271,7 @@ gen.abund.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_kee
                         facet = c("Group"),
                         order_x = c(ordered.samples))
 ```
+### Diff
 ```{r}
 wlcx.rap.int <- trans_diff$new(
   dataset = dataset.rap.int,
@@ -306,8 +282,11 @@ wlcx.rap.int <- trans_diff$new(
 wlcx.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
 wlcx.rap.intervention <- wlcx.rap.int$plot_diff_abund(
                                               use_number = 1:16,
-                                              add_sig = TRUE)
+                                              add_sig = TRUE,
+                                              group_order = c("control", "gum"))
+wlcx.rap.intervention
 ```
+
 ```{r}
 rap.g1.int <- clone(dataset.rap.g1)
 rap.g1.int$sample_table <- dataset.rap.g1$sample_table %>%
@@ -345,74 +324,6 @@ wlcx.rap.group2 <- wlcx.rap.g2$plot_diff_abund(
                                               add_sig = TRUE)
 wlcx.rap.group2
 ```
-## Functional
-### KEGG
-```{r}
-keg.1.main <- trans_abund$new(dataset = keg.main,
-                            taxrank = "Level.1")
-keg.1.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
-                        color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
-                        order_x = c(ordered.samples))
-```
-```{r}
-keg.2.main <- trans_abund$new(dataset = keg.main,
-                            taxrank = "Level.2")
-keg.2.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
-                        color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
-                        order_x = c(ordered.samples))
-```
-```{r}
-keg.3.main <- trans_abund$new(dataset = keg.main,
-                            taxrank = "Level.3")
-keg.3.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
-                        color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
-                        order_x = c(ordered.samples))
-```
-### FAPROTAX
-```{r}
-fpt.func.main <- trans_abund$new(dataset = fpt.main,
-                            taxrank = "Function")
-fpt.func.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
-                        color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
-                        order_x = c(ordered.samples))
-```
-### NJC19
-```{r}
-njc.func.main <- trans_abund$new(dataset = njc.main,
-                            taxrank = "Function")
-njc.func.main$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
-                        color_values = paletteer::paletteer_d("pals::tol"), 
-                        facet = c("group"),
-                        order_x = c(ordered.samples))
-```
-
-
-```{r}
-wlcx.rap.int <- trans_diff$new(
-  dataset = dataset.rap.int,
-  method = "wilcox",
-  group = "Group_Phase",
-  alpha = 0.05,
-  filter_thres = 0.001)
-
-wlcx.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
-wlcx.rap.int$plot_diff_abund()
-```
-```{r}
-wlcx.int <- trans_diff$new(
-  dataset = dataset.int,
-  method = "wilcox",
-  group = "Group_Phase",
-  alpha = 0.05,
-  filter_thres = 0.001)
-
-wlcx.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
-wlcx.int$plot_diff_abund()
-```
 ```{r}
 rap.lfs.gp <- trans_diff$new(
   dataset = dataset.rap,
@@ -423,6 +334,88 @@ rap.lfs.gp <- trans_diff$new(
 
 rap.lfs.gp$plot_diff_abund()
 ```
+## Functional
+### KEGG
+```{r}
+keg.1.rap <- trans_abund$new(dataset = keg.rap,
+                            taxrank = "Level.1")
+keg.1.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("Group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+keg.2.rap <- trans_abund$new(dataset = keg.rap,
+                            taxrank = "Level.2")
+keg.2.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("Group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+keg.3.rap <- trans_abund$new(dataset = keg.rap,
+                            taxrank = "Level.3")
+keg.3.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("Group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+wlcx.keg.rap.int <- trans_diff$new(
+  dataset = keg.rap.int,
+  method = "wilcox",
+  group = "Group_Phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+wlcx.keg.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.keg.rap.intervention <- wlcx.keg.rap.int$plot_diff_abund(
+                                              use_number = 1:16,
+                                              add_sig = TRUE)
+```
+### FAPROTAX
+```{r}
+fpt.func.rap <- trans_abund$new(dataset = fpt.rap,
+                            taxrank = "Function")
+fpt.func.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("Group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+wlcx.fpt.rap.int <- trans_diff$new(
+  dataset = fpt.data.rap.int,
+  method = "wilcox",
+  group = "Group_Phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+wlcx.fpt.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.fpt.rap.intervention <- wlcx.fpt.rap.int$plot_diff_abund(
+                                              use_number = 1:16,
+                                              add_sig = TRUE)
+```
+### NJC19
+```{r}
+njc.func.rap <- trans_abund$new(dataset = njc.rap,
+                            taxrank = "Function")
+njc.func.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep = F, 
+                        color_values = paletteer::paletteer_d("pals::tol"), 
+                        facet = c("Group"),
+                        order_x = c(ordered.samples))
+```
+```{r}
+wlcx.njc.rap.int <- trans_diff$new(
+  dataset = njc.data.rap.int,
+  method = "wilcox",
+  group = "Group_Phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+wlcx.njc.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
+wlcx.njc.rap.intervention <- wlcx.njc.rap.int$plot_diff_abund(
+                                              use_number = 1:16,
+                                              add_sig = TRUE)
+```
+
+
 ```{r}
 gen.phy.rap.g1 <- trans_abund$new(
   dataset = dataset.rap.g1,
