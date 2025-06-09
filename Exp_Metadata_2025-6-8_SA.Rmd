@@ -1,0 +1,22 @@
+---
+title: "Experiment Metadata"
+output: html_notebook:
+  code_folding: hide
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r, warning = FALSE}
+global <- config::get(config = "default")
+
+here::i_am("Exp_Metadata_2025-6-8_SA.Rmd")
+source(here::here(global$setup))
+```
+# Sample Metadata {.tabset}
+## Samples
+## Extracts
+## Libraries
+## Sequencing Runs
+## Weights
+## Leftover Food 
+## Bristol

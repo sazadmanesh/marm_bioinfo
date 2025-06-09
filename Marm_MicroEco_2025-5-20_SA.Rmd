@@ -13,47 +13,31 @@ source(here::here(global$setup))
 ```
 ## Taxonomic Datasets
 ```{r}
-dataset.main     <- read.main.microtable("tax", "main")
-dataset.g1       <- read.main.microtable("tax", "group1")
-dataset.g2       <- read.main.microtable("tax", "group2")
-dataset.int      <- read.main.microtable("tax", "intervention")
 dataset.lsk      <- read.main.microtable("tax", "ligation")
 dataset.rap      <- read.main.microtable("tax", "rapid")
-dataset.rap.g1   <- read.main.microtable("tax", "rapid_g1")
-dataset.rap.g2   <- read.main.microtable("tax", "rapid_g2")
+dataset.rap.g1   <- read.main.microtable("tax", "rapid_group1")
+dataset.rap.g2   <- read.main.microtable("tax", "rapid_group2")
 dataset.rap.int  <- read.main.microtable("tax", "rapid_intervention")
 ```
 ## Functional Datasets
 ```{r}
-keg.main     <- read.func.microtable("function", "keg", "main")
-keg.g1       <- read.func.microtable("function", "keg", "group1")
-keg.g2       <- read.func.microtable("function", "keg", "group2")
-keg.int      <- read.func.microtable("function", "keg", "intervention")
 keg.lsk      <- read.func.microtable("function", "keg", "ligation")
 keg.rap      <- read.func.microtable("function", "keg", "rapid")
 keg.rap.g1   <- read.func.microtable("function", "keg", "rapid_g1")
 keg.rap.g2   <- read.func.microtable("function", "keg", "rapid_g2")
 keg.rap.int  <- read.func.microtable("function", "keg", "rapid_intervention")
 
-fpt.main     <- read.func.microtable("function", "fpt", "main")
-fpt.g1       <- read.func.microtable("function", "fpt", "group1")
-fpt.g2       <- read.func.microtable("function", "fpt", "group2")
-fpt.int      <- read.func.microtable("function", "fpt", "intervention")
-fpt.lsk      <- read.func.microtable("function", "keg", "ligation")
-fpt.rap      <- read.func.microtable("function", "keg", "rapid")
-fpt.rap.g1   <- read.func.microtable("function", "keg", "rapid_g1")
-fpt.rap.g2   <- read.func.microtable("function", "keg", "rapid_g2")
-fpt.rap.int  <- read.func.microtable("function", "keg", "rapid_intervention")
+fpt.lsk      <- read.func.microtable("function", "fpt", "ligation")
+fpt.rap      <- read.func.microtable("function", "fpt", "rapid")
+fpt.rap.g1   <- read.func.microtable("function", "fpt", "rapid_g1")
+fpt.rap.g2   <- read.func.microtable("function", "fpt", "rapid_g2")
+fpt.rap.int  <- read.func.microtable("function", "fpt", "rapid_intervention")
 
-njc.main     <- read.func.microtable("function", "njc", "main")
-njc.g1       <- read.func.microtable("function", "njc", "group1")
-njc.g2       <- read.func.microtable("function", "njc", "group2")
-njc.int      <- read.func.microtable("function", "njc", "intervention")
-njc.lsk      <- read.func.microtable("function", "keg", "ligation")
-njc.rap      <- read.func.microtable("function", "keg", "rapid")
-njc.rap.g1   <- read.func.microtable("function", "keg", "rapid_g1")
-njc.rap.g2   <- read.func.microtable("function", "keg", "rapid_g2")
-njc.rap.int  <- read.func.microtable("function", "keg", "rapid_intervention")
+njc.lsk      <- read.func.microtable("function", "njc", "ligation")
+njc.rap      <- read.func.microtable("function", "njc", "rapid")
+njc.rap.g1   <- read.func.microtable("function", "njc", "rapid_g1")
+njc.rap.g2   <- read.func.microtable("function", "njc", "rapid_g2")
+njc.rap.int  <- read.func.microtable("function", "njc", "rapid_intervention")
 ```
 ## Ordered Samples
 ```{r}
@@ -64,22 +48,7 @@ sample.table.order <- read.table("C:/Users/shayda/Documents/work/marm_bioinfo/mi
 
 ordered.samples <- as.ordered(sample.table.order$ID)
 ```
-# Data Visualization
-## Alpha Diversity
-### RAP
-```{r}
-alpha.rap.int <- trans_alpha$new(dataset = dataset.rap.int,
-                                 group = "Group_Phase")
-alpha.rap.int$cal_diff(method = "wilcox")
-```
-```{r}
-shan.rap.intervention <- alpha.rap.int$plot_alpha(measure = "Shannon")
-shan.rap.intervention
-```
-```{r}
-ggsave("visuals/sha_wlcx_rap_int.png", shan.rap.intervention)
-```
-#### RAP Groups
+## Intervention Group Subsets
 ```{r}
 rap.g1.int <- clone(dataset.rap.g1)
 rap.g1.int$sample_table <- dataset.rap.g1$sample_table %>%
@@ -91,34 +60,40 @@ rap.g2.int$sample_table <- dataset.rap.g2$sample_table %>%
   dplyr::filter(Group_Phase %in% c("gum", "control"))
 rap.g2.int$tidy_dataset()
 ```
-## Beta Diversity
-### LSK and RAP
+# Data Visualization
+## Alpha Diversity (Shannon)
 ```{r}
-
+alpha.rap.int <- trans_alpha$new(dataset = dataset.rap.int,
+                                 group = "Group_Phase")
+alpha.rap.int$cal_diff(method = "wilcox")
 ```
 ```{r}
-dataset.main$cal_betadiv()
-
-bray.main <- trans_beta$new(
-  dataset = dataset.main,
-  group = "group_phase",
-  measure = "bray"
-)
+shan.rap.intervention <- alpha.rap.int$plot_alpha(measure = "Shannon",
+                                                  xtext_angle = 0,
+                                                  color_values = c("#00868B", "#EE7600"))
+shan.rap.intervention
 ```
 ```{r}
-bray.main$cal_group_distance(within_group = TRUE)
-bray.main$cal_group_distance_diff(method = "wilcox")
-bray.main$plot_group_distance(add = "mean")
+shan.rap.intervention + labs(
+  x = "Intervention Diet",
+  y = "Shannon Diversity Index",
+  title = "Figure X",
+  subtitle = "Shannon Diversity of Intervention Diets") +
+  scale_x_discrete(label = c("Control", "Gum")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
 ```
 ```{r}
-bray.main$cal_ordination(method = "PCoA")
+ggsave("visuals/sha_wlcx_rap_int.png", shan.rap.intervention)
 ```
-```{r}
-bray.main.pcoa <- bray.main$plot_ordination(plot_color = "group_phase",
-                                          plot_shape = "group_phase",
-                                          plot_type = c("point", "ellipse"))
-```
-### RAP
+## Beta Diversity (Bray-Curtis)
 ```{r}
 dataset.rap.int$cal_betadiv()
 
@@ -131,8 +106,26 @@ bray.rap.int <- trans_beta$new(
 ```{r}
 bray.rap.int$cal_group_distance(within_group = TRUE)
 bray.rap.int$cal_group_distance_diff(method = "wilcox")
-bray.box.rap.int <- bray.rap.int$plot_group_distance(add = "mean")
-bray.box.rap.int
+bray.box.rap.int <- bray.rap.int$plot_group_distance(add = "mean",
+                                                     xtext_angle = 0,
+                                                  color_values = c("#00868B", "#EE7600"))
+```
+```{r}
+bray.box.rap.int + labs(
+  x = "Intervention Diet",
+  y = "Bray-Curtis Distance",
+  title = "Figure X",
+  subtitle = "Bray-Curtis Dissimilarity of Intervention Diets") +
+  scale_x_discrete(label = c("Control", "Gum")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
 ```
 ```{r}
 ggsave("visuals/box_bray-wlcx_rap_int.png", bray.box.rap.int)
@@ -151,7 +144,8 @@ bray.rap.int.pcoa + labs(
     fill = "Intervention Diet",
     color = "Intervention Diet",
     shape = "Intervention Diet",
-    title = "Principal Coordinate Analysis (PCoA) with Bray-Curtis Dissimilarity") +
+    title = "Figure X",
+    subtitle = "Principal Coordinate Analysis (PCoA) with Bray-Curtis Dissimilarity") +
   scale_fill_manual(
     values = c("control" = "#00868B", "gum" = "#EE7600"),
     labels = c("Control", "Gum")) +
@@ -163,67 +157,20 @@ bray.rap.int.pcoa + labs(
     labels = c("Control", "Gum")) +
   theme(panel.grid = element_blank(),
         panel.background = element_blank(),
-        plot.title = element_text(hjust = 0.5,
-                                  size = 26),
-        legend.text = element_text(size = 22),
-        legend.title = element_text(size = 24),
-        axis.title = element_text(size = 18),
-        axis.text = element_text(size = 18))
+        plot.title = element_text(face = "bold",
+                                  size = 15),
+        plot.subtitle = element_text(face = "italic", 
+                                     size = 16),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
 ```
 ```{r}
 ggsave("visuals/pcoa_bray_rap_int.png", bray.rap.int.pcoa)
-```
-#### RAP Group 1
-```{r}
-rap.g1.int$cal_betadiv()
-
-bray.rap.g1.int <- trans_beta$new(
-  dataset = rap.g1.int,
-  group = "Group_Phase",
-  measure = "bray"
-)
-```
-```{r}
-bray.rap.g1.int$cal_group_distance(within_group = TRUE)
-bray.rap.g1.int$cal_group_distance_diff(method = "wilcox")
-bray.box.rap.g1.int <- bray.rap.g1.int$plot_group_distance(add = "mean")
-bray.box.rap.g1.int
-```
-```{r}
-ggsave("visuals/box_bray-wlcx_rap_g1_int.png", bray.box.rap.g1.int)
-```
-```{r}
-bray.rap.g1.int$cal_ordination(method = "PCoA")
-```
-```{r}
-bray.rap.g1.int.pcoa <- bray.rap.g1.int$plot_ordination(plot_color = "Group_Phase",
-                                          plot_shape = "Group_Phase",
-                                          plot_type = c("point", "ellipse"))
-bray.rap.g1.int.pcoa
-```
-```{r}
-bray.rap.g1.int.pcoa + labs(
-    fill = "Intervention Diet",
-    color = "Intervention Diet",
-    shape = "Intervention Diet",
-    title = "Principal Coordinate Analysis (PCoA) with Bray-Curtis Dissimilarity") +
-  scale_fill_manual(
-    values = c("control" = "#00868B", "gum" = "#EE7600"),
-    labels = c("Control", "Gum")) +
-  scale_color_manual(
-    values = c("control" = "#00868B", "gum" = "#EE7600"),
-    labels = c("Control", "Gum")) +
-  scale_shape_manual(
-    values = c("control" = 16, "gum" = 17),
-    labels = c("Control", "Gum")) +
-  theme(panel.grid = element_blank(),
-        panel.background = element_blank(),
-        plot.title = element_text(hjust = 0.5,
-                                  size = 26),
-        legend.text = element_text(size = 22),
-        legend.title = element_text(size = 24),
-        axis.title = element_text(size = 18),
-        axis.text = element_text(size = 18))
 ```
 # Abundance
 ## Taxonomic
@@ -271,6 +218,132 @@ gen.abund.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_kee
                         facet = c("Group"),
                         order_x = c(ordered.samples))
 ```
+### Nested 
+```{r}
+gen.phy.rap.g1 <- trans_abund$new(
+  dataset = dataset.rap.g1,
+  ntaxa = 30,
+  taxrank = "Genus",
+  high_level = "Phylum",
+  groupmean = "Group_Phase",
+  group_morestats = T)
+phygen.rap.g1 <- gen.phy.rap.g1$plot_bar(ggnested = T,
+                     order_x = c("baseline",
+                                 "gum",
+                                 "gum-washout",
+                                 "control",
+                                 "control-washout"))
+```
+```{r}
+phygen.rap.g1 + labs(
+  x = "Diet Trial Phase",
+  y = "Relative Abundance (%)",
+  title = "Figure X",
+  subtitle = "Group 1: Abundance of Genera Nested by Phylum") +
+  scale_x_discrete(label = c("Baseline", "Gum", "Gum Washout", "Control", "Control Washout")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/phy_gen_rap_g1.png", phygen.rap.g1)
+```
+```{r}
+gen.phy.rap.g2 <- trans_abund$new(
+  dataset = dataset.rap.g2,
+  ntaxa = 30,
+  taxrank = "Genus",
+  high_level = "Phylum",
+  groupmean = "Group_Phase",
+  group_morestats = T)
+phygen.rap.g2 <- gen.phy.rap.g2$plot_bar(ggnested = T,
+                     order_x = c("baseline",
+                                 "control",
+                                 "control-washout",
+                                 "gum",
+                                 "gum-washout"))
+```
+```{r}
+phygen.rap.g2 + labs(
+  x = "Diet Trial Phase",
+  y = "Relative Abundance (%)",
+  title = "Figure X",
+  subtitle = "Group 2: Abundance of Genera Nested by Phylum") +
+  scale_x_discrete(label = c("Baseline", "Control", "Control Washout", "Gum", "Gum Washout")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/phy_gen_rap_g2.png", phygen.rap.g2)
+```
+```{r}
+gen.phy.rap.int <- trans_abund$new(
+  dataset = dataset.rap.int,
+  ntaxa = 30,
+  taxrank = "Genus",
+  high_level = "Phylum",
+  groupmean = "Group_Phase",
+  group_morestats = T)
+phygen.rap.int <- gen.phy.rap.int$plot_bar(ggnested = T,
+                     order_x = c("control", "gum"))
+```
+```{r}
+phygen.rap.int + labs(
+  x = "Intervention Diet",
+  y = "Relative Abundance (%)",
+  title = "Figure X",
+  subtitle = "Abundance of Genera Nested by Phylum During Diet Interventions") +
+  scale_x_discrete(label = c( "Control", "Gum")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/phy_gen_rap_int.png", phygen.rap.int)
+```
+```{r}
+gen.int <- trans_abund$new(dataset = dataset.int,
+                             taxrank = "Genus",
+                             ntaxa = 40)
+gen.hm.int <- gen.int$plot_heatmap(facet = c("group", "group_phase"),
+                                 xtext_keep = FALSE,
+                                 withmargin = FALSE,
+                                 plot_breaks = c(0.01, 0.1, 1, 10),
+                                 order_x = c(ordered.samples))
+gen.hm.int
+```
+```{r}
+spe.fam.int <- trans_abund$new(
+  dataset = dataset.int,
+  ntaxa = 25,
+  taxrank = "Species",
+  high_level = "Family",
+  groupmean = "group_phase",
+  group_morestats = T)
+spe.fam.int$plot_bar(ggnested = T,
+                     order_x = c("control", "gum"))
+  
+
+```
 ### Diff
 ```{r}
 wlcx.rap.int <- trans_diff$new(
@@ -280,13 +353,47 @@ wlcx.rap.int <- trans_diff$new(
   alpha = 0.05,
   filter_thres = 0.001)
 wlcx.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
-wlcx.rap.intervention <- wlcx.rap.int$plot_diff_abund(
+wlcx.rap.intervention <- wlcx.rap.int$plot_diff_abund(plot_type = "barerrorbar",
                                               use_number = 1:16,
                                               add_sig = TRUE,
-                                              group_order = c("control", "gum"))
-wlcx.rap.intervention
+                                              group_order = c("control", "gum"),
+                                              errorbar_color_black = TRUE,
+                                              errorbar_addpoint = FALSE,
+                                              errorbar_width = 0.3,
+                                              errorbar_size = 0.75)
 ```
-
+```{r}
+wlcx.rap.intervention + labs(
+    fill = "Intervention Diet",
+    color = "Intervention Diet",
+    title = "Figure X",
+    subtitle = "Abundance of Taxa During Diet Intervention",
+    x = "Taxon",
+    y = "Relative Abundance") +
+  scale_fill_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Gum", "Control")) +
+  scale_color_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Gum", "Control")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(face = "bold",
+                                  size = 15),
+        plot.subtitle = element_text(face = "italic", 
+                                     size = 16),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/wlcx_diff_rap_int.png", bray.rap.int.pcoa)
+```
+#### By Group
 ```{r}
 rap.g1.int <- clone(dataset.rap.g1)
 rap.g1.int$sample_table <- dataset.rap.g1$sample_table %>%
@@ -306,10 +413,45 @@ wlcx.rap.g1 <- trans_diff$new(
   alpha = 0.05,
   filter_thres = 0.001)
 wlcx.rap.g1$res_diff %<>% subset(Significance %in% c("*","**","***"))
-wlcx.rap.group1 <- wlcx.rap.g1$plot_diff_abund(
+wlcx.rap.group1 <- wlcx.rap.g1$plot_diff_abund(plot_type = "barerrorbar",
                                               use_number = 1:16,
-                                              add_sig = TRUE)
-wlcx.rap.group1
+                                              add_sig = TRUE,
+                                              group_order = c("control", "gum"),
+                                              errorbar_color_black = TRUE,
+                                              errorbar_addpoint = FALSE,
+                                              errorbar_width = 0.3,
+                                              errorbar_size = 0.75)
+```
+```{r}
+wlcx.rap.group1 + labs(
+    fill = "Intervention Diet",
+    color = "Intervention Diet",
+    title = "Figure X",
+    subtitle = "Group 1: Abundance of Taxa During Diet Interventions",
+    x = "Taxon",
+    y = "Relative Abundance") +
+  scale_fill_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Gum", "Control")) +
+  scale_color_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Gum", "Control")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(face = "bold",
+                                  size = 15),
+        plot.subtitle = element_text(face = "italic", 
+                                     size = 16),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+
 ```
 ```{r}
 wlcx.rap.g2 <- trans_diff$new(
@@ -319,10 +461,42 @@ wlcx.rap.g2 <- trans_diff$new(
   alpha = 0.05,
   filter_thres = 0.001)
 wlcx.rap.g2$res_diff %<>% subset(Significance %in% c("*","**","***"))
-wlcx.rap.group2 <- wlcx.rap.g2$plot_diff_abund(
+wlcx.rap.group2 <- wlcx.rap.g2$plot_diff_abund(plot_type = "barerrorbar",
                                               use_number = 1:16,
-                                              add_sig = TRUE)
-wlcx.rap.group2
+                                              add_sig = TRUE,
+                                              group_order = c("control", "gum"),
+                                              errorbar_color_black = TRUE,
+                                              errorbar_addpoint = FALSE,
+                                              errorbar_width = 0.3,
+                                              errorbar_size = 0.75)
+```
+```{r}
+wlcx.rap.group2 + labs(
+    fill = "Intervention Diet",
+    color = "Intervention Diet",
+    title = "Figure X",
+    subtitle = "Group 2: Abundance of Taxa During Diet Interventions",
+    x = "Taxon",
+    y = "Relative Abundance") +
+  scale_fill_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Gum", "Control")) +
+  scale_color_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Gum", "Control")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(face = "bold",
+                                  size = 15),
+        plot.subtitle = element_text(face = "italic", 
+                                     size = 16),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
 ```
 ```{r}
 rap.lfs.gp <- trans_diff$new(
@@ -332,7 +506,85 @@ rap.lfs.gp <- trans_diff$new(
   alpha = 0.05,
   filter_thres = 0.001)
 
-rap.lfs.gp$plot_diff_abund()
+lfs.rap.gp <- rap.lfs.gp$plot_diff_abund(plot_type = "barerrorbar",
+                                              use_number = 1:16,
+                                              add_sig = TRUE,
+                                              group_order = c(
+                                                "baseline", "control", "control-washout", "gum", "gum-washout"),
+                                              errorbar_color_black = TRUE,
+                                              errorbar_addpoint = FALSE,
+                                              errorbar_width = 0.3,
+                                              errorbar_size = 0.75)
+```
+```{r}
+lfs.rap.gp  + labs(
+    fill = "Diet Trial Phase",
+    color = "Diet Trial Phase",
+    title = "Figure X",
+    subtitle = "Abundance of Taxa Throughout Study",
+    x = "Taxon",
+    y = "Relative Abundance") +
+  scale_fill_manual(
+    values = c("control" = "#00868B",
+               "control-washout" = "#a1c0c2",
+               "gum" = "#EE7600",
+               "gum-washout" = "#f5b9a1",
+               "baseline" = "#f2e351"),
+    labels = c("Gum Washout", "Gum", "Control Washout", "Control", "Baseline")) +
+  scale_color_manual(
+    values = c("control" = "#00868B",
+               "control-washout" = "#a1c0c2",
+               "gum" = "#EE7600",
+               "gum-washout" = "#f5b9a1",
+               "baseline" = "#f2e351"),
+    labels = c("Gum Washout", "Gum", "Control Washout", "Control", "Baseline")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(face = "bold",
+                                  size = 15),
+        plot.subtitle = element_text(face = "italic", 
+                                     size = 16),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+rap.lfs.g1 <- trans_diff$new(
+  dataset = dataset.rap.g1,
+  method = "lefse",
+  group = "Group_Phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+
+rap.lfs.g1$plot_diff_abund(plot_type = "barerrorbar",
+                                              use_number = 1:16,
+                                              add_sig = TRUE,
+                                              group_order = c("baseline", "gum", "gum-washout", "control", "control-washout"),
+                                              errorbar_color_black = TRUE,
+                                              errorbar_addpoint = FALSE,
+                                              errorbar_width = 0.3,
+                                              errorbar_size = 0.75)
+```
+```{r}
+rap.lfs.g2 <- trans_diff$new(
+  dataset = dataset.rap.g2,
+  method = "lefse",
+  group = "Group_Phase",
+  alpha = 0.05,
+  filter_thres = 0.001)
+
+rap.lfs.g2$plot_diff_abund(plot_type = "barerrorbar",
+                                              use_number = 1:16,
+                                              add_sig = TRUE,
+                                              group_order = c("baseline", "control", "control-washout", "gum", "gum-washout"),
+                                              errorbar_color_black = TRUE,
+                                              errorbar_addpoint = FALSE,
+                                              errorbar_width = 0.3,
+                                              errorbar_size = 0.75)
 ```
 ## Functional
 ### KEGG
@@ -383,15 +635,51 @@ fpt.func.rap$plot_bar(bar_full = F, use_alluvium = T, clustering = F, xtext_keep
 ```
 ```{r}
 wlcx.fpt.rap.int <- trans_diff$new(
-  dataset = fpt.data.rap.int,
+  dataset = fpt.rap.int,
   method = "wilcox",
   group = "Group_Phase",
   alpha = 0.05,
   filter_thres = 0.001)
 wlcx.fpt.rap.int$res_diff %<>% subset(Significance %in% c("*","**","***"))
-wlcx.fpt.rap.intervention <- wlcx.fpt.rap.int$plot_diff_abund(
+wlcx.fpt.rap.intervention <- wlcx.fpt.rap.int$plot_diff_abund(plot_type = "barerrorbar",
                                               use_number = 1:16,
-                                              add_sig = TRUE)
+                                              add_sig = TRUE,
+                                              group_order = c("control", "gum"),
+                                              errorbar_color_black = TRUE,
+                                              errorbar_addpoint = FALSE,
+                                              errorbar_width = 0.3,
+                                              errorbar_size = 0.75)
+```
+```{r}
+wlcx.fpt.rap.intervention + labs(
+    fill = "Intervention Diet",
+    color = "Intervention Diet",
+    title = "Figure X",
+    subtitle = "Abundance of Function During Diet Intervention",
+    x = "Function",
+    y = "Relative Abundance") +
+  scale_fill_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Gum", "Control")) +
+  scale_color_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Gum", "Control")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(face = "bold",
+                                  size = 15),
+        plot.subtitle = element_text(face = "italic", 
+                                     size = 16),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/wlcx_fpt_rap_int.png", wlcx.fpt.rap.intervention)
 ```
 ### NJC19
 ```{r}
@@ -416,68 +704,3 @@ wlcx.njc.rap.intervention <- wlcx.njc.rap.int$plot_diff_abund(
 ```
 
 
-```{r}
-gen.phy.rap.g1 <- trans_abund$new(
-  dataset = dataset.rap.g1,
-  ntaxa = 30,
-  taxrank = "Genus",
-  high_level = "Phylum",
-  groupmean = "Group_Phase",
-  group_morestats = T)
-gen.phy.rap.g1$plot_bar(ggnested = T,
-                     order_x = c("run-in",
-                                 "gum",
-                                 "gum-washout",
-                                 "control",
-                                 "control-washout"))
-```
-```{r}
-gen.phy.rap.g2 <- trans_abund$new(
-  dataset = dataset.rap.g2,
-  ntaxa = 30,
-  taxrank = "Genus",
-  high_level = "Phylum",
-  groupmean = "Group_Phase",
-  group_morestats = T)
-gen.phy.rap.g2$plot_bar(ggnested = T,
-                     order_x = c("run-in",
-                                 "control",
-                                 "control-washout",
-                                 "gum",
-                                 "gum-washout"))
-```
-```{r}
-gen.phy.rap.int <- trans_abund$new(
-  dataset = dataset.rap.int,
-  ntaxa = 30,
-  taxrank = "Genus",
-  high_level = "Phylum",
-  groupmean = "Group_Phase",
-  group_morestats = T)
-gen.phy.rap.int$plot_bar(ggnested = T,
-                     order_x = c("control", "gum"))
-```
-```{r}
-gen.int <- trans_abund$new(dataset = dataset.int,
-                             taxrank = "Genus",
-                             ntaxa = 40)
-gen.hm.int <- gen.int$plot_heatmap(facet = c("group", "group_phase"),
-                                 xtext_keep = FALSE,
-                                 withmargin = FALSE,
-                                 plot_breaks = c(0.01, 0.1, 1, 10),
-                                 order_x = c(ordered.samples))
-gen.hm.int
-```
-```{r}
-spe.fam.int <- trans_abund$new(
-  dataset = dataset.int,
-  ntaxa = 25,
-  taxrank = "Species",
-  high_level = "Family",
-  groupmean = "group_phase",
-  group_morestats = T)
-spe.fam.int$plot_bar(ggnested = T,
-                     order_x = c("control", "gum"))
-  
-
-```
