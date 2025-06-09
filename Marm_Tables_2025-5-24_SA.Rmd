@@ -2,7 +2,8 @@
 title: "Marm_Tables_2025-5-24_SA"
 author: "Shayda"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  html_document: default
 ---
 
 # Setup and Datasets
@@ -79,7 +80,6 @@ marm_foods <- list(
                               weight = "bold",
                               size = "18px"),
             locations = cells_title(groups = "title"))
-gt::gtsave(filename = "visuals/marm_foods.docx")
 marm_foods
 ```
 # 
@@ -130,7 +130,7 @@ marm_diet_trials <- list(
   gt(rowname_col = "Group") %>%
   
   cols_align("center") %>%
-  tab_stubhead("Days") %>%
+  tab_stubhead("Trial Days") %>%
   
   tab_header(title = "Table 1",
              subtitle = "Timeline of Study") %>%
@@ -173,10 +173,7 @@ marm_diet_trials <- list(
                                  color = "lightgrey"),
             locations = cells_body(rows = 1)) %>%
   
-  tab_style(style = cell_borders(sides = "right",
-                                 color = "lightgrey",
-                                 weight = px(2)),
-            locations = cells_stubhead()) %>%
+
   tab_style_body(style = list(cell_text(transform = "capitalize"), 
                               cell_fill("#F0C6A9")),
                  pattern = "Intervention") %>%
@@ -193,19 +190,19 @@ marm_diet_trials <- list(
                               cell_fill("#F8F3EA")),
                  pattern = "Run-in") %>%
   
-  tab_style(style = list(cell_text(size = "small",
+  tab_style(style = list(cell_text(
                                    transform = "capitalize",
                                    weight = "bold",
                                    color = "#4D4D4D")),
             locations = cells_column_labels()) %>%
   
-  tab_style(style = list(cell_text(size = "small",
+  tab_style(style = list(cell_text(
                                    transform = "capitalize",
                                    weight = "bold",
                                    color = "#4D4D4D")),
             locations = cells_stub()) %>%
   
-  tab_style(style = list(cell_text(size = "small",
+  tab_style(style = list(cell_text(align = "center",
                                    transform = "capitalize",
                                    weight = "bold",
                                    color = "#4D4D4D")),
@@ -213,7 +210,11 @@ marm_diet_trials <- list(
   
   tab_style(style = list(cell_text(align = "left"),
                          cell_borders(sides = "bottom")),
-            locations = cells_title(groups = "subtitle"))
+            locations = cells_title(groups = "subtitle")) %>%
+  
+    cols_width(
+    everything() ~ px(125)
+  ) 
 
 marm_diet_trials
 ```
