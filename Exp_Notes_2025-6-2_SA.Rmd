@@ -3,7 +3,7 @@ title: "Experiment Notes & Observations"
 output:
    html_notebook:
      code_folding: hide
-  editor_options: 
+  editor_options:
   chunk_output_type: inline
 ---
 ```{r, warning = FALSE}

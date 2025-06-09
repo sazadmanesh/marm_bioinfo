@@ -218,3 +218,8 @@ marm_diet_trials <- list(
 
 marm_diet_trials
 ```
+```{r}
+metadata <- read.table("metadata/metadata.tsv",
+                      header = T,
+                      sep = "\t")
+```

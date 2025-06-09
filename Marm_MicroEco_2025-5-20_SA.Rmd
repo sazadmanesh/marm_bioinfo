@@ -702,5 +702,3 @@ wlcx.njc.rap.intervention <- wlcx.njc.rap.int$plot_diff_abund(
                                               use_number = 1:16,
                                               add_sig = TRUE)
 ```
-
-
