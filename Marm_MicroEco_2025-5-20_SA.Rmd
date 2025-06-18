@@ -68,13 +68,14 @@ alpha.rap.int <- trans_alpha$new(dataset = dataset.rap.int,
 alpha.rap.int$cal_diff(method = "wilcox")
 ```
 ```{r}
-shan.rap.intervention <- alpha.rap.int$plot_alpha(measure = "Shannon",
+shan.rap.int <- alpha.rap.int$plot_alpha(
+                                         measure = "Shannon",
                                                   xtext_angle = 0,
                                                   color_values = c("#00868B", "#EE7600"))
-shan.rap.intervention
 ```
 ```{r}
-shan.rap.intervention + labs(
+shan.rap.int + 
+  labs(
   x = "Intervention Diet",
   y = "Shannon Diversity Index",
   title = "Figure X",
@@ -92,6 +93,68 @@ shan.rap.intervention + labs(
 ```
 ```{r}
 ggsave("visuals/sha_wlcx_rap_int.png", shan.rap.intervention)
+```
+### Alpha Diversity Group 1 (Shannon)
+```{r}
+alpha.rap.int.g1 <- trans_alpha$new(dataset = rap.g1.int,
+                                 group = "Group_Phase")
+alpha.rap.int.g1$cal_diff(method = "wilcox")
+```
+```{r}
+shan.rap.int.g1 <- alpha.rap.int.g1$plot_alpha(measure = "Shannon",
+                                                  xtext_angle = 0,
+                                                  color_values = c("#00868B", "#EE7600"))
+```
+```{r}
+shan.rap.int.g1 + labs(
+  x = "Intervention Diet",
+  y = "Shannon Diversity Index",
+  title = "Figure X",
+  subtitle = "Group 1: Shannon Diversity of Intervention Diets") +
+  scale_x_discrete(label = c("Control", "Gum")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/sha_wlcx_rap_int_g1.png", shan.rap.int.g1)
+```
+### Alpha Diversity Group 2 (Shannon)
+```{r}
+alpha.rap.int.g2 <- trans_alpha$new(dataset = rap.g2.int,
+                                 group = "Group_Phase")
+alpha.rap.int.g2$cal_diff(method = "wilcox")
+```
+```{r}
+shan.rap.int.g2 <- alpha.rap.int.g2$plot_alpha(measure = "Shannon",
+                                                  xtext_angle = 0,
+                                                  color_values = c("#00868B", "#EE7600"))
+```
+```{r}
+shan.rap.int.g2 + labs(
+  x = "Intervention Diet",
+  y = "Shannon Diversity Index",
+  title = "Figure X",
+  subtitle = "Group 2: Shannon Diversity of Intervention Diets") +
+  scale_x_discrete(label = c("Control", "Gum")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/sha_wlcx_rap_int_g2.png", shan.rap.int.g2)
 ```
 ## Beta Diversity (Bray-Curtis)
 ```{r}
@@ -171,6 +234,215 @@ bray.rap.int.pcoa + labs(
 ```
 ```{r}
 ggsave("visuals/pcoa_bray_rap_int.png", bray.rap.int.pcoa)
+```
+### Beta Diversity Group 1 (Bray-Curtis)
+```{r}
+rap.g1.int$cal_betadiv()
+
+bray.rap.int.g1 <- trans_beta$new(
+  dataset = rap.g1.int,
+  group = "Group_Phase",
+  measure = "bray"
+)
+```
+```{r}
+bray.rap.int.g1$cal_group_distance(within_group = TRUE)
+bray.rap.int.g1$cal_group_distance_diff(method = "wilcox")
+bray.box.rap.int.g1 <- bray.rap.int.g1$plot_group_distance(add = "mean",
+                                                     xtext_angle = 0,
+                                                  color_values = c("#00868B", "#EE7600"))
+```
+```{r}
+bray.box.rap.int.g1 + labs(
+  x = "Intervention Diet",
+  y = "Bray-Curtis Distance",
+  title = "Figure X",
+  subtitle = "Group 1: Bray-Curtis Dissimilarity of Intervention Diets") +
+  scale_x_discrete(label = c("Control", "Gum")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/box_bray-wlcx_rap_int_g1.png", bray.box.rap.int.g1)
+```
+```{r}
+bray.rap.int.g1$cal_ordination(method = "PCoA")
+```
+```{r}
+bray.rap.int.pcoa.g1 <- bray.rap.int.g1$plot_ordination(plot_color = "Group_Phase",
+                                          plot_shape = "Group_Phase",
+                                          plot_type = c("point", "ellipse"))
+bray.rap.int.pcoa.g1
+```
+```{r}
+bray.rap.int.pcoa.g1 + labs(
+    fill = "Intervention Diet",
+    color = "Intervention Diet",
+    shape = "Intervention Diet",
+    title = "Figure X",
+    subtitle = "Group 1: Principal Coordinate Analysis (PCoA) with Bray-Curtis Dissimilarity") +
+  scale_fill_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Control", "Gum")) +
+  scale_color_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Control", "Gum")) +
+  scale_shape_manual(
+    values = c("control" = 16, "gum" = 17),
+    labels = c("Control", "Gum")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(face = "bold",
+                                  size = 15),
+        plot.subtitle = element_text(face = "italic", 
+                                     size = 16),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/pcoa_bray_rap_int_g1.png", bray.rap.int.pcoa.g1)
+```
+### Beta Diversity Group 2 (Bray-Curtis)
+```{r}
+rap.g2.int$cal_betadiv()
+
+bray.rap.int.g2 <- trans_beta$new(
+  dataset = rap.g2.int,
+  group = "Group_Phase",
+  measure = "bray"
+)
+```
+```{r}
+bray.rap.int.g2$cal_group_distance(within_group = TRUE)
+bray.rap.int.g2$cal_group_distance_diff(method = "wilcox")
+bray.box.rap.int.g2 <- bray.rap.int.g2$plot_group_distance(add = "mean",
+                                                     xtext_angle = 0,
+                                                  color_values = c("#00868B", "#EE7600"))
+```
+```{r}
+bray.box.rap.int.g2 + labs(
+  x = "Intervention Diet",
+  y = "Bray-Curtis Distance",
+  title = "Figure X",
+  subtitle = "Group 2: Bray-Curtis Dissimilarity of Intervention Diets") +
+  scale_x_discrete(label = c("Control", "Gum")) +
+  theme(plot.title = element_text(
+                                  size = 15,
+                                  face = "bold"),
+        plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/box_bray-wlcx_rap_int_g2.png", bray.box.rap.int.g2)
+```
+```{r}
+bray.rap.int.g2$cal_ordination(method = "PCoA")
+```
+```{r}
+bray.rap.int.pcoa.g2 <- bray.rap.int.g2$plot_ordination(plot_color = "Group_Phase",
+                                          plot_shape = "Group_Phase",
+                                          plot_type = c("point", "ellipse"))
+bray.rap.int.pcoa.g2
+```
+```{r}
+bray.rap.int.pcoa.g2 + labs(
+    fill = "Intervention Diet",
+    color = "Intervention Diet",
+    shape = "Intervention Diet",
+    title = "Figure X",
+    subtitle = "Group 2: Principal Coordinate Analysis (PCoA) with Bray-Curtis Dissimilarity") +
+  scale_fill_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Control", "Gum")) +
+  scale_color_manual(
+    values = c("control" = "#00868B", "gum" = "#EE7600"),
+    labels = c("Control", "Gum")) +
+  scale_shape_manual(
+    values = c("control" = 16, "gum" = 17),
+    labels = c("Control", "Gum")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        plot.title = element_text(face = "bold",
+                                  size = 15),
+        plot.subtitle = element_text(face = "italic", 
+                                     size = 16),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+        axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+ggsave("visuals/pcoa_bray_rap_int_g2.png", bray.rap.int.pcoa.g2)
+```
+## Combined Plots
+```{r}
+shan.rap.int <- alpha.rap.int$plot_alpha(measure = "Shannon",
+                                                  xtext_angle = 0,
+                                                  color_values = c("#00868B", "#EE7600")) +
+  aes(color = Group_Phase) +
+
+  labs(
+    x = "Intervention Diet",
+    y = "Shannon Diversity Index",
+    title = "Figure XA",
+    subtitle = "Shannon Diversity") +
+   scale_x_discrete(label = c("Control", "Gum")) +
+    theme(plot.title = element_text(
+                                     size = 15,
+                                     face = "bold"),
+          plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+          axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+          axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+bray.rap.int$cal_group_distance(within_group = TRUE)
+bray.rap.int$cal_group_distance_diff(method = "wilcox")
+bray.box.rap.int <- bray.rap.int$plot_group_distance(add = "mean",
+                                                     xtext_angle = 0,
+                                                  color_values = c("#00868B", "#EE7600")) +
+  aes(color = Group_Phase) +
+  
+  labs(
+    x = "Intervention Diet",
+    y = "Bray-Curtis Distance",
+    title = "Figure XB",
+    subtitle = "Bray-Curtis Dissimilarity") +
+    scale_x_discrete(label = c("Control", "Gum")) +
+    theme(plot.title = element_text(
+                                     size = 15,
+                                     face = "bold"),
+          plot.subtitle = element_text(size = 16,
+                                     face = "italic"),
+          axis.title.x = element_text(size = 14,
+                                    face = "bold"),
+          axis.title.y = element_text(size = 14,
+                                    face = "bold"))
+```
+```{r}
+(shan.rap.int + bray.box.rap.int) +
+  plot_layout(guides = "collect")
 ```
 # Abundance
 ## Taxonomic
@@ -321,6 +593,9 @@ phygen.rap.int + labs(
 ggsave("visuals/phy_gen_rap_int.png", phygen.rap.int)
 ```
 ```{r}
+
+```
+```{r}
 gen.int <- trans_abund$new(dataset = dataset.int,
                              taxrank = "Genus",
                              ntaxa = 40)
@@ -333,11 +608,11 @@ gen.hm.int
 ```
 ```{r}
 spe.fam.int <- trans_abund$new(
-  dataset = dataset.int,
+  dataset = dataset.rap.int,
   ntaxa = 25,
   taxrank = "Species",
   high_level = "Family",
-  groupmean = "group_phase",
+  groupmean = "Group_Phase",
   group_morestats = T)
 spe.fam.int$plot_bar(ggnested = T,
                      order_x = c("control", "gum"))
@@ -507,7 +782,7 @@ rap.lfs.gp <- trans_diff$new(
   filter_thres = 0.001)
 
 lfs.rap.gp <- rap.lfs.gp$plot_diff_abund(plot_type = "barerrorbar",
-                                              use_number = 1:16,
+                                              use_number = 1:10,
                                               add_sig = TRUE,
                                               group_order = c(
                                                 "baseline", "control", "control-washout", "gum", "gum-washout"),

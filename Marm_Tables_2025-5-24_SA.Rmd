@@ -69,7 +69,9 @@ marm_foods <- list(
             locations = cells_body()) %>%
   
   tab_header(title = "Table 2",
-             subtitle = "Standardized Diet per Marmoset Pair") %>%
+             subtitle = "Standardized Diet") %>%
+  
+  tab_caption(caption = "Table 2: The standardized diet provided to each marmoset pair during the study") %>%
   
   tab_style(style = cell_text(align = "left",
                               style = "italic",
@@ -79,7 +81,10 @@ marm_foods <- list(
   tab_style(style = cell_text(align = "left",
                               weight = "bold",
                               size = "18px"),
-            locations = cells_title(groups = "title"))
+            locations = cells_title(groups = "title")) %>%
+  
+  tab_style(style = cell_text(align = "left"),
+            locations = cells_footnotes())
 marm_foods
 ```
 # 
@@ -134,6 +139,8 @@ marm_diet_trials <- list(
   
   tab_header(title = "Table 1",
              subtitle = "Timeline of Study") %>%
+  
+  tab_caption(caption = "Table 1: Timeline of the study separated by phase") %>%
   
   tab_style(style = cell_text(align = "left",
                               style = "italic",

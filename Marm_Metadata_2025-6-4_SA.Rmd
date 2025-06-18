@@ -70,7 +70,8 @@ samples <- read.table(marmoset$samples,
                 Sample_Notes,
                 Diet_Trial,
                 Group_Phase,
-                Subj_Day
+                Subj_Day,
+                Known_Repro
                 )
 ```
 ```{r}
@@ -109,7 +110,6 @@ libraries <- read.table(marmoset$libraries,
                 Extract_ID,
                 Sample_ID,
                 Seq_ID,
-                Pipeline,
                 Library_Tube,
                 Library_Tube_ID,
                 Library_Barcode,
@@ -193,17 +193,12 @@ write.table(leftover_food, file = "metadata/leftover_food.tsv", sep = "\t", row.
 bristol <- read.table(marmoset$bristol,
                       header = T,
                       sep = "\t") %>%
-  mutate(Study_Date = as.Date(Date,
-                                format = "%m/%d/%y"),
-         SampleTimeFormatted = str_pad(Time, 4, pad = "0"),
-         Sample_Time = as_hms(sprintf("%02d:%02d:00",
-          as.integer(str_sub(SampleTimeFormatted, 1, 2)),
-          as.integer(str_sub(SampleTimeFormatted, 3, 4))))) %>%
-  dplyr::select(Study_Date,
-                Study_Day,
-                Sample_Time,
+  mutate(Date = as.Date(Date,
+                                format = "%m/%d/%y")) %>%
+  dplyr::select(Date,
                 Subject,
-                Bristol
+                Bristol, 
+                Repro_Status
                 )
 ```
 ```{r}
@@ -211,17 +206,26 @@ write.csv(bristol, "metadata/bristol.csv")
 write.table(bristol, file = "metadata/bristol.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
+samp_subj <- samples %>%
+  left_join(subjects, by = "Subject")
+```
+```{r}
 seq_metadata <- libraries %>%
-  left_join(seqruns, by = c("Seq_ID", "Run_ID")) %>%
-  dplyr::select(-"Pipeline.x") %>%
-  mutate(Pipeline = Pipeline.y) %>%
-  dplyr::select(-"Pipeline.y")
+  left_join(seqruns, by = c("Seq_ID", "Run_ID"))
+```
+```{r}
+full_metadata <- samp_subj %>%
+  left_join(extracts, by = "Sample_ID") %>%
+  left_join(seq_metadata, by = c("Extract_ID", "Sample_ID"))
+```
+```{r}
+write.csv(full_metadata, "metadata/full_metadata.csv")
+write.table(full_metadata, file = "metadata/full_metadata.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 ```{r}
 metadata <- seq_metadata %>%
   left_join(extracts, by = c("Extract_ID", "Sample_ID")) %>%
-  left_join(samples, by = "Sample_ID") %>%
-  left_join(subjects, by = "Subject")
+  left_join(samp_subj, by = c("Sample_ID"))
 ```
 ```{r}
 write.csv(metadata, "metadata/metadata.csv")
